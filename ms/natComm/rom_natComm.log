@@ -1,0 +1,929 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 JUN 2016 18:20
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**\input rom_natComm.tex
+(./rom_natComm.tex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip43
+\@affilsep=\skip44
+\c@Maxaffil=\count87
+\c@authors=\count88
+\c@affil=\count89
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen105
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen106
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks17
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks18
+\eqnshift@=\dimen108
+\alignsep@=\dimen109
+\tagshift@=\dimen110
+\tagwidth@=\dimen111
+\totwidth@=\dimen112
+\lineht@=\dimen113
+\@envbody=\toks19
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2015/04/19 v3.0 programmable bibliographies (PK/JW/AB)
+
+
+Package biblatex Warning: No "backend" specified, using Biber backend.
+(biblatex)                To use BibTeX, load biblatex with 
+(biblatex)                the "backend=bibtex" option.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex2.sty
+Package: biblatex2 2015/04/19 v3.0 programmable bibliographies (biber) (PK/JW/A
+B)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count103
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count104
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count105
+\c@listtotal=\count106
+\c@listcount=\count107
+\c@liststart=\count108
+\c@liststop=\count109
+\c@citecount=\count110
+\c@citetotal=\count111
+\c@multicitecount=\count112
+\c@multicitetotal=\count113
+\c@instcount=\count114
+\c@maxnames=\count115
+\c@minnames=\count116
+\c@maxitems=\count117
+\c@minitems=\count118
+\c@citecounter=\count119
+\c@savedcitecounter=\count120
+\c@uniquelist=\count121
+\c@uniquename=\count122
+\c@refsection=\count123
+\c@refsegment=\count124
+\c@maxextratitle=\count125
+\c@maxextratitleyear=\count126
+\c@maxextrayear=\count127
+\c@maxextraalpha=\count128
+\c@abbrvpenalty=\count129
+\c@highnamepenalty=\count130
+\c@lownamepenalty=\count131
+\c@maxparens=\count132
+\c@parenlevel=\count133
+\blx@tempcnta=\count134
+\blx@tempcntb=\count135
+\blx@tempcntc=\count136
+\blx@maxsection=\count137
+\blx@maxsegment@0=\count138
+\blx@notetype=\count139
+\blx@parenlevel@text=\count140
+\blx@parenlevel@foot=\count141
+\blx@sectionciteorder@0=\count142
+\labelnumberwidth=\skip48
+\labelalphawidth=\skip49
+\biblabelsep=\skip50
+\bibitemsep=\skip51
+\bibnamesep=\skip52
+\bibinitsep=\skip53
+\bibparsep=\skip54
+\bibhang=\skip55
+\blx@bcfin=\read1
+\blx@bcfout=\write3
+\c@mincomprange=\count143
+\c@maxcomprange=\count144
+\c@mincompwidth=\count145
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/blx-dm.def)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'nature.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count146
+\c@savedafterword=\count147
+\c@annotator=\count148
+\c@savedannotator=\count149
+\c@author=\count150
+\c@savedauthor=\count151
+\c@bookauthor=\count152
+\c@savedbookauthor=\count153
+\c@commentator=\count154
+\c@savedcommentator=\count155
+\c@editor=\count156
+\c@savededitor=\count157
+\c@editora=\count158
+\c@savededitora=\count159
+\c@editorb=\count160
+\c@savededitorb=\count161
+\c@editorc=\count162
+\c@savededitorc=\count163
+\c@foreword=\count164
+\c@savedforeword=\count165
+\c@holder=\count166
+\c@savedholder=\count167
+\c@introduction=\count168
+\c@savedintroduction=\count169
+\c@namea=\count170
+\c@savednamea=\count171
+\c@nameb=\count172
+\c@savednameb=\count173
+\c@namec=\count174
+\c@savednamec=\count175
+\c@translator=\count176
+\c@savedtranslator=\count177
+\c@shortauthor=\count178
+\c@savedshortauthor=\count179
+\c@shorteditor=\count180
+\c@savedshorteditor=\count181
+\c@labelname=\count182
+\c@savedlabelname=\count183
+\c@institution=\count184
+\c@savedinstitution=\count185
+\c@lista=\count186
+\c@savedlista=\count187
+\c@listb=\count188
+\c@savedlistb=\count189
+\c@listc=\count190
+\c@savedlistc=\count191
+\c@listd=\count192
+\c@savedlistd=\count193
+\c@liste=\count194
+\c@savedliste=\count195
+\c@listf=\count196
+\c@savedlistf=\count197
+\c@location=\count198
+\c@savedlocation=\count199
+\c@organization=\count200
+\c@savedorganization=\count201
+\c@origlocation=\count202
+\c@savedoriglocation=\count203
+\c@origpublisher=\count204
+\c@savedorigpublisher=\count205
+\c@publisher=\count206
+\c@savedpublisher=\count207
+\c@language=\count208
+\c@savedlanguage=\count209
+\c@pageref=\count210
+\c@savedpageref=\count211
+\shorthandwidth=\skip56
+\shortjournalwidth=\skip57
+\shortserieswidth=\skip58
+\shorttitlewidth=\skip59
+\shortauthorwidth=\skip60
+\shorteditorwidth=\skip61
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2015/04/19 v3.0 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 
+\c@textcitecount=\count212
+\c@textcitetotal=\count213
+\c@textcitemaxnames=\count214
+\c@biburlnumpenalty=\count215
+\c@biburlucpenalty=\count216
+\c@biburllcpenalty=\count217
+\c@smartand=\count218
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2015/04/19 v3.0 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load bibliography style 'nature'...
+Package biblatex Info: ... file 'nature.bbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex-nature/nature.bbx
+File: nature.bbx 2013/05/20 v1.2e biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2015/04/19 v3.0 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count219
+\c@bbx:relatedtotal=\count220
+))))
+Package biblatex Info: Trying to load citation style 'nature'...
+Package biblatex Info: ... file 'nature.cbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex-nature/nature.cbx
+File: nature.cbx 2013/05/20 v1.2e biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2015/04/19 v3.0 biblatex citation style (PK/JW/AB)
+\c@cbx@tempcnta=\count221
+\c@cbx@tempcntb=\count222
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+))
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+\linenopenalty=\count223
+\output=\toks21
+\linenoprevgraf=\count224
+\linenumbersep=\dimen114
+\linenumberwidth=\dimen115
+\c@linenumber=\count225
+\c@pagewiselinenumber=\count226
+\c@LN@truepage=\count227
+\c@internallinenumber=\count228
+\c@internallinenumbers=\count229
+\quotelinenumbersep=\dimen116
+\bframerule=\dimen117
+\bframesep=\dimen118
+\bframebox=\box28
+LaTeX Info: Redefining \\ on input line 3056.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2013/06/09 v2.4 Extended list environments
+\pltopsep=\skip62
+\plpartopsep=\skip63
+\plitemsep=\skip64
+\plparsep=\skip65
+\pl@lab=\toks22
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 1994/05/28 v5.02 eXternal References (DPC)
+)
+Package xr Info: IMPORTING LABELS FROM rom_natComm_supp.aux on input line 15.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
+)
+\@quotelevel=\count230
+\@quotereset=\count231
+
+(./rom_natComm.aux)
+\openout1 = `rom_natComm.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count232
+\scratchdimen=\dimen119
+\scratchbox=\box29
+\nofMPsegments=\count233
+\nofMParguments=\count266
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count267
+\MPscratchDim=\dimen120
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package biblatex Info: No input encoding detected.
+(biblatex)             Assuming 'ascii'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'ascii'.
+\openout3 = `rom_natComm.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'rom_natComm.bbl' found.
+
+(./rom_natComm.bbl)
+Package biblatex Info: Reference section=0 on input line 53.
+Package biblatex Info: Reference segment=0 on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ³ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ± in font cmr12!
+ [1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+
+LaTeX Warning: Citation 'raup1982' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'sepkoski1984' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'gilinsky1994' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'liow2007' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'alroy08' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 3 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'benton1995' on page 3 undefined on input line 104.
+
+
+LaTeX Warning: Citation 'Erwin1998' on page 3 undefined on input line 104.
+
+
+LaTeX Warning: Citation 'sepkoski1984' on page 3 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'alroy08' on page 3 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'quental2013' on page 3 undefined on input line 105.
+
+
+LaTeX Warning: Citation 'bak1993' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Citation 'sole1997' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Citation 'newman1995' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'vermeij1987' on page 3 undefined on input line 113.
+
+
+LaTeX Warning: Citation 'kirchner1998' on page 3 undefined on input line 116.
+
+
+LaTeX Warning: Citation 'madin2006' on page 3 undefined on input line 116.
+
+
+LaTeX Warning: Citation 'alroy08' on page 3 undefined on input line 116.
+
+
+LaTeX Warning: Citation 'sepkoski1984' on page 3 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'alroy08' on page 3 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 3 undefined on input line 118.
+
+
+LaTeX Warning: Citation 'rabosky2009ecolLett' on page 3 undefined on input line
+ 118.
+
+
+LaTeX Warning: Citation 'erwin2012' on page 3 undefined on input line 121.
+
+
+LaTeX Warning: Citation 'liow2007' on page 3 undefined on input line 121.
+
+
+LaTeX Warning: Citation 'quental2013' on page 3 undefined on input line 121.
+
+
+LaTeX Warning: Citation 'roy2009range' on page 3 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'hopkins2014' on page 3 undefined on input line 136.
+
+
+LaTeX Warning: Citation 'eldredgeGould1972' on page 3 undefined on input line 1
+39.
+
+
+LaTeX Warning: Citation 'newman1985adaptive' on page 3 undefined on input line 
+139.
+
+
+LaTeX Warning: Citation 'hopkins2014' on page 3 undefined on input line 139.
+
+
+LaTeX Warning: Citation 'vrba1983' on page 3 undefined on input line 142.
+
+
+LaTeX Warning: Citation 'simpson1953' on page 3 undefined on input line 144.
+
+
+LaTeX Warning: Citation 'sepkoski1984' on page 3 undefined on input line 144.
+
+
+LaTeX Warning: Citation 'holman1989' on page 3 undefined on input line 144.
+
+
+LaTeX Warning: Citation 'gilinsky1994' on page 3 undefined on input line 144.
+
+
+Overfull \hbox (55.61586pt too wide) in paragraph at lines 129--146
+\OT1/cmr/m/n/12 plo-ration of new eco-log-i-cal niche space [[], [],
+ []
+
+
+Overfull \hbox (4.88295pt too wide) in paragraph at lines 129--146
+\OT1/cmr/m/n/12 tion, spe-ci-a-tion and ex-tinc-tion [[], [], [],
+ []
+
+
+LaTeX Warning: Citation 'eldredgeGould1972' on page 3 undefined on input line 1
+51.
+
+
+LaTeX Warning: Citation 'beck2003' on page 3 undefined on input line 154.
+
+
+LaTeX Warning: Citation 'beck2003' on page 3 undefined on input line 154.
+
+
+LaTeX Warning: Citation 'beck2003' on page 3 undefined on input line 157.
+
+
+LaTeX Warning: Citation 'simpson1953' on page 3 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'gavrilets2005' on page 3 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'rabosky2009ecolLett' on page 3 undefined on input line
+ 163.
+
+
+LaTeX Warning: Citation 'price2014' on page 3 undefined on input line 163.
+
+
+LaTeX Warning: Citation 'jablonski2008' on page 3 undefined on input line 168.
+
+
+LaTeX Warning: Citation 'erwin2012' on page 3 undefined on input line 169.
+
+
+LaTeX Warning: Citation 'harnik2011' on page 3 undefined on input line 169.
+
+
+LaTeX Warning: Citation 'harnik2011' on page 3 undefined on input line 170.
+
+
+LaTeX Warning: Citation 'foote2008paleobiol' on page 3 undefined on input line 
+170.
+
+
+LaTeX Warning: Citation 'hopkins2014' on page 3 undefined on input line 171.
+
+[3
+
+]
+
+LaTeX Warning: Citation 'alroy08' on page 4 undefined on input line 195.
+
+
+LaTeX Warning: Citation 'alroy08' on page 4 undefined on input line 209.
+
+[4]
+
+LaTeX Warning: Citation 'alroy08' on page 5 undefined on input line 216.
+
+
+LaTeX Warning: Citation 'sepkoski1992' on page 5 undefined on input line 216.
+
+
+LaTeX Warning: Citation 'alroy08' on page 5 undefined on input line 221.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 5 undefined on input line 221.
+
+
+LaTeX Warning: Citation 'alroy08' on page 5 undefined on input line 222.
+
+
+Overfull \hbox (4.30424pt too wide) in paragraph at lines 213--233
+[]\OT1/cmr/m/n/12 To un-cover the super-statistical na-ture of the ma-rine in-v
+er-te-brate Phanero-
+ []
+
+
+LaTeX Warning: Citation 'mayr1965systZool' on page 5 undefined on input line 24
+1.
+
+
+LaTeX Warning: Citation 'erwin2007' on page 5 undefined on input line 241.
+
+
+LaTeX Warning: Citation 'holman1989' on page 5 undefined on input line 242.
+
+[5]
+
+LaTeX Warning: Citation 'alroy08' on page 6 undefined on input line 258.
+
+
+Overfull \hbox (12.97365pt too wide) in paragraph at lines 256--266
+\OT1/cmr/m/n/12 Data were down-loaded from the Pa-le-o-bi-ol-ogy Database (PBDB
+; www.pbdb.org)
+ []
+
+
+LaTeX Warning: Citation 'alroy08' on page 6 undefined on input line 279.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 6 undefined on input line 279.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 6 undefined on input line 282.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 6 undefined on input line 284.
+
+
+LaTeX Warning: Citation 'alroy08' on page 6 undefined on input line 286.
+
+[6]
+
+LaTeX Warning: Citation 'alroy08' on page 7 undefined on input line 301.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 7 undefined on input line 301.
+
+
+LaTeX Warning: Citation 'alroy2010' on page 7 undefined on input line 303.
+
+
+LaTeX Warning: Citation 'hubbell2001' on page 7 undefined on input line 337.
+
+
+LaTeX Warning: Citation 'brose2005' on page 7 undefined on input line 339.
+
+
+LaTeX Warning: Citation 'bak1993' on page 7 undefined on input line 341.
+
+
+LaTeX Warning: Citation 'sole1997' on page 7 undefined on input line 341.
+
+[7]
+
+LaTeX Warning: Citation 'cir1985' on page 8 undefined on input line 349.
+
+
+LaTeX Warning: Citation 'cir1985' on page 8 undefined on input line 350.
+
+
+LaTeX Warning: Citation 'cir1985' on page 8 undefined on input line 354.
+
+
+LaTeX Warning: Citation 'butler2004' on page 8 undefined on input line 354.
+
+
+Overfull \hbox (6.81949pt too wide) in paragraph at lines 370--385
+[]\OT1/cmr/m/n/12 To quan-ti-ta-tively eval-u-ate how well the super-statistica
+l pre-dic-tion matches
+ []
+
+[8]
+
+LaTeX Warning: Citation 'holman1989' on page 9 undefined on input line 424.
+
+[9]
+
+LaTeX Warning: Citation 'beck2004' on page 10 undefined on input line 434.
+
+
+LaTeX Warning: Citation 'fuentes2009' on page 10 undefined on input line 434.
+
+
+LaTeX Warning: Citation 'liow2007' on page 10 undefined on input line 456.
+
+
+LaTeX Warning: Citation 'quental2013' on page 10 undefined on input line 456.
+
+
+Overfull \hbox (2.93343pt too wide) in paragraph at lines 446--458
+\OT1/cmr/m/n/12 tu-ated adap-tive ra-di-a-tion in pro-duc-ing the sta-tis-ti-ca
+l be-hav-ior of the Phanero-
+ []
+
+
+Overfull \hbox (17.89484pt too wide) in paragraph at lines 446--458
+\OT1/cmr/m/n/12 zoic; our the-ory thus pro-vides new mo-ti-va-tion for iden-ti-
+fy-ing the eco-evolutionary
+ []
+
+
+LaTeX Warning: Citation 'rabosky2006laser' on page 10 undefined on input line 4
+66.
+
+
+LaTeX Warning: Citation 'rosindell2011TREE' on page 10 undefined on input line 
+472.
+
+
+LaTeX Warning: Citation 'hubbell2001' on page 10 undefined on input line 473.
+
+
+LaTeX Warning: Citation 'chave2004neutral' on page 10 undefined on input line 4
+75.
+
+
+LaTeX Warning: Citation 'ricklefs2006neutral' on page 10 undefined on input lin
+e 476.
+
+
+Overfull \hbox (27.10344pt too wide) in paragraph at lines 463--482
+\OT1/cmr/m/n/12 [[]] and poor pre-dic-tion of real dy-nam-ics [[]].
+ []
+
+[10] [11] <figs/fig_pkx-fbeta.pdf, id=48, 576.56696pt x 477.76683pt>
+File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
+
+<use figs/fig_pkx-fbeta.pdf>
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 500.
+(pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
+
+Overfull \hbox (71.2542pt too wide) in paragraph at lines 500--512
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figs/fig_Px.pdf, id=49, 270.00874pt x 270.00874pt>
+File: figs/fig_Px.pdf Graphic file (type pdf)
+ <use figs/fig_Px.pdf>
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 518.
+(pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
+
+
+LaTeX Warning: Citation 'alroy08' on page 12 undefined on input line 529.
+
+
+LaTeX Warning: Citation 'alroy08' on page 12 undefined on input line 529.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figs/fig_dStat(3TP).pdf, id=50, 235.46048pt x 216.81pt>
+File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
+
+<use figs/fig_dStat(3TP).pdf>
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 535.
+(pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12
+
+]
+
+LaTeX Warning: Text page 13 contains only floats.
+
+
+Overfull \vbox (5.21399pt too high) has occurred while \output is active []
+
+
+[13 <./figs/fig_pkx-fbeta.pdf>] [14 <./figs/fig_Px.pdf>] [15 <./figs/fig_dStat(
+3TP).pdf>] (./rom_natComm.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                rom_natComm
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'rom_natComm.run.xml'.
+\openout1 = `rom_natComm.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 8275 strings out of 493089
+ 135686 string characters out of 6134842
+ 554410 words of memory out of 5000000
+ 11644 multiletter control sequences out of 15000+600000
+ 14298 words of font info for 55 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,6n,35p,841b,903s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on rom_natComm.pdf (15 pages, 791080 bytes).
+PDF statistics:
+ 255 PDF objects out of 1000 (max. 8388607)
+ 183 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
