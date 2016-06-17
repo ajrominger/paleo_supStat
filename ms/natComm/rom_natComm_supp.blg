@@ -1,46 +1,17 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: rom_natComm_supp.aux
-The style file: nature.bst
-Database file #1: ../superStat.bib.bib
-You've used 4 entries,
-            1865 wiz_defined-function locations,
-            476 strings with 4792 characters,
-and the built_in function-call counts, 1360 in all, are:
-= -- 95
-> -- 123
-< -- 0
-+ -- 43
-- -- 39
-* -- 142
-:= -- 250
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 3
-chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 37
-empty$ -- 94
-format.name$ -- 39
-if$ -- 268
-int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 5
-newline$ -- 23
-num.names$ -- 4
-pop$ -- 9
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 12
-stack$ -- 0
-substring$ -- 84
-swap$ -- 4
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 10
-width$ -- 5
-write$ -- 46
+[0] Config.pm:324> INFO - This is Biber 2.1
+[0] Config.pm:327> INFO - Logfile is 'rom_natComm_supp.blg'
+[36] biber-darwin:276> INFO - === Fri Jun 17, 2016, 11:43:15
+[36] Biber.pm:333> INFO - Reading 'rom_natComm_supp.bcf'
+[113] Biber.pm:645> INFO - Found 4 citekeys in bib section 0
+[129] Biber.pm:2977> INFO - Processing section 0
+[142] Biber.pm:3115> INFO - Looking for bibtex format file '../superStat.bib' for section 0
+[148] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[155] bibtex.pm:895> INFO - Found BibTeX data source '../superStat.bib'
+[212] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[213] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[213] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
+[213] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[217] bbl.pm:505> INFO - Writing 'rom_natComm_supp.bbl' with encoding 'ascii'
+[221] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[221] bbl.pm:596> INFO - Output to rom_natComm_supp.bbl
+[221] Biber.pm:106> INFO - WARNINGS: 1

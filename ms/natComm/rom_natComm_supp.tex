@@ -1,11 +1,15 @@
 \documentclass[12pt]{article}
 \usepackage{authblk}
+\usepackage[margin=1in]{geometry}
+\geometry{letterpaper}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
-\usepackage[sort&compress]{natbib}
-\bibliographystyle{nature}
-\bibpunct{}{}{,}{s}{}{,}
+
+\usepackage[style=nature, natbib=true, autocite = superscript]{biblatex}
+\addbibresource{../superStat.bib}
+\let\citep=\autocite
+
 \usepackage{lineno}
 \usepackage{paralist}
 
@@ -40,7 +44,7 @@ Santiago, Chile}
 Pontificia Universidad Católica de Chile, Alameda 340, Santiago,
 Chile}
 %
-\affil[8]{Centro Cambio Global UC, Av.~Vicuña Mackenna 4860, Campus
+\affil[8]{Centro Cambio Global UC, Av.~Vicu\~na Mackenna 4860, Campus
 San Vicu\~na, Santiago, Chile}
 
 \date{}
@@ -48,6 +52,9 @@ San Vicu\~na, Santiago, Chile}
 \begin{document}
 
 \maketitle
+
+\clearpage
+\linenumbers
 
 \section{Limit distribution of a time-averaged homogeneous
   origination-extinction process}
@@ -116,7 +123,7 @@ null Gaussian model (Fig. \ref{fig:supp_sepkPx}) and worsens with
 increasing taxonomic scale (Fig. \ref{fig:supp_sepkPx}), again
 implying the uniqueness of orders.
 
-\bibliography{../superStat.bib}
+\printbibliography
 
 \clearpage
 
