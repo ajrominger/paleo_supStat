@@ -95,7 +95,6 @@ within orders and undergo punctuated innovations between orders.
 
 \clearpage
 
-\section{Background}
 %% Diversity changes
 Biodiversity has not remained constant nor followed a simple
 trajectory through geologic time \citep{raup1982, sepkoski1984,
@@ -105,7 +104,9 @@ the case of net origination or negative in the case of net
 extinction. Major events, such as adaptive radiations and mass
 extinctions have received special attention \citep{benton1995,
   Erwin1998}, but fluctuations of all sizes are ubiquitous
-\citep{sepkoski1984, alroy08, quental2013}.
+\citep{sepkoski1984, alroy08, quental2013}. Predicting the magnitude
+of these fluctuations continues to illude paleobiologists and
+biodiversity theoriticians.
 
 %% What drives diversity dynamics?
 Several approaches have been taken to study the complex trajectory of
@@ -124,10 +125,28 @@ producing observed patterns \citep{erwin2012, liow2007,
   quental2013}. As such, we still lack a synthetic theory of evolving
 biodiversity through the fossil record.
 %
-Here we use a simple model of evolution in an abstract niche space
-derived from universal non-equilibrium processes to predict,
-with great accuracy, the complex distribution of pervasive diversity
-fluctuations throughout the marine Phanerozoic.
+Here we build a parsimonious theory of diversification across an
+adaptive landscape, deriving predictions from universal
+non-equilibrial processes, and show that it accurately predicts the
+complex distribution of pervasive diversity fluctuations throughout
+the marine Phanerozoic.
+
+\subsection*{Diversification in an Adaptive Landscape}
+
+Model: takes from classic models (simpson, wright) says
+diversification in a region of niche space is equilibrial. Constraints
+on evolutionary innovation (i.e. niche conservatism) lead to stasis in
+those niches. Underlying properties of that region of niche space
+determine rates of orig and extinct leading to different
+$\beta$. Result is different Gaussians in different regions and a jump
+process between regions (e.g. Gamma).
+
+This is same as super-stats. Stat mech in biodiversity has powerful
+potential.
+
+Predictions
+
+Datasets
 
 Despite the heterogeneity of explanations of Phanerozoic
 biodiversity, consensus has emerged on three properties of
@@ -253,80 +272,7 @@ taxonomies to confirm that observed patterns are not an artifact of
 arbitrary classification but instead represent real biologically
 relevant differences between clades.
 
-\section{Methods}
 
-\subsection{Paleobiology Database data download and filtering}
-Data were downloaded from the Paleobiology Database (PBDB;
-www.pbdb.org) on 28 May 2013. Collections were filtered using the same
-approach as Alroy \citep{alroy08} to insure that only well preserved
-marine invertebrate occurrences were used in subsequent analysis
-resulting in 221202 genus occurrences. These were further filtered to
-exclude those occurrences without order-level taxonomy and those
-collections with age estimate resolutions outside the 10my default
-bins of the PBDB resulting in 189516 occurrences left for analysis. To
-avoid basic sampling concerns we excluded the earliest Cambrian and
-the Cenozoic.
-
-To focus attention on the variance of fluctuations we center each
-clade's fluctuation distribution. Because ``equilibrium'' in the
-statistical mechanical sense means a system undergoes coherent,
-concerted responses to perturbation the mean trend line is of less
-interest than deviations from it. We also note that most clades are
-already close to centered and so centering has little influence on
-clade-specific fluctuation distributions.
-
-\subsection{Three-timer and publication bias correction} 
-\label{sec:3TP}
-We use a new and flexible method, described below, to correct for
-known sampling biases in publication-based specimen databases
-\citep{alroy08, alroy2010}.  We were motivated to use this method
-because rarefaction has been shown to under-perform compared to the
-more data-intensive shareholder quorum subsampling (SQS) method
-\citep{alroy2010}.  However, subsampling cannot be applied to small
-orders (i.e. the majority) because SQS becomes increasingly unreliable
-as sample size decreases \citep{alroy2010}.  We therefore develop a
-simple method based on first correcting for detection bias using the
-``three timer'' correction \citep{alroy08} in which the rate of failure
-to observe a genus is estimated by the number of times a gap occurs in
-the occurrence history of each genus. To eliminate further bias due to
-preferential publication of novel taxa we divide observed number of
-genera per order per time period by the expected number of genera
-given publications in that time period.  The expected number is
-calculated by regressing the log-transformed number of genera on
-log-transformed number of publications. There is a weak trend toward
-higher diversity with more publications (Fig. \ref{fig:divByPub})
-meaning that the most important correction comes from the three timer
-correction.
-
-Our new method effectively re-scales each genus occurrence from 0/1
-(absent/present), to a weighted number continuously ranging between 0
-and 1.  This method achieves similar results to more computationally
-intensive sub-sampling procedures \citep{alroy08, alroy2010}. We
-directly compare our predicted time series of global genus diversity
-with results derived from SQS \citep{alroy2010} and the raw data
-(Fig. \ref{fig:supp_3TPub}).  Our method shows minor differences with
-the SQS prediction, However, these discrepancies do not have impact
-the distribution of fluctuations (Fig. \ref{fig:supp_3TPub}) and
-super-statistical analysis on uncorrected PBDB data (see section
-\ref{sec:rawPBDB}) produces a similar result to the analysis on
-corrected PBDB data presented in the main text.
-
-\subsection{Numerical methods} \label{sec:numMeth} To fit our
-super-statistical prediction we use the method of least squares
-instead and maximum likelihood. When building the prediction for
-$P(x)$ by calculating order-level Gaussian distributions and
-integrating over them, we use least squares to fit the variance term
-to each order. We do so because orders potentially show asymmetries in
-their distribution of fluctuations. Least squares is more flexible in
-fitting such distributions compared to maximum likelihood which will
-always estimate the empirical variance as the best-fitting parameters.
-
-We also estimate $P(x)$ directly from the raw data using maximum
-likelihood to compare the fit of our super-statistical prediction and
-that of a simple Gaussian distribution using AIC. To calculate a
-likelihood-based confidence interval on our prediction we bootstrapped
-the data, subsampling fluctuations with replacement from all orders
-combined.
 
 \section{Results and Discussion}
 % present p_k(x|b), f(b) and P(x) fit
@@ -483,6 +429,80 @@ set of non-equivalent statistics, then diversity dynamics could be
 parsimoniously predicted while incorporating real biological
 information on ecological differences between taxa.
 
+\section{Methods}
+
+\subsection{Paleobiology Database data download and filtering}
+Data were downloaded from the Paleobiology Database (PBDB;
+www.pbdb.org) on 28 May 2013. Collections were filtered using the same
+approach as Alroy \citep{alroy08} to insure that only well preserved
+marine invertebrate occurrences were used in subsequent analysis
+resulting in 221202 genus occurrences. These were further filtered to
+exclude those occurrences without order-level taxonomy and those
+collections with age estimate resolutions outside the 10my default
+bins of the PBDB resulting in 189516 occurrences left for analysis. To
+avoid basic sampling concerns we excluded the earliest Cambrian and
+the Cenozoic.
+
+To focus attention on the variance of fluctuations we center each
+clade's fluctuation distribution. Because ``equilibrium'' in the
+statistical mechanical sense means a system undergoes coherent,
+concerted responses to perturbation the mean trend line is of less
+interest than deviations from it. We also note that most clades are
+already close to centered and so centering has little influence on
+clade-specific fluctuation distributions.
+
+\subsection{Three-timer and publication bias correction} 
+\label{sec:3TP}
+We use a new and flexible method, described below, to correct for
+known sampling biases in publication-based specimen databases
+\citep{alroy08, alroy2010}.  We were motivated to use this method
+because rarefaction has been shown to under-perform compared to the
+more data-intensive shareholder quorum subsampling (SQS) method
+\citep{alroy2010}.  However, subsampling cannot be applied to small
+orders (i.e. the majority) because SQS becomes increasingly unreliable
+as sample size decreases \citep{alroy2010}.  We therefore develop a
+simple method based on first correcting for detection bias using the
+``three timer'' correction \citep{alroy08} in which the rate of failure
+to observe a genus is estimated by the number of times a gap occurs in
+the occurrence history of each genus. To eliminate further bias due to
+preferential publication of novel taxa we divide observed number of
+genera per order per time period by the expected number of genera
+given publications in that time period.  The expected number is
+calculated by regressing the log-transformed number of genera on
+log-transformed number of publications. There is a weak trend toward
+higher diversity with more publications (Fig. \ref{fig:divByPub})
+meaning that the most important correction comes from the three timer
+correction.
+
+Our new method effectively re-scales each genus occurrence from 0/1
+(absent/present), to a weighted number continuously ranging between 0
+and 1.  This method achieves similar results to more computationally
+intensive sub-sampling procedures \citep{alroy08, alroy2010}. We
+directly compare our predicted time series of global genus diversity
+with results derived from SQS \citep{alroy2010} and the raw data
+(Fig. \ref{fig:supp_3TPub}).  Our method shows minor differences with
+the SQS prediction, However, these discrepancies do not have impact
+the distribution of fluctuations (Fig. \ref{fig:supp_3TPub}) and
+super-statistical analysis on uncorrected PBDB data (see section
+\ref{sec:rawPBDB}) produces a similar result to the analysis on
+corrected PBDB data presented in the main text.
+
+\subsection{Numerical methods} \label{sec:numMeth} To fit our
+super-statistical prediction we use the method of least squares
+instead and maximum likelihood. When building the prediction for
+$P(x)$ by calculating order-level Gaussian distributions and
+integrating over them, we use least squares to fit the variance term
+to each order. We do so because orders potentially show asymmetries in
+their distribution of fluctuations. Least squares is more flexible in
+fitting such distributions compared to maximum likelihood which will
+always estimate the empirical variance as the best-fitting parameters.
+
+We also estimate $P(x)$ directly from the raw data using maximum
+likelihood to compare the fit of our super-statistical prediction and
+that of a simple Gaussian distribution using AIC. To calculate a
+likelihood-based confidence interval on our prediction we bootstrapped
+the data, subsampling fluctuations with replacement from all orders
+combined.
 
 \section*{Acknowledgments}
 We thank John Harte, Rosemary Gillespie and Jun Ying Lim for helpful
