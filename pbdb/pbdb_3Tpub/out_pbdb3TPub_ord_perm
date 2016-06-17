@@ -1,0 +1,5173 @@
+
+R version 3.0.0 (2013-04-03) -- "Masked Marvel"
+Copyright (C) 2013 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin10.8.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ###############  ord-perm for 3TPub corrected PBDB  ###############
+> 
+> oldwd <- setwd("~/Desktop/Research/paleo_supStat/pbdb/pbdb_3Tpub")
+> 
+> ##	depends on .../make_pbdb_3Tpub.R
+> if(!(exists("pbdb.ord.div") & exists("pbdb.gen.occ3TP") & exists("pbdb.sstat.ord.cor"))) {
++ 	makePlot <- FALSE
++ 	source("make_pbdb_3Tpub.R")
++ }
+Loading required package: startupmsg
+:startupmsg>  Utilities for start-up messages (version 0.8)
+:startupmsg> 
+:startupmsg>  For more information see ?"startupmsg",
+:startupmsg>  NEWS("startupmsg")
+
+Loading required package: sfsmisc
+Loading required package: SweaveListingUtils
+:SweaveListingUtils>  Utilities for Sweave together with
+:SweaveListingUtils>  TeX listings package (version
+:SweaveListingUtils>  0.6.1)
+:SweaveListingUtils> 
+:SweaveListingUtils>  NOTE: Support for this package
+:SweaveListingUtils>  will stop soon.
+:SweaveListingUtils> 
+:SweaveListingUtils>  Package 'knitr' is providing the
+:SweaveListingUtils>  same functionality in a better
+:SweaveListingUtils>  way.
+:SweaveListingUtils> 
+:SweaveListingUtils>  Some functions from package 'base'
+:SweaveListingUtils>  are intentionally masked ---see
+:SweaveListingUtils>  SweaveListingMASK().
+:SweaveListingUtils> 
+:SweaveListingUtils>  Note that global options are
+:SweaveListingUtils>  controlled by
+:SweaveListingUtils>  SweaveListingoptions() ---c.f.
+:SweaveListingUtils>  ?"SweaveListingoptions".
+:SweaveListingUtils> 
+:SweaveListingUtils>  For more information see
+:SweaveListingUtils>  ?"SweaveListingUtils",
+:SweaveListingUtils>  NEWS("SweaveListingUtils")
+:SweaveListingUtils>  There is a vignette to this
+:SweaveListingUtils>  package; try
+:SweaveListingUtils>  vignette("ExampleSweaveListingUtils").
+
+
+Attaching package: ‘SweaveListingUtils’
+
+The following object is masked from ‘package:base’:
+
+    library, require
+
+:distr>  Object oriented implementation of distributions (version
+:distr>  2.4)
+:distr> 
+:distr>  Attention: Arithmetics on distribution objects are
+:distr>  understood as operations on corresponding random variables
+:distr>  (r.v.s); see distrARITH().
+:distr> 
+:distr>  Some functions from package 'stats' are intentionally masked
+:distr>  ---see distrMASK().
+:distr> 
+:distr>  Note that global options are controlled by distroptions()
+:distr>  ---c.f. ?"distroptions".
+:distr> 
+:distr>  For more information see ?"distr", NEWS("distr"), as well as
+:distr>    http://distr.r-forge.r-project.org/
+:distr>  Package "distrDoc" provides a vignette to this package as
+:distr>  well as to several extension packages; try
+:distr>  vignette("distr").
+
+
+Attaching package: ‘distr’
+
+The following object is masked from ‘package:stats’:
+
+    df, qqplot, sd
+
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+Warning messages:
+1: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+2: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+3: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+4: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+5: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+6: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+7: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+8: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+9: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+10: In pnorm(xval, mean = mean, sd = sd, lower.tail = lower) :
+  NaNs produced
+> 
+> ##	functions for d-stat
+> ks.stat.pfun <- function(x,pfun,...) {
++ 	n <- length(x)
++ 	y <- pfun
++ 	
++ 	x <- y(sort(x),...) - (0:(n - 1))/n
++ 	stat <- max(c(x, 1/n - x))
++ 	
++ 	return(stat)
++ }
+> 
+> ##	convenience function to split up time-bin by genus occurance matrix
+> ##	into order flux list
+> genOcc2ord <- function(genOcc,genMap,ords) {
++ 	lapply(ords,function(x) {
++ 		raw.div <- rowSums(genOcc[,genMap==x,drop=FALSE])
++ 		raw.flux <- diff(c(0,raw.div))
++ 		return(raw.flux[raw.flux != 0])
++ 	})
++ }
+> 
+> ##	vector mapping genera (columns) in pbdb.gen.occ3TP to orders
+> gen2ord <- as.character(with(pbdb.dat,occurrences.order_name[match(colnames(pbdb.gen.occ3TP),occurrences.genus_name)]))
+> all.ord <- colnames(pbdb.ord.div)
+> 
+> ##	begin permutation
+> nsim <- 1000
+> ordperm.dstat <- replicate(nsim,{
++ 	new.gen2ord <- sample(gen2ord)
++ 	new.flux <- genOcc2ord(pbdb.gen.occ3TP,new.gen2ord,all.ord)
++ 	
++ 	this.sstat <- sstat.comp(new.flux,minN=15,plotit=FALSE)
++ 	
++ 	this.PPx <- function(x) 0.5 + 0.5*this.sstat$PPx(x,FALSE)
++ 	ks.stat.pfun(unlist(this.sstat$raw.pk),this.PPx)
++ 	cat(proc.time()[1],'\n')
++ })
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+36.334 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+41.307 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+46.307 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+51.121 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+56.046 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+61.075 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+65.931 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+70.794 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+75.73 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+80.481 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+85.379 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+90.207 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+95.192 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+100.066 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+104.897 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+109.787 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+114.672 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+119.692 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+124.641 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+129.567 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+134.42 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+139.38 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+144.349 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+149.319 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+154.097 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+158.978 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+163.904 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+168.58 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+173.382 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+178.391 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+183.4 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+188.438 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+193.308 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+198.278 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+203.07 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+208.005 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+212.959 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+218.031 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+223.017 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+228.024 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+232.967 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+237.916 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+242.796 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+247.8 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+252.809 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+257.793 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+262.732 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+267.692 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+272.5 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+277.744 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+282.68 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+287.446 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+292.395 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+297.362 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+302.423 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+307.384 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+312.31 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+317.401 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+322.454 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+327.263 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+332.153 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+337.072 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+341.939 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+346.992 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+351.88 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+356.778 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+361.62 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+366.622 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+371.52 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+376.405 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+381.362 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+386.449 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+391.341 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+396.346 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+401.238 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+406.177 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+411.115 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+416.141 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+420.996 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+425.929 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+430.842 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+435.712 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+440.619 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+445.592 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+450.557 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+455.411 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+460.304 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+465.235 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+470.155 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+475.124 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+480.081 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+485.029 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+489.945 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+494.824 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+499.894 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+504.839 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+509.635 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+514.621 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+519.527 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+524.458 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+529.507 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+534.505 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+539.44 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+544.578 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+549.485 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+554.345 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+559.025 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+563.881 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+568.769 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+573.626 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+578.544 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+583.553 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+588.496 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+593.39 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+598.377 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+603.348 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+608.181 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+613.055 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+618.058 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+622.96 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+627.887 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+632.885 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+637.847 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+642.688 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+647.586 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+652.579 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+657.532 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+662.356 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+667.257 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+672.261 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+677.146 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+681.998 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+687.007 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+691.916 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+696.719 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+701.609 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+706.45 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+711.349 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+716.36 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+721.364 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+726.319 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+731.219 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+736.07 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+741.158 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+745.961 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+750.89 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+755.955 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+760.88 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+765.837 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+770.95 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+775.857 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+780.776 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+785.832 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+790.74 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+795.672 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+800.632 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+805.566 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+810.423 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+815.328 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+820.103 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+825.017 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+829.837 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+834.648 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+839.694 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+844.574 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+849.389 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+854.354 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+859.333 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+864.129 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+869.092 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+874.108 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+878.979 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+883.907 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+888.962 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+893.783 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+899.092 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+904.56 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+909.681 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+914.435 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+919.247 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+924.27 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+929.058 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+933.953 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+938.765 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+943.612 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+948.441 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+953.337 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+958.239 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+963.127 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+968.177 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+972.978 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+977.822 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+982.701 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+987.453 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+992.393 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+997.193 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1002.148 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1006.974 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1011.985 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1016.884 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1021.713 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1026.504 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1031.395 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1036.411 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1041.343 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1046.346 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1051.281 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1056.201 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1061.192 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1066.103 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1071.002 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1075.925 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1080.877 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1085.989 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1090.903 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1095.91 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1100.87 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1105.805 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1110.813 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1115.72 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1120.638 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1125.542 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1130.502 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1135.33 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1140.289 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1145.195 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1150.115 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1154.993 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1159.957 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1164.83 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1169.586 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1174.66 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1179.595 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1184.458 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1189.409 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1194.329 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1199.412 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1204.394 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1209.287 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1214.189 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1219.077 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1224.108 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1229.042 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1234.044 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1238.723 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1243.769 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1248.76 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1253.777 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1258.668 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1263.462 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1268.406 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1273.334 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1278.141 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1283.212 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1288.09 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1293.023 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1297.837 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1302.72 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1307.59 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1312.621 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1317.651 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1322.529 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1327.473 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1332.458 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1337.327 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1342.062 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1346.899 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1351.754 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1356.589 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1361.486 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1366.512 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1371.379 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1376.356 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1381.214 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1386.142 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1391.122 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1395.985 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1400.866 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1405.838 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1410.84 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1415.731 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1420.734 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1425.54 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1430.481 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1435.574 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1440.454 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1445.54 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1450.474 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1455.398 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1460.348 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1465.257 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1470.216 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1475.145 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1480.103 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1484.986 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1489.807 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1494.688 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1499.601 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1504.618 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1509.589 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1514.465 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1519.38 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1524.29 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1529.056 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1534.02 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1538.852 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1543.721 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1548.584 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1553.617 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1558.441 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1563.409 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1568.379 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1573.162 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1578.015 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1582.878 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1587.801 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1592.647 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1597.586 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1602.542 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1607.485 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1612.33 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1617.28 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1622.238 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1627.079 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1631.961 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1637.017 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1641.87 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1646.785 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1651.717 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1656.651 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1661.477 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1666.335 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1671.257 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1676.125 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1681.094 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1686.046 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1690.971 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1695.779 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1700.575 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1705.532 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1710.568 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1715.372 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1720.253 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1725.205 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1730.087 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1735.055 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1740.024 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1744.955 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1749.843 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1754.756 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1759.629 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1764.49 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1769.477 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1774.366 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1779.365 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1784.137 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1789.125 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1794.042 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1798.85 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1803.753 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1808.689 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1813.588 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1818.482 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1823.397 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1828.163 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1833.1 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1838.096 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1843.044 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1847.866 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1852.78 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1857.772 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1862.647 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1867.567 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1872.593 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1877.431 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1882.412 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1887.352 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1892.325 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1897.236 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1902.107 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1907.101 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1912.09 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1917.07 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1922.243 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1927.078 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1931.927 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1936.951 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1942.035 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1946.887 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1951.69 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1956.741 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1961.674 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1966.483 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1971.349 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1976.376 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1981.328 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1986.348 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1991.293 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+1996.309 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2001.143 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2006.103 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2011.186 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2016.133 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2020.979 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2025.939 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2030.812 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2035.819 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2040.731 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2045.659 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2050.588 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2055.4 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2060.217 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2065.134 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2070.061 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2074.976 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2079.9 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2084.703 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2089.697 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2094.656 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2099.624 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2104.542 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2109.478 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2114.355 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2119.282 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2124.597 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2129.922 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2135.193 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2140.597 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2145.574 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2151.172 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2157.339 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2162.804 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2168.344 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2173.372 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2178.385 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2183.741 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2188.98 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2194.304 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2199.63 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2204.677 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2209.675 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2214.843 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2220.312 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2225.355 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2230.264 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2235.436 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2241.221 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2246.526 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2251.638 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2257.419 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2263.316 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2268.625 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2273.61 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2278.709 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2283.685 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2289.085 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2295.01 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2300.232 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2305.422 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2310.627 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2315.464 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2320.903 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2325.898 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2331.217 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2336.108 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2341.224 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2346.173 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2351.083 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2356.44 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2361.529 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2366.712 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2372.02 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2377.123 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2382.44 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2387.496 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2392.498 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2397.372 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2402.256 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2407.236 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2412.155 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2417.092 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2422.007 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2426.898 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2431.876 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2436.81 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2441.673 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2446.626 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2451.655 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2456.631 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2461.779 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2467.047 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2471.998 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2477.183 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2482.334 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2487.536 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2492.631 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2497.792 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2503.193 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2508.674 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2513.606 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2518.498 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2523.518 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2528.474 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2533.533 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2538.691 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2543.668 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2548.572 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2553.333 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2558.308 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2563.116 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2567.988 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2572.941 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2577.796 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2582.689 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2587.511 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2592.35 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2597.353 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2602.258 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2607.186 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2612.007 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2616.973 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2621.864 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2626.671 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2631.478 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2636.448 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2641.418 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2646.223 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2651.152 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2656.121 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2661.095 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2665.973 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2670.802 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2675.855 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2680.734 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2685.778 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2690.753 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2695.662 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2700.529 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2705.372 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2710.347 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2715.192 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2720.129 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2724.986 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2729.916 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2734.777 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2739.717 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2744.61 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2749.374 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2754.301 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2759.389 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2764.107 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2768.958 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2774.017 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2779.036 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2783.939 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2788.78 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2793.734 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2798.571 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2803.434 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2808.383 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2813.303 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2818.335 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2823.185 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2828.137 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2833.014 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2838.059 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2843.115 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2847.892 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2852.728 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2857.616 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2862.402 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2867.284 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2872.176 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2877.034 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2881.934 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2886.891 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2891.788 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2896.78 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2901.622 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2906.467 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2911.334 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2916.275 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2921.112 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2925.88 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2930.768 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2935.535 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2940.443 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2945.51 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2950.293 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2955.237 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2960.357 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2965.157 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2970.066 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2975.03 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2980.058 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2984.89 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2989.842 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2994.848 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+2999.708 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3004.571 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3009.481 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3014.217 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3019.005 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3024.03 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3028.843 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3033.668 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3038.501 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3043.35 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3048.169 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3052.96 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3057.693 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3062.476 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3067.282 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3072.374 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3077.228 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3082.262 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3087.198 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3092.1 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3096.987 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3101.755 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3106.892 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3111.766 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3116.671 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3121.608 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3126.594 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3131.45 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3136.352 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3141.34 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3146.179 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3151.123 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3155.806 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3160.628 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3165.491 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3170.41 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3175.31 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3180.36 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3185.263 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3190.152 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3195.212 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3200.181 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3205.118 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3210.034 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3214.96 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3219.852 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3224.612 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3229.651 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3234.982 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3239.981 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3244.81 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3249.793 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3254.619 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3259.547 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3264.513 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3269.484 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3274.329 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3279.307 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3284.297 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3289.143 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3294.01 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3298.916 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3303.814 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3308.798 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3313.646 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3318.583 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3323.417 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3328.281 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3333.143 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3337.949 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3342.893 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3347.784 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3352.73 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3357.623 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3362.364 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3367.317 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3372.134 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3376.996 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3381.859 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3386.792 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3391.566 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3396.491 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3401.362 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3406.164 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3411.017 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3415.885 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3420.794 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3425.556 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3430.449 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3435.368 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3440.221 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3445.1 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3449.995 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3454.976 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3459.868 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3464.663 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3469.507 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3474.471 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3479.315 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3484.215 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3489.119 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3493.786 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3498.615 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3503.536 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3508.426 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3513.446 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3518.512 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3523.261 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3528.277 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3533.243 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3538.12 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3542.897 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3547.74 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3552.656 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3557.48 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3562.445 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3567.397 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3572.293 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3577.224 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3581.999 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3586.857 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3591.624 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3596.567 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3601.51 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3606.355 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3611.203 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3615.9 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3620.82 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3625.639 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3630.447 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3635.466 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3640.403 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3645.319 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3650.346 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3655.336 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3660.101 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3664.966 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3670.009 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3674.845 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3679.702 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3684.622 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3689.522 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3694.35 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3699.187 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3704.083 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3708.877 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3713.786 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3718.7 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3723.55 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3728.56 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3733.719 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3738.656 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3743.542 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3748.571 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3753.577 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3758.563 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3763.463 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3768.325 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3773.152 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3777.933 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3782.966 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3787.95 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3792.74 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3797.537 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3802.499 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3807.495 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3812.449 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3817.424 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3822.354 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3827.141 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3831.943 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3836.753 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3841.66 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3846.467 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3851.318 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3856.253 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3861.243 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3866.15 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3870.926 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3876.023 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3880.959 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3885.977 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3890.803 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3895.656 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3900.59 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3905.482 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3910.564 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3915.514 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3920.308 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3925.315 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3930.107 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3934.98 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3939.809 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3944.814 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3949.579 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3954.429 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3959.367 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3964.195 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3969.128 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3974.061 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3978.883 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3983.74 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3988.797 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3994.176 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+3999.006 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4003.981 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4008.966 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4013.839 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4018.797 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4023.898 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4029.068 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4034.047 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4039.228 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4044.444 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4049.363 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4054.623 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4059.918 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4065.233 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4070.211 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4075.327 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4080.241 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4085.241 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4090.13 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4095.13 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4099.898 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4104.611 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4109.467 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4114.63 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4119.577 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4124.538 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4129.697 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4134.702 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4139.562 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4144.56 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4149.395 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4154.073 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4158.975 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4163.888 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4168.734 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4173.58 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4178.675 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4183.573 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4188.224 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4193.006 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4197.837 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4202.748 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4207.765 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4212.63 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4217.371 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4222.129 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4227.078 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4231.931 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4236.704 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4241.619 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4246.545 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4251.348 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4256.148 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4261.106 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4265.967 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4270.851 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4275.74 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4280.658 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4285.491 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4290.303 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4295.344 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4300.245 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4305.259 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4310.047 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4314.955 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4319.745 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4324.539 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4329.477 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4334.332 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4339.081 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4343.939 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4348.733 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4353.592 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4358.361 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4363.212 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4368.393 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4373.233 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4378.14 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4382.954 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4387.911 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4393.033 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4398.015 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4403.137 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4408.012 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4412.858 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4417.705 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4422.507 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4427.446 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4432.32 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4437.024 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4441.858 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4446.647 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4451.556 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4456.347 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4461.005 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4465.943 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4470.821 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4475.646 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4480.444 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4485.217 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4490.275 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4495.166 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4499.982 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4504.778 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4509.583 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4514.484 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4519.231 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4524.028 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4528.953 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4533.755 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4538.579 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4543.313 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4548.137 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4552.962 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4557.631 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4562.5 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4567.402 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4572.331 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4577.043 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4581.937 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4586.892 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4591.708 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4596.487 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4601.293 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4606.09 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4610.891 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4615.776 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4620.454 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4625.308 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4630.25 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4635.093 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4639.918 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4644.714 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4649.776 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4654.613 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4659.417 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4664.247 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4669.122 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4674.003 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4678.828 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4683.73 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4688.608 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4693.438 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4698.24 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4703.138 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4708.005 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4712.924 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4717.799 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4722.503 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4727.425 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4732.229 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4737.233 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4742.311 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4747.136 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4752.007 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4756.87 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4761.801 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4766.711 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4771.666 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4776.531 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4781.434 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4786.261 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4790.982 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4795.771 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4800.614 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4805.355 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4810.235 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4815.022 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4819.973 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4824.785 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4829.706 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4834.638 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4839.341 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4844.1 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4849.103 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4854.024 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4858.906 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4863.724 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4868.63 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4873.47 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4878.442 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4883.286 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4888.133 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4892.924 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4897.834 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4902.665 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4907.467 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4912.262 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4917.176 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4921.902 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4926.799 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4931.566 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4936.512 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4941.458 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4946.268 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4951.155 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4956.057 
+computing Gaussian fit for p_k(x|sigma) 
+re-centering 
+computing f(beta) 
+computing P(x) 
+4960.976 
+There were 50 or more warnings (use warnings() to see the first 50)
+> 
+> ##	save it
+> save(ordperm.dstat,file="ordperm_dstat.RData")
+> 
+> setwd(oldwd)
+> 
+> proc.time()
+     user    system   elapsed 
+ 4960.980    50.692 13481.297 

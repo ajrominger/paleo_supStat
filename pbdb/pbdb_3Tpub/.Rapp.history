@@ -1,0 +1,27 @@
+4343.939/5
+oldwd <- setwd('~/Desktop/Research/paleo_supStat/pbdb/pbdb_3Tpub')#
+#
+##	function for plotting desnities#
+source("~/R_functions/den_fill.R")#
+#
+##	depends on .../make_pbdb_3Tpub.R#
+if(!(exists("pbdb.ord.div") & exists("pbdb.gen.occ3TP") & exists("pbdb.sstat.ord.cor"))) {#
+	makePlot <- FALSE#
+	source("make_pbdb_3Tpub.R")#
+}#
+#
+##	load permuted d-stat#
+load("ordperm_dstat.RData")
+pbdb.ord.dstat <- with(pbdb.sstat.ord.cor,ks.stat.pfun(unlist(raw.pk),function(x) 0.5 + 0.5*PPx(x,FALSE)))#
+pbdb.cls.dstat <- with(pbdb.sstat.cls.cor,ks.stat.pfun(unlist(raw.pk),function(x) 0.5 + 0.5*PPx(x,FALSE)))#
+pbdb.phy.dstat <- NA	# STUB!!!#
+#
+##	plot it!#
+source('../../code/sstat_plotting_par.R')
+source("~/R_functions/ks_stat_pfun.R")
+pbdb.ord.dstat <- with(pbdb.sstat.ord.cor,ks.stat.pfun(unlist(raw.pk),function(x) 0.5 + 0.5*PPx(x,FALSE)))#
+pbdb.cls.dstat <- with(pbdb.sstat.cls.cor,ks.stat.pfun(unlist(raw.pk),function(x) 0.5 + 0.5*PPx(x,FALSE)))#
+pbdb.phy.dstat <- NA	# STUB!!!
+source("~/R_functions/ks_stat_pfun.R")
+!(exists("pbdb.ord.div") & exists("pbdb.gen.occ3TP") & exists("pbdb.sstat.ord.cor"))
+PPx

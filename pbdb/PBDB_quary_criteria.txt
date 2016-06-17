@@ -1,0 +1,51 @@
+Taxa:
+Porifera
+Placozoa
+Ctenophora
+Cnidaria
+Orthonectida
+Rhombozoa
+Acoelomorpha
+Chaetognatha
+Hemichordata
+Echinodermata
+Xenoturbellida
+Vetulicolia
+Kinorhyncha
+Loricifera
+Priapulida
+Nematoda
+Nematomorpha
+Lobopodia
+Onychophora
+Tardigrada
+Arthropoda
+Platyhelminthes
+Gastrotricha
+Rotifera
+Acanthocephala
+Gnathostomulida
+Micrognathozoa
+Cycliophora
+Sipuncula
+Hyolitha
+Nemertea
+Phoronida
+Bryozoa
+Entoprocta
+Brachiopoda
+Mollusca
+Annelida
+Echiura
+
+
+inclusion criteria (from Alroy 2008 Science):
+(1) excluded collections known to come from poorly lithified sediments that were sieved or from entirely unlithified sediments
+(2) Collections from non-marine settings were excluded. 
+(3) Collections of the coarsest spatial scale (basin) or stratigraphic scale (geological group) were excluded. 
+(4) Multiple occurrences of the same genus in a single collection were treated as a single occurrence. 
+(5) Reidentifications of individual occurrences and blanket synonymies were both employed. 
+(6) To ensure comparability with earlier analyses (e.g., S2, S3), subgenera were treated as separate genera. 
+(7) Genera whose names were qualified with the term "aff." or with quotation marks were excluded. 
+(8) Form taxa and ichnofossils were excluded, leaving only body fossils
+(9) all other PBDB defaults
