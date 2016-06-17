@@ -1,0 +1,4 @@
+META DATA FOR GENERAL SUPER STAT SCRIPTS
+
+/Users/andrewrominger/Desktop/Research/paleo_supStat/code/sstat_comp.R
+does all super statistical computations
