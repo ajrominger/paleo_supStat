@@ -1,11 +1,14 @@
 \documentclass[12pt]{article}
 \usepackage{authblk}
+\usepackage[margin=1in]{geometry}
+\geometry{letterpaper}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-\usepackage[style=nature,natbib=true]{biblatex}
+\usepackage[style=nature, natbib=true, autocite = superscript]{biblatex}
 \addbibresource{../superStat.bib}
+\let\citep=\autocite
 
 \usepackage{lineno}
 \usepackage{paralist}
@@ -45,7 +48,7 @@ Santiago, Chile}
 Pontificia Universidad Católica de Chile, Alameda 340, Santiago,
 Chile}
 %
-\affil[8]{Centro Cambio Global UC, Av.~Vicuña Mackenna 4860, Campus
+\affil[8]{Centro Cambio Global UC, Av.~Vicu\~na Mackenna 4860, Campus
 San Vicu\~na, Santiago, Chile}
 
 \date{}
@@ -54,11 +57,10 @@ San Vicu\~na, Santiago, Chile}
 
 \maketitle
 
-\noindent
-\textbf{Abstract}
-\vspace{\baselineskip}
+\clearpage
+\linenumbers
 
-\noindent
+\begin{abstract}
 Fluctuations in biodiversity, both large and small, are pervasive
 through the fossil record, yet we do not understand the processes
 generating them.
@@ -89,6 +91,7 @@ both small and extreme fluctuations in fossil diversity.
 Its success opens up new research directions to better understand
 the evolutionary processes leading adaptive landscapes to be conserved
 within orders and undergo punctuated innovations between orders.
+\end{abstract}
 
 \clearpage
 
@@ -541,6 +544,5 @@ thanks FONDECYT 1140278; PM thanks support from Grant PFB-023
     at the class level.}
   \label{fig:dStat}
 \end{figure}
-
 
 \end{document}

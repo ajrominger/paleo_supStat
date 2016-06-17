@@ -2302,4 +2302,11 @@
     <bcf:citekey order="54">alroy08</bcf:citekey>
     <bcf:citekey order="55">alroy08</bcf:citekey>
   </bcf:section>
+  <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
+  <bcf:sorting>
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sorting>
+  </bcf:sortlist>
 </bcf:controlfile>
