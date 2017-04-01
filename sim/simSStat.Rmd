@@ -1,0 +1,52 @@
+---
+title: "Simulating time-averaged birth-death processes"
+author: "A. J. Rominger"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(socorro)
+setwd('~/Dropbox/Research/paleo_supStat/sim')
+
+## helper function for plotting *s*uper *s*at *s*imulation
+sssPlot <- function(x, y, log, tt, ttlty) {
+    spp <- unique(sstatSim$S)
+    nspp <- length(spp)
+    sppCol <- hsv(seq(0.45, 0.7, length.out = nspp), 
+                  seq(0.5, 1, length.out = nspp), 
+                  seq(1, 0.75, length.out = nspp))
+    
+    plot(sstatSim[, x], sstatSim[, y], log = log, type = 'n', 
+         xaxt = ifelse(grepl('x', log), 'n', 's'), 
+         yaxt = ifelse(grepl('y', log), 'n', 's'), 
+         ...)
+    
+    for(j in 1:length(tt)) {
+        for(i in unique(sstatSim$S)) 
+            with(sstatSim[sstatSim$S == i & sstatSim$tmax == tt[j], ], 
+                 points(get(x), get(y), type = 'l', lty = ttlty[j], lwd = 2,
+                        col = quantCol(i, sppCol, xlim = range(spp))))
+    }
+    
+    if(grepl('x', log)) logAxis(1)
+    if(grepl('y', log)) logAxis(2)
+}
+
+sstatSim <- read.csv('simSStat.csv', as.is = TRUE)
+```
+
+Part of our paper depends on the assumption that a birth-death process, when time-averaged, will show an approximately Gaussian distribution of fluctuations between time periods.  This is conventiently proven by \cite{}.  We are interested in how the variances of these time-averaged fluctuations are distributed and how they evolve across taxa.  First we must address the question of how the variance of a time-averaged birth-death process is expected to be distributed.  Using simulations discussed below, I show that the inverse variances of a time-averaged birth-death process will follow a gamma distribution.  In our paper we make the claim that the observed gamma distribution of inverse variances in the fossil record of diversity fluctuations arrises from a super-statistical process.  Now that we know a gamma distribution can arrise just by time-averaging a birth-death process, how should be best frame our super-statistical argument?  In addition to that big question, below I highlight smaller questions where your input would be very helpful.
+
+## Examples of gamma fits 
+
+Here I simulate a few examples of time-averaged birth-death processes and show graphically that their inverse variances are very well fit by a gamma distribution.  An important question is: **Are you aware of any published references that show time-averaged birth-death processes have gamma-distributed inverse variances?**  In my initial search I couldn't find any.
+
+First let me explain the simulation approach.  I assume that the fossil record mostly captures lineages in steady state.  Therefore I assume that speciation rate ($\lambda$) equals extinction rate ($\mu$)---call this universal rate $\rho$---and I initiate the process at an arbitrary initial number of species $S$ (ranging from `r min(sstatSim$S)` to `r max(sstatSim$S)`).  I assume each lineage originated at some time $t_0$ in the past ranging from `r max(sstatSim$tmax)` to `r min(sstatSim$tmax)`
+
+
+## The gamma parameters change with the parameters of the birth-death process
+
+Here I show how the parameters of the gamma distribution of inverse variances change depending on the underlying birth and death rates of the 
