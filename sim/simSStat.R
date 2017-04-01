@@ -23,9 +23,9 @@ tAvg <- function(tt, oe, tbin, tmax) {
 nrate <- 10
 tbin <- 10
 
-allPar <- expand.grid(exp(seq(log(0.001), log(3), length.out = ntaxa)),
-                      seq(10, 100, length.out = ceiling(ntaxa/3)),
-                      seq(100, 550, length.out = ceiling(ntaxa/3)))
+allPar <- expand.grid(exp(seq(log(0.001), log(3), length.out = nrate)),
+                      seq(10, 100, length.out = ceiling(nrate/3)),
+                      seq(100, 550, length.out = ceiling(nrate/3)))
 allRho <- allPar[, 1]
 allS <- allPar[, 2]
 allTmax <- allPar[, 3]
@@ -75,7 +75,9 @@ gammaPar <- mclapply(1:nrow(allPar),
         return(out)
     })
     
-    gpar <- fitdistr(1/out[2, !is.na(out[2, ])], 'gamma')
+    gpar <- fitdistr(1/out[2, out[2, ] > 0 & !is.na(out[2, ])], 'gamma')
+    if(class(gpar) == 'try-error') browser()
+    
     mpar <- c(mean = mean(out[1, !is.na(out[1, ])]), sd = sd(out[1, !is.na(out[1, ])]))
     ext <- mean(out[5, ] == 1)
     endT <- mean(out[6, ])
@@ -87,5 +89,7 @@ gammaPar <- mclapply(1:nrow(allPar),
 })
 
 gammaPar <- do.call(rbind, gammaPar)
+
+## combine with sim params and write out
 gammaPar <- cbind(rho = allRho, S = allS, tmax = allTmax, gammaPar)
-write.csv(gammaPar)
+write.csv(gammaPar, file = 'simSStat.csv', row.names = FALSE)
