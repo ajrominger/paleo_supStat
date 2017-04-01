@@ -1,6 +1,6 @@
-library(socorro)
 library(parallel)
 library(MASS)
+setwd('~/Dropbox/Research/paleo_supStat/sim')
 
 ## function to time average origination and extinction
 tAvg <- function(tt, oe, tbin, tmax) {
@@ -12,8 +12,7 @@ tAvg <- function(tt, oe, tbin, tmax) {
     tbins <- tbins[1:(max(which(tbins <= max(tt))) + 1)]
     
     ## divide the sequence by tbins and average
-    tcut <- try(cut(tt, tbins))
-    if(class(tcut) == 'try-error') browser()
+    tcut <- cut(tt, tbins)
     
     avg <- sapply(split(oe, tcut), function(x) c(sum(x == 1), sum(x ==-1)))
     
@@ -21,28 +20,29 @@ tAvg <- function(tt, oe, tbin, tmax) {
 }
 
 ## control parameters on simulation
-ntaxa <- 10
-tmax <- 550
+nrate <- 10
 tbin <- 10
 
-allRho <- exp(seq(log(0.001), log(2), length.out = ntaxa))
-allS <- rep(100, ntaxa)
-allTmax <- rep(550, ntaxa)
+allPar <- expand.grid(exp(seq(log(0.001), log(3), length.out = ntaxa)),
+                      seq(10, 100, length.out = ceiling(ntaxa/3)),
+                      seq(100, 550, length.out = ceiling(ntaxa/3)))
+allRho <- allPar[, 1]
+allS <- allPar[, 2]
+allTmax <- allPar[, 3]
 
-gammaPar <- lapply(1:ntaxa, 
-                     # mc.cores = 6,
+gammaPar <- mclapply(1:nrow(allPar), 
+                     mc.cores = 6,
                      FUN = function(i) {
     ## set simulation parameters
     la <- mu<- allRho[i]
     S <- allS[i]
+    tmax <- allTmax[i]
     
     ## calculate an over-estimate of number of timesteps till hitting tmax
     nt <- 10 * tmax / (1/(S*(la+mu)))
     
-    # browser()
-    
     ## simulate multiple realizations
-    out <- replicate(50, {
+    out <- replicate(500, {
         oe <- c(0, sample(c(-1, 1), nt-1, replace = TRUE))
         St <- S + cumsum(oe)
         
@@ -56,7 +56,7 @@ gammaPar <- lapply(1:ntaxa,
         tt <- cumsum(c(0, rexp(length(St)-1, St[-length(St)] * (la + mu))))
         
         ## if 2 or less time bins, return NAs
-        if(ceiling(tt / tbin) < 3) {
+        if(ceiling(max(tt) / tbin) < 3) {
             out <- c(mean = NA, var = NA)
         } else {
             ## calculate the time average of orig and extinction
@@ -67,24 +67,25 @@ gammaPar <- lapply(1:ntaxa,
                      var = var(oeAvg[1, ]) + var(oeAvg[2, ]))
         }
         
-        ## add to output whether the process went extinct (`ext = 1` coresponds to extinct)
-        ## and what time the process ends at
-        out <- c(out, ext = as.numeric(St[length(St)] == 0), endT = max(tt))
+        ## add to output the range of S, whether the process went extinct (`ext = 1` 
+        ## coresponds to extinct) and what time the process ends at
+        out <- c(out, Smin = min(St[St > 0]), Smax = max(St), 
+                 ext = as.numeric(St[length(St)] == 0), 
+                 endT = max(tt[tt <= tmax]))
         return(out)
     })
     
-    gpar <- fitdistr(1/out[2, ], 'gamma')
-    mpar <- c(mean = mean(out[1, ]), sd = sd(out[1, ]))
-    ext <- mean(out[3, ] == 1)
+    gpar <- fitdistr(1/out[2, !is.na(out[2, ])], 'gamma')
+    mpar <- c(mean = mean(out[1, !is.na(out[1, ])]), sd = sd(out[1, !is.na(out[1, ])]))
+    ext <- mean(out[5, ] == 1)
+    endT <- mean(out[6, ])
+    minS <- mean(out[3, ])
+    maxS <- mean(out[4, ])
     
-    return(c(mean = mpar, var = gpar$estimate, ext = ext))
+    return(c(mean = mpar, var = gpar$estimate, minS = minS, maxS = maxS, 
+             ext = ext, endT = endT))
 })
 
 gammaPar <- do.call(rbind, gammaPar)
-
 gammaPar <- cbind(rho = allRho, S = allS, tmax = allTmax, gammaPar)
-
-
-
-plot(allRho, gammaPar[, 1], log = 'xy')
-plot(allRho, gammaPar[, 2], log = 'xy')
+write.csv(gammaPar)
