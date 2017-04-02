@@ -117,6 +117,8 @@ sstatSim <- lapply(sstatSim, function(x) {
                                                   ','~S == .(x[[3]][2])*
                                                   ','~t[0] == .(x[[3]][3])), 
                bty = 'n')
+        
+        return(x[[1]])
     }
 })
 
