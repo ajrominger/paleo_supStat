@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 JUN 2016 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAR 2017 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -579,27 +579,28 @@ Missing character: There is no ³ in font cmr12!
 
 ] [3
 
-] [4] [5]
+] [4]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'cir1985' on input line 352.
+(biblatex)                at entry 'cir1985' on input line 298.
 
-[6] [7]
+[5] [6]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'rabosky2006laser' on input line 469.
+(biblatex)                at entry 'rabosky2006laser' on input line 415.
 
-[8] [9] [10] [11] <figs/fig_pkx-fbeta.pdf, id=51, 576.56696pt x 477.76683pt>
+[7] [8] [9] [10] [11]
+<figs/fig_pkx-fbeta.pdf, id=51, 576.56696pt x 477.76683pt>
 File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use figs/fig_pkx-fbeta.pdf>
-Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 503.
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 523.
 (pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
 
 <figs/fig_Px.pdf, id=52, 270.00874pt x 270.00874pt>
 File: figs/fig_Px.pdf Graphic file (type pdf)
  <use figs/fig_Px.pdf>
-Package pdftex.def Info: figs/fig_Px.pdf used on input line 521.
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 541.
 (pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
 
 
@@ -609,7 +610,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
 
 <use figs/fig_dStat(3TP).pdf>
-Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 538.
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 558.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
 
 
@@ -626,7 +627,7 @@ Package logreq Info: Writing requests to 'rom_natComm.run.xml'.
 Here is how much of TeX's memory you used:
  8821 strings out of 493089
  144426 string characters out of 6134842
- 569397 words of memory out of 5000000
+ 570397 words of memory out of 5000000
  12178 multiletter control sequences out of 15000+600000
  15215 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -645,7 +646,7 @@ live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natComm.pdf (14 pages, 845252 bytes).
+Output written on rom_natComm.pdf (14 pages, 846230 bytes).
 PDF statistics:
  264 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams

@@ -1,24 +1,24 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'rom_natComm.blg'
-[35] biber-darwin:276> INFO - === Fri Jun 17, 2016, 11:42:58
-[35] Biber.pm:333> INFO - Reading 'rom_natComm.bcf'
-[117] Biber.pm:645> INFO - Found 43 citekeys in bib section 0
-[132] Biber.pm:2977> INFO - Processing section 0
-[145] Biber.pm:3115> INFO - Looking for bibtex format file '../superStat.bib' for section 0
-[153] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[161] bibtex.pm:895> INFO - Found BibTeX data source '../superStat.bib'
-[214] Utils.pm:146> WARN - I didn't find a database entry for 'rosindell2011TREE' (section 0)
-[457] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[458] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[458] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
-[458] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[487] bbl.pm:505> INFO - Writing 'rom_natComm.bbl' with encoding 'ascii'
-[492] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[494] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[495] Utils.pm:146> WARN - The entry 'madin2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[497] Utils.pm:146> WARN - The entry 'beck2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[498] Utils.pm:146> WARN - The entry 'price2014' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[526] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[527] Utils.pm:146> WARN - The entry 'chave2004neutral' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[527] bbl.pm:596> INFO - Output to rom_natComm.bbl
-[527] Biber.pm:106> INFO - WARNINGS: 8
+[37] biber-darwin:276> INFO - === Tue Mar 28, 2017, 12:20:00
+[37] Biber.pm:333> INFO - Reading 'rom_natComm.bcf'
+[121] Biber.pm:645> INFO - Found 43 citekeys in bib section 0
+[139] Biber.pm:2977> INFO - Processing section 0
+[154] Biber.pm:3115> INFO - Looking for bibtex format file '../superStat.bib' for section 0
+[160] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[168] bibtex.pm:895> INFO - Found BibTeX data source '../superStat.bib'
+[215] Utils.pm:146> WARN - I didn't find a database entry for 'rosindell2011TREE' (section 0)
+[471] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[471] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[471] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
+[471] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[503] bbl.pm:505> INFO - Writing 'rom_natComm.bbl' with encoding 'ascii'
+[507] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[509] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[511] Utils.pm:146> WARN - The entry 'madin2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[512] Utils.pm:146> WARN - The entry 'beck2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[514] Utils.pm:146> WARN - The entry 'price2014' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[560] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[562] Utils.pm:146> WARN - The entry 'chave2004neutral' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[562] bbl.pm:596> INFO - Output to rom_natComm.bbl
+[562] Biber.pm:106> INFO - WARNINGS: 8
