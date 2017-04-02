@@ -12,7 +12,7 @@ library(socorro)
 setwd('~/Dropbox/Research/paleo_supStat/sim')
 
 ## helper function for plotting *s*uper *s*at *s*imulation
-sssPlot <- function(x, y, log, tt, ttlty) {
+sssPlot <- function(x, y, log, tt, ttlty, ...) {
     spp <- unique(sstatSim$S)
     nspp <- length(spp)
     sppCol <- hsv(seq(0.45, 0.7, length.out = nspp), 
@@ -44,9 +44,45 @@ Part of our paper depends on the assumption that a birth-death process, when tim
 
 Here I simulate a few examples of time-averaged birth-death processes and show graphically that their inverse variances are very well fit by a gamma distribution.  An important question is: **Are you aware of any published references that show time-averaged birth-death processes have gamma-distributed inverse variances?**  In my initial search I couldn't find any.
 
-First let me explain the simulation approach.  I assume that the fossil record mostly captures lineages in steady state.  Therefore I assume that speciation rate ($\lambda$) equals extinction rate ($\mu$)---call this universal rate $\rho$---and I initiate the process at an arbitrary initial number of species $S$ (ranging from `r min(sstatSim$S)` to `r max(sstatSim$S)`).  I assume each lineage originated at some time $t_0$ in the past ranging from `r max(sstatSim$tmax)` to `r min(sstatSim$tmax)`
+First let me explain the simulation approach.  I assume that the fossil record mostly captures lineages in steady state.  Therefore I assume that speciation rate ($\lambda$) equals extinction rate ($\mu$)---call this universal rate $\rho$---and I initiate the process at an arbitrary initial number of species $S$ ranging from `r min(sstatSim$S)` to `r max(sstatSim$S)`.  I assume each lineage originated at some time $t_0$ in the past ranging from `r max(sstatSim$tmax)` to `r min(sstatSim$tmax)`.  For each simulation experiment I generate `500` lineages, calculating the inverse variance for each.  I then use these `500` inverse variances to estimate the maximum likelihood parameters (shape $\alpha$ and rate $\beta$) of the gamma distribution:
+$$
+f(x \mid \alpha, \beta) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-x\beta}
+$$
 
+![fig1](fig_exampleGamma.pdf) 
 
 ## The gamma parameters change with the parameters of the birth-death process
 
-Here I show how the parameters of the gamma distribution of inverse variances change depending on the underlying birth and death rates of the 
+Here I show how the parameters of the gamma distribution of inverse variances change depending on the underlying birth and death rates.
+
+The shape parameter $\alpha$ generally decreases with increasing $\rho$, but for small values of $\rho$ there is a non-monotonic phase in which $\alpha$ first increases.  The more recent the origin of the lineage (i.e. the less time its had to diversify) the more prolonged is this non-monotonic phase.
+
+```{r, fig.width=5, fig.height=5, echo=FALSE}
+sssPlot('rho', 'var.shape', log = 'xy', tt = c(100, 550), ttlty = c(3, 1))
+```
+
+The rate parameter $\beta$ generally increases with $\rho$, but there is again a non-monotonic phase for small $\rho$.  This non-monotonicity is increases with the age of the lineage (i.e. older lineages show more a pronounced non-monotonic pattern).
+
+```{r, fig.width=5, fig.height=5, echo=FALSE}
+sssPlot('rho', 'var.rate', log = 'xy', tt = c(100, 550), ttlty = c(3, 1))
+```
+
+Because the simulated birth death process has an absorbing state at $X(t) = 0$ the process will eventaully go extinct.  Higher $\rho$ values will cause this to happen more quickly, and thus the overall trend of the fluctuations will be negatvie over the time period considered.  This pattern is recovered in the simulations and suggests that in these simulation we are primarily observing the decline phase of a lineage and not its growth phase.  This results by imposing an arbitrary initial lineage diversity $S$.
+
+```{r, fig.width=5, fig.height=5, echo=FALSE}
+sssPlot('rho', 'mean.mean', log = '', tt = c(100, 550), ttlty = c(3, 1))
+```
+
+In general the simulations produced realistic within lineage diversities, the maximum and minim diversity values showing a power-law-like relationship with $\rho$.
+
+```{r, fig.width=6, fig.height=4, echo=FALSE}
+par(mfrow = c(1, 2))
+sssPlot('rho', 'minS', log = 'xy', tt = c(100, 550), ttlty = c(3, 1))
+sssPlot('rho', 'maxS', log = 'xy', tt = c(100, 550), ttlty = c(3, 1))
+```
+
+The observed life-span of lineages was most accurately captured by assuming an initial diversity of $S \leq 40$ and for birth-death rate values of $\rho \geq 0.25$.
+
+```{r, fig.width=5, fig.height=5, echo=FALSE}
+sssPlot('rho', 'endT', log = 'y', tt = 550, ttlty = 1)
+```
