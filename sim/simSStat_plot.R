@@ -2,7 +2,7 @@ library(socorro)
 setwd('~/Dropbox/Research/paleo_supStat/sim')
 
 ## helper function for plotting *s*uper *s*at *s*imulation
-sssPlot <- function(x, y, log, tt, ttlty) {
+sssPlot <- function(x, y, log, tt, ttlty, ...) {
     spp <- unique(sstatSim$S)
     nspp <- length(spp)
     sppCol <- hsv(seq(0.45, 0.7, length.out = nspp), 
