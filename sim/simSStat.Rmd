@@ -5,6 +5,7 @@ date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
     pdf_document:
         fig_caption: true
+bibliography: sim.bib
 ---
 
 ```{r echo=FALSE}
@@ -39,7 +40,7 @@ sssPlot <- function(x, y, log, tt, ttlty, ...) {
 }
 ```
 
-Part of our paper depends on the assumption that a birth-death process, when time-averaged, will show an approximately Gaussian distribution of fluctuations between time periods.  This is conveniently proven by \cite{}.  We are interested in how the variances of these time-averaged fluctuations are distributed and how they evolve across taxa.  First we must address the question of how the variance of a time-averaged birth-death process is expected to be distributed.  Using simulations discussed below, I show that the inverse variances of a time-averaged birth-death process will follow a gamma distribution.  In our paper we make the claim that the observed gamma distribution of inverse variances in the fossil record of diversity fluctuations arises from a super-statistical process.  Now that we know a gamma distribution can arise just by time-averaging a birth-death process, how should be best frame our super-statistical argument?  In addition to that big question, are you aware of any published references that show time-averaged birth-death processes have gamma-distributed inverse variances?  In my initial search I couldn't find any.
+Part of our paper depends on the assumption that a birth-death process, when time-averaged, will show an approximately Gaussian distribution of fluctuations between time periods.  This is conveniently proven by [1].  We are interested in how the variances of these time-averaged fluctuations are distributed and how they evolve across taxa.  First we must address the question of how the variance of a time-averaged birth-death process is expected to be distributed.  Using simulations discussed below, I show that the inverse variances of a time-averaged birth-death process will follow a gamma distribution.  In our paper we make the claim that the observed gamma distribution of inverse variances in the fossil record of diversity fluctuations arises from a super-statistical process.  Now that we know a gamma distribution can arise just by time-averaging a birth-death process, how should be best frame our super-statistical argument?  In addition to that big question, are you aware of any published references that show time-averaged birth-death processes have gamma-distributed inverse variances?  In my initial search I couldn't find any.
 
 ## Examples of gamma fits
 
@@ -100,3 +101,6 @@ par(mar = c(3, 3.1, 0, 0) + 0.5, mgp = c(2.5, 0.75, 0), cex.lab = 1.2)
 sssPlot('rho', 'endT', log = 'y', tt = 550, ttlty = 1, 
         xlab = expression('Birth-death rate'~rho), ylab = 'Lineage lifespan')
 ```
+
+## References
+1. Keilson, J., & Rao, S. S. (1970). A process with chain dependent growth rate. *Journal of Applied Probability* 7: 699--711.
