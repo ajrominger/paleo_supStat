@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>rom_natComm.bcf</file>
+      <file>rom_natEcoEvo_supp.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>rom_natComm.bbl</file>
+      <file>rom_natEcoEvo_supp.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -68,19 +68,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>rom_natComm</infile>
+      <infile>rom_natEcoEvo_supp</infile>
     </cmdline>
     <input>
-      <file>rom_natComm.bcf</file>
+      <file>rom_natEcoEvo_supp.bcf</file>
     </input>
     <output>
-      <file>rom_natComm.bbl</file>
+      <file>rom_natEcoEvo_supp.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>rom_natComm.bbl</file>
+      <file>rom_natEcoEvo_supp.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>rom_natComm.bcf</file>
+      <file>rom_natEcoEvo_supp.bcf</file>
     </requires>
     <requires type="editable">
       <file>../superStat.bib</file>
