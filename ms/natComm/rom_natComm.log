@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JUL 2017 12:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JUL 2017 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -456,18 +456,18 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 (./rom_natComm.aux)
 \openout1 = `rom_natComm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -560,13 +560,13 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 56.
-Package biblatex Info: Reference segment=0 on input line 56.
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+Package biblatex Info: Reference section=0 on input line 53.
+Package biblatex Info: Reference segment=0 on input line 53.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -580,31 +580,31 @@ Missing character: There is no ³ in font cmr12!
 ]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'alroy08' on input line 185.
+(biblatex)                at entry 'alroy08' on input line 182.
 
 [3
 
 ] [4] [5]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'cir1985' on input line 337.
+(biblatex)                at entry 'cir1985' on input line 334.
 
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'rabosky2006laser' on input line 366.
+(biblatex)                at entry 'rabosky2006laser' on input line 363.
 
 [6] [7] [8] [9] [10]
 <figs/fig_pkx-fbeta.pdf, id=48, 576.56696pt x 477.76683pt>
 File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use figs/fig_pkx-fbeta.pdf>
-Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 474.
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 471.
 (pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
 
 <figs/fig_Px.pdf, id=49, 270.00874pt x 270.00874pt>
 File: figs/fig_Px.pdf Graphic file (type pdf)
  <use figs/fig_Px.pdf>
-Package pdftex.def Info: figs/fig_Px.pdf used on input line 492.
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 489.
 (pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
 
 
@@ -614,7 +614,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
 
 <use figs/fig_dStat(3TP).pdf>
-Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 509.
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 506.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
 
 
@@ -631,7 +631,7 @@ Package logreq Info: Writing requests to 'rom_natComm.run.xml'.
 Here is how much of TeX's memory you used:
  8822 strings out of 493089
  144452 string characters out of 6134842
- 571402 words of memory out of 5000000
+ 571194 words of memory out of 5000000
  12179 multiletter control sequences out of 15000+600000
  15215 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -650,7 +650,7 @@ live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natComm.pdf (13 pages, 843506 bytes).
+Output written on rom_natComm.pdf (13 pages, 843205 bytes).
 PDF statistics:
  261 PDF objects out of 1000 (max. 8388607)
  188 compressed objects within 2 object streams
