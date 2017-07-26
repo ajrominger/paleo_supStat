@@ -19,6 +19,49 @@
 
 \refsection{0}
   \sortlist{none}{none}
+    \entry{keilson1970}{article}{}
+      \name{author}{2}{}{%
+        {{hash=283f81e7e8fa74b1f177634bbd001a54}{Keilson}{K\bibinitperiod}{Julian}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=17c805a5dbc8726db583db4bfa0179fe}{Rao}{R\bibinitperiod}{S\bibnamedelima Subba}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{bf15509ab391c4404c55cb4d617eddc1}
+      \strng{fullhash}{bf15509ab391c4404c55cb4d617eddc1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Applied Probability}
+      \field{number}{3}
+      \field{title}{A process with chain dependent growth rate}
+      \field{volume}{7}
+      \field{year}{1970}
+      \field{pages}{699\bibrangedash 711}
+      \range{pages}{13}
+    \endentry
+    \entry{grassmann1987}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a6c8552361d1e6b5b3849a0f815abef3}{Grassmann}{G\bibinitperiod}{Winfried\bibnamedelima K}{W\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a6c8552361d1e6b5b3849a0f815abef3}
+      \strng{fullhash}{a6c8552361d1e6b5b3849a0f815abef3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Operations Research}
+      \field{number}{1}
+      \field{title}{The asymptotic variance of a time average in a birth-death process}
+      \field{volume}{8}
+      \field{year}{1987}
+      \field{pages}{165\bibrangedash 174}
+      \range{pages}{10}
+    \endentry
     \entry{hannisdal2011}{article}{}
       \name{author}{2}{}{%
         {{hash=47afb6c28ea24f5d136ed6de0f0cd35a}{Hannisdal}{H\bibinitperiod}{Bjarte}{B\bibinitperiod}{}{}{}{}}%

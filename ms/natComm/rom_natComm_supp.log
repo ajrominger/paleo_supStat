@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 JUN 2016 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JUL 2017 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -452,18 +452,18 @@ File: english.lbx 2015/04/19 v3.0 biblatex localization (PK/JW/AB)
 (./rom_natComm_supp.aux)
 \openout1 = `rom_natComm_supp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -548,14 +548,14 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'rom_natComm_supp.bbl' found.
 
 (./rom_natComm_supp.bbl)
-Package biblatex Info: Reference section=0 on input line 52.
-Package biblatex Info: Reference segment=0 on input line 52.
-LaTeX Font Info:    Try loading font information for U+msa on input line 54.
+Package biblatex Info: Reference section=0 on input line 49.
+Package biblatex Info: Reference segment=0 on input line 49.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 54.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -571,38 +571,38 @@ Missing character: There is no ³ in font cmr12!
 File: figs/figSupp_divByPub.pdf Graphic file (type pdf)
 
 <use figs/figSupp_divByPub.pdf>
-Package pdftex.def Info: figs/figSupp_divByPub.pdf used on input line 134.
+Package pdftex.def Info: figs/figSupp_divByPub.pdf used on input line 135.
 (pdftex.def)             Requested size: 189.70744pt x 189.70744pt.
 
 <figs/figSupp_sqsRaw3tpub.pdf, id=24, 569.12625pt x 271.0125pt>
 File: figs/figSupp_sqsRaw3tpub.pdf Graphic file (type pdf)
 
 <use figs/figSupp_sqsRaw3tpub.pdf>
-Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.pdf used on input line 143.
+Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.pdf used on input line 144.
 (pdftex.def)             Requested size: 398.38567pt x 189.70744pt.
 
 <figs/figSupp_pbdbRaw_Px.pdf, id=25, 289.08pt x 289.08pt>
 File: figs/figSupp_pbdbRaw_Px.pdf Graphic file (type pdf)
 
 <use figs/figSupp_pbdbRaw_Px.pdf>
-Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.pdf used on input line 158.
+Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.pdf used on input line 159.
 (pdftex.def)             Requested size: 202.35461pt x 202.35461pt.
 
 <figs/figSupp_Px_cls.pdf, id=26, 270.00874pt x 270.00874pt>
 File: figs/figSupp_Px_cls.pdf Graphic file (type pdf)
 
 <use figs/figSupp_Px_cls.pdf>
-Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 170.
+Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 171.
 (pdftex.def)             Requested size: 189.00482pt x 189.00482pt.
 
 <figs/figSupp_sepk_Px.pdf, id=27, 802.37805pt x 273.33165pt>
 File: figs/figSupp_sepk_Px.pdf Graphic file (type pdf)
 
 <use figs/figSupp_sepk_Px.pdf>
-Package pdftex.def Info: figs/figSupp_sepk_Px.pdf used on input line 183.
+Package pdftex.def Info: figs/figSupp_sepk_Px.pdf used on input line 184.
 (pdftex.def)             Requested size: 481.43054pt x 164.00024pt.
 
-Overfull \hbox (11.67552pt too wide) in paragraph at lines 183--190
+Overfull \hbox (11.67552pt too wide) in paragraph at lines 184--191
  [][] 
  []
 
@@ -616,10 +616,10 @@ Package logreq Info: Writing requests to 'rom_natComm_supp.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8758 strings out of 493089
- 143285 string characters out of 6134842
- 565625 words of memory out of 5000000
- 12120 multiletter control sequences out of 15000+600000
+ 8760 strings out of 493089
+ 143341 string characters out of 6134842
+ 565443 words of memory out of 5000000
+ 12122 multiletter control sequences out of 15000+600000
  13050 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,6n,49p,1033b,1230s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -634,7 +634,7 @@ al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
 texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natComm_supp.pdf (6 pages, 1418477 bytes).
+Output written on rom_natComm_supp.pdf (6 pages, 1421273 bytes).
 PDF statistics:
  541 PDF objects out of 1000 (max. 8388607)
  404 compressed objects within 5 object streams

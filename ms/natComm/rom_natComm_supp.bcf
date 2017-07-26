@@ -2213,11 +2213,13 @@
     <bcf:datasource type="file" datatype="bibtex">../superStat.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">hannisdal2011</bcf:citekey>
-    <bcf:citekey order="2">sepkoski1992</bcf:citekey>
-    <bcf:citekey order="3">alroy08</bcf:citekey>
-    <bcf:citekey order="4">alroy2010</bcf:citekey>
+    <bcf:citekey order="1">keilson1970</bcf:citekey>
+    <bcf:citekey order="1">grassmann1987</bcf:citekey>
+    <bcf:citekey order="2">hannisdal2011</bcf:citekey>
+    <bcf:citekey order="3">sepkoski1992</bcf:citekey>
+    <bcf:citekey order="4">alroy08</bcf:citekey>
     <bcf:citekey order="5">alroy2010</bcf:citekey>
+    <bcf:citekey order="6">alroy2010</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="none" type="entry" sortscheme="none">
   <bcf:sorting>
