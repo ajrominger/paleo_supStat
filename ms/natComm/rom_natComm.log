@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 MAR 2017 12:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JUL 2017 12:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -577,58 +577,62 @@ Missing character: There is no ³ in font cmr12!
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-] [3
-
-] [4]
+]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'cir1985' on input line 298.
+(biblatex)                at entry 'alroy08' on input line 185.
 
-[5] [6]
+[3
+
+] [4] [5]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'rabosky2006laser' on input line 415.
+(biblatex)                at entry 'cir1985' on input line 337.
 
-[7] [8] [9] [10] [11]
-<figs/fig_pkx-fbeta.pdf, id=51, 576.56696pt x 477.76683pt>
+
+Package biblatex Warning: Ignoring prenote argument
+(biblatex)                at entry 'rabosky2006laser' on input line 366.
+
+[6] [7] [8] [9] [10]
+<figs/fig_pkx-fbeta.pdf, id=48, 576.56696pt x 477.76683pt>
 File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use figs/fig_pkx-fbeta.pdf>
-Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 523.
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 474.
 (pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
 
-<figs/fig_Px.pdf, id=52, 270.00874pt x 270.00874pt>
+<figs/fig_Px.pdf, id=49, 270.00874pt x 270.00874pt>
 File: figs/fig_Px.pdf Graphic file (type pdf)
  <use figs/fig_Px.pdf>
-Package pdftex.def Info: figs/fig_Px.pdf used on input line 541.
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 492.
 (pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figs/fig_dStat(3TP).pdf, id=53, 235.46048pt x 216.81pt>
+<figs/fig_dStat(3TP).pdf, id=50, 235.46048pt x 216.81pt>
 File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
 
 <use figs/fig_dStat(3TP).pdf>
-Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 558.
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 509.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12
+[11
 
- <./figs/fig_pkx-fbeta.pdf>] [13 <./figs/fig_Px.pdf>] [14 <./figs/fig_dStat(3TP
+ <./figs/fig_pkx-fbeta.pdf>] [12 <./figs/fig_Px.pdf>] [13 <./figs/fig_dStat(3TP
 ).pdf>] (./rom_natComm.aux)
 Package logreq Info: Writing requests to 'rom_natComm.run.xml'.
 \openout1 = `rom_natComm.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 8821 strings out of 493089
- 144426 string characters out of 6134842
- 570397 words of memory out of 5000000
- 12178 multiletter control sequences out of 15000+600000
+ 8822 strings out of 493089
+ 144452 string characters out of 6134842
+ 571402 words of memory out of 5000000
+ 12179 multiletter control sequences out of 15000+600000
  15215 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,6n,49p,2237b,1230s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -646,10 +650,10 @@ live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natComm.pdf (14 pages, 846230 bytes).
+Output written on rom_natComm.pdf (13 pages, 843506 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
+ 261 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

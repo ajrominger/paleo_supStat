@@ -603,6 +603,54 @@
       \endverb
       \keyw{super-statistics}
     \endentry
+    \entry{beck2004}{article}{}
+      \name{author}{1}{}{%
+        {{hash=53a777055b139b74439193de18ada60c}{Beck}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{53a777055b139b74439193de18ada60c}
+      \strng{fullhash}{53a777055b139b74439193de18ada60c}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{Superstatistics is a `statistics of a statistics'relevant for driven nonequilibrium systems with fluctuating intensive parameters. It contains Tsallis statistics as a special case. We show that probability density functions of velocity differences and accelerations measured in Eulerian and Lagrangian turbulence experiments are well reproduced by simple superstatistics models. We compare fits obtained for log-normal superstatistics and \x{fffd}\x{fffd}2-superstatistics (= Tsallis statistics).}
+      \field{journaltitle}{Physica D: Nonlinear Phenomena}
+      \field{title}{Superstatistics in hydrodynamic turbulence}
+      \field{volume}{193}
+      \field{year}{2004}
+      \field{pages}{195\bibrangedash 207}
+      \range{pages}{13}
+      \keyw{Superstatistics; Generalized statistical mechanics; Turbulence models}
+    \endentry
+    \entry{fuentes2009}{article}{}
+      \name{author}{3}{}{%
+        {{hash=a2e89bdbbad97821f6b94ce400682067}{Fuentes}{F\bibinitperiod}{Miguel\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=f1cf392a9efae433b0f7b6440d2f2d3a}{Gerig}{G\bibinitperiod}{Austin}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=715fef480ab32d3a28aee179339804e0}{Vicente}{V\bibinitperiod}{Javier}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{ef95c55259c3d8d551465791717cc493}
+      \strng{fullhash}{c8cce5a1143845bf60593e53c7669b11}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{<p>Many studies assume stock prices follow a random process known as geometric Brownian motion. Although approximately correct, this model fails to explain the frequent occurrence of extreme price movements, such as stock market crashes. Using a large collection of data from three different stock markets, we present evidence that a modification to the random model---adding a slow, but significant, fluctuation to the standard deviation of the process---accurately explains the probability of different-sized price changes, including the relative high frequency of extreme movements. Furthermore, we show that this process is similar across stocks so that their price fluctuations can be characterized by a single curve. Because the behavior of price fluctuations is rooted in the characteristics of volatility, we expect our results to bring increased interest to stochastic volatility models, and especially to those that can produce the properties of volatility reported here.</p>}
+      \field{journaltitle}{PLoS ONE}
+      \field{title}{Universal Behavior of Extreme Price Movements in Stock Markets}
+      \field{volume}{4}
+      \field{year}{2009}
+      \field{pages}{e8243}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0008243
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1371/journal.pone.0008243
+      \endverb
+    \endentry
     \entry{gavrilets2005}{article}{}
       \name{author}{2}{}{%
         {{hash=3e74e28774ffb3065e8ed4921a6c23d5}{Gavrilets}{G\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
@@ -816,6 +864,32 @@
       \field{pages}{1317\bibrangedash 1325}
       \range{pages}{9}
     \endentry
+    \entry{berlow2009}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b496493e2f31bc898c426e0509fa1b8e}{Berlow}{B\bibinitperiod}{Eric\bibnamedelima L}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=d8bd9d6ede58c3085d77c4bbfa3d44b3}{Dunne}{D\bibinitperiod}{Jennifer\bibnamedelima A}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=63fed56949183dae525be50c39cd97d9}{Martinez}{M\bibinitperiod}{Neo\bibnamedelima D}{N\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=13eeadeb7a302eec8b842b35ad4eaf5a}{Stark}{S\bibinitperiod}{Philip\bibnamedelima B}{P\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+        {{hash=7f8123cf5e619b351609ba83abb43335}{Williams}{W\bibinitperiod}{Richard\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=39ca3a19ab48aa9f09001ea80b9fd10c}{Brose}{B\bibinitperiod}{Ulrich}{U\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{b26610a53a28da4cfa256a16e10eb120}
+      \strng{fullhash}{61e50a63d6d2e234f8aeaee7eed0cf57}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{1}
+      \field{title}{Simple prediction of interaction strengths in complex food webs}
+      \field{volume}{106}
+      \field{year}{2009}
+      \field{pages}{187\bibrangedash 191}
+      \range{pages}{5}
+    \endentry
     \entry{cir1985}{article}{}
       \name{author}{3}{}{%
         {{hash=c8aecc8a197ab088e9f072a62e9dde3e}{Cox}{C\bibinitperiod}{John\bibnamedelima C}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
@@ -858,54 +932,6 @@
       \field{year}{2004}
       \field{pages}{683\bibrangedash 695}
       \range{pages}{13}
-    \endentry
-    \entry{beck2004}{article}{}
-      \name{author}{1}{}{%
-        {{hash=53a777055b139b74439193de18ada60c}{Beck}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{53a777055b139b74439193de18ada60c}
-      \strng{fullhash}{53a777055b139b74439193de18ada60c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{Superstatistics is a `statistics of a statistics'relevant for driven nonequilibrium systems with fluctuating intensive parameters. It contains Tsallis statistics as a special case. We show that probability density functions of velocity differences and accelerations measured in Eulerian and Lagrangian turbulence experiments are well reproduced by simple superstatistics models. We compare fits obtained for log-normal superstatistics and \x{fffd}\x{fffd}2-superstatistics (= Tsallis statistics).}
-      \field{journaltitle}{Physica D: Nonlinear Phenomena}
-      \field{title}{Superstatistics in hydrodynamic turbulence}
-      \field{volume}{193}
-      \field{year}{2004}
-      \field{pages}{195\bibrangedash 207}
-      \range{pages}{13}
-      \keyw{Superstatistics; Generalized statistical mechanics; Turbulence models}
-    \endentry
-    \entry{fuentes2009}{article}{}
-      \name{author}{3}{}{%
-        {{hash=a2e89bdbbad97821f6b94ce400682067}{Fuentes}{F\bibinitperiod}{Miguel\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=f1cf392a9efae433b0f7b6440d2f2d3a}{Gerig}{G\bibinitperiod}{Austin}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=715fef480ab32d3a28aee179339804e0}{Vicente}{V\bibinitperiod}{Javier}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Public Library of Science}%
-      }
-      \strng{namehash}{ef95c55259c3d8d551465791717cc493}
-      \strng{fullhash}{c8cce5a1143845bf60593e53c7669b11}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{<p>Many studies assume stock prices follow a random process known as geometric Brownian motion. Although approximately correct, this model fails to explain the frequent occurrence of extreme price movements, such as stock market crashes. Using a large collection of data from three different stock markets, we present evidence that a modification to the random model---adding a slow, but significant, fluctuation to the standard deviation of the process---accurately explains the probability of different-sized price changes, including the relative high frequency of extreme movements. Furthermore, we show that this process is similar across stocks so that their price fluctuations can be characterized by a single curve. Because the behavior of price fluctuations is rooted in the characteristics of volatility, we expect our results to bring increased interest to stochastic volatility models, and especially to those that can produce the properties of volatility reported here.</p>}
-      \field{journaltitle}{PLoS ONE}
-      \field{title}{Universal Behavior of Extreme Price Movements in Stock Markets}
-      \field{volume}{4}
-      \field{year}{2009}
-      \field{pages}{e8243}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1371/journal.pone.0008243
-      \endverb
-      \verb{url}
-      \verb http://dx.doi.org/10.1371/journal.pone.0008243
-      \endverb
     \endentry
     \entry{rabosky2006laser}{article}{}
       \name{author}{1}{}{%
