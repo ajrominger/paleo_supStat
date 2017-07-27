@@ -651,58 +651,22 @@
       \verb http://dx.doi.org/10.1371/journal.pone.0008243
       \endverb
     \endentry
-    \entry{gavrilets2005}{article}{}
+    \entry{macWilson}{book}{}
       \name{author}{2}{}{%
-        {{hash=3e74e28774ffb3065e8ed4921a6c23d5}{Gavrilets}{G\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=7e66ca7993c1d6bc4208fd40459c56e9}{Vose}{V\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=d8aca303897970c75c6cc996b48dff19}{MacArthur}{M\bibinitperiod}{R.\bibnamedelimi H.}{R\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=6d1640252ac6d13aa24972647d647476}{Wilson}{W\bibinitperiod}{E.\bibnamedelimi O.}{E\bibinitperiod\bibinitdelim O\bibinitperiod}{}{}{}{}}%
       }
       \list{publisher}{1}{%
-        {National Acad Sciences}%
+        {Princeton University Press}%
       }
-      \strng{namehash}{fedc8c27981e6c69fa5339124ab07398}
-      \strng{fullhash}{fedc8c27981e6c69fa5339124ab07398}
+      \strng{namehash}{69d69fe169ab5d5c6d1e5e3a66496ba5}
+      \strng{fullhash}{69d69fe169ab5d5c6d1e5e3a66496ba5}
       \field{sortinit}{0}
       \field{sortinithash}{990108227b3316c02842d895999a0165}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the National academy of Sciences of the United States of America}
-      \field{number}{50}
-      \field{title}{Dynamic patterns of adaptive radiation}
-      \field{volume}{102}
-      \field{year}{2005}
-      \field{pages}{18040\bibrangedash 18045}
-      \range{pages}{6}
-    \endentry
-    \entry{price2014}{article}{}
-      \true{moreauthor}
-      \name{author}{10}{}{%
-        {{hash=c412eda7e46a5065357c524d3f1dd4b0}{Price}{P\bibinitperiod}{Trevor\bibnamedelima D}{T\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
-        {{hash=836a8b59963b4dcc92756c7fa082a541}{Hooper}{H\bibinitperiod}{Daniel\bibnamedelima M}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=18f86360642079d26c0c633f860c5c01}{Buchanan}{B\bibinitperiod}{Caitlyn\bibnamedelima D}{C\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
-        {{hash=676f80887a25929acb19deb4df816dcf}{Johansson}{J\bibinitperiod}{Ulf\bibnamedelima S}{U\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=d6571a432c904c8c780635e113c30d3e}{Tietze}{T\bibinitperiod}{D\bibnamedelima Thomas}{D\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
-        {{hash=9f4c25afc0a99e81eba1615c848cc0d8}{Alstr\"{o}m}{A\bibinitperiod}{Per}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=a099bed23ee4714a0789a0300dc79ee6}{Olsson}{O\bibinitperiod}{Urban}{U\bibinitperiod}{}{}{}{}}%
-        {{hash=3355ac19ed4cb8efe4b770f5b8afec33}{Ghosh-Harihar}{G\bibinithyphendelim H\bibinitperiod}{Mousumi}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=20c6ae8185d6e46412d0cf3416262dfa}{Ishtiaq}{I\bibinitperiod}{Farah}{F\bibinitperiod}{}{}{}{}}%
-        {{hash=940e832a2fd38550ba1fea7858efe1fd}{Gupta}{G\bibinitperiod}{Sandeep\bibnamedelima K}{S\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Nature Publishing Group}%
-      }
-      \strng{namehash}{092c62be69e8f140a4508f0524a71cb1}
-      \strng{fullhash}{75e4065b8cbd2f72784051d0f5429a94}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{number}{7499}
-      \field{title}{Niche filling slows the diversification of Himalayan songbirds}
-      \field{volume}{509}
-      \field{year}{2014}
-      \field{pages}{222\bibrangedash 225}
-      \range{pages}{4}
+      \field{title}{The theory of island biogeography}
+      \field{year}{1967}
     \endentry
     \entry{jablonski2008}{article}{}
       \name{author}{1}{}{%
@@ -864,6 +828,28 @@
       \field{pages}{1317\bibrangedash 1325}
       \range{pages}{9}
     \endentry
+    \entry{gavrilets2005}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3e74e28774ffb3065e8ed4921a6c23d5}{Gavrilets}{G\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=7e66ca7993c1d6bc4208fd40459c56e9}{Vose}{V\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {National Acad Sciences}%
+      }
+      \strng{namehash}{fedc8c27981e6c69fa5339124ab07398}
+      \strng{fullhash}{fedc8c27981e6c69fa5339124ab07398}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National academy of Sciences of the United States of America}
+      \field{number}{50}
+      \field{title}{Dynamic patterns of adaptive radiation}
+      \field{volume}{102}
+      \field{year}{2005}
+      \field{pages}{18040\bibrangedash 18045}
+      \range{pages}{6}
+    \endentry
     \entry{berlow2009}{article}{}
       \name{author}{6}{}{%
         {{hash=b496493e2f31bc898c426e0509fa1b8e}{Berlow}{B\bibinitperiod}{Eric\bibnamedelima L}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
@@ -953,6 +939,29 @@
       \field{pages}{247}
       \range{pages}{1}
     \endentry
+    \entry{rosindell2011}{article}{}
+      \name{author}{3}{}{%
+        {{hash=36b7bb6ccab2d451ab5cf1eacbde3ce8}{Rosindell}{R\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=635ea663fafb004e3296141940fece57}{Hubbell}{H\bibinitperiod}{Stephen\bibnamedelima P}{S\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
+        {{hash=69c9fc74ce473fd6101d7d2c5e9db4d0}{Etienne}{E\bibinitperiod}{Rampal\bibnamedelima S}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{ea6ef6774ffa41f22a4de91ed2ebc9da}
+      \strng{fullhash}{4b866c54c5cd75a1a55410355e1a4400}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Trends in ecology \& evolution}
+      \field{number}{7}
+      \field{title}{{\it The Unified Neutral Theory of Biodiversity and Biogeography} at Age Ten}
+      \field{volume}{26}
+      \field{year}{2011}
+      \field{pages}{340\bibrangedash 348}
+      \range{pages}{9}
+    \endentry
     \entry{chave2004neutral}{article}{}
       \name{author}{1}{}{%
         {{hash=249f8cae89f2819d474fe8664b44712a}{Chave}{C\bibinitperiod}{Jer\^{o}me}{J\bibinitperiod}{}{}{}{}}%
@@ -996,7 +1005,6 @@
       \range{pages}{8}
     \endentry
   \endsortlist
-  \missing{rosindell2011TREE}
 \endrefsection
 \endinput
 
