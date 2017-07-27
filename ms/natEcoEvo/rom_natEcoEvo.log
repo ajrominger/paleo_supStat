@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JUL 2017 14:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JUL 2017 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -576,29 +576,29 @@ Missing character: There is no ³ in font cmr12!
 ]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'alroy08' on input line 194.
+(biblatex)                at entry 'alroy08' on input line 195.
 
 [4] [5]
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'cir1985' on input line 349.
+(biblatex)                at entry 'cir1985' on input line 354.
 
 
 Package biblatex Warning: Ignoring prenote argument
-(biblatex)                at entry 'rabosky2006laser' on input line 378.
+(biblatex)                at entry 'rabosky2006laser' on input line 388.
 
 [6] [7] [8] [9] [10] [11]
 <figs/fig_pkx-fbeta.pdf, id=50, 576.56696pt x 477.76683pt>
 File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use figs/fig_pkx-fbeta.pdf>
-Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 495.
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 505.
 (pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
 
 <figs/fig_Px.pdf, id=51, 270.00874pt x 270.00874pt>
 File: figs/fig_Px.pdf Graphic file (type pdf)
  <use figs/fig_Px.pdf>
-Package pdftex.def Info: figs/fig_Px.pdf used on input line 513.
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 523.
 (pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
 
 
@@ -608,7 +608,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
 
 <use figs/fig_dStat(3TP).pdf>
-Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 530.
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 540.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
 
 
@@ -643,7 +643,7 @@ exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natEcoEvo.pdf (14 pages, 835680 bytes).
+Output written on rom_natEcoEvo.pdf (14 pages, 836301 bytes).
 PDF statistics:
  260 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams

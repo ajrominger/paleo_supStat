@@ -1,22 +1,22 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'rom_natEcoEvo.blg'
-[48] biber-darwin:276> INFO - === Thu Jul 27, 2017, 14:00:37
-[48] Biber.pm:333> INFO - Reading 'rom_natEcoEvo.bcf'
-[125] Biber.pm:645> INFO - Found 44 citekeys in bib section 0
-[145] Biber.pm:2977> INFO - Processing section 0
-[162] Biber.pm:3115> INFO - Looking for bibtex format file '../superStat.bib' for section 0
-[168] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[174] bibtex.pm:895> INFO - Found BibTeX data source '../superStat.bib'
-[487] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[487] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[487] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
-[488] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[520] bbl.pm:505> INFO - Writing 'rom_natEcoEvo.bbl' with encoding 'ascii'
-[525] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[527] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[529] Utils.pm:146> WARN - The entry 'madin2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[531] Utils.pm:146> WARN - The entry 'beck2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[532] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[553] Utils.pm:146> WARN - The entry 'chave2004neutral' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[553] bbl.pm:596> INFO - Output to rom_natEcoEvo.bbl
-[553] Biber.pm:106> INFO - WARNINGS: 6
+[45] biber-darwin:276> INFO - === Thu Jul 27, 2017, 17:55:02
+[45] Biber.pm:333> INFO - Reading 'rom_natEcoEvo.bcf'
+[126] Biber.pm:645> INFO - Found 44 citekeys in bib section 0
+[150] Biber.pm:2977> INFO - Processing section 0
+[171] Biber.pm:3115> INFO - Looking for bibtex format file '../superStat.bib' for section 0
+[176] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[182] bibtex.pm:895> INFO - Found BibTeX data source '../superStat.bib'
+[494] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[494] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[494] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
+[494] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[526] bbl.pm:505> INFO - Writing 'rom_natEcoEvo.bbl' with encoding 'ascii'
+[531] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[533] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[535] Utils.pm:146> WARN - The entry 'madin2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[537] Utils.pm:146> WARN - The entry 'beck2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[538] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[570] Utils.pm:146> WARN - The entry 'chave2004neutral' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[570] bbl.pm:596> INFO - Output to rom_natEcoEvo.bbl
+[570] Biber.pm:106> INFO - WARNINGS: 6
