@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JUL 2017 14:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JUL 2017 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,7 +643,7 @@ exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_natEcoEvo.pdf (14 pages, 835692 bytes).
+Output written on rom_natEcoEvo.pdf (14 pages, 835680 bytes).
 PDF statistics:
  260 PDF objects out of 1000 (max. 8388607)
  187 compressed objects within 2 object streams
