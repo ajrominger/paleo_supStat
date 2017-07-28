@@ -1,1010 +1,257 @@
-% $ biblatex auxiliary file $
-% $ biblatex bbl format version 2.5 $
-% Do not modify the above lines!
-%
-% This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated by
-% biber as required.
-%
-\begingroup
-\makeatletter
-\@ifundefined{ver@biblatex.sty}
-  {\@latex@error
-     {Missing 'biblatex' package}
-     {The bibliography requires the 'biblatex' package.}
-      \aftergroup\endinput}
-  {}
-\endgroup
+\begin{thebibliography}{10}
 
+\bibitem{raup1982}
+David~M Raup, J~John Sepkoski~Jr, et~al.
+\newblock Mass extinctions in the marine fossil record.
+\newblock {\em Science}, 215(4539):1501--1503, 1982.
 
-\refsection{0}
-  \sortlist{none}{none}
-    \entry{raup1982}{article}{}
-      \true{moreauthor}
-      \name{author}{2}{}{%
-        {{hash=49e0868bff0724a4eac45d03165d0bbf}{Raup}{R\bibinitperiod}{David\bibnamedelima M}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=5a4a7fd3f30f4f9a7490b1ee3f24d1bb}{Sepkoski\bibnamedelima Jr}{S\bibinitperiod\bibinitdelim J\bibinitperiod}{J\bibnamedelima John}{J\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{b7d1b5c6e39a03cc8d64a79653afe9d6}
-      \strng{fullhash}{51e430abd3a1e2d1a63afc4213b0dd5b}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{number}{4539}
-      \field{title}{Mass extinctions in the marine fossil record}
-      \field{volume}{215}
-      \field{year}{1982}
-      \field{pages}{1501\bibrangedash 1503}
-      \range{pages}{3}
-    \endentry
-    \entry{sepkoski1984}{article}{}
-      \name{author}{1}{}{%
-        {{hash=03ce371e292808c2681748577174738c}{Sepkoski}{S\bibinitperiod}{J.\bibnamedelimi J.}{J\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{03ce371e292808c2681748577174738c}
-      \strng{fullhash}{03ce371e292808c2681748577174738c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{A three-phase kinetic model with time-specific perturbations is used to describe large-scale patterns in the diversification of Phanerozoic marine families. The basic model assumes that the Cambrian, Paleozoic, and Modern evolutionary faunas each diversified logistically as a consequence of early exponential growth and of later slowing of growth as the ecosystems became filled; it also assumes interaction among the evolutionary faunas such that expansion of the combined diversities of all three faunas above any single fauna's equilibrium caused that fauna's diversity to begin to decline. This basic model adequately describes the diversification of the evolutionary faunas through the Paleozoic Era as well as the asymmetrical rise and fall of background extinction rates through the entire Phanerozoic. Declines in diversity and changes in faunal dominance associated with mass extinctions can be accommodated in the model with short-term accelerations in extinction rates or declines in equilibria. Such accelerations, or perturbations, cause diversity to decline exponentially and then to rebound sigmoidally following release. The amount of decline is dependent on the magnitude and duration of the perturbation, the timing of the perturbation with respect to the diversification of the system, and the system's initial per-taxon rates of diversification and turnover. When applied to the three-phase model, such perturbations describe the changes in diversity and faunal dominance during and after major mass extinctions, the long-term rise in total diversity following the Late Permian and Norian mass extinctions, and the peculiar diversification and then decline of the remnants of the Paleozoic fauna during the Mesozoic and Cenozoic Eras. The good fit of this model to data on Phanerozoic familial diversity suggests that many of the large-scale patterns of diversification seen in the marine fossil record of animal families are simple consequences of nonlinear interrelationships among a small number of parameters that are intrinsic to the evolutionary faunas and are largely (but not completely) invariant through time.}
-      \field{journaltitle}{Paleobiology}
-      \field{title}{A Kinetic Model of Phanerozoic Taxonomic Diversity. III. Post-Paleozoic Families and Mass Extinctions}
-      \field{volume}{10}
-      \field{year}{1984}
-      \field{pages}{246\bibrangedash 267}
-      \range{pages}{22}
-      \verb{url}
-      \verb http://www.jstor.org/stable/2400399
-      \endverb
-    \endentry
-    \entry{gilinsky1994}{article}{}
-      \name{author}{1}{}{%
-        {{hash=47dd50cf0c32e61796f62b94353c3373}{Gilinsky}{G\bibinitperiod}{Norman\bibnamedelima L}{N\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{47dd50cf0c32e61796f62b94353c3373}
-      \strng{fullhash}{47dd50cf0c32e61796f62b94353c3373}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Paleobiology}
-      \field{title}{Volatility and the Phanerozoic decline of background extinction intensity}
-      \field{year}{1994}
-      \field{pages}{445\bibrangedash 458}
-      \range{pages}{14}
-    \endentry
-    \entry{liow2007}{article}{}
-      \name{author}{2}{}{%
-        {{hash=8c6b4cf0c42a9827fa59a7ccd6a10b2e}{Liow}{L\bibinitperiod}{Lee\bibnamedelima Hsiang}{L\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=937aafe9500405b642859368d838bfbc}{Stenseth}{S\bibinitperiod}{Nils\bibnamedelima Chr}{N\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {The Royal Society}%
-      }
-      \strng{namehash}{29605da8af64b7ab5784267ec13dde0c}
-      \strng{fullhash}{29605da8af64b7ab5784267ec13dde0c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the Royal Society B: Biological Sciences}
-      \field{number}{1626}
-      \field{title}{The rise and fall of species: implications for macroevolutionary and macroecological studies}
-      \field{volume}{274}
-      \field{year}{2007}
-      \field{pages}{2745\bibrangedash 2752}
-      \range{pages}{8}
-    \endentry
-    \entry{alroy08}{article}{}
-      \name{author}{35}{}{%
-        {{hash=139258ecb448cbdd5d01bef611b8d985}{Alroy}{A\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=761fc6142f0314272dd542d68acf6bfb}{Aberhan}{A\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=0c15afae33f11b4b22cdbde37ed70693}{Bottjer}{B\bibinitperiod}{David\bibnamedelima J.}{D\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=ab99be064192f9409924032ef936a04f}{Foote}{F\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=e82b45d65664a87e48eff98875ca2a49}{F\"{u}rsich}{F\bibinitperiod}{Franz\bibnamedelima T.}{F\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
-        {{hash=4002d185d7b5f77d1c75ed366dec6515}{Harries}{H\bibinitperiod}{Peter\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=4c389ed3f57ef774c277f28d0522203a}{Hendy}{H\bibinitperiod}{Austin\bibnamedelimb J.\bibnamedelimi W.}{A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-        {{hash=f3fcac22215fe6b6e59f4eef8fa85497}{Holland}{H\bibinitperiod}{Steven\bibnamedelima M.}{S\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=7a07b576c3bc81bb3db926e1bb67ae69}{Ivany}{I\bibinitperiod}{Linda\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=8d64c069ee1e4098c8ae987371387165}{Kiessling}{K\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=ad5fe40c075b34c5e70ee1a08f0a5c25}{Kosnik}{K\bibinitperiod}{Matthew\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=e7d5e2e47cb586c9b464216d130b5cb0}{Marshall}{M\bibinitperiod}{Charles\bibnamedelima R.}{C\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-        {{hash=2e46677ba044211d971bffe2cf38dcba}{McGowan}{M\bibinitperiod}{Alistair\bibnamedelima J.}{A\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=3c93905b0f808eaf6ef5cdbd621ff635}{Miller}{M\bibinitperiod}{Arnold\bibnamedelima I.}{A\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
-        {{hash=b3f411e518adff51c0b4e05c9e7620e6}{Olszewski}{O\bibinitperiod}{Thomas\bibnamedelima D.}{T\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
-        {{hash=ca633cab3dfd6e4f28db38164a6cbff9}{Patzkowsky}{P\bibinitperiod}{Mark\bibnamedelima E.}{M\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{hash=a3243cb96ab018507d727f2aacc79087}{Peters}{P\bibinitperiod}{Shanan\bibnamedelima E.}{S\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{hash=da78eedc80b5a08a3b844a43a2f93bcf}{Villier}{V\bibinitperiod}{Lo\"{\i{}}c}{L\bibinitperiod}{}{}{}{}}%
-        {{hash=bb0a5fbe4c854d4eca45761cfcbe9a6f}{Wagner}{W\bibinitperiod}{Peter\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=e93ace0a504000082e58bd271e96f200}{Bonuso}{B\bibinitperiod}{Nicole}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=7d9d1caafaa1c7d831ed3c3bfd6dd404}{Borkow}{B\bibinitperiod}{Philip\bibnamedelima S.}{P\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=7f080afcc23bcf178ed97149ecb5aa82}{Brenneis}{B\bibinitperiod}{Benjamin}{B\bibinitperiod}{}{}{}{}}%
-        {{hash=ed4188bd7e566caae248b0ec0ad67f7a}{Clapham}{C\bibinitperiod}{Matthew\bibnamedelima E.}{M\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{hash=81a578350b908c6ad06bfc11b0cea597}{Fall}{F\bibinitperiod}{Leigh\bibnamedelima M.}{L\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=096426a10900e7bed2b3ca25619e06d9}{Ferguson}{F\bibinitperiod}{Chad\bibnamedelima A.}{C\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=cc66d1dcceb6b500792d7c092b74cfa7}{Hanson}{H\bibinitperiod}{Victoria\bibnamedelima L.}{V\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{hash=28628c52f8ddd079c4698c398c96dc15}{Krug}{K\bibinitperiod}{Andrew\bibnamedelima Z.}{A\bibinitperiod\bibinitdelim Z\bibinitperiod}{}{}{}{}}%
-        {{hash=e212ca13a267dbba9a0cb76e7fe2d38b}{Layou}{L\bibinitperiod}{Karen\bibnamedelima M.}{K\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=73cf5de3a8585a946fa1130986cd36a1}{Leckey}{L\bibinitperiod}{Erin\bibnamedelima H.}{E\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=1f27669f53e216d5ff99c97962018d1f}{N\"{u}rnberg}{N\bibinitperiod}{Sabine}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=3b2a15744609835b89b1873eaa815228}{Powers}{P\bibinitperiod}{Catherine\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
-        {{hash=b51d306b58241f16555013685e9b1d35}{Sessa}{S\bibinitperiod}{Jocelyn\bibnamedelima A.}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=21b6af629bc168836575391476615574}{Simpson}{S\bibinitperiod}{Carl}{C\bibinitperiod}{}{}{}{}}%
-        {{hash=08e0a80a5670a0dd3f4511b43fc0dd79}{Toma\v{s}ov\'{y}ch}{T\bibinitperiod}{Adam}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=536e12ea152c4d3fee6e5ae491d981fb}{Visaggi}{V\bibinitperiod}{Christy\bibnamedelima C.}{C\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{7149a6dd8b097f4da60fb2d31032398f}
-      \strng{fullhash}{2121ca203f743b27aa669b6274005c74}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{It has previously been thought that there was a steep Cretaceous and Cenozoic radiation of marine invertebrates. This pattern can be replicated with a new data set of fossil occurrences representing 3.5 million specimens, but only when older analytical protocols are used. Moreover, analyses that employ sampling standardization and more robust counting methods show a modest rise in diversity with no clear trend after the mid-Cretaceous. Globally, locally, and at both high and low latitudes, diversity was less than twice as high in the Neogene as in the mid-Paleozoic. The ratio of global to local richness has changed little, and a latitudinal diversity gradient was present in the early Paleozoic.}
-      \field{journaltitle}{Science}
-      \field{title}{Phanerozoic Trends in the Global Diversity of Marine Invertebrates}
-      \field{volume}{321}
-      \field{year}{2008}
-      \field{pages}{97\bibrangedash 100}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1126/science.1156963
-      \endverb
-      \keyw{database,fossil record,evolutionary history}
-    \endentry
-    \entry{alroy2010}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b41b106c94a7142a4ec3408d8f212969}{Alroy}{A\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{b41b106c94a7142a4ec3408d8f212969}
-      \strng{fullhash}{b41b106c94a7142a4ec3408d8f212969}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The fossil record demonstrates that each major taxonomic group has a consistent net rate of diversification and a limit to its species richness. It has been thought that long-term changes in the dominance of major taxonomic groups can be predicted from these characteristics. However, new analyses show that diversity limits may rise or fall in response to adaptive radiations or extinctions. These changes are idiosyncratic and occur at different times in each taxa. For example, the end-Permian mass extinction permanently reduced the diversity of important, previously dominant groups such as brachiopods and crinoids. The current global crisis may therefore permanently alter the biosphere's taxonomic composition by changing the rules of evolution.}
-      \field{journaltitle}{Science}
-      \field{number}{5996}
-      \field{title}{The Shifting Balance of Diversity Among Major Marine Animal Groups}
-      \field{volume}{329}
-      \field{year}{2010}
-      \field{pages}{1191\bibrangedash 1194}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1126/science.1189910
-      \endverb
-      \verb{eprint}
-      \verb http://www.sciencemag.org/content/329/5996/1191.full.pdf
-      \endverb
-      \verb{url}
-      \verb http://www.sciencemag.org/content/329/5996/1191.abstract
-      \endverb
-    \endentry
-    \entry{benton1995}{article}{}
-      \name{author}{1}{}{%
-        {{hash=468152cc297bac085ae4c54d397f86c1}{Benton}{B\bibinitperiod}{M.J.}{M\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{468152cc297bac085ae4c54d397f86c1}
-      \strng{fullhash}{468152cc297bac085ae4c54d397f86c1}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Analysis of the fossil record of microbes, algae, fungi, protists, plants, and animals shows that the diversity of both marine and continental life increased exponentially since the end of the Precambrian. This diversification was interrupted by mass extinctions, the largest of which occurred in the Early Cambrian, Late Ordovician, Late Devonian, Late Permian, Early Triassic, Late Triassic, and end-Cretaceous. Most of these extinctions were experienced by both marine and continental organisms. As for the periodicity of mass extinctions, no support was found: Seven mass extinction peaks in the last 250 million years are spaced 20 to 60 million years apart.}
-      \field{journaltitle}{Science}
-      \field{title}{Diversification and extinction in the history of life}
-      \field{volume}{268}
-      \field{year}{1995}
-      \field{pages}{52\bibrangedash 58}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1126/science.7701342
-      \endverb
-      \verb{eprint}
-      \verb http://www.sciencemag.org/content/268/5207/52.full.pdf
-      \endverb
-      \verb{url}
-      \verb http://www.sciencemag.org/content/268/5207/52.abstract
-      \endverb
-    \endentry
-    \entry{Erwin1998}{article}{}
-      \name{author}{1}{}{%
-        {{hash=4e34e70f888b7e0875d62060bea6783a}{Erwin}{E\bibinitperiod}{Douglas\bibnamedelima H.}{D\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{4e34e70f888b7e0875d62060bea6783a}
-      \strng{fullhash}{4e34e70f888b7e0875d62060bea6783a}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Trends in Ecology and Evolution}
-      \field{title}{The end and the beginning: recoveries from mass extinctions}
-      \field{volume}{13}
-      \field{year}{1998}
-      \field{pages}{344\bibrangedash 349}
-      \range{pages}{6}
-    \endentry
-    \entry{quental2013}{article}{}
-      \name{author}{2}{}{%
-        {{hash=4697050685f791af7029dc961cfa883b}{Quental}{Q\bibinitperiod}{Tiago\bibnamedelima B}{T\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=4440c90f4109aec211fad3e8c50e6a8c}{Marshall}{M\bibinitperiod}{Charles\bibnamedelima R}{C\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {American Association for the Advancement of Science}%
-      }
-      \strng{namehash}{3b060678dc046466bd2257a16ab5d413}
-      \strng{fullhash}{3b060678dc046466bd2257a16ab5d413}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{title}{How the Red Queen Drives Terrestrial Mammals to Extinction}
-      \field{year}{2013}
-    \endentry
-    \entry{bak1993}{article}{}
-      \name{author}{2}{}{%
-        {{hash=ba09ee685f28647bf1bebbff4d1e814e}{Bak}{B\bibinitperiod}{Per}{P\bibinitperiod}{}{}{}{}}%
-        {{hash=f5b8567831dadb725654bc06718f8caa}{Sneppen}{S\bibinitperiod}{Kim}{K\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{eabd1d43053f28ad6ab222f89a53f87c}
-      \strng{fullhash}{eabd1d43053f28ad6ab222f89a53f87c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Phys. Rev. Lett.}
-      \field{title}{Punctuated equilibrium and criticality in a simple model of evolution}
-      \field{volume}{71}
-      \field{year}{1993}
-      \field{pages}{4083\bibrangedash 4086}
-      \range{pages}{4}
-      \verb{url}
-      \verb http://link.aps.org/doi/10.1103/PhysRevLett.71.4083
-      \endverb
-    \endentry
-    \entry{sole1997}{article}{}
-      \name{author}{4}{}{%
-        {{hash=ebc2374ef1b559289a25060bfc512ac5}{Sol\'{e}}{S\bibinitperiod}{R.\bibnamedelimi V.}{R\bibinitperiod\bibinitdelim V\bibinitperiod}{}{}{}{}}%
-        {{hash=a711b4d087519b9f56a34a724205d44b}{Manrubia}{M\bibinitperiod}{S.\bibnamedelimi C.}{S\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=e3ba3fc7bf864a6a45d039b87693c83c}{Benton}{B\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=d805047557ef1ac413c2fbbb2105f28a}{Bak}{B\bibinitperiod}{P.}{P\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{8258c90ee3ba487aac8f7e607cb4d36f}
-      \strng{fullhash}{653410a5991ae55f7de388450ae587d4}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{title}{Self-similarity of extinction statistics in the fossil record}
-      \field{volume}{388}
-      \field{year}{1997}
-      \field{pages}{764\bibrangedash 767}
-      \range{pages}{4}
-    \endentry
-    \entry{newman1995}{article}{}
-      \name{author}{2}{}{%
-        {{hash=e10496a046558ed6c27e3a9373727f7f}{Newman}{N\bibinitperiod}{M.\bibnamedelimi E.\bibnamedelimi J.}{M\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=ef865a24bdd3713391013732e1f8a240}{Roberts}{R\bibinitperiod}{B.\bibnamedelimi W.}{B\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{e6d88c786037b96e5e00b5574d115749}
-      \strng{fullhash}{e6d88c786037b96e5e00b5574d115749}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{We present a new model for extinction in which species evolve in bursts or `avalanches', during which they become on average more susceptible to environmental stresses such as harsh climates and so are more easily rendered extinct. Results of simulations and analytic calculations using our model show a powerlaw distribution of extinction sizes which is in reasonable agreement with fossil data. We also see several features qualitatively similar to those seen in the fossil record. For example, we see frequent smaller extinctions in the wake of a large mass extinction which arise because there is reduced competition for resources in the aftermath of a large extinction event, so species which would not normally be able to compete can get a foothold, but only until the next cold winter or bad attack of influenza comes along to wipe them out.}
-      \field{journaltitle}{Proceedings of the Royal Society of London B}
-      \field{title}{Mass Extinction: Evolution and the Effects of External Influences on Unfit Species}
-      \field{volume}{260}
-      \field{year}{1995}
-      \field{pages}{31\bibrangedash 37}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1098/rspb.1995.0055
-      \endverb
-      \verb{eprint}
-      \verb http://rspb.royalsocietypublishing.org/content/260/1357/31.full.pdf+html
-      \endverb
-      \verb{url}
-      \verb http://rspb.royalsocietypublishing.org/content/260/1357/31.abstract
-      \endverb
-    \endentry
-    \entry{vermeij1987}{book}{}
-      \name{author}{1}{}{%
-        {{hash=c3e299dac1b4f5aec1eb755b501b8742}{Vermeij}{V\bibinitperiod}{G.\bibnamedelimi J.}{G\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Princeton, N.J.}%
-      }
-      \list{publisher}{1}{%
-        {Princeton University Press}%
-      }
-      \strng{namehash}{c3e299dac1b4f5aec1eb755b501b8742}
-      \strng{fullhash}{c3e299dac1b4f5aec1eb755b501b8742}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Evolution and Escalation}
-      \field{year}{1987}
-    \endentry
-    \entry{kirchner1998}{article}{}
-      \name{author}{2}{}{%
-        {{hash=cf4962508825bcbb589a0e4eff0a6aef}{Kirchner}{K\bibinitperiod}{James\bibnamedelima W.}{J\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-        {{hash=8b08b867f7546b8600f2b465ebda7042}{Weil}{W\bibinitperiod}{Anne}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{85c0891ffa6c4af3bb130035be23d037}
-      \strng{fullhash}{85c0891ffa6c4af3bb130035be23d037}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{10.1038/26384}
-      \field{journaltitle}{Nature}
-      \field{title}{No fractals in fossil extinction statistics}
-      \field{volume}{395}
-      \field{year}{1998}
-      \field{pages}{337\bibrangedash 338}
-      \range{pages}{2}
-      \verb{url}
-      \verb http://dx.doi.org/10.1038/26384
-      \endverb
-    \endentry
-    \entry{madin2006}{article}{}
-      \name{author}{7}{}{%
-        {{hash=d337b50c64b9e7a958eb0c37937c866c}{Madin}{M\bibinitperiod}{Joshua\bibnamedelima S.}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=139258ecb448cbdd5d01bef611b8d985}{Alroy}{A\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=761fc6142f0314272dd542d68acf6bfb}{Aberhan}{A\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=e82b45d65664a87e48eff98875ca2a49}{F\"{u}rsich}{F\bibinitperiod}{Franz\bibnamedelima T.}{F\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
-        {{hash=8d64c069ee1e4098c8ae987371387165}{Kiessling}{K\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
-        {{hash=ad5fe40c075b34c5e70ee1a08f0a5c25}{Kosnik}{K\bibinitperiod}{Matthew\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=bb0a5fbe4c854d4eca45761cfcbe9a6f}{Wagner}{W\bibinitperiod}{Peter\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{58fcc0a47e3beb05afa1ba28978fb91d}
-      \strng{fullhash}{a63bb5e1113da528dec6ed1df4324ced}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Ecological interactions, such as predation and bioturbation, are thought to be fundamental determinants of macroevolutionary trends. A data set containing global occurrences of Phanerozoic fossils of benthic marine invertebrates shows escalatory trends in the relative frequency of ecological groups, such as carnivores and noncarnivorous infaunal or mobile organisms. Associations between these trends are either statistically insignificant or interpretable as preservational effects. Thus, there is no evidence that escalation drives macroecological trends at global and million-year time scales. We also find that taxonomic richness and occurrence data are cross-correlated, which justifies the traditional use of one as a proxy of the other.}
-      \field{journaltitle}{Science}
-      \field{title}{Statistical Independence of Escalatory Ecological Trends in Phanerozoic Marine Invertebrates}
-      \field{volume}{312}
-      \field{year}{2006}
-      \field{pages}{897\bibrangedash 900}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1126/science.1123591
-      \endverb
-      \verb{eprint}
-      \verb http://www.sciencemag.org/content/312/5775/897.full.pdf
-      \endverb
-      \verb{url}
-      \verb http://www.sciencemag.org/content/312/5775/897.abstract
-      \endverb
-    \endentry
-    \entry{rabosky2009ecolLett}{article}{}
-      \name{author}{1}{}{%
-        {{hash=4938485f5bd189d2724875b55b3a6fb3}{Rabosky}{R\bibinitperiod}{Daniel\bibnamedelima L}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{4938485f5bd189d2724875b55b3a6fb3}
-      \strng{fullhash}{4938485f5bd189d2724875b55b3a6fb3}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology Letters}
-      \field{number}{8}
-      \field{title}{Ecological limits and diversification rate: alternative paradigms to explain the variation in species richness among clades and regions}
-      \field{volume}{12}
-      \field{year}{2009}
-      \field{pages}{735\bibrangedash 743}
-      \range{pages}{9}
-    \endentry
-    \entry{erwin2012}{article}{}
-      \name{author}{1}{}{%
-        {{hash=16ce4e61df28470cd28fea1c9c850e54}{Erwin}{E\bibinitperiod}{Douglas\bibnamedelima H}{D\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{16ce4e61df28470cd28fea1c9c850e54}
-      \strng{fullhash}{16ce4e61df28470cd28fea1c9c850e54}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Experimental Zoology Part B: Molecular and Developmental Evolution}
-      \field{number}{6}
-      \field{title}{Novelties that change carrying capacity}
-      \field{volume}{318}
-      \field{year}{2012}
-      \field{pages}{460\bibrangedash 465}
-      \range{pages}{6}
-    \endentry
-    \entry{roy2009range}{article}{}
-      \name{author}{5}{}{%
-        {{hash=ff1d62641c28e7f87462e02117ec3270}{Roy}{R\bibinitperiod}{Kaustuv}{K\bibinitperiod}{}{}{}{}}%
-        {{hash=0b9d0f0f7a653f26b3eb669a6040b182}{Hunt}{H\bibinitperiod}{Gene}{G\bibinitperiod}{}{}{}{}}%
-        {{hash=9fe0d8e7cb3ea42ff56b12c847ffb968}{Jablonski}{J\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
-        {{hash=d0b28bac6ba3deac49d011ca3bb09eff}{Krug}{K\bibinitperiod}{Andrew\bibnamedelima Z}{A\bibinitperiod\bibinitdelim Z\bibinitperiod}{}{}{}{}}%
-        {{hash=1cfd1ad31c637b7945cca8f3391847b7}{Valentine}{V\bibinitperiod}{James\bibnamedelima W}{J\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {The Royal Society}%
-      }
-      \strng{namehash}{0e6056669a8fb79eefcfd9f7e92c75f0}
-      \strng{fullhash}{297588fefcbd4678cac98611c95f94e4}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the Royal Society B: Biological Sciences}
-      \field{number}{1661}
-      \field{title}{A macroevolutionary perspective on species range limits}
-      \field{volume}{276}
-      \field{year}{2009}
-      \field{pages}{1485\bibrangedash 1493}
-      \range{pages}{9}
-    \endentry
-    \entry{hopkins2014}{article}{}
-      \name{author}{3}{}{%
-        {{hash=574fa6e15fbeaab8fe92e4b0e12a9432}{Hopkins}{H\bibinitperiod}{Melanie\bibnamedelima J}{M\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=21b6af629bc168836575391476615574}{Simpson}{S\bibinitperiod}{Carl}{C\bibinitperiod}{}{}{}{}}%
-        {{hash=8d64c069ee1e4098c8ae987371387165}{Kiessling}{K\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{a8af43961e306e730bdcdcbd8920e9cb}
-      \strng{fullhash}{48ab77d65a1b988c59293503f3de830d}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology letters}
-      \field{number}{3}
-      \field{title}{Differential niche dynamics among major marine invertebrate clades}
-      \field{volume}{17}
-      \field{year}{2014}
-      \field{pages}{314\bibrangedash 323}
-      \range{pages}{10}
-    \endentry
-    \entry{eldredgeGould1972}{article}{}
-      \name{author}{2}{}{%
-        {{hash=6cb642801921eaebf10ee5f4511ce88a}{Eldredge}{E\bibinitperiod}{Niles}{N\bibinitperiod}{}{}{}{}}%
-        {{hash=4684625981e330bfd023f543c1324b0f}{Gould}{G\bibinitperiod}{Stephen\bibnamedelima Jay}{S\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {San Francisco}%
-      }
-      \strng{namehash}{bb3844167ac5915af70da00f8dc375f7}
-      \strng{fullhash}{bb3844167ac5915af70da00f8dc375f7}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Models in paleobiology}
-      \field{title}{Punctuated equilibria: an alternative to phyletic gradualism}
-      \field{volume}{82}
-      \field{year}{1972}
-      \field{pages}{115}
-      \range{pages}{1}
-    \endentry
-    \entry{newman1985adaptive}{article}{}
-      \name{author}{3}{}{%
-        {{hash=ca725a94db2209a3e61ae29ca7163ef7}{Newman}{N\bibinitperiod}{CM}{C\bibinitperiod}{}{}{}{}}%
-        {{hash=12e99ead5b577942b43c0c2c8186a2ac}{Cohen}{C\bibinitperiod}{JE}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=130c3ebadc5ff5a727b0876883939e24}{Kipnis}{K\bibinitperiod}{C}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Nature Publishing Group}%
-      }
-      \strng{namehash}{355a8aa30be5e022d5ab34c25659c208}
-      \strng{fullhash}{f1788aeafb77a521044026648a239abf}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Nature}
-      \field{number}{6018}
-      \field{title}{Neo-darwinian evolution implies punctuated equilibria}
-      \field{volume}{315}
-      \field{year}{1985}
-      \field{pages}{400\bibrangedash 401}
-      \range{pages}{2}
-    \endentry
-    \entry{vrba1983}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b0da76127eb5e025d7adb35c58594c47}{Vrba}{V\bibinitperiod}{Elisabeth\bibnamedelima S.}{E\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{b0da76127eb5e025d7adb35c58594c47}
-      \strng{fullhash}{b0da76127eb5e025d7adb35c58594c47}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Science}
-      \field{number}{4608}
-      \field{title}{Macroevolutionary Trends: New Perspectives on the Roles of Adaptation and Incidental Effect}
-      \field{volume}{221}
-      \field{year}{1983}
-      \field{pages}{387\bibrangedash 389}
-      \range{pages}{3}
-    \endentry
-    \entry{simpson1953}{article}{}
-      \name{author}{1}{}{%
-        {{hash=27030a7e2829afc8520f21a1f8d0844c}{Simpson}{S\bibinitperiod}{GG}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{27030a7e2829afc8520f21a1f8d0844c}
-      \strng{fullhash}{27030a7e2829afc8520f21a1f8d0844c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The Major Features of Evolution}
-      \field{title}{Horotely, Bradytely, and Tachytely}
-      \field{year}{1953}
-      \field{pages}{313\bibrangedash 337}
-      \range{pages}{25}
-    \endentry
-    \entry{holman1989}{article}{}
-      \name{author}{1}{}{%
-        {{hash=d2ab29dfb43f52325dc9d1614c4597c3}{Holman}{H\bibinitperiod}{Eric\bibnamedelima W}{E\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{d2ab29dfb43f52325dc9d1614c4597c3}
-      \strng{fullhash}{d2ab29dfb43f52325dc9d1614c4597c3}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Paleobiology}
-      \field{title}{Some evolutionary correlates of higher taxa}
-      \field{year}{1989}
-      \field{pages}{357\bibrangedash 363}
-      \range{pages}{7}
-    \endentry
-    \entry{beck2003}{article}{}
-      \name{author}{2}{}{%
-        {{hash=c42ed7e408c5a648c4892d30f5ba5cad}{Beck}{B\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
-        {{hash=a3485714a2c84d2da0215e6b9bba843d}{Cohen}{C\bibinitperiod}{E.G.D.}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{eab11b675e8eb84267b6615aa2dfb039}
-      \strng{fullhash}{eab11b675e8eb84267b6615aa2dfb039}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{We consider nonequilibrium systems with complex dynamics in stationary states with large fluctuations of intensive quantities (e.g. the temperature, chemical potential or energy dissipation) on long time scales. Depending on the statistical properties of the fluctuations, we obtain different effective statistical mechanical descriptions. Tsallis statistics follows from a \x{fffd}\x{fffd}2-distribution of an intensive variable, but other classes of generalized statistics are obtained as well. We show that for small variance of the fluctuations all these different statistics behave in a universal way.}
-      \field{journaltitle}{Physica A: Statistical Mechanics and its Applications}
-      \field{title}{Superstatistics}
-      \field{volume}{322}
-      \field{year}{2003}
-      \field{pages}{267\bibrangedash 275}
-      \range{pages}{9}
-      \verb{doi}
-      \verb 10.1016/S0378-4371(03)00019-0
-      \endverb
-      \verb{url}
-      \verb http://www.sciencedirect.com/science/article/pii/S0378437103000190
-      \endverb
-      \keyw{super-statistics}
-    \endentry
-    \entry{beck2004}{article}{}
-      \name{author}{1}{}{%
-        {{hash=53a777055b139b74439193de18ada60c}{Beck}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{53a777055b139b74439193de18ada60c}
-      \strng{fullhash}{53a777055b139b74439193de18ada60c}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{Superstatistics is a `statistics of a statistics'relevant for driven nonequilibrium systems with fluctuating intensive parameters. It contains Tsallis statistics as a special case. We show that probability density functions of velocity differences and accelerations measured in Eulerian and Lagrangian turbulence experiments are well reproduced by simple superstatistics models. We compare fits obtained for log-normal superstatistics and \x{fffd}\x{fffd}2-superstatistics (= Tsallis statistics).}
-      \field{journaltitle}{Physica D: Nonlinear Phenomena}
-      \field{title}{Superstatistics in hydrodynamic turbulence}
-      \field{volume}{193}
-      \field{year}{2004}
-      \field{pages}{195\bibrangedash 207}
-      \range{pages}{13}
-      \keyw{Superstatistics; Generalized statistical mechanics; Turbulence models}
-    \endentry
-    \entry{fuentes2009}{article}{}
-      \name{author}{3}{}{%
-        {{hash=a2e89bdbbad97821f6b94ce400682067}{Fuentes}{F\bibinitperiod}{Miguel\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=f1cf392a9efae433b0f7b6440d2f2d3a}{Gerig}{G\bibinitperiod}{Austin}{A\bibinitperiod}{}{}{}{}}%
-        {{hash=715fef480ab32d3a28aee179339804e0}{Vicente}{V\bibinitperiod}{Javier}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Public Library of Science}%
-      }
-      \strng{namehash}{ef95c55259c3d8d551465791717cc493}
-      \strng{fullhash}{c8cce5a1143845bf60593e53c7669b11}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{<p>Many studies assume stock prices follow a random process known as geometric Brownian motion. Although approximately correct, this model fails to explain the frequent occurrence of extreme price movements, such as stock market crashes. Using a large collection of data from three different stock markets, we present evidence that a modification to the random model---adding a slow, but significant, fluctuation to the standard deviation of the process---accurately explains the probability of different-sized price changes, including the relative high frequency of extreme movements. Furthermore, we show that this process is similar across stocks so that their price fluctuations can be characterized by a single curve. Because the behavior of price fluctuations is rooted in the characteristics of volatility, we expect our results to bring increased interest to stochastic volatility models, and especially to those that can produce the properties of volatility reported here.</p>}
-      \field{journaltitle}{PLoS ONE}
-      \field{title}{Universal Behavior of Extreme Price Movements in Stock Markets}
-      \field{volume}{4}
-      \field{year}{2009}
-      \field{pages}{e8243}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1371/journal.pone.0008243
-      \endverb
-      \verb{url}
-      \verb http://dx.doi.org/10.1371/journal.pone.0008243
-      \endverb
-    \endentry
-    \entry{macWilson}{book}{}
-      \name{author}{2}{}{%
-        {{hash=d8aca303897970c75c6cc996b48dff19}{MacArthur}{M\bibinitperiod}{R.\bibnamedelimi H.}{R\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-        {{hash=6d1640252ac6d13aa24972647d647476}{Wilson}{W\bibinitperiod}{E.\bibnamedelimi O.}{E\bibinitperiod\bibinitdelim O\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Princeton University Press}%
-      }
-      \strng{namehash}{69d69fe169ab5d5c6d1e5e3a66496ba5}
-      \strng{fullhash}{69d69fe169ab5d5c6d1e5e3a66496ba5}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The theory of island biogeography}
-      \field{year}{1967}
-    \endentry
-    \entry{jablonski2008}{article}{}
-      \name{author}{1}{}{%
-        {{hash=9fe0d8e7cb3ea42ff56b12c847ffb968}{Jablonski}{J\bibinitperiod}{David}{D\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{9fe0d8e7cb3ea42ff56b12c847ffb968}
-      \strng{fullhash}{9fe0d8e7cb3ea42ff56b12c847ffb968}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annual Review of Ecology, Evolution, and Systematics}
-      \field{title}{Species Selection: Theory and Data}
-      \field{volume}{39}
-      \field{year}{2008}
-      \field{pages}{501\bibrangedash 524}
-      \range{pages}{24}
-    \endentry
-    \entry{harnik2011}{article}{}
-      \name{author}{1}{}{%
-        {{hash=68ea50f8c0b787e5d0e5461dc22f9ef9}{Harnik}{H\bibinitperiod}{Paul\bibnamedelima G}{P\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {National Acad Sciences}%
-      }
-      \strng{namehash}{68ea50f8c0b787e5d0e5461dc22f9ef9}
-      \strng{fullhash}{68ea50f8c0b787e5d0e5461dc22f9ef9}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the National Academy of Sciences}
-      \field{number}{33}
-      \field{title}{Direct and indirect effects of biological factors on extinction risk in fossil bivalves}
-      \field{volume}{108}
-      \field{year}{2011}
-      \field{pages}{13594\bibrangedash 13599}
-      \range{pages}{6}
-    \endentry
-    \entry{foote2008paleobiol}{article}{}
-      \name{author}{4}{}{%
-        {{hash=ab99be064192f9409924032ef936a04f}{Foote}{F\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
-        {{hash=82eadf5d847c6112674acf09c3939934}{Crampton}{C\bibinitperiod}{James\bibnamedelima S}{J\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-        {{hash=aa4ddd053ba55afd3d6ccd4e4f63f7e3}{Beu}{B\bibinitperiod}{Alan\bibnamedelima G}{A\bibinitperiod\bibinitdelim G\bibinitperiod}{}{}{}{}}%
-        {{hash=386edc64c852567fd62e16d190732de1}{Cooper}{C\bibinitperiod}{Roger\bibnamedelima A}{R\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \strng{namehash}{effb74a34054c454f735b73cf24f434a}
-      \strng{fullhash}{c98345ad452bf6c963b5d2d928825b32}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Paleobiology}
-      \field{number}{4}
-      \field{title}{On the bidirectional relationship between geographic range and taxonomic duration}
-      \field{volume}{34}
-      \field{year}{2008}
-      \field{pages}{421\bibrangedash 433}
-      \range{pages}{13}
-    \endentry
-    \entry{sepkoski1992}{book}{}
-      \name{author}{1}{}{%
-        {{hash=ac15c4030f31726c781cb5b377139815}{Sepkoski}{S\bibinitperiod}{J.\bibnamedelimi John}{J\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{location}{1}{%
-        {Milwaukee, WI}%
-      }
-      \list{publisher}{1}{%
-        {Milwaukee Public Museum}%
-      }
-      \strng{namehash}{ac15c4030f31726c781cb5b377139815}
-      \strng{fullhash}{ac15c4030f31726c781cb5b377139815}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{A compendium of fossil marine animal families}
-      \field{year}{1992}
-    \endentry
-    \entry{mayr1965systZool}{article}{}
-      \name{author}{1}{}{%
-        {{hash=cac50db2a50745fbffff26230282b557}{Mayr}{M\bibinitperiod}{Ernst}{E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{cac50db2a50745fbffff26230282b557}
-      \strng{fullhash}{cac50db2a50745fbffff26230282b557}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Systematic Zoology}
-      \field{number}{2}
-      \field{title}{Numerical phenetics and taxonomic theory}
-      \field{volume}{14}
-      \field{year}{1965}
-      \field{pages}{73\bibrangedash 97}
-      \range{pages}{25}
-    \endentry
-    \entry{erwin2007}{article}{}
-      \name{author}{1}{}{%
-        {{hash=16ce4e61df28470cd28fea1c9c850e54}{Erwin}{E\bibinitperiod}{Douglas\bibnamedelima H}{D\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{16ce4e61df28470cd28fea1c9c850e54}
-      \strng{fullhash}{16ce4e61df28470cd28fea1c9c850e54}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Palaeontology}
-      \field{number}{1}
-      \field{title}{Disparity: morphological pattern and developmental context}
-      \field{volume}{50}
-      \field{year}{2007}
-      \field{pages}{57\bibrangedash 73}
-      \range{pages}{17}
-    \endentry
-    \entry{hubbell2001}{book}{}
-      \name{author}{1}{}{%
-        {{hash=635ea663fafb004e3296141940fece57}{Hubbell}{H\bibinitperiod}{Stephen\bibnamedelima P}{S\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Princeton University Press}%
-      }
-      \strng{namehash}{635ea663fafb004e3296141940fece57}
-      \strng{fullhash}{635ea663fafb004e3296141940fece57}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{The unified neutral theory of biodiversity and biogeography (MPB-32)}
-      \field{volume}{32}
-      \field{year}{2001}
-    \endentry
-    \entry{brose2005}{article}{}
-      \name{author}{3}{}{%
-        {{hash=39ca3a19ab48aa9f09001ea80b9fd10c}{Brose}{B\bibinitperiod}{Ulrich}{U\bibinitperiod}{}{}{}{}}%
-        {{hash=b496493e2f31bc898c426e0509fa1b8e}{Berlow}{B\bibinitperiod}{Eric\bibnamedelima L}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{hash=63fed56949183dae525be50c39cd97d9}{Martinez}{M\bibinitperiod}{Neo\bibnamedelima D}{N\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{5910439e2c1c2d47cad2bd1a455648ce}
-      \strng{fullhash}{e5cff8bf30d9370d2693672969ea27cb}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology Letters}
-      \field{number}{12}
-      \field{title}{Scaling up keystone effects from simple to complex ecological networks}
-      \field{volume}{8}
-      \field{year}{2005}
-      \field{pages}{1317\bibrangedash 1325}
-      \range{pages}{9}
-    \endentry
-    \entry{gavrilets2005}{article}{}
-      \name{author}{2}{}{%
-        {{hash=3e74e28774ffb3065e8ed4921a6c23d5}{Gavrilets}{G\bibinitperiod}{Sergey}{S\bibinitperiod}{}{}{}{}}%
-        {{hash=7e66ca7993c1d6bc4208fd40459c56e9}{Vose}{V\bibinitperiod}{Aaron}{A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {National Acad Sciences}%
-      }
-      \strng{namehash}{fedc8c27981e6c69fa5339124ab07398}
-      \strng{fullhash}{fedc8c27981e6c69fa5339124ab07398}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the National academy of Sciences of the United States of America}
-      \field{number}{50}
-      \field{title}{Dynamic patterns of adaptive radiation}
-      \field{volume}{102}
-      \field{year}{2005}
-      \field{pages}{18040\bibrangedash 18045}
-      \range{pages}{6}
-    \endentry
-    \entry{berlow2009}{article}{}
-      \name{author}{6}{}{%
-        {{hash=b496493e2f31bc898c426e0509fa1b8e}{Berlow}{B\bibinitperiod}{Eric\bibnamedelima L}{E\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-        {{hash=d8bd9d6ede58c3085d77c4bbfa3d44b3}{Dunne}{D\bibinitperiod}{Jennifer\bibnamedelima A}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=63fed56949183dae525be50c39cd97d9}{Martinez}{M\bibinitperiod}{Neo\bibnamedelima D}{N\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
-        {{hash=13eeadeb7a302eec8b842b35ad4eaf5a}{Stark}{S\bibinitperiod}{Philip\bibnamedelima B}{P\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
-        {{hash=7f8123cf5e619b351609ba83abb43335}{Williams}{W\bibinitperiod}{Richard\bibnamedelima J}{R\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
-        {{hash=39ca3a19ab48aa9f09001ea80b9fd10c}{Brose}{B\bibinitperiod}{Ulrich}{U\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {National Acad Sciences}%
-      }
-      \strng{namehash}{b26610a53a28da4cfa256a16e10eb120}
-      \strng{fullhash}{61e50a63d6d2e234f8aeaee7eed0cf57}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Proceedings of the National Academy of Sciences}
-      \field{number}{1}
-      \field{title}{Simple prediction of interaction strengths in complex food webs}
-      \field{volume}{106}
-      \field{year}{2009}
-      \field{pages}{187\bibrangedash 191}
-      \range{pages}{5}
-    \endentry
-    \entry{cir1985}{article}{}
-      \name{author}{3}{}{%
-        {{hash=c8aecc8a197ab088e9f072a62e9dde3e}{Cox}{C\bibinitperiod}{John\bibnamedelima C}{J\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
-        {{hash=2899526e32d631985c100851d6c7f422}{Ingersoll\bibnamedelima Jr}{I\bibinitperiod\bibinitdelim J\bibinitperiod}{Jonathan\bibnamedelima E}{J\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-        {{hash=111bf9116d14be52996f6a85716e9f98}{Ross}{R\bibinitperiod}{Stephen\bibnamedelima A}{S\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{98db5bdd5b8c82f8c851e41a2e880398}
-      \strng{fullhash}{ccd5b8ff79a8e46e8681a02c922f81e7}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Econometrica: Journal of the Econometric Society}
-      \field{title}{A theory of the term structure of interest rates}
-      \field{year}{1985}
-      \field{pages}{385\bibrangedash 407}
-      \range{pages}{23}
-    \endentry
-    \entry{butler2004}{article}{}
-      \name{author}{2}{}{%
-        {{hash=b4aa323655bfe3cac53ff74e77641709}{Butler}{B\bibinitperiod}{Marguerite\bibnamedelima A}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-        {{hash=26453edaa112da2dca3455595f23c408}{King}{K\bibinitperiod}{Aaron\bibnamedelima A}{A\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{21118bc7ce3b5b8767d7ec6f508dfb2b}
-      \strng{fullhash}{21118bc7ce3b5b8767d7ec6f508dfb2b}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{The American Naturalist}
-      \field{number}{6}
-      \field{title}{Phylogenetic comparative analysis: a modeling approach for adaptive evolution}
-      \field{volume}{164}
-      \field{year}{2004}
-      \field{pages}{683\bibrangedash 695}
-      \range{pages}{13}
-    \endentry
-    \entry{rabosky2006laser}{article}{}
-      \name{author}{1}{}{%
-        {{hash=4938485f5bd189d2724875b55b3a6fb3}{Rabosky}{R\bibinitperiod}{Daniel\bibnamedelima L}{D\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Libertas Academica}%
-      }
-      \strng{namehash}{4938485f5bd189d2724875b55b3a6fb3}
-      \strng{fullhash}{4938485f5bd189d2724875b55b3a6fb3}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Evolutionary bioinformatics online}
-      \field{title}{LASER: a maximum likelihood toolkit for detecting temporal shifts in diversification rates from molecular phylogenies}
-      \field{volume}{2}
-      \field{year}{2006}
-      \field{pages}{247}
-      \range{pages}{1}
-    \endentry
-    \entry{rosindell2011}{article}{}
-      \name{author}{3}{}{%
-        {{hash=36b7bb6ccab2d451ab5cf1eacbde3ce8}{Rosindell}{R\bibinitperiod}{James}{J\bibinitperiod}{}{}{}{}}%
-        {{hash=635ea663fafb004e3296141940fece57}{Hubbell}{H\bibinitperiod}{Stephen\bibnamedelima P}{S\bibinitperiod\bibinitdelim P\bibinitperiod}{}{}{}{}}%
-        {{hash=69c9fc74ce473fd6101d7d2c5e9db4d0}{Etienne}{E\bibinitperiod}{Rampal\bibnamedelima S}{R\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{ea6ef6774ffa41f22a4de91ed2ebc9da}
-      \strng{fullhash}{4b866c54c5cd75a1a55410355e1a4400}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Trends in ecology \& evolution}
-      \field{number}{7}
-      \field{title}{{\it The Unified Neutral Theory of Biodiversity and Biogeography} at Age Ten}
-      \field{volume}{26}
-      \field{year}{2011}
-      \field{pages}{340\bibrangedash 348}
-      \range{pages}{9}
-    \endentry
-    \entry{chave2004neutral}{article}{}
-      \name{author}{1}{}{%
-        {{hash=249f8cae89f2819d474fe8664b44712a}{Chave}{C\bibinitperiod}{Jer\^{o}me}{J\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Wiley Online Library}%
-      }
-      \strng{namehash}{249f8cae89f2819d474fe8664b44712a}
-      \strng{fullhash}{249f8cae89f2819d474fe8664b44712a}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology letters}
-      \field{number}{3}
-      \field{title}{Neutral theory and community ecology}
-      \field{volume}{7}
-      \field{year}{2004}
-      \field{pages}{241\bibrangedash 253}
-      \range{pages}{13}
-    \endentry
-    \entry{ricklefs2006neutral}{article}{}
-      \name{author}{1}{}{%
-        {{hash=8de2b52d1a267b6b349f7af2e25035eb}{Ricklefs}{R\bibinitperiod}{Robert\bibnamedelima E}{R\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Eco Soc America}%
-      }
-      \strng{namehash}{8de2b52d1a267b6b349f7af2e25035eb}
-      \strng{fullhash}{8de2b52d1a267b6b349f7af2e25035eb}
-      \field{sortinit}{0}
-      \field{sortinithash}{990108227b3316c02842d895999a0165}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Ecology}
-      \field{number}{6}
-      \field{title}{The unified neutral theory of biodiversity: do the numbers add up?}
-      \field{volume}{87}
-      \field{year}{2006}
-      \field{pages}{1424\bibrangedash 1431}
-      \range{pages}{8}
-    \endentry
-  \endsortlist
-\endrefsection
-\endinput
+\bibitem{sepkoski1984}
+J.~J. Sepkoski.
+\newblock A kinetic model of phanerozoic taxonomic diversity. iii.
+  post-paleozoic families and mass extinctions.
+\newblock {\em Paleobiology}, 10:246--267, 1984.
 
+\bibitem{gilinsky1994}
+Norman~L Gilinsky.
+\newblock Volatility and the phanerozoic decline of background extinction
+  intensity.
+\newblock {\em Paleobiology}, pages 445--458, 1994.
+
+\bibitem{liow2007}
+Lee~Hsiang Liow and Nils~Chr Stenseth.
+\newblock The rise and fall of species: implications for macroevolutionary and
+  macroecological studies.
+\newblock {\em Proceedings of the Royal Society B: Biological Sciences},
+  274(1626):2745--2752, 2007.
+
+\bibitem{alroy08}
+John Alroy, Martin Aberhan, David~J. Bottjer, Michael Foote, Franz~T.
+  F{\"u}rsich, Peter~J. Harries, Austin J.~W. Hendy, Steven~M. Holland,
+  Linda~C. Ivany, Wolfgang Kiessling, Matthew~A. Kosnik, Charles~R. Marshall,
+  Alistair~J. McGowan, Arnold~I. Miller, Thomas~D. Olszewski, Mark~E.
+  Patzkowsky, Shanan~E. Peters, Lo{\"\i}c Villier, Peter~J. Wagner, Nicole
+  Bonuso, Philip~S. Borkow, Benjamin Brenneis, Matthew~E. Clapham, Leigh~M.
+  Fall, Chad~A. Ferguson, Victoria~L. Hanson, Andrew~Z. Krug, Karen~M. Layou,
+  Erin~H. Leckey, Sabine N{\"u}rnberg, Catherine~M. Powers, Jocelyn~A. Sessa,
+  Carl Simpson, Adam Toma{\v s}ov{\'y}ch, and Christy~C. Visaggi.
+\newblock Phanerozoic trends in the global diversity of marine invertebrates.
+\newblock {\em Science}, 321:97--100, 2008.
+
+\bibitem{alroy2010}
+J.~Alroy.
+\newblock The shifting balance of diversity among major marine animal groups.
+\newblock {\em Science}, 329(5996):1191--1194, 2010.
+
+\bibitem{benton1995}
+M.J. Benton.
+\newblock Diversification and extinction in the history of life.
+\newblock {\em Science}, 268:52--58, 1995.
+
+\bibitem{Erwin1998}
+Douglas~H. Erwin.
+\newblock The end and the beginning: recoveries from mass extinctions.
+\newblock {\em Trends in Ecology and Evolution}, 13:344--349, 1998.
+
+\bibitem{quental2013}
+Tiago~B Quental and Charles~R Marshall.
+\newblock How the red queen drives terrestrial mammals to extinction.
+\newblock {\em Science}, 2013.
+
+\bibitem{bak1993}
+Per Bak and Kim Sneppen.
+\newblock Punctuated equilibrium and criticality in a simple model of
+  evolution.
+\newblock {\em Phys. Rev. Lett.}, 71:4083--4086, 1993.
+
+\bibitem{sole1997}
+R.~V. Sol{\'e}, S.~C. Manrubia, M.~Benton, and P.~Bak.
+\newblock Self-similarity of extinction statistics in the fossil record.
+\newblock {\em Nature}, 388:764--767, 1997.
+
+\bibitem{newman1995}
+M.~E.~J. Newman and B.~W. Roberts.
+\newblock Mass extinction: Evolution and the effects of external influences on
+  unfit species.
+\newblock {\em Proceedings of the Royal Society of London B}, 260:31--37, 1995.
+
+\bibitem{vermeij1987}
+G.~J. Vermeij.
+\newblock {\em Evolution and Escalation}.
+\newblock Princeton University Press, Princeton, N.J., 1987.
+
+\bibitem{kirchner1998}
+James~W. Kirchner and Anne Weil.
+\newblock No fractals in fossil extinction statistics.
+\newblock {\em Nature}, 395:337--338, 1998.
+
+\bibitem{madin2006}
+Joshua~S. Madin, John Alroy, Martin Aberhan, Franz~T. F{\"u}rsich, Wolfgang
+  Kiessling, Matthew~A. Kosnik, and Peter~J. Wagner.
+\newblock Statistical independence of escalatory ecological trends in
+  phanerozoic marine invertebrates.
+\newblock {\em Science}, 312:897--900, 2006.
+
+\bibitem{rabosky2009ecolLett}
+Daniel~L Rabosky.
+\newblock Ecological limits and diversification rate: alternative paradigms to
+  explain the variation in species richness among clades and regions.
+\newblock {\em Ecology Letters}, 12(8):735--743, 2009.
+
+\bibitem{erwin2012}
+Douglas~H Erwin.
+\newblock Novelties that change carrying capacity.
+\newblock {\em Journal of Experimental Zoology Part B: Molecular and
+  Developmental Evolution}, 318(6):460--465, 2012.
+
+\bibitem{roy2009range}
+Kaustuv Roy, Gene Hunt, David Jablonski, Andrew~Z Krug, and James~W Valentine.
+\newblock A macroevolutionary perspective on species range limits.
+\newblock {\em Proceedings of the Royal Society B: Biological Sciences},
+  276(1661):1485--1493, 2009.
+
+\bibitem{hopkins2014}
+Melanie~J Hopkins, Carl Simpson, and Wolfgang Kiessling.
+\newblock Differential niche dynamics among major marine invertebrate clades.
+\newblock {\em Ecology letters}, 17(3):314--323, 2014.
+
+\bibitem{eldredgeGould1972}
+Niles Eldredge and Stephen~Jay Gould.
+\newblock Punctuated equilibria: an alternative to phyletic gradualism.
+\newblock {\em Models in paleobiology}, 82:115, 1972.
+
+\bibitem{newman1985adaptive}
+CM~Newman, JE~Cohen, and C~Kipnis.
+\newblock Neo-darwinian evolution implies punctuated equilibria.
+\newblock {\em Nature}, 315(6018):400--401, 1985.
+
+\bibitem{vrba1983}
+Elisabeth~S. Vrba.
+\newblock Macroevolutionary trends: New perspectives on the roles of adaptation
+  and incidental effect.
+\newblock {\em Science}, 221(4608):387--389, 1983.
+
+\bibitem{simpson1953}
+GG~Simpson.
+\newblock Horotely, bradytely, and tachytely.
+\newblock {\em The Major Features of Evolution}, pages 313--337, 1953.
+
+\bibitem{holman1989}
+Eric~W Holman.
+\newblock Some evolutionary correlates of higher taxa.
+\newblock {\em Paleobiology}, pages 357--363, 1989.
+
+\bibitem{beck2003}
+C.~Beck and E.G.D. Cohen.
+\newblock Superstatistics.
+\newblock {\em Physica A: Statistical Mechanics and its Applications},
+  322:267--275, 2003.
+
+\bibitem{beck2004}
+Christian Beck.
+\newblock Superstatistics in hydrodynamic turbulence.
+\newblock {\em Physica D: Nonlinear Phenomena}, 193:195--207, 2004.
+
+\bibitem{fuentes2009}
+Miguel~A. Fuentes, Austin Gerig, and Javier Vicente.
+\newblock Universal behavior of extreme price movements in stock markets.
+\newblock {\em PLoS ONE}, 4:e8243, 2009.
+
+\bibitem{macWilson}
+R.~H. MacArthur and E.~O. Wilson.
+\newblock {\em The theory of island biogeography}.
+\newblock Princeton University Press, 1967.
+
+\bibitem{jablonski2008}
+David Jablonski.
+\newblock Species selection: Theory and data.
+\newblock {\em Annual Review of Ecology, Evolution, and Systematics},
+  39:501--524, 2008.
+
+\bibitem{harnik2011}
+Paul~G Harnik.
+\newblock Direct and indirect effects of biological factors on extinction risk
+  in fossil bivalves.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  108(33):13594--13599, 2011.
+
+\bibitem{foote2008paleobiol}
+Michael Foote, James~S Crampton, Alan~G Beu, and Roger~A Cooper.
+\newblock On the bidirectional relationship between geographic range and
+  taxonomic duration.
+\newblock {\em Paleobiology}, 34(4):421--433, 2008.
+
+\bibitem{sepkoski1992}
+J.~John Sepkoski.
+\newblock {\em A compendium of fossil marine animal families}.
+\newblock Milwaukee Public Museum, Milwaukee, WI, 1992.
+
+\bibitem{mayr1965systZool}
+Ernst Mayr.
+\newblock Numerical phenetics and taxonomic theory.
+\newblock {\em Systematic Zoology}, 14(2):73--97, 1965.
+
+\bibitem{erwin2007}
+Douglas~H Erwin.
+\newblock Disparity: morphological pattern and developmental context.
+\newblock {\em Palaeontology}, 50(1):57--73, 2007.
+
+\bibitem{hubbell2001}
+Stephen~P Hubbell.
+\newblock {\em The unified neutral theory of biodiversity and biogeography
+  (MPB-32)}, volume~32.
+\newblock Princeton University Press, 2001.
+
+\bibitem{brose2005}
+Ulrich Brose, Eric~L Berlow, and Neo~D Martinez.
+\newblock Scaling up keystone effects from simple to complex ecological
+  networks.
+\newblock {\em Ecology Letters}, 8(12):1317--1325, 2005.
+
+\bibitem{gavrilets2005}
+Sergey Gavrilets and Aaron Vose.
+\newblock Dynamic patterns of adaptive radiation.
+\newblock {\em Proceedings of the National academy of Sciences of the United
+  States of America}, 102(50):18040--18045, 2005.
+
+\bibitem{berlow2009}
+Eric~L Berlow, Jennifer~A Dunne, Neo~D Martinez, Philip~B Stark, Richard~J
+  Williams, and Ulrich Brose.
+\newblock Simple prediction of interaction strengths in complex food webs.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  106(1):187--191, 2009.
+
+\bibitem{cir1985}
+John~C Cox, Jonathan~E Ingersoll~Jr, and Stephen~A Ross.
+\newblock A theory of the term structure of interest rates.
+\newblock {\em Econometrica: Journal of the Econometric Society}, pages
+  385--407, 1985.
+
+\bibitem{butler2004}
+Marguerite~A Butler and Aaron~A King.
+\newblock Phylogenetic comparative analysis: a modeling approach for adaptive
+  evolution.
+\newblock {\em The American Naturalist}, 164(6):683--695, 2004.
+
+\bibitem{rabosky2006laser}
+Daniel~L Rabosky.
+\newblock Laser: a maximum likelihood toolkit for detecting temporal shifts in
+  diversification rates from molecular phylogenies.
+\newblock {\em Evolutionary bioinformatics online}, 2:247, 2006.
+
+\bibitem{rosindell2011}
+James Rosindell, Stephen~P Hubbell, and Rampal~S Etienne.
+\newblock {\it The Unified Neutral Theory of Biodiversity and Biogeography} at
+  age ten.
+\newblock {\em Trends in ecology \& evolution}, 26(7):340--348, 2011.
+
+\bibitem{chave2004neutral}
+Jer{\^o}me Chave.
+\newblock Neutral theory and community ecology.
+\newblock {\em Ecology letters}, 7(3):241--253, 2004.
+
+\bibitem{ricklefs2006neutral}
+Robert~E Ricklefs.
+\newblock The unified neutral theory of biodiversity: do the numbers add up?
+\newblock {\em Ecology}, 87(6):1424--1431, 2006.
+
+\end{thebibliography}
