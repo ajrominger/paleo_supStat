@@ -227,6 +227,24 @@ Database (PBDB) \citep{alroy08} are shown in Figure \ref{fig:pk_f},
 and indeed all diversity fluctuations within orders are well
 characterized by a Gaussian distribution \ref{fig:pk_f}.
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.8]{figs/fig_pkx-fbeta.pdf}
+  \caption[Variability in trajectories of within-order fluctuations in
+  genus diversity]{The distributions of within-order fluctuations in
+    genus diversity shown for the trajectories of three exemplar
+    orders (A) and shown as an empirical cumulative density aggregated
+    across all orders (B). To display all orders simultaneously we
+    simply collapse their fluctuation distributions by dividing by
+    their standard deviations. If orders conform to the Gaussian
+    hypothesis their scaled fluctuations should fall along the
+    cumulative density line of a normal N(0, 1) distribution, as shown
+    in (B). In (C) the distribution of inverse variances $\beta_k$
+    across all orders matches very closely to a Gamma distribution
+    (black line); exemplar orders are again highlighted.}
+  \label{fig:pk_f}
+\end{figure}
+
 In independent and dynamically equilibrial dynamics suggested by these
 Gaussian fluctuations in genus richness could result from neutral-like
 processes \citep{hubbell2001}, where the dynamics of one taxon are
@@ -267,6 +285,23 @@ diversity. This leads to a non-Gaussian, fat-tailed prediction for
 $P(x)$ which matches both the PBDB and Sepkoski data closely
 (Fig. \ref{fig:Px} and Appendix \ref{sec:suppSepk}).
 
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=1]{figs/fig_Px.pdf} 
+  \caption[Order-level distribution of diversity
+  fluctuations]{Distribution of fluctuations in genus diversity within
+    orders of marine invertebrates in the Paleobiology Database
+    \citep{alroy08} after bias correction. The distribution is
+    fat-tailed as compared to the maximum likelihood estimate of the
+    normal distribution (blue line).  At the order level the empirical
+    distribution of fluctuations are well described by our
+    super-statistical approach, both when computed from integrating
+    over the distribution of observed variances (red line) and when
+    fit via maximum likelihood (95\% confidence interval; red
+    shading).}
+  \label{fig:Px}
+\end{figure}
+
 To quantitatively evaluate how well the super-statistical prediction
 matches the data we constructed a 95\% confidence envelope from
 bootstrapped maximum likelihood estimates for $P(x)$. Observed
@@ -303,6 +338,18 @@ independently from other orders. Both the good fit at the order level
 and worsening fit at higher taxonomic levels is confirmed in
 Sepkoski's compendium, which also allows analysis of phylum-level
 patterns (Fig. \ref{fig:supp_sepkPx}).
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=1]{figs/fig_dStat(3TP).pdf}
+  \caption[Goodness of super-statistical theory fit]{Distribution of
+    Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
+    within orders (gray shading represents 95\% confidence
+    interval). Solid black line is observed KS statistic at the order
+    level, while the dashed black line shows the observed KS statistic
+    at the class level.}
+  \label{fig:dStat}
+\end{figure}
 
 To further test the evolutionary coherence of orders we conducted a
 permutation experiment in which genera were randomly reassigned to
@@ -495,56 +542,5 @@ Institute; MAF thanks FONDECYT 1140278; PM thanks CONICYT PFB-023,
 ICM-P05-002 and FONDECYT 1161023.
 
 \printbibliography
-
-\clearpage
-
-\section*{Figures}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=0.8]{figs/fig_pkx-fbeta.pdf}
-  \caption[Variability in trajectories of within-order fluctuations in
-  genus diversity]{The distributions of within-order fluctuations in
-    genus diversity shown for the trajectories of three exemplar
-    orders (A) and shown as an empirical cumulative density aggregated
-    across all orders (B). To display all orders simultaneously we
-    simply collapse their fluctuation distributions by dividing by
-    their standard deviations. If orders conform to the Gaussian
-    hypothesis their scaled fluctuations should fall along the
-    cumulative density line of a normal N(0, 1) distribution, as shown
-    in (B). In (C) the distribution of inverse variances $\beta_k$
-    across all orders matches very closely to a Gamma distribution
-    (black line); exemplar orders are again highlighted.}
-  \label{fig:pk_f}
-\end{figure}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=1]{figs/fig_Px.pdf} 
-  \caption[Order-level distribution of diversity
-  fluctuations]{Distribution of fluctuations in genus diversity within
-    orders of marine invertebrates in the Paleobiology Database
-    \citep{alroy08} after bias correction. The distribution is
-    fat-tailed as compared to the maximum likelihood estimate of the
-    normal distribution (blue line).  At the order level the empirical
-    distribution of fluctuations are well described by our
-    super-statistical approach, both when computed from integrating
-    over the distribution of observed variances (red line) and when
-    fit via maximum likelihood (95\% confidence interval; red
-    shading).}
-  \label{fig:Px}
-\end{figure}
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[scale=1]{figs/fig_dStat(3TP).pdf}
-  \caption[Goodness of super-statistical theory fit]{Distribution of
-    Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
-    within orders (gray shading represents 95\% confidence
-    interval). Solid black line is observed KS statistic at the order
-    level, while the dashed black line shows the observed KS statistic
-    at the class level.}
-  \label{fig:dStat}
-\end{figure}
 
 \end{document}
