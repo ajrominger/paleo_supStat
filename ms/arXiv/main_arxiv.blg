@@ -1,0 +1,22 @@
+[0] Config.pm:324> INFO - This is Biber 2.1
+[0] Config.pm:327> INFO - Logfile is 'main_arxiv.blg'
+[35] biber-darwin:276> INFO - === Thu Jul 27, 2017, 17:57:26
+[35] Biber.pm:333> INFO - Reading 'main_arxiv.bcf'
+[111] Biber.pm:645> INFO - Found 44 citekeys in bib section 0
+[129] Biber.pm:2977> INFO - Processing section 0
+[143] Biber.pm:3115> INFO - Looking for bibtex format file 'references.bib' for section 0
+[150] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[157] bibtex.pm:895> INFO - Found BibTeX data source 'references.bib'
+[452] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[452] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[452] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
+[452] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[485] bbl.pm:505> INFO - Writing 'main_arxiv.bbl' with encoding 'ascii'
+[490] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[491] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[493] Utils.pm:146> WARN - The entry 'madin2006' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[495] Utils.pm:146> WARN - The entry 'beck2003' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[495] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[531] Utils.pm:146> WARN - The entry 'chave2004neutral' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[531] bbl.pm:596> INFO - Output to main_arxiv.bbl
+[531] Biber.pm:106> INFO - WARNINGS: 6
