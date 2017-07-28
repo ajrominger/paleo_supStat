@@ -1,19 +1,19 @@
-[0] Config.pm:324> INFO - This is Biber 2.1
-[0] Config.pm:327> INFO - Logfile is 'rominger_sstat_cover.blg'
-[41] biber-darwin:276> INFO - === Wed Jul 26, 2017, 14:44:13
-[41] Biber.pm:333> INFO - Reading 'rominger_sstat_cover.bcf'
-[119] Biber.pm:645> INFO - Found 12 citekeys in bib section 0
-[137] Biber.pm:2977> INFO - Processing section 0
-[151] Biber.pm:3115> INFO - Looking for bibtex format file '../../superStat.bib' for section 0
-[157] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[164] bibtex.pm:895> INFO - Found BibTeX data source '../../superStat.bib'
-[274] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[274] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[274] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
-[274] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
-[286] bbl.pm:505> INFO - Writing 'rominger_sstat_cover.bbl' with encoding 'ascii'
-[288] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[293] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[294] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
-[295] bbl.pm:596> INFO - Output to rominger_sstat_cover.bbl
-[295] Biber.pm:106> INFO - WARNINGS: 3
+[1] Config.pm:324> INFO - This is Biber 2.1
+[2] Config.pm:327> INFO - Logfile is 'rominger_sstat_cover.blg'
+[173] biber-darwin:276> INFO - === Fri Jul 28, 2017, 09:09:36
+[173] Biber.pm:333> INFO - Reading 'rominger_sstat_cover.bcf'
+[513] Biber.pm:645> INFO - Found 12 citekeys in bib section 0
+[583] Biber.pm:2977> INFO - Processing section 0
+[644] Biber.pm:3115> INFO - Looking for bibtex format file '../../superStat.bib' for section 0
+[671] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[699] bibtex.pm:895> INFO - Found BibTeX data source '../../superStat.bib'
+[1175] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1175] UCollate.pm:66> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1176] Biber.pm:2854> INFO - Sorting list 'none' of type 'entry' with scheme 'none' and locale 'en-US'
+[1176] Biber.pm:2858> INFO - No sort tailoring available for locale 'en-US'
+[1228] bbl.pm:505> INFO - Writing 'rominger_sstat_cover.bbl' with encoding 'ascii'
+[1238] Utils.pm:146> WARN - The entry 'beck2004' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1255] Utils.pm:146> WARN - The entry 'alroy08' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1260] Utils.pm:146> WARN - The entry 'sole1997' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[1262] bbl.pm:596> INFO - Output to rominger_sstat_cover.bbl
+[1263] Biber.pm:106> INFO - WARNINGS: 3
