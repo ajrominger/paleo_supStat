@@ -1,4 +1,5 @@
 library(paleobioDB)
+oldOp <- options(stringsAsFactors = FALSE) # can't set this within pbdb functions
 
 ## function to take a taxon and break it down into subtaxa (recursively) if
 ## the parent is deemed too large
@@ -13,41 +14,46 @@ subTaxa <- function(x, maxSize = 400) {
     }
     
     ## clades to further decompose 
-    tooBig <- which(x$size > maxSize)
+    tooBig <- which(x$size > maxSize & !grepl('genus|species', x$rank, ignore.case = TRUE))
     
-    ## get children of large clades
-    chil <- lapply(as.character(x$taxon_no[tooBig]), function(tname) {
-        print(tname)
-        out <- try(pbdb_taxa(id = tname, vocab = 'pbdb', show = 'size', 
-                             rel = 'children'))
-        
-        if(class(out) == 'try-error') {
-            if(grepl('port 80' %in% attr(out, 'condition'))) {
-                Sys.sleep(10)
-                out <- pbdb_taxa(id = tname, vocab = 'pbdb', show = 'size', 
-                                 rel = 'children')
-            } else {
-                stop(attr(out, 'condition'))
+    if(length(tooBig) > 0) {
+        ## get children of large clades
+        chil <- lapply(as.character(x$taxon_no[tooBig]), function(tname) {
+            print(tname)
+            out <- try(pbdb_taxa(id = tname, vocab = 'pbdb', show = 'size', 
+                                 rel = 'children'))
+            
+            if(class(out) == 'try-error') {
+                if(grepl('port 80' %in% attr(out, 'condition'))) {
+                    Sys.sleep(10)
+                    out <- pbdb_taxa(id = tname, vocab = 'pbdb', show = 'size', 
+                                     rel = 'children')
+                } else {
+                    stop(attr(out, 'condition'))
+                }
             }
-        }
+            
+            ## hack for a bug in paleobioDB where empty columns are not returned, see:
+            ## https://github.com/ropensci/paleobioDB/issues/18
+            if(!all(names(x) %in% names(out))) {
+                out[, names(x)[!(names(x) %in% names(out))]] <- NA
+            }
+            out <- out[, names(x)]
+            
+            return(out)
+        })
         
-        ## hack for a bug in paleobioDB where empty columns are not returned, see:
-        ## https://github.com/ropensci/paleobioDB/issues/18
-        if(!all(names(x) %in% names(out))) {
-            out[, names(x)[!(names(x) %in% names(out))]] <- NA
-        }
-        out <- out[, names(x)]
+        res <- rbind(x[-tooBig, ], do.call(rbind, chil))
         
-        return(out)
-    })
-    
-    res <- rbind(x[-tooBig, ], do.call(rbind, chil))
-    
-    ## recursively break-up clades
-    if(any(res$size > maxSize)) {
-        subTaxa(res, maxSize = maxSize)
+        ## recursively break-up clades
+        if(any(res$size > maxSize)) {
+            subTaxa(res, maxSize = maxSize)
+        } else {
+            return(res)
+        }
     } else {
-        return(res)
+        ## return raw `x` if no clades were too big
+        return(x)
     }
 }
 
@@ -63,25 +69,25 @@ getOccs <- function(taxaDF, show) {
     
     ## loop over taxa, getting occurrences data
     dat <- lapply(1:nrow(taxaDF), function(i) {
-        temp <- try(pbdb_occurrences(limit = 'all', base_name = allTaxa$taxon_name[i],
-                                     vocab = 'pbdb', show = show))
+        temp <- try(pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
+                                     vocab = 'pbdb', show = show), silent = TRUE)
         
         ## deal with possible errors
         if('try-error' %in% class(temp)) {
             if(grepl('C stack', attr(temp, 'condition'))) {
                 ## too big
-                newTaxa <- subTaxa(allTaxa[i, ], maxSize = round(allTaxa$size[i] / 2))
+                newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2))
                 temp <- getOccs(newTaxa, show = show)
             } else if(grepl('reg_count != df_count', attr(temp, 'condition'))) {
                 ## nothing there, usually the `id` works
-                temp <- pbdb_occurrences(limit = 'all', id = allTaxa$taxon_no[i],
+                temp <- pbdb_occurrences(limit = 'all', id = taxaDF$taxon_no[i],
                                          vocab = 'pbdb', 
                                          show = c('ident', 'phylo', 'lith', 'loc', 'time', 
                                                   'geo', 'stratext'))
             } else if(grepl('port 80' %in% attr(temp, 'condition'))) {
                 ## too busy, wait a (10) sec
                 Sys.sleep(10)
-                temp <- pbdb_occurrences(limit = 'all', base_name = allTaxa$taxon_name[i],
+                temp <- pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
                                          vocab = 'pbdb', 
                                          show = c('ident', 'phylo', 'lith', 'loc', 'time', 
                                                   'geo', 'stratext'))
@@ -91,7 +97,7 @@ getOccs <- function(taxaDF, show) {
         }
         
         ## make sure all columns are present
-        if(!any(rawAPI %in% names(temp))) {
+        if(any(!(rawAPI %in% names(temp)))) {
             temp[, rawAPI[!(rawAPI %in% names(temp))]] <- NA
         }
         temp <- temp[, rawAPI]
@@ -102,9 +108,18 @@ getOccs <- function(taxaDF, show) {
     return(do.call(rbind, dat))
 }
 
+
 ## get all taxa of interest
 allTaxa <- pbdb_taxa(name = 'Animalia', vocab = 'pbdb', show = 'size', rel = 'children')
 allTaxa <- subTaxa(allTaxa, maxSize = 400)
-allTaxa$taxon_name <- as.character(allTaxa$taxon_name)
 allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 
+
+## get occurence data
+show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
+
+
+
+
+## re-set options
+options(oldOp)
