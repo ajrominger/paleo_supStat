@@ -60,38 +60,38 @@ subTaxa <- function(x, maxSize = 400) {
 ## function to loop over taxa and retrieve their occurence data
 #' @param taxaDF is the `data.frame` returned by `subTaxa`
 #' @param show are all the desired additional columns
+#' @param rawAPI the raw column names from the API, without missing entries removed
 
-getOccs <- function(taxaDF, show) {
-    ## get all the potential column names
-    url <- sprintf('http://paleobiodb.org/data1.1/occs/list.txt?taxon_name=Canis&show=%s&limit=1', 
-                   paste0(show, collapse = ','))
-    rawAPI <- names(read.csv(url))
-    
+getOccs <- function(taxaDF, show, rawAPI) {
     ## loop over taxa, getting occurrences data
     dat <- lapply(1:nrow(taxaDF), function(i) {
+        print(taxaDF[i, c('taxon_no', 'taxon_name')])
         temp <- try(pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
                                      vocab = 'pbdb', show = show), silent = TRUE)
-        
         ## deal with possible errors
         if('try-error' %in% class(temp)) {
             if(grepl('C stack', attr(temp, 'condition'))) {
                 ## too big
                 newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2))
-                temp <- getOccs(newTaxa, show = show)
+                temp <- getOccs(newTaxa, show = show, rawAPI = rawAPI)
             } else if(grepl('reg_count != df_count', attr(temp, 'condition'))) {
                 ## nothing there, usually the `id` works
-                temp <- pbdb_occurrences(limit = 'all', id = taxaDF$taxon_no[i],
-                                         vocab = 'pbdb', 
-                                         show = c('ident', 'phylo', 'lith', 'loc', 'time', 
-                                                  'geo', 'stratext'))
+                temp <- try(pbdb_occurrences(limit = 'all', id = taxaDF$taxon_no[i],
+                                             vocab = 'pbdb', 
+                                             show = show))
+                
+                ## if failed, there's no records there
+                if('' %in% class(temp)) {
+                    temp <- as.list(rep(NA, length(rawAPI)))
+                    names(temp) <- rawAPI
+                    temp <- as.data.frame(temp)
+                }
             } else if(grepl('port 80' %in% attr(temp, 'condition'))) {
-                ## too busy, wait a (10) sec
+                ## too busy, wait 10 sec
                 Sys.sleep(10)
-                temp <- pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
-                                         vocab = 'pbdb', 
-                                         show = c('ident', 'phylo', 'lith', 'loc', 'time', 
-                                                  'geo', 'stratext'))
+                temp <- getOccs(taxaDF[i, ], show = show, rawAPI = rawAPI)
             } else {
+                browser()
                 stop(attr(temp, 'condition'))
             }
         }
@@ -108,6 +108,17 @@ getOccs <- function(taxaDF, show) {
     return(do.call(rbind, dat))
 }
 
+## unabashed wrapper function around `getOccs` that simply minimizes the number
+## of times we have to make a request from the API
+getOccsWrapper <- function(taxaDF, show) {
+    ## get all the potential column names
+    url <- sprintf(
+        'http://paleobiodb.org/data1.1/occs/list.txt?taxon_name=Canis&show=%s&limit=1', 
+        paste0(show, collapse = ','))
+    rawAPI <- names(read.csv(url))
+    
+    getOccs(taxaDF, show, rawAPI)
+}
 
 ## get all taxa of interest
 allTaxa <- pbdb_taxa(name = 'Animalia', vocab = 'pbdb', show = 'size', rel = 'children')
@@ -117,8 +128,13 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 
 ## get occurence data
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
+allOccs <- getOccsWrapper(allTaxa, show)
 
 
+allTaxa[allTaxa$taxon_no == '31833', ]
+
+
+getOccsWrapper(pbdb_taxa(id = '31833', vocab = 'pbdb', show = 'size'), show)
 
 
 ## re-set options
