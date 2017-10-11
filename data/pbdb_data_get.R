@@ -74,18 +74,33 @@ getOccs <- function(taxaDF, show, rawAPI) {
     ## loop over taxa, getting occurrences data
     dat <- lapply(1:nrow(taxaDF), function(i) {
         print(taxaDF[i, c('taxon_no', 'taxon_name')])
+        if(is.na(taxaDF$taxon_name)) browser()
         temp <- try(pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
                                      vocab = 'pbdb', show = show), silent = TRUE)
-        browser()
+        # browser()
         ## deal with possible errors
         if('try-error' %in% class(temp)) {
             if(grepl('C stack', attr(temp, 'condition'))) {
                 ## too big
-                ## if rank is genus, we need to go below genus, but then include the 
-                ## original genus name (to get those not described below gen) like this:
-                ## `pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')`
-                newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2))
-                temp <- getOccs(newTaxa, show = show, rawAPI = rawAPI)
+                if(grepl('gen|spe', taxaDF$rank[i], ignore.case = TRUE)) {
+                    ## if rank is genus, we need to go below genus, but then include the 
+                    ## original genus name (to get those not described below gen) like this:
+                    ## `pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')`
+                    newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2), 
+                                       genMin = FALSE)
+                    temp1 <- pbdb_occurrences(limit = 'all', taxon_name = 'Nucula', 
+                                              vocab = 'pbdb', show = show)
+                    temp1[, rawAPI[!(rawAPI %in% names(temp1))]] <- NA
+                    temp1 <- temp1[, rawAPI]
+                    
+                    temp2 <- getOccs(newTaxa, show = show, rawAPI = rawAPI)
+                    
+                    temp <- rbind(temp1, temp2)
+                } else {
+                    ## otherwise subtaxa as normal
+                    newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2))
+                    temp <- getOccs(newTaxa, show = show, rawAPI = rawAPI)
+                }
             } else if(grepl('reg_count != df_count', attr(temp, 'condition'))) {
                 ## nothing there, usually the `id` works
                 temp <- try(pbdb_occurrences(limit = 'all', id = taxaDF$taxon_no[i],
@@ -145,11 +160,11 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
 allOccs <- getOccsWrapper(allTaxa, show)
 
-subTaxa(pbdb_taxa(id = '16082', vocab = 'pbdb', show = 'size'), maxSize = 50, genMin = FALSE)
+## something with this one is problematic (makes NA)
+pbdb_taxa(name = 'Lophinae', vocab = 'pbdb')
 
-getOccsWrapper(pbdb_taxa(id = '16082', vocab = 'pbdb', show = 'size'), show)
-
-pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')
+## it most likely comes from calling `subTaxa` on Ostreidae
+pbdb_taxa(id = '61529', vocab = 'pbdb')
 
 ## re-set options
 options(oldOp)
