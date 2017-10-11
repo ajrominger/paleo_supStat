@@ -5,16 +5,24 @@ oldOp <- options(stringsAsFactors = FALSE) # can't set this within pbdb function
 ## the parent is deemed too large
 #' @param x is the output from `pbdb_taxa`
 #' @param maxSize is the maximum allowable clade size
+#' @param genMin logical, should taxa be decomposed below the rank of genus 
+#' (no: `genMin = TRUE`)
 
-subTaxa <- function(x, maxSize = 400) {
+subTaxa <- function(x, maxSize = 400, genMin = TRUE) {
     ## clean up and exclude vertebrates
     x <- x[x$status == 'belongs to', ]
     if('Vertebrata' %in% x$taxon_name) {
         x <- x[x$taxon_name != 'Vertebrata', ]
     }
     
-    ## clades to further decompose 
-    tooBig <- which(x$size > maxSize & !grepl('genus|species', x$rank, ignore.case = TRUE))
+    ## clades to further decompose
+    if(genMin) {
+        tooBig <- which(x$size > maxSize & 
+                            !grepl('genus|species', x$rank, ignore.case = TRUE))
+    } else {
+        tooBig <- which(x$size > maxSize)
+    }
+    
     
     if(length(tooBig) > 0) {
         ## get children of large clades
@@ -68,23 +76,30 @@ getOccs <- function(taxaDF, show, rawAPI) {
         print(taxaDF[i, c('taxon_no', 'taxon_name')])
         temp <- try(pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
                                      vocab = 'pbdb', show = show), silent = TRUE)
+        browser()
         ## deal with possible errors
         if('try-error' %in% class(temp)) {
             if(grepl('C stack', attr(temp, 'condition'))) {
                 ## too big
+                ## if rank is genus, we need to go below genus, but then include the 
+                ## original genus name (to get those not described below gen) like this:
+                ## `pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')`
                 newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2))
                 temp <- getOccs(newTaxa, show = show, rawAPI = rawAPI)
             } else if(grepl('reg_count != df_count', attr(temp, 'condition'))) {
                 ## nothing there, usually the `id` works
                 temp <- try(pbdb_occurrences(limit = 'all', id = taxaDF$taxon_no[i],
                                              vocab = 'pbdb', 
-                                             show = show))
+                                             show = show), 
+                            silent = TRUE)
                 
                 ## if failed, there's no records there
-                if('' %in% class(temp)) {
+                if('try-error' %in% class(temp)) {
                     temp <- as.list(rep(NA, length(rawAPI)))
                     names(temp) <- rawAPI
                     temp <- as.data.frame(temp)
+                    temp$taxon_no <- taxaDF$taxon_no[i]
+                    temp$taxon_name <- taxaDF$taxon_name[i]
                 }
             } else if(grepl('port 80' %in% attr(temp, 'condition'))) {
                 ## too busy, wait 10 sec
@@ -130,12 +145,11 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
 allOccs <- getOccsWrapper(allTaxa, show)
 
+subTaxa(pbdb_taxa(id = '16082', vocab = 'pbdb', show = 'size'), maxSize = 50, genMin = FALSE)
 
-allTaxa[allTaxa$taxon_no == '31833', ]
+getOccsWrapper(pbdb_taxa(id = '16082', vocab = 'pbdb', show = 'size'), show)
 
-
-getOccsWrapper(pbdb_taxa(id = '31833', vocab = 'pbdb', show = 'size'), show)
-
+pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')
 
 ## re-set options
 options(oldOp)
