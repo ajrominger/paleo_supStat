@@ -165,6 +165,40 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
 allOccs <- getOccsWrapper(allTaxa, show)
 
+## clean up
+allOccs <- allOccs[!is.na(allOccs$occurrence_no), ]
+
+## lithification
+allOccs <- allOccs[allOccs$lithification1 == 'lithified' & 
+                       !is.na(allOccs$lithification1), ]
+
+## geo scale
+allOccs <- allOccs[allOccs$geogscale != 'basin' & !is.na(allOccs$geogscale), ]
+
+## strat scale
+allOccs <- allOccs[!(allOccs$stratscale %in% c('group', 'supergroup')) & 
+                       !is.na(allOccs$stratscale), ]
+
+## remove unreliable taxa
+allOccs$genus[!is.na(allOccs$genus_reso)] <- NA
+allOccs$subgenus_name[!is.na(allOccs$subgenus_reso)] <- NA
+
+## resolve to genus or sub-genus level, remove occs unresolved to gen
+allOccs$otu <- ifelse(is.na(allOccs$subgenus_name), allOccs$genus, 
+                      allOccs$subgenus_name)
+allOccs <- allOccs[!is.na(allOccs$otu), ]
+
+## combine multiple records of same genus per collection
+allOccs <- lapply(split(allOccs, allOccs$collection_no), function(coll) {
+    coll[match(unique(coll$otu), coll$otu), ]
+})
+allOccs <- do.call(rbind, allOccs)
+
+
+## write it out
+write.csv(allOccs, file = '~/Dropbox/Research/paleo_supStat/data/pbdb_data.csv', 
+          row.names = FALSE)
+
 
 ## re-set options
 options(oldOp)
