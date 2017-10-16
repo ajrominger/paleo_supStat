@@ -32,7 +32,7 @@ subTaxa <- function(x, maxSize = 400, genMin = TRUE) {
                                  rel = 'children'))
             
             if(class(out) == 'try-error') {
-                if(grepl('port 80' %in% attr(out, 'condition'))) {
+                if(grepl('port 80', attr(out, 'condition'))) {
                     Sys.sleep(10)
                     out <- pbdb_taxa(id = tname, vocab = 'pbdb', show = 'size', 
                                      rel = 'children')
@@ -57,6 +57,8 @@ subTaxa <- function(x, maxSize = 400, genMin = TRUE) {
         if(any(res$size > maxSize)) {
             subTaxa(res, maxSize = maxSize)
         } else {
+            ## remove synonyms
+            res <- res[res$status == 'belongs to', ]
             return(res)
         }
     } else {
@@ -74,7 +76,7 @@ getOccs <- function(taxaDF, show, rawAPI) {
     ## loop over taxa, getting occurrences data
     dat <- lapply(1:nrow(taxaDF), function(i) {
         print(taxaDF[i, c('taxon_no', 'taxon_name')])
-        if(is.na(taxaDF$taxon_name)) browser()
+        
         temp <- try(pbdb_occurrences(limit = 'all', base_name = taxaDF$taxon_name[i],
                                      vocab = 'pbdb', show = show), silent = TRUE)
         # browser()
@@ -116,13 +118,16 @@ getOccs <- function(taxaDF, show, rawAPI) {
                     temp$taxon_no <- taxaDF$taxon_no[i]
                     temp$taxon_name <- taxaDF$taxon_name[i]
                 }
-            } else if(grepl('port 80' %in% attr(temp, 'condition'))) {
+            } else if(grepl('port 80', attr(temp, 'condition'))) {
                 ## too busy, wait 10 sec
                 Sys.sleep(10)
                 temp <- getOccs(taxaDF[i, ], show = show, rawAPI = rawAPI)
             } else {
-                browser()
-                stop(attr(temp, 'condition'))
+                temp <- as.list(rep(NA, length(rawAPI)))
+                names(temp) <- rawAPI
+                temp <- as.data.frame(temp)
+                temp$taxon_no <- taxaDF$taxon_no[i]
+                temp$taxon_name <- taxaDF$taxon_name[i]
             }
         }
         
@@ -160,11 +165,6 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
 allOccs <- getOccsWrapper(allTaxa, show)
 
-## something with this one is problematic (makes NA)
-pbdb_taxa(name = 'Lophinae', vocab = 'pbdb')
-
-## it most likely comes from calling `subTaxa` on Ostreidae
-pbdb_taxa(id = '61529', vocab = 'pbdb')
 
 ## re-set options
 options(oldOp)
