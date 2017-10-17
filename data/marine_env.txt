@@ -1,0 +1,41 @@
+carbonate indet.
+interdune
+peritidal
+open shallow subtidal
+lagoonal/restricted shallow subtidal
+lagoonal
+shallow subtidal indet.
+sand shoal
+intrashelf/intraplatform reef
+platform/shelf-margin reef
+slope/ramp reef
+basin reef
+reef, buildup or bioherm
+deep subtidal ramp
+deep subtidal shelf
+deep subtidal indet.
+offshore ramp
+offshore shelf
+offshore indet.
+slope
+basinal (carbonate)
+basinal (siliceous)
+basinal (siliciclastic)
+marine indet.
+marginal marine indet.
+coastal indet.
+estuary/bay
+paralic indet.
+delta plain
+interdistributary bay
+delta front
+prodelta
+deltaic indet.
+shoreface
+transition zone/lower shoreface
+offshore
+submarine fan
+deep-water indet.
+foreshore
+perireef or subreef
+
