@@ -166,6 +166,8 @@ allTaxa <- allTaxa[order(allTaxa$size, decreasing = TRUE), ]
 show <- c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext')
 allOccs <- getOccsWrapper(allTaxa, show)
 
+## some crazy problem with this: 168625 Gnathostomata
+
 ## clean up
 allOccs <- allOccs[!is.na(allOccs$occurrence_no), ]
 
