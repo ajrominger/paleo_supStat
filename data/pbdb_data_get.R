@@ -90,6 +90,7 @@ getOccs <- function(taxaDF, show, rawAPI) {
                     ## `pbdb_occurrences(limit = 'all', taxon_name = 'Nucula')`
                     newTaxa <- subTaxa(taxaDF[i, ], maxSize = ceiling(taxaDF$size[i] / 2), 
                                        genMin = FALSE)
+######################### BAAAAAAAADDDDDDDD (Nucula) ############################
                     temp1 <- pbdb_occurrences(limit = 'all', taxon_name = 'Nucula', 
                                               vocab = 'pbdb', show = show)
                     temp1[, rawAPI[!(rawAPI %in% names(temp1))]] <- NA
