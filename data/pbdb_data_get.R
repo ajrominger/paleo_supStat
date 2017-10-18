@@ -43,12 +43,6 @@ x <- x[!(x$geogscale %in% c('', 'basin')), ]
 x <- x[!(x$stratscale %in% c('', 'group', 'supergroup')), ]
 
 
-
-
-
-
-
-
 ## resolve taxonomy to genus or subgenus where availible
 otu <- x$genus
 otu[x$subgenus_name != ''] <- ifelse(x$subgenus_reso[x$subgenus_name != ''] == '', 
@@ -59,11 +53,12 @@ x$otu <- otu
 x <- x[x$otu != '', ]
 
  
-# ## combine multiple records of same otu per collection
-# x <- mclapply(split(x, x$collection_no), mc.cores = 6, FUN = function(coll) {
-#     coll[match(unique(coll$otu), coll$otu), ]
-# })
-# x <- do.call(rbind, x)
+## combine multiple records of same otu per collection
+x <- mclapply(split(x, x$collection_no), mc.cores = 6, FUN = function(coll) {
+    coll[match(unique(coll$otu), coll$otu), ]
+})
+x <- do.call(rbind, x)
+
 # 
 # ## standard time bins
 # names(x)
