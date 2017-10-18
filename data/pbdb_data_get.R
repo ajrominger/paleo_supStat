@@ -70,10 +70,33 @@ x <- mclapply(split(x, x$collection_no), mc.cores = 6, FUN = function(coll) {
 })
 x <- do.call(rbind, x)
 
-# 
-# ## standard time bins
-# names(x)
-# head(x[, c('early_interval', 'late_interval', 'max_ma', 'min_ma', '')])
-# 
-# names(x)
 
+## standard time bins
+tbins <- read.csv('timebins.csv', as.is = TRUE)
+x$tbin <- ''
+for(i in 1:nrow(tbins)) {
+    x$tbin[x$max_ma <= tbins$ma_max[i] & x$min_ma >= tbins$ma_min[i]] <- tbins$tbin[i]
+}
+
+sum(x$tbin == '')
+sum(x$tbin != '')
+
+m <- x[x$tbin == '', ]
+m <- m[order(m$min_ma), ]
+n <- x[x$tbin != '', ]
+n <- n[order(n$min_ma, decreasing = TRUE), ]
+
+pdf('~/test.pdf')
+plot(1:nrow(m), type = 'n', xlim = range(tbins[, -1]))
+# stub <- lapply(1:nrow(m), function(i) {
+#     segments(y0 = i, x0 = m$min_ma[i], x1 = m$max_ma[i])
+# })
+
+stub <- lapply(1:nrow(n), function(i) {
+    segments(y0 = nrow(m) * i/nrow(n), x0 = n$min_ma[i], x1 = n$max_ma[i], col = 'gray')
+})
+abline(v = unique(unlist(tbins[, -1])), col = 'red')
+dev.off()
+
+
+write.csv(x, 'pbdb_data.csv', row.names = FALSE)
