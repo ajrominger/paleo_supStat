@@ -33,6 +33,17 @@ write.csv(x, 'pbdb_data_raw.csv', row.names = FALSE)
 
 ## clean up
 
+## remove unnecceary columns
+c2rm <- c('record_type', 'reid_no', 'flags', 'identified_name', 
+          'identified_rank', 'identified_no', 'difference', 'species_name', 
+          'species_reso', 'lithdescript', 'lithology1', 'minor_lithology1', 
+          'lithology2', 'lithification2', 'minor_lithology2', 'cc', 'state', 
+          'county', 'latlng_basis', 'geogcomments', 'geology_comments', 
+          'zone', 'localsection', 'localbed', 'localorder', 
+          'regionalsection', 'regionalbed', 'regionalorder', 
+          'stratcomments')
+x <- x[, !(names(x) %in% c2rm)]
+
 ## only well lithified specimens
 x <- x[x$lithification1 == 'lithified', ]
 
