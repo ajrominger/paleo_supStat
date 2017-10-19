@@ -1,3 +1,9 @@
+## ------------------------------------------------------
+## this script attempts to use the paleobioDB package to
+## download a huge amount of data...it fails, best to use 
+## the API directly
+## ------------------------------------------------------
+
 library(paleobioDB)
 oldOp <- options(stringsAsFactors = FALSE) # can't set this within pbdb functions
 
