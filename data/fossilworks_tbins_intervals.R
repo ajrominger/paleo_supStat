@@ -24,7 +24,7 @@ tbinInfo <- lapply(1:1108, function(i) {
                          linfo[grep('class="pageTitle"', linfo)])
     }
     
-    return(data.frame(name = thisName,
+    return(data.frame(name = ifelse(length(thisName) == 0, NA, thisName),
                       tbin = ifelse(length(thisTbin) == 0, NA, thisTbin), 
                       ma_min = ifelse(length(thisMin) == 0, NA, thisMin),
                       ma_max = ifelse(length(thisMax) == 0, NA, thisMax)))
