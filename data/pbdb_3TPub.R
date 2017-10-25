@@ -67,6 +67,8 @@ plot(tbins$ma_mid, rowSums(occsRaw) / presProb, type = 'l', xlim = c(540, 0),
      xaxt = 'n', xaxs = 'i')
 paleoAxis(1)
 
-'Jurassic 6' %in% pbdb$tbin
 
-tapply(pbdb$reference_no, pbdb$tbin, function(x) length(unique(x)))
+## correct for number of publications
+plot(tapply(pbdb$reference_no, pbdb$tbin, function(x) length(unique(x))), 
+     rowSums(occsRaw) / presProb, log = 'xy')
+
