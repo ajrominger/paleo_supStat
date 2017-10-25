@@ -32,7 +32,25 @@ tbinInfo <- lapply(1:1108, function(i) {
 
 tbinInfo <- do.call(rbind, tbinInfo)
 
-tbinInfo <- tbinInfo[!is.na(tbinInfo$name), ]
-tbinInfo$name <- gsub('^| .*age.*$', '', tbinInfo$name)
 
+## clean up
+
+tbinInfo <- tbinInfo[!is.na(tbinInfo$name), ]
+
+## remove 'stage' and equivilant from name
+tbinInfo$name <- gsub(' [[:lower:]].*', '', tbinInfo$name)
+
+## split up stages with a '/' into both names
+temp <- tbinInfo[grep('/', tbinInfo$name), ]
+tbinInfo$name <- gsub('.*/', '', tbinInfo$name)
+temp$name <- gsub('/.* ', ' ', temp$name)
+tbinInfo <- rbind(tbinInfo, temp)
+
+## fix random typo
+tbinInfo$name[tbinInfo$name == 'Cazenovia'] <- 'Cazenovian'
+
+## remove time periods that do not fall completely within a 10my bin
+tbinInfo <- tbinInfo[!is.na(tbinInfo$tbin), ]
+
+## write out
 write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
