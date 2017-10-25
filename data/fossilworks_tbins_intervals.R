@@ -32,4 +32,7 @@ tbinInfo <- lapply(1:1108, function(i) {
 
 tbinInfo <- do.call(rbind, tbinInfo)
 
+tbinInfo <- tbinInfo[!is.na(tbinInfo$name), ]
+tbinInfo$name <- gsub('^| .*age.*$', '', tbinInfo$name)
+
 write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
