@@ -1,3 +1,1210 @@
 "name","tbin","ma_min","ma_max"
-"Cenozoic era",NA,0,66.043
-"Mesozoic era",NA,66.043,252.3
+"Cenozoic",NA,0,66.043
+"Mesozoic",NA,66.043,252.3
+"Paleozoic",NA,252.3,542
+"Sinian",NA,542,635
+"Riphean",NA,635,1650
+"Animikean",NA,1650,NA
+"Huronian",NA,NA,NA
+"Randian",NA,NA,NA
+"Swazian",NA,NA,NA
+"Isuan",NA,NA,1650
+"Hadean",NA,1650,4560
+"Quaternary",NA,0,2.588
+"Tertiary",NA,2.588,66.043
+"Cretaceous",NA,66.043,145.5
+"Jurassic",NA,145.5,201.6
+"Triassic",NA,201.6,252.3
+"Permian",NA,252.3,298.9
+"Carboniferous",NA,298.9,360.7
+"Devonian",NA,360.7,416
+"Silurian",NA,416,443.7
+"Ordovician",NA,443.7,488.3
+"Cambrian",NA,488.3,542
+"Vendian",NA,542,635
+"Sturtian",NA,663,723
+"Neogene",NA,2.588,23.03
+"Paleogene",NA,23.03,66.043
+"Pennsylvanian",NA,298.9,318.1
+"Mississippian",NA,318.1,360.7
+"Upper Ordovician",NA,443.7,460.9
+"Middle Ordovician",NA,460.9,471.8
+"Lower Ordovician",NA,471.8,488.3
+"Holocene",NA,0,0.012
+"Pleistocene","Cenozoic 6",0.012,2.588
+"Pliocene","Cenozoic 6",2.588,5.332
+"Miocene",NA,5.332,23.03
+"Oligocene","Cenozoic 4",23.03,33.9
+"Eocene",NA,33.9,55.8
+"Paleocene","Cenozoic 1",55.8,66.043
+"Upper Cretaceous",NA,66.043,99.7
+"Lower Cretaceous",NA,99.7,145.5
+"Upper Jurassic",NA,145.5,161.2
+"Middle Jurassic",NA,161.2,175.6
+"Lower Jurassic",NA,175.6,201.6
+"Upper Triassic",NA,201.6,235
+"Middle Triassic","Triassic 2",235,247.2
+"Lower Triassic","Triassic 1",247.2,252.3
+"Zechstein","Permian 4",252.3,NA
+"Rotliegendes",NA,NA,298.9
+"Gzhelian","Carboniferous 5",298.9,303.4
+"Kasimovian","Carboniferous 5",303.4,306.95
+"Moscovian","Carboniferous 4",306.95,314.6
+"Bashkirian","Carboniferous 4",314.6,318.1
+"Serpukhovian","Carboniferous 3",318.1,326.4
+"Visean",NA,326.4,345.3
+"Tournaisian","Carboniferous 1",345.3,360.7
+"Upper Devonian",NA,360.7,383.7
+"Middle Devonian","Devonian 3",383.7,391.9
+"Lower Devonian",NA,391.9,416
+"Pridoli","Silurian 2",416,418.7
+"Ludlow","Silurian 2",418.7,422.9
+"Wenlock","Silurian 2",422.9,428.2
+"Llandovery","Silurian 1",428.2,443.7
+"Ashgill","Ordovician 5",443.7,449.5
+"Caradoc","Ordovician 4",449.5,460.9
+"Llandeilo",NA,449.5,466
+"Llanvirn","Ordovician 3",460.9,466
+"Arenig","Ordovician 2",466,478.6
+"Tremadoc","Ordovician 1",478.6,488.3
+"Merioneth","Cambrian 4",488.3,501
+"St Davids","Cambrian 3",501,513
+"Caerfai","Cambrian 2",513,530
+"Ediacara",NA,542,NA
+"Varanger",NA,NA,635
+"Karatau",NA,635,1050
+"Yurmatin",NA,1050,1350
+"Burzyan",NA,1350,1650
+"Lower Imbrian",NA,1650,3850
+"Nectarian",NA,3850,3950
+"Basin Groups 1-9",NA,3950,4150
+"Cryptic",NA,4150,4560
+"Upper Pliocene","Cenozoic 6",2.588,3.6
+"Lower Pliocene","Cenozoic 6",3.6,5.332
+"Upper Miocene","Cenozoic 6",5.332,11.608
+"Middle Miocene","Cenozoic 5",11.608,15.97
+"Lower Miocene","Cenozoic 5",15.97,23.03
+"Upper Oligocene","Cenozoic 4",23.03,28.4
+"Lower Oligocene","Cenozoic 4",28.4,33.9
+"Upper Eocene","Cenozoic 3",33.9,37.2
+"Middle Eocene",NA,37.2,48.6
+"Lower Eocene","Cenozoic 2",48.6,55.8
+"Upper Paleocene","Cenozoic 1",55.8,58.7
+"Lower Paleocene","Cenozoic 1",61.7,66.043
+"Senonian",NA,66.043,89.3
+"Gallic",NA,89.3,130
+"Neocomian",NA,130,145.5
+"Piacenzian","Cenozoic 6",2.588,3.6
+"Zanclean","Cenozoic 6",3.6,5.332
+"Messinian","Cenozoic 6",5.332,7.246
+"Tortonian","Cenozoic 6",7.246,11.608
+"Serravallian","Cenozoic 5",11.608,13.65
+"Langhian","Cenozoic 5",13.65,15.97
+"Burdigalian","Cenozoic 5",15.97,20.43
+"Aquitanian","Cenozoic 5",20.43,23.03
+"Chattian","Cenozoic 4",23.03,28.4
+"Rupelian","Cenozoic 4",28.4,33.9
+"Priabonian","Cenozoic 3",33.9,37.2
+"Bartonian","Cenozoic 3",37.2,40.4
+"Lutetian","Cenozoic 2",40.4,48.6
+"Ypresian","Cenozoic 2",48.6,55.8
+"Thanetian","Cenozoic 1",55.8,58.7
+"Danian","Cenozoic 1",61.7,66.043
+"Maastrichtian","Cretaceous 8",66.043,70.6
+"Campanian","Cretaceous 7",70.6,84.9
+"Santonian","Cretaceous 6",84.9,85.8
+"Coniacian","Cretaceous 6",85.8,89.3
+"Turonian","Cretaceous 6",89.3,94.3
+"Cenomanian","Cretaceous 5",94.3,99.7
+"Albian","Cretaceous 4",99.7,112.6
+"Aptian","Cretaceous 3",112.6,125.45
+"Barremian","Cretaceous 2",125.45,130
+"Hauterivian","Cretaceous 2",130,136.4
+"Valanginian","Cretaceous 1",136.4,140.2
+"Berriasian","Cretaceous 1",140.2,145.5
+"Tithonian","Jurassic 6",145.5,150.8
+"Kimmeridgian","Jurassic 5",150.8,155.7
+"Oxfordian","Jurassic 5",155.7,161.2
+"Callovian","Jurassic 5",161.2,164.7
+"Bathonian","Jurassic 4",164.7,167.7
+"Bajocian","Jurassic 4",167.7,171.6
+"Aalenian","Jurassic 3",171.6,175.6
+"Toarcian","Jurassic 3",175.6,183
+"Pliensbachian","Jurassic 2",183,189.6
+"Sinemurian","Jurassic 1",189.6,196.5
+"Hettangian","Jurassic 1",196.5,201.6
+"Rhaetian","Triassic 4",201.6,205.6
+"Norian","Triassic 4",205.6,221.5
+"Carnian","Triassic 3",221.5,235
+"Ladinian","Triassic 2",235,242
+"Anisian","Triassic 2",242,247.2
+"Spathian","Triassic 1",247.2,NA
+"Nammalian","Triassic 1",NA,NA
+"Griesbachian","Triassic 1",NA,252.3
+"Longtanian","Permian 4",254,259
+"Capitanian","Permian 3",259,265
+"Wordian","Permian 3",265,268
+"Ufimian","Permian 2",272.5,279.5
+"Kungurian","Permian 2",272.5,279.5
+"Artinskian","Permian 2",279.5,290.1
+"Sakmarian","Permian 1",290.1,295
+"Asselian","Permian 1",295,298.9
+"Noginian","Carboniferous 5",300.2,301.2
+"Klazminskian","Carboniferous 5",301.2,NA
+"Dorogovilovian","Carboniferous 5",NA,304.8
+"Khamovnichean","Carboniferous 5",304.8,305.9
+"Krevyakian","Carboniferous 5",305.9,306.95
+"Myachkovian","Carboniferous 4",306.95,309
+"Podolskian","Carboniferous 4",309,311.45
+"Kashirian","Carboniferous 4",311.45,313.8
+"Vereian","Carboniferous 4",313.8,314.6
+"Melekesian","Carboniferous 4",314.6,NA
+"Cheremshanian","Carboniferous 4",NA,NA
+"Yeadonian","Carboniferous 4",NA,NA
+"Marsdenian","Carboniferous 4",NA,NA
+"Kinderscoutian","Carboniferous 4",NA,NA
+"Alportian","Carboniferous 4",NA,NA
+"Chokierian","Carboniferous 4",NA,318.1
+"Arnsbergian","Carboniferous 3",318.1,NA
+"Pendleian","Carboniferous 3",NA,326.4
+"Brigantian","Carboniferous 3",326.4,336
+"Asbian","Carboniferous 2",336,339.4
+"Holkerian","Carboniferous 2",339.4,342.8
+"Arundian","Carboniferous 2",342.8,345
+"Chadian","Carboniferous 2",345,345.3
+"Ivorian","Carboniferous 1",345.3,353.8
+"Hastarian","Carboniferous 1",353.8,360.7
+"Famennian","Devonian 5",360.7,376.1
+"Frasnian","Devonian 4",376.1,383.7
+"Givetian","Devonian 3",383.7,388.1
+"Eifelian","Devonian 3",388.1,391.9
+"Emsian","Devonian 2",391.9,409.1
+"Pragian","Devonian 1",409.1,412.3
+"Lochkovian","Devonian 1",412.3,416
+"Ludfordian","Silurian 2",418.7,421.3
+"Gorstian","Silurian 2",421.3,422.9
+"Gleedonian","Silurian 2",422.9,425.4
+"Whitwellian","Silurian 2",425.4,426.2
+"Sheinwoodian","Silurian 2",426.2,428.2
+"Telychian","Silurian 1",428.2,436
+"Aeronian","Silurian 1",436,439
+"Rhuddanian","Silurian 1",439,443.7
+"Hirnantian","Ordovician 5",443.7,445.6
+"Rawtheyan",NA,445.6,NA
+"Cautleyan","Ordovician 5",NA,NA
+"Pusgillian","Ordovician 5",NA,449.5
+"Onnian","Ordovician 4",449.5,452
+"Actonian","Ordovician 4",452,NA
+"Marshbrookian","Ordovician 4",NA,NA
+"Longvillian","Ordovician 4",455.8,NA
+"Soudleyan","Ordovician 4",NA,NA
+"Harnagian","Ordovician 4",NA,457.5
+"Costonian","Ordovician 4",457.5,NA
+"Upper Llandeilo","Ordovician 4",449.5,NA
+"Middle Llandeilo","Ordovician 4",NA,460.9
+"Lower Llandeilo","Ordovician 3",460.9,466
+"Upper Llanvirn","Ordovician 3",460.9,463.5
+"Lower Llanvirn","Ordovician 3",463.5,466
+"Dolgellian","Cambrian 4",488.3,NA
+"Maentwrogian","Cambrian 4",NA,501
+"Menevian","Cambrian 3",501,NA
+"Solvan","Cambrian 3",NA,513
+"Lenian","Cambrian 2",513,516
+"Atdabanian","Cambrian 2",516,520
+"Tommotian","Cambrian 2",520,530
+"Poundian",NA,530,580
+"Wonokan",NA,580,NA
+"Mortensnes",NA,NA,580
+"Smalfjord",NA,635,723
+"Blancan","Cenozoic 6",1.8,4.9
+"Hemphillian","Cenozoic 6",4.9,10.3
+"Clarendonian",NA,10.3,13.6
+"Barstovian","Cenozoic 5",13.6,15.97
+"Hemingfordian","Cenozoic 5",15.97,20.43
+"Arikareean",NA,20.43,30.8
+"Whitneyan","Cenozoic 4",30.8,33.3
+"Orellan","Cenozoic 4",33.3,33.9
+"Chadronian","Cenozoic 3",33.9,37.2
+"Duchesnean","Cenozoic 3",37.2,40.4
+"Uintan","Cenozoic 2",40.4,46.2
+"Bridgerian","Cenozoic 2",46.2,50.3
+"Wasatchian","Cenozoic 2",50.3,55.8
+"Clarkforkian","Cenozoic 1",55.8,56.8
+"Tiffanian","Cenozoic 1",56.8,61.7
+"Torrejonian","Cenozoic 1",61.7,63.3
+"Dragonian","Cenozoic 1",61.7,66.043
+"Puercan","Cenozoic 1",63.3,66.043
+"Rancholabrean","Cenozoic 6",0.012,0.3
+"Irvingtonian","Cenozoic 6",0.3,1.8
+"Sheridanian","Cenozoic 6",0.012,0.3
+"Cudahyan","Cenozoic 6",0.3,NA
+"Sappan","Cenozoic 6",NA,1.8
+"""Senecan""","Cenozoic 6",1.8,NA
+"Rexroadian","Cenozoic 6",NA,4.9
+"Upper Hemphillian","Cenozoic 6",4.9,NA
+"late Early Hemphillian","Cenozoic 6",NA,NA
+"early Early Hemphillian","Cenozoic 6",NA,10.3
+"Upper Clarendonian",NA,10.3,NA
+"Lower Clarendonian",NA,NA,13.6
+"late Late Barstovian","Cenozoic 5",13.6,NA
+"early Late Barstovian","Cenozoic 5",NA,NA
+"Lower Barstovian","Cenozoic 5",NA,15.97
+"Upper Hemingfordian","Cenozoic 5",15.97,NA
+"Lower Hemingfordian","Cenozoic 5",NA,20.43
+"late Late Arikareean",NA,20.43,NA
+"early Late Arikareean",NA,NA,NA
+"late Early Arikareean",NA,NA,NA
+"early Early Arikareean",NA,NA,30.8
+"Upper Chadronian","Cenozoic 3",33.9,NA
+"Middle Chadronian","Cenozoic 3",NA,NA
+"Lower Chadronian","Cenozoic 3",NA,37.2
+"Upper Uintan","Cenozoic 2",40.4,NA
+"Lower Uintan","Cenozoic 2",NA,46.2
+"Twinbuttean","Cenozoic 2",46.2,NA
+"Blacksforkian","Cenozoic 2",NA,NA
+"Gardnerbuttian","Cenozoic 2",NA,50.3
+"Lostcabinian","Cenozoic 2",50.3,NA
+"Lysitean","Cenozoic 2",NA,NA
+"Graybullian","Cenozoic 2",NA,NA
+"Sandcouleean","Cenozoic 2",NA,55.8
+"Cf3","Cenozoic 1",55.8,NA
+"Cf2","Cenozoic 1",NA,NA
+"Cf1","Cenozoic 1",NA,56.8
+"Ti6","Cenozoic 1",56.8,NA
+"Ti5","Cenozoic 1",NA,NA
+"Ti4","Cenozoic 1",NA,NA
+"Ti3","Cenozoic 1",NA,NA
+"Ti2","Cenozoic 1",NA,NA
+"Ti1","Cenozoic 1",NA,61.7
+"To3","Cenozoic 1",61.7,NA
+"To2","Cenozoic 1",NA,NA
+"To1","Cenozoic 1",NA,63.3
+"Pu3","Cenozoic 1",63.3,NA
+"Pu2","Cenozoic 1",NA,NA
+"Pu1","Cenozoic 1",NA,66.043
+"Harrisonian",NA,20.43,24.8
+"Monroecreekian","Cenozoic 4",24.8,26.3
+"Geringian","Cenozoic 4",26.3,30.8
+"Villanyian","Cenozoic 6",2.588,3.2
+"Ruscinian","Cenozoic 6",3.2,5.332
+"Turolian","Cenozoic 6",5.332,8.7
+"Vallesian","Cenozoic 6",8.7,11.608
+"Astaracian","Cenozoic 5",11.608,15.97
+"Orleanian","Cenozoic 5",15.97,20
+"Agenian","Cenozoic 5",20,23.03
+"MN 17","Cenozoic 6",1.806,2.588
+"MN 16","Cenozoic 6",2.588,3.2
+"MN 15","Cenozoic 6",3.2,4.2
+"MN 14","Cenozoic 6",4.2,4.9
+"MN 13","Cenozoic 6",4.9,7.246
+"MN 12","Cenozoic 6",7.246,7.75
+"MN 11","Cenozoic 6",7.75,8.7
+"MN 10","Cenozoic 6",8.7,9.7
+"MN 9","Cenozoic 6",9.7,11.1
+"MN 7 + 8",NA,11.1,12.75
+"MN 6","Cenozoic 5",12.75,13.65
+"MN 5","Cenozoic 5",13.65,15.97
+"MN 4","Cenozoic 5",15.97,16.9
+"MN 3","Cenozoic 5",16.9,20
+"MN 2","Cenozoic 5",20,22.4
+"MN 1","Cenozoic 5",22.4,23.03
+"Dolgelly","Cambrian 4",488.3,NA
+"Ffestiniog","Cambrian 4",NA,NA
+"Maentwrog","Cambrian 4",NA,501
+"Clogau","Cambrian 3",501,NA
+"Gamlan","Cambrian 3",NA,NA
+"Barmouth","Cambrian 3",NA,NA
+"Hafotty","Cambrian 3",NA,513
+"Rhinog","Cambrian 2",513,516
+"Llanbedr","Cambrian 2",516,NA
+"Dolwen","Cambrian 2",NA,530
+"Trempealeauan","Cambrian 4",488.3,NA
+"Franconian","Cambrian 4",NA,NA
+"Dresbachian","Cambrian 4",NA,501
+"Albertian","Cambrian 3",501,513
+"Waucoban","Cambrian 2",513,NA
+"Kosov","Ordovician 5",443.7,445.6
+"Kraluv Dvur","Ordovician 5",445.6,NA
+"Bohdalec",NA,NA,NA
+"Zahorany","Ordovician 4",NA,NA
+"Vinice","Ordovician 4",NA,NA
+"Letna","Ordovician 4",NA,NA
+"Liben","Ordovician 4",NA,460.9
+"Dobrotiva","Ordovician 3",460.9,466
+"Sarka","Ordovician 3",466,NA
+"Klabava","Ordovician 2",NA,478.6
+"Porkuni","Ordovician 5",443.7,445.6
+"Pirgu","Ordovician 5",445.6,NA
+"Vormsi",NA,NA,NA
+"Nabala","Ordovician 4",NA,452
+"Rakvere","Ordovician 4",452,NA
+"Oandu","Ordovician 4",NA,NA
+"Keila","Ordovician 4",NA,NA
+"Johvi","Ordovician 4",NA,NA
+"Idavere","Ordovician 4",NA,NA
+"Kukruse","Ordovician 4",NA,460.9
+"Uhaku","Ordovician 3",460.9,NA
+"Lasnamagi","Ordovician 3",NA,NA
+"Aseri","Ordovician 3",NA,463.5
+"Kunda",NA,463.5,468.1
+"Volkhov","Ordovician 2",468.1,471.8
+"Latorp",NA,471.8,484.5
+"Olentian",NA,484.5,NA
+"Gamach","Ordovician 5",443.7,445.6
+"Richmond","Ordovician 5",445.6,NA
+"Maysville",NA,NA,NA
+"Edenian","Ordovician 4",NA,NA
+"Sherman",NA,NA,NA
+"Kirkfield","Ordovician 4",NA,NA
+"Rockland","Ordovician 4",NA,457.5
+"Black River","Ordovician 4",457.5,NA
+"Chazy",NA,NA,NA
+"Whiterock",NA,NA,468.1
+"Cassinian","Ordovician 2",468.1,NA
+"Jefferson",NA,NA,NA
+"Deming","Ordovician 1",NA,NA
+"Gasconadian","Ordovician 1",NA,488.3
+"Red Downtonian","Silurian 2",416,NA
+"Temeside Shales","Silurian 2",NA,NA
+"Downton Castle","Silurian 2",NA,418.7
+"Whitcliffe","Silurian 2",418.7,NA
+"Leintwardine","Silurian 2",NA,421.3
+"Bringewood","Silurian 2",421.3,NA
+"Elton","Silurian 2",NA,422.9
+"Wenlock (England)","Silurian 2",422.9,NA
+"Tickwood","Silurian 2",NA,NA
+"Coalbrookdale","Silurian 2",NA,NA
+"Buildwas","Silurian 2",NA,428.2
+"Woolhope","Silurian 1",428.2,NA
+"Wych","Silurian 1",NA,439
+"Cowleigh Park","Silurian 1",439,443.7
+"Pridolischichten","Silurian 2",416,418.7
+"Kopaninaschichten","Silurian 2",418.7,NA
+"Litenschichten",NA,NA,443.7
+"Sundre","Silurian 2",416,418.7
+"Hamra","Silurian 2",418.7,NA
+"Burgsvik","Silurian 2",NA,NA
+"Eke","Silurian 2",NA,NA
+"Hemse","Silurian 2",NA,NA
+"Mulde","Silurian 2",NA,NA
+"Slite","Silurian 2",NA,NA
+"Hogklint","Silurian 2",NA,NA
+"Upper Visby","Silurian 2",NA,428.2
+"Lower Visby","Silurian 1",428.2,436
+"Cayugan","Silurian 2",416,422.9
+"Lockportian","Silurian 2",422.9,NA
+"Tonawandan",NA,NA,NA
+"Ontarian","Silurian 1",NA,NA
+"Alexandrian","Silurian 1",NA,443.7
+"Pilton",NA,353.8,NA
+"Baggy","Devonian 5",NA,NA
+"Upcott","Devonian 5",NA,NA
+"Pickwell Down","Devonian 5",NA,376.1
+"Morte",NA,376.1,NA
+"Ilfracombe","Devonian 3",NA,388.1
+"Hangman","Devonian 3",388.1,NA
+"Lynton",NA,NA,NA
+"Brecon",NA,NA,412.3
+"Ditton","Devonian 1",412.3,NA
+"Downton",NA,NA,418.7
+"Famennien",NA,360.7,NA
+"Frasnien",NA,NA,NA
+"Givetien","Devonian 3",NA,NA
+"Couvinien",NA,NA,NA
+"Coblencien",NA,NA,412.3
+"Gedinnine","Devonian 1",412.3,416
+"Wocklum","Devonian 5",360.7,NA
+"Dasberg","Devonian 5",NA,NA
+"Hemberg","Devonian 5",NA,NA
+"Nehden","Devonian 5",NA,376.1
+"Adorf",NA,376.1,NA
+"Givet","Devonian 3",NA,388.1
+"Eifel","Devonian 3",388.1,391.9
+"Ems","Devonian 2",391.9,409.1
+"Siegen","Devonian 1",409.1,412.3
+"Gedinne","Devonian 1",412.3,416
+"Srbsko","Devonian 3",383.7,388.1
+"Chotec","Devonian 3",388.1,NA
+"Daleje",NA,NA,NA
+"Zlichovian","Devonian 2",NA,NA
+"Pragian (Czechoslovakia)",NA,NA,NA
+"Lochkovian (Czechoslovakia)","Devonian 1",NA,416
+"Conewango","Devonian 5",360.7,NA
+"Conneaut","Devonian 5",NA,NA
+"Canadaway","Devonian 5",NA,376.1
+"West Falls","Devonian 4",376.1,NA
+"Sonyea","Devonian 4",NA,NA
+"Genesee",NA,NA,NA
+"Taghanic","Devonian 3",NA,NA
+"Tioughnioga","Devonian 3",NA,NA
+"Cazenovian","Devonian 3",NA,NA
+"Southwood","Devonian 3",NA,391.9
+"Sawkill","Devonian 2",391.9,NA
+"Deer Park","Devonian 2",NA,NA
+"Helderberg",NA,NA,416
+"Stephanian","Carboniferous 5",298.9,306.95
+"Westphalian","Carboniferous 4",306.95,NA
+"Namurian",NA,NA,326.4
+"Stephanian C","Carboniferous 5",301.2,303.4
+"Stephanian B","Carboniferous 5",303.4,304.8
+"Stephanian A","Carboniferous 5",304.8,305.9
+"Cantabrian",NA,305.9,NA
+"Westphalian D","Carboniferous 4",NA,311.45
+"Westphalian C","Carboniferous 4",311.45,314.6
+"Westphalian B","Carboniferous 4",314.6,NA
+"Westphalian A","Carboniferous 4",NA,NA
+"Virgilian",NA,NA,NA
+"Missourian","Carboniferous 5",NA,305.9
+"Desmoinesian",NA,305.9,NA
+"Atokan","Carboniferous 4",NA,NA
+"Morrowan","Carboniferous 4",NA,318.1
+"Chesterian",NA,318.1,NA
+"Meramecian","Carboniferous 2",NA,NA
+"Osagean",NA,NA,353.8
+"Kinderhookian","Carboniferous 1",353.8,360.7
+"Buntsandstein",NA,252.3,NA
+"Ohre","Permian 3",NA,NA
+"Aller","Permian 3",NA,265
+"Leine","Permian 3",265,NA
+"Stassfurt Evaporites","Permian 3",NA,NA
+"Hauptdolomitstinkschiefer","Permian 3",NA,NA
+"Werra","Permian 2",NA,NA
+"Zechsteinkalk","Permian 2",NA,NA
+"Kupferschiefer","Permian 2",NA,NA
+"Weissliegendes","Permian 2",NA,279.5
+"Dewey Lake","Permian 4",252.3,254
+"Rustler","Permian 4",254,NA
+"Salado","Permian 4",NA,NA
+"Castile","Permian 4",NA,259
+"Capitan","Permian 3",259,265
+"Word","Permian 3",265,NA
+"Leonard",NA,NA,NA
+"Wolfcamp",NA,NA,NA
+"Upper Callovian","Jurassic 5",161.2,NA
+"Middle Callovian","Jurassic 5",NA,NA
+"Lower Callovian","Jurassic 5",NA,164.7
+"Upper Bajocian","Jurassic 4",167.7,NA
+"Lower Bajocian","Jurassic 4",NA,171.6
+"Upper Toarcian","Jurassic 3",175.6,NA
+"Middle Toarcian","Jurassic 3",NA,182
+"Lower Toarcian","Jurassic 3",182,183
+"Upper Pliensbachian","Jurassic 2",183,NA
+"Lower Pliensbachian","Jurassic 2",NA,189.6
+"Upper Sinemurian","Jurassic 1",189.6,NA
+"Lower Sinemurian","Jurassic 1",NA,196.5
+"Epizigzagiceras","Jurassic 4",167.7,168.4
+"Rotundum","Jurassic 4",168.4,NA
+"Oblatum","Jurassic 4",NA,NA
+"Kirschneri","Jurassic 4",NA,NA
+"Crassicostatus","Jurassic 4",NA,NA
+"Widebayense","Jurassic 4",NA,171.6
+"Howelli","Jurassic 3",171.6,NA
+"Scissum","Jurassic 3",NA,NA
+"Westermanni","Jurassic 3",NA,175.6
+"Yakounensis","Jurassic 3",175.6,NA
+"Hillebrandti","Jurassic 3",NA,NA
+"Crassicosta","Jurassic 3",NA,180.1
+"Planulata","Jurassic 3",180.1,182
+"Kanense","Jurassic 3",182,183
+"Carlottense","Jurassic 2",183,184.1
+"Kunae","Jurassic 2",184.1,185.7
+"Freboldi","Jurassic 2",185.7,186.7
+"Whiteavesi","Jurassic 2",186.7,NA
+"Imlayi","Jurassic 2",NA,NA
+"Tetraspidoceras",NA,NA,190.7
+"Plesechioceras","Jurassic 1",190.7,NA
+"Asteroceras","Jurassic 1",NA,NA
+"Arnioceras","Jurassic 1",NA,NA
+"Coroniceras","Jurassic 1",NA,NA
+"Canadensis","Jurassic 1",NA,NA
+"Pseudaetomoceras","Jurassic 1",NA,196.6
+"Franziceras","Jurassic 1",196.6,NA
+"Euphyllites","Jurassic 1",NA,NA
+"Psiloceras","Jurassic 1",NA,201.6
+"Parkinsoni","Jurassic 4",167.7,NA
+"Garantiana","Jurassic 4",NA,NA
+"Subfurcatum","Jurassic 4",NA,NA
+"Humphresianum","Jurassic 4",NA,NA
+"Sauzei","Jurassic 4",NA,NA
+"Laeviuscula","Jurassic 4",NA,NA
+"Discites","Jurassic 4",NA,171.6
+"Concavum","Jurassic 3",171.6,NA
+"Murchisonae","Jurassic 3",NA,NA
+"Opalinum","Jurassic 3",NA,175.6
+"Levesquei","Jurassic 3",175.6,NA
+"Thouarsense","Jurassic 3",NA,NA
+"Variabilis","Jurassic 3",NA,NA
+"Bifrons","Jurassic 3",NA,182
+"Falciferum","Jurassic 3",182,NA
+"Tenuicostatum","Jurassic 3",NA,183
+"Spinatum","Jurassic 2",183,NA
+"Margaritatus","Jurassic 2",NA,NA
+"Davoei","Jurassic 2",NA,NA
+"Ibex","Jurassic 2",NA,NA
+"Jamesoni","Jurassic 2",NA,189.6
+"Raricostatum","Jurassic 1",189.6,NA
+"Oxynotum","Jurassic 1",NA,NA
+"Obtusum","Jurassic 1",NA,NA
+"Turneri","Jurassic 1",NA,NA
+"Semicostatum","Jurassic 1",NA,NA
+"Bucklandi","Jurassic 1",NA,196.5
+"Angulata","Jurassic 1",196.5,NA
+"Liasicus","Jurassic 1",NA,NA
+"Planorbis","Jurassic 1",NA,201.6
+"Trentonian","Ordovician 4",449.5,NA
+"Darriwilian",NA,460.9,468.1
+"Wildernessian","Ordovician 4",NA,460.9
+"Ashbyan","Ordovician 4",NA,460.9
+"Tremadocian","Ordovician 1",478.6,488.3
+"Cincinnatian",NA,443.7,452.5
+"Mohawkian","Ordovician 4",452.5,457.5
+"Whiterockian",NA,457.5,471.8
+"Ibexian",NA,471.8,NA
+"Gamachian","Ordovician 5",443.7,NA
+"Richmondian","Ordovician 5",NA,449.5
+"Maysvillian","Ordovician 4",449.5,NA
+"Chatfieldian","Ordovician 4",NA,NA
+"Turinian","Ordovician 4",NA,460.9
+"Rangerian","Ordovician 2",468.1,471.8
+"Blackhillsian","Ordovician 2",471.8,NA
+"Tulean",NA,NA,NA
+"Stairsian","Ordovician 1",NA,NA
+"Skullrockian","Ordovician 1",NA,NA
+"Harju",NA,443.7,452
+"Viru",NA,452,463.5
+"Oeland",NA,463.5,488.3
+"Streffordian","Ordovician 4",449.5,NA
+"Cheneyan","Ordovician 4",NA,455.8
+"Burrellian","Ordovician 4",455.8,457.5
+"Aurelucian","Ordovician 4",457.5,460.9
+"Llandeilian","Ordovician 3",460.9,NA
+"Abereiddian","Ordovician 3",NA,466
+"Fennian","Ordovician 2",466,471.8
+"Whitlandian","Ordovician 2",471.8,NA
+"Moridunian","Ordovician 2",NA,478.6
+"Migneintian","Ordovician 1",478.6,NA
+"Cressagian","Ordovician 1",NA,488.3
+"Woolstonian","Ordovician 4",NA,455.8
+"Volfreyan","Ordovician 4",NA,460.9
+"Dobrotivian","Ordovician 4",NA,460.9
+"Oretanian","Ordovician 3",460.9,466
+"Kosovian","Ordovician 5",443.7,445.6
+"Kralodvorian","Ordovician 5",445.6,449.5
+"Berounian","Ordovician 4",449.5,NA
+"Llanvirnian",NA,460.9,468.1
+"Arenigian","Ordovician 2",468.1,478.6
+"Bolindian","Ordovician 5",443.7,449.5
+"Eastonian","Ordovician 4",449.5,456.1
+"Gisbornian","Ordovician 4",456.1,460.9
+"Yapeenian","Ordovician 2",466,468.9
+"Castlemainian","Ordovician 2",468.9,472
+"Chewtonian","Ordovician 2",472,473.9
+"Bendigonian","Ordovician 2",473.9,476.8
+"Lancefieldian",NA,476.8,NA
+"Warendian","Ordovician 1",NA,488.3
+"Qiantianjiang","Ordovician 5",443.7,NA
+"Aijiashan",NA,NA,460.9
+"Yangtzi",NA,460.9,478.6
+"Yichang","Ordovician 1",478.6,488.3
+"Wufeng","Ordovician 5",443.7,NA
+"Xiaoxita",NA,NA,460.9
+"Guniu",NA,460.9,468.1
+"Dawan","Ordovician 2",468.1,NA
+"Daobaowan","Ordovician 2",NA,478.6
+"Lianghekou","Ordovician 1",478.6,488.3
+"Shikou",NA,NA,NA
+"Hanjiang","Ordovician 4",NA,460.9
+"Hulo",NA,460.9,468.1
+"Ningkuo","Ordovician 2",468.1,NA
+"Hunjiang",NA,NA,488.3
+"Chientangkiangian","Ordovician 5",443.7,449.5
+"Neichiashanian","Ordovician 4",449.5,460.9
+"Zhejiangian",NA,460.9,468.1
+"Yushanian","Ordovician 2",468.1,478.6
+"Ichangian","Ordovician 1",478.6,488.3
+"Valhallan","Ordovician 2",468.1,478.6
+"Haljala","Ordovician 4",NA,NA
+"Varangu","Ordovician 1",484.5,NA
+"Pakerort","Ordovician 1",NA,488.3
+"Aluoja","Ordovician 3",NA,466
+"Valaste","Ordovician 2",466,NA
+"Hunderum","Ordovician 2",NA,NA
+"Langevoja","Ordovician 2",NA,NA
+"Vaana","Ordovician 2",NA,NA
+"Saka","Ordovician 2",NA,471.8
+"Billingen","Ordovician 2",471.8,NA
+"Hunneberg",NA,NA,484.5
+"Ashgillian","Ordovician 5",443.7,449.5
+"Caradocian","Ordovician 4",449.5,460.9
+"Volkhovian","Ordovician 2",468.1,471.8
+"Latorpian","Ordovician 2",471.8,478.6
+"Franklinian","Ordovician 4",449.5,460.9
+"Kirkfieldian","Ordovician 4",NA,NA
+"Rocklandian","Ordovician 4",NA,NA
+"Canadian",NA,468.1,488.3
+"Shermanian","Ordovician 4",NA,NA
+"Blackriveran","Ordovician 4",NA,NA
+"Chazyan",NA,460.9,NA
+"Marmor",NA,NA,468.1
+"Jeffersonian",NA,NA,NA
+"Demingian","Ordovician 1",NA,NA
+"Olenekian","Triassic 1",247.2,251.3
+"Induan","Triassic 1",251.3,252.3
+"Upper Maastrichtian","Cretaceous 8",66.043,NA
+"Lower Maastrichtian","Cretaceous 8",NA,70.6
+"Upper Campanian","Cretaceous 7",70.6,NA
+"Middle Campanian","Cretaceous 7",NA,NA
+"Lower Campanian","Cretaceous 7",NA,84.9
+"Upper Santonian","Cretaceous 6",84.9,NA
+"Middle Santonian","Cretaceous 6",NA,NA
+"Lower Santonian","Cretaceous 6",NA,85.8
+"Upper Coniacian","Cretaceous 6",85.8,NA
+"Middle Coniacian","Cretaceous 6",NA,NA
+"Lower Coniacian","Cretaceous 6",NA,89.3
+"Upper Turonian","Cretaceous 6",89.3,NA
+"Middle Turonian","Cretaceous 6",NA,NA
+"Lower Turonian","Cretaceous 6",NA,94.3
+"Upper Cenomanian","Cretaceous 5",94.3,NA
+"Middle Cenomanian","Cretaceous 5",NA,NA
+"Lower Cenomanian","Cretaceous 5",NA,99.7
+"Upper Albian","Cretaceous 4",99.7,105.3
+"Middle Albian","Cretaceous 4",105.3,109
+"Lower Albian","Cretaceous 4",109,112.6
+"Upper Aptian","Cretaceous 3",112.6,122.46
+"Lower Aptian","Cretaceous 3",122.46,125.45
+"Upper Barremian","Cretaceous 2",125.45,NA
+"Lower Barremian","Cretaceous 2",NA,130
+"Upper Hauterivian","Cretaceous 2",130,NA
+"Lower Hauterivian","Cretaceous 2",NA,136.4
+"Upper Valanginian","Cretaceous 1",136.4,NA
+"Lower Valanginian","Cretaceous 1",NA,140.2
+"Upper Berriasian","Cretaceous 1",140.2,NA
+"Middle Berriasian","Cretaceous 1",NA,NA
+"Lower Berriasian","Cretaceous 1",NA,145.5
+"Upper Tithonian","Jurassic 6",145.5,NA
+"Middle Tithonian","Jurassic 6",NA,NA
+"Lower Tithonian","Jurassic 6",NA,150.8
+"Upper Kimmeridgian","Jurassic 5",150.8,NA
+"Lower Kimmeridgian","Jurassic 5",NA,155.7
+"Upper Oxfordian","Jurassic 5",155.7,NA
+"Middle Oxfordian","Jurassic 5",NA,NA
+"Lower Oxfordian","Jurassic 5",NA,161.2
+"Upper Bathonian","Jurassic 4",164.7,NA
+"Middle Bathonian","Jurassic 4",NA,NA
+"Lower Bathonian","Jurassic 4",NA,167.7
+"Upper Aalenian","Jurassic 3",171.6,NA
+"Middle Aalenian","Jurassic 3",NA,NA
+"Lower Aalenian","Jurassic 3",NA,175.6
+"Upper Hettangian","Jurassic 1",196.5,NA
+"Middle Hettangian","Jurassic 1",NA,NA
+"Lower Hettangian","Jurassic 1",NA,NA
+"Sevatian","Triassic 4",205.6,212
+"Alaunian","Triassic 4",212,215.56
+"Lacian","Triassic 4",215.56,221.5
+"Tuvalian","Triassic 3",221.5,232
+"Julian","Triassic 3",232,235
+"Longobardian","Triassic 2",235,NA
+"Fassanian","Triassic 2",NA,242
+"Illyrian","Triassic 2",242,NA
+"Pelsonian","Triassic 2",NA,NA
+"Bithynian","Triassic 2",NA,NA
+"Aegean","Triassic 2",NA,247.2
+"Smithian","Triassic 1",NA,251.3
+"Dienerian","Triassic 1",251.3,NA
+"Changhsingian","Permian 4",252.3,254
+"Wuchiapingian","Permian 4",254,259
+"Roadian","Permian 3",268,272.5
+"Lujanian","Cenozoic 6",0.012,0.781
+"Ensenadan","Cenozoic 6",0.781,1.2
+"Uquian","Cenozoic 6",1.2,3
+"Chapadmalalan","Cenozoic 6",3,4
+"Montehermosan","Cenozoic 6",4,6.8
+"Huayquerian","Cenozoic 6",6.8,9
+"Chasicoan","Cenozoic 6",9,10
+"Mayoan",NA,10,11.8
+"Laventan","Cenozoic 5",11.8,13.8
+"Colloncuran","Cenozoic 5",13.8,15.5
+"Friasian","Cenozoic 5",15.5,16.3
+"Santacrucian","Cenozoic 5",16.3,17.5
+"Colhuehuapian","Cenozoic 5",17.5,21
+"Deseadan",NA,21,29
+"Tinguirirican",NA,29,36
+"Divisaderan",NA,36,42
+"Mustersan","Cenozoic 2",42,48
+"Casamayoran","Cenozoic 2",48,55.8
+"Riochican","Cenozoic 1",55.8,57
+"Itaboraian","Cenozoic 1",57,59
+"Peligran","Cenozoic 1",59,62.5
+"Tiupampan","Cenozoic 1",62.5,66.043
+"Calabrian","Cenozoic 6",0.781,1.806
+"Gelasian","Cenozoic 6",1.806,2.588
+"Selandian","Cenozoic 1",58.7,61.7
+"Lancian","Cretaceous 8",66.043,NA
+"Edmontonian","Cretaceous 8",NA,70.6
+"Judithian","Cretaceous 7",70.6,NA
+"Aquilan","Cretaceous 7",NA,84.9
+"Manykaian","Cambrian 1",530,542
+"Toyonian","Cambrian 2",513,NA
+"Botomian","Cambrian 2",NA,516
+"Phanerozoic",NA,0,542
+"Proterozoic",NA,542,2500
+"Archean",NA,2500,4560
+"Neoproterozoic",NA,542,1000
+"Mesoproterozoic",NA,1000,1600
+"Paleoproterozoic",NA,1600,2500
+"Neoarchean",NA,2500,2800
+"Mesoarchean",NA,2800,3200
+"Paleoarchean",NA,3200,3600
+"Eoarchean",NA,3600,4560
+"Ediacaran",NA,542,635
+"Cryogenian",NA,635,723
+"Tonian",NA,723,1000
+"Stenian",NA,1000,NA
+"Ectasian",NA,NA,NA
+"Calymmian",NA,NA,1600
+"Statherian",NA,1600,NA
+"Orosirian",NA,NA,NA
+"Rhyacian",NA,NA,NA
+"Siderian",NA,NA,2500
+"Lopingian","Permian 4",252.3,259
+"Guadalupian","Permian 3",259,272.5
+"Cisuralian",NA,272.5,298.9
+"Upper Pennsylvanian","Carboniferous 5",298.9,306.95
+"Middle Pennsylvanian","Carboniferous 4",306.95,314.6
+"Lower Pennsylvanian","Carboniferous 4",314.6,318.1
+"Upper Mississippian","Carboniferous 3",318.1,326.4
+"Middle Mississippian",NA,326.4,345.3
+"Lower Mississippian","Carboniferous 1",345.3,360.7
+"Furongian","Cambrian 4",488.3,501
+"Middle Cambrian","Cambrian 3",501,513
+"Lower Cambrian",NA,513,542
+"Middle Paleocene","Cenozoic 1",58.7,61.7
+"unnamed Pridoli","Silurian 2",416,418.7
+"Homerian","Silurian 2",422.9,426.2
+"middle Late Ordovician",NA,445.6,455.8
+"early Late Ordovician","Ordovician 4",455.8,460.9
+"early Middle Ordovician","Ordovician 2",468.1,471.8
+"late Early Ordovician","Ordovician 2",471.8,478.6
+"Mansian","Ordovician 1",488.3,NA
+"Ketyan","Cambrian 4",NA,NA
+"Yurakian","Cambrian 4",NA,498.5
+"Ensyan","Cambrian 4",498.5,NA
+"Maduan","Cambrian 4",NA,NA
+"Tavgian","Cambrian 4",NA,NA
+"Nganasanian","Cambrian 4",NA,501
+"Mayan","Cambrian 3",501,505
+"Amgan","Cambrian 3",505,513
+"Nemakit-Daldynian","Cambrian 1",530,542
+"Datsonian","Ordovician 1",488.3,NA
+"Payntonian","Cambrian 4",NA,494
+"Iverian","Cambrian 4",494,498.5
+"Idamean","Cambrian 4",498.5,NA
+"Mindyallan","Cambrian 4",NA,501
+"Boomerangian","Cambrian 3",501,504
+"Undillan","Cambrian 3",504,505
+"Floran","Cambrian 3",505,507
+"Templetonian","Cambrian 3",507,513
+"Ordian","Cambrian 2",513,NA
+"Taoyuanian","Cambrian 4",NA,498.5
+"Waergangian","Cambrian 4",498.5,NA
+"Youshuanian","Cambrian 4",NA,NA
+"Wangcunian","Cambrian 3",NA,505
+"Taijangian","Cambrian 3",505,513
+"Duyunian","Cambrian 2",513,NA
+"Nangaoian","Cambrian 2",NA,516
+"Meishucunian",NA,516,NA
+"Jinnigian",NA,NA,542
+"Millardan","Cambrian 4",NA,NA
+"Lincolnian",NA,NA,513
+"Begadean",NA,NA,542
+"Sunwaptan","Cambrian 4",NA,NA
+"Steptoean","Cambrian 4",NA,NA
+"Marjumian",NA,NA,NA
+"Delamaran","Cambrian 3",NA,513
+"Dyeran","Cambrian 2",513,516
+"Montezuman","Cambrian 2",516,530
+"Ungurian","Ordovician 1",478.6,NA
+"Batyrbaian","Cambrian 4",NA,NA
+"Aksayan","Cambrian 4",NA,NA
+"Sakian","Cambrian 4",NA,NA
+"Ayusokkanian",NA,NA,NA
+"Zhanarykian","Cambrian 3",NA,505
+"Tyesaian","Cambrian 3",505,513
+"Merionethian","Cambrian 4",488.3,501
+"Arcadian","Cambrian 3",501,513
+"Branchian","Cambrian 2",513,NA
+"Placentian",NA,NA,542
+"Ohesaare","Silurian 2",416,NA
+"Kaugetuma","Silurian 2",NA,418.7
+"Kuressaare","Silurian 2",418.7,NA
+"Paadla","Silurian 2",NA,422.9
+"Rootsikula","Silurian 2",422.9,NA
+"Jaagarahu","Silurian 2",NA,NA
+"Jaani","Silurian 2",NA,428.2
+"Adavere","Silurian 1",428.2,NA
+"Raikkula","Silurian 1",NA,NA
+"Juuru","Silurian 1",NA,443.7
+"Autunian","Permian 1",295,298.9
+"Lebach","Permian 1",295,298.9
+"Kuzel","Carboniferous 5",298.9,301.2
+"Vyatkian","Permian 4",252.3,NA
+"Severodvinian",NA,NA,265
+"Urzhumian","Permian 3",265,268
+"Povolzhian","Permian 3",268,NA
+"Sokian","Permian 3",NA,272.5
+"Irenian","Permian 2",272.5,NA
+"Filipovian","Permian 2",NA,NA
+"Saranian","Permian 2",NA,279.5
+"Sarginian","Permian 2",279.5,NA
+"Irginian","Permian 2",NA,NA
+"Burtsevian","Permian 2",NA,290.1
+"Sterlitamakian","Permian 1",290.1,293
+"Tastubian","Permian 1",293,295
+"Shikhanian","Permian 1",295,296.4
+"Uskalykian","Permian 1",296.4,297.45
+"Sjuranian","Permian 1",297.45,298.9
+"Melekhovian","Carboniferous 5",298.9,300.2
+"Pavlovoposadian","Carboniferous 5",301.2,302.2
+"Rusavkian","Carboniferous 5",302.2,NA
+"Peskovian",NA,305.9,309
+"Tsninian","Carboniferous 4",311.45,314.6
+"Prikarnian","Carboniferous 4",NA,NA
+"Severokeltmenian","Carboniferous 4",NA,NA
+"Krasnopolyanian","Carboniferous 4",NA,NA
+"Voznesenian","Carboniferous 4",NA,NA
+"Zapaltyubian",NA,NA,NA
+"Protvian","Carboniferous 3",NA,NA
+"Steshevian","Carboniferous 3",NA,NA
+"Tarussian","Carboniferous 3",NA,326.4
+"Venevian","Carboniferous 3",326.4,336
+"Mikhailovian","Carboniferous 2",336,339.4
+"Aleksian","Carboniferous 2",339.4,NA
+"Tulian","Carboniferous 2",NA,342.8
+"Bobrikovian","Carboniferous 2",342.8,345
+"Radaevian","Carboniferous 2",345,NA
+"Kosvinian",NA,NA,NA
+"Kizolovian","Carboniferous 1",NA,353.8
+"Cherepetsian","Carboniferous 1",353.8,NA
+"Karakubian","Carboniferous 1",NA,NA
+"Upinian","Carboniferous 1",NA,NA
+"Malevian","Carboniferous 1",NA,NA
+"Gumerovian","Carboniferous 1",NA,360.7
+"Bursumian","Permian 1",295,NA
+"Mapingian","Permian 1",295,298.9
+"Xiaodushanian","Carboniferous 5",298.9,NA
+"Dalanian",NA,NA,NA
+"Huashibanian","Carboniferous 4",NA,NA
+"Luosuan","Carboniferous 4",NA,318.1
+"Dewunian","Carboniferous 3",318.1,326.4
+"Shangsian",NA,326.4,339.4
+"Jiusian","Carboniferous 2",339.4,345.3
+"Tangbagouan","Carboniferous 1",345.3,360.7
+"Tatarian",NA,252.3,268
+"Kazanian","Permian 3",268,272.5
+"Pamirian",NA,252.3,265
+"Murgabian","Permian 3",265,268
+"Kubergandian","Permian 3",268,272.5
+"Bolorian","Permian 2",272.5,NA
+"Yakhtashian","Permian 2",NA,290.1
+"Khoridzhian","Permian 1",290.1,295
+"Sebisurkhian","Permian 1",295,298.9
+"Chhidru","Permian 4",252.3,254
+"Kalabagh","Permian 4",254,NA
+"Wargal",NA,NA,265
+"Amb","Permian 3",265,272.5
+"Lengwuan","Permian 3",259,265
+"Kuhfengian","Permian 3",265,272.5
+"Luodianian","Permian 2",272.5,279.5
+"Longlinian",NA,279.5,NA
+"Zisongian","Permian 1",NA,298.9
+"Upper Pleistocene","Cenozoic 6",0.012,0.126
+"Middle Pleistocene","Cenozoic 6",0.126,0.781
+"Lower Pleistocene","Cenozoic 6",0.781,2.588
+"Wanganui",NA,0,5.332
+"Taranaki","Cenozoic 6",5.332,10.92
+"Southland",NA,10.92,15.9
+"Pareora","Cenozoic 5",15.9,21.7
+"Landon",NA,21.7,34.3
+"Arnold",NA,34.3,43
+"Dannevirke",NA,43,66.043
+"Mata",NA,66.043,86.5
+"Raukumara",NA,86.5,95.2
+"Clarence",NA,95.2,108.4
+"Taitai",NA,108.4,145.5
+"Oteke","Jurassic 6",145.5,148.5
+"Kawhia",NA,148.5,175.6
+"Herangi",NA,175.6,201.6
+"Balfour",NA,201.6,227.5
+"Gore",NA,227.5,NA
+"DUrville",NA,NA,259
+"Aparima",NA,259,290.1
+"Haweran",NA,0,0.34
+"Castlecliffian","Cenozoic 6",0.34,1.63
+"Nukumaruan","Cenozoic 6",1.63,2.4
+"Mangapanian","Cenozoic 6",2.4,3
+"Waipipian","Cenozoic 6",3,3.6
+"Opoitian","Cenozoic 6",3.6,5.332
+"Kapitean","Cenozoic 6",5.332,6.5
+"Tongaporutuan","Cenozoic 6",6.5,11.608
+"Waiauan","Cenozoic 5",11.608,12.7
+"Lillburnian","Cenozoic 5",12.7,13.65
+"Clifdenian","Cenozoic 5",13.65,15.9
+"Altonian","Cenozoic 5",15.9,19
+"Otaian","Cenozoic 5",19,21.7
+"Waitakian",NA,21.7,25.2
+"Duntroonian","Cenozoic 4",25.2,27.3
+"Whaingaroan",NA,27.3,34.3
+"Runangan","Cenozoic 3",34.3,36
+"Kaiatan","Cenozoic 3",36,37.2
+"Bortonian",NA,37.2,43
+"Porangan","Cenozoic 2",43,46.2
+"Heretaungan","Cenozoic 2",46.2,49.5
+"Mangaorapan","Cenozoic 2",49.5,53
+"Waipawan","Cenozoic 2",53,55.8
+"Teurian","Cenozoic 1",55.8,66.043
+"Haumurian",NA,66.043,84.9
+"Piripauan","Cretaceous 6",84.9,85.8
+"Teratan","Cretaceous 6",85.8,89.3
+"Mangaotanean","Cretaceous 6",89.3,92.1
+"Arowhanan",NA,92.1,95.2
+"Ngaterian","Cretaceous 5",95.2,99.7
+"Motuan","Cretaceous 4",99.7,103.3
+"Urutawan","Cretaceous 4",103.3,108.4
+"Korangan",NA,108.4,125.45
+"Puaroan","Jurassic 6",145.5,148.5
+"Ohauan",NA,148.5,153.5
+"Heterian","Jurassic 5",153.5,161.2
+"Temaikan",NA,161.2,175.6
+"Ururoan",NA,175.6,189.6
+"Aratauran","Jurassic 1",189.6,201.6
+"Otapirian","Triassic 4",201.6,205.6
+"Warepan","Triassic 4",205.6,212
+"Otamitan","Triassic 4",212,221.5
+"Oretian","Triassic 3",221.5,227.5
+"Kaihikuan",NA,227.5,238.5
+"Etalian","Triassic 2",238.5,244.5
+"Malakovian",NA,244.5,NA
+"Nelsonian","Triassic 1",NA,NA
+"Makarewan",NA,NA,NA
+"Waiitian","Permian 4",NA,253
+"Puruhauan","Permian 4",253,259
+"Flettian","Permian 3",259,265
+"Barettian",NA,265,273
+"Mangapirian","Permian 2",273,280
+"Telfordian","Permian 2",280,290.1
+"Tabenbulakian","Cenozoic 4",23.03,NA
+"Hsandagolian","Cenozoic 4",NA,NA
+"Kekeamuan","Cenozoic 4",NA,33.9
+"Houldjinian","Cenozoic 3",33.9,NA
+"Ergilian","Cenozoic 3",NA,NA
+"Ulangochuian","Cenozoic 3",NA,37.2
+"Sharamurunian",NA,37.2,NA
+"Irdinmanhan",NA,NA,NA
+"Arshantan",NA,NA,48.6
+"Bumbanian","Cenozoic 2",48.6,55.8
+"Gashatan","Cenozoic 1",55.8,58.7
+"Katian",NA,445.6,455.8
+"Sandbian","Ordovician 4",455.8,460.9
+"Floian","Ordovician 2",471.8,478.6
+"late Late Ordovician","Ordovician 5",443.7,445.6
+"MP 30","Cenozoic 4",23.03,NA
+"MP 29","Cenozoic 4",NA,NA
+"MP 28","Cenozoic 4",NA,NA
+"MP 27","Cenozoic 4",NA,NA
+"MP 26","Cenozoic 4",NA,NA
+"MP 25","Cenozoic 4",NA,NA
+"MP 24","Cenozoic 4",NA,NA
+"MP 23","Cenozoic 4",NA,NA
+"MP 22","Cenozoic 4",NA,NA
+"MP 21","Cenozoic 4",NA,33.9
+"MP 20","Cenozoic 3",33.9,NA
+"MP 19","Cenozoic 3",NA,NA
+"MP 18","Cenozoic 3",NA,NA
+"MP 17B","Cenozoic 3",NA,NA
+"MP 17A","Cenozoic 3",NA,37.2
+"MP 16","Cenozoic 3",37.2,40.4
+"MP 15","Cenozoic 2",40.4,NA
+"MP 14","Cenozoic 2",NA,NA
+"MP 13","Cenozoic 2",NA,NA
+"MP 12","Cenozoic 2",NA,NA
+"MP 11","Cenozoic 2",NA,48.6
+"MP 10","Cenozoic 2",48.6,NA
+"MP 8 + 9","Cenozoic 2",NA,NA
+"MP 7","Cenozoic 2",NA,55.8
+"MP 6","Cenozoic 1",55.8,NA
+"MP 1 - 5","Cenozoic 1",NA,66.043
+"Nihewanian","Cenozoic 6",0.012,2.588
+"Yushean","Cenozoic 6",2.588,4.9
+"Baodean","Cenozoic 6",4.9,11.1
+"Tunggurian",NA,11.1,13.65
+"Shanwangian","Cenozoic 5",13.65,16.9
+"Xiejiaan","Cenozoic 5",16.9,23.03
+"Pannonian","Cenozoic 6",7.246,11.608
+"Sarmatian","Cenozoic 5",11.608,12.7
+"Badenian","Cenozoic 5",12.7,13.65
+"Biarmian","Permian 3",268,272.5
+"Yarengian","Triassic 1",247.2,NA
+"Vetlugian","Triassic 1",NA,252.3
+"Bukobayian","Triassic 2",235,NA
+"Donguzian","Triassic 2",NA,247.2
+"Gamian","Triassic 1",247.2,NA
+"Fedorovkian","Triassic 1",NA,NA
+"Ustmylian","Triassic 1",NA,NA
+"Sludkian","Triassic 1",NA,NA
+"Rybinskian","Triassic 1",NA,NA
+"Vokhmian","Triassic 1",NA,252.3
+"Upper Vyatkian",NA,252.3,NA
+"Lower Vyatkian","Permian 4",NA,NA
+"Upper Severodvinian",NA,NA,NA
+"Lower Severodvinian",NA,NA,265
+"Upper Urzhumian","Permian 3",265,NA
+"Lower Urzhumian","Permian 3",NA,268
+"Upper Kazanian","Permian 3",268,NA
+"Lower Kazanian","Permian 3",NA,272.5
+"Sheshmian","Permian 2",272.5,NA
+"Solikamskian","Permian 2",NA,279.5
+"Upper Famennian","Devonian 5",360.7,364.7
+"Middle Famennian","Devonian 5",364.7,370.6
+"Lower Famennian","Devonian 5",370.6,376.1
+"Upper Frasnian","Devonian 4",376.1,379.5
+"Middle Frasnian","Devonian 4",379.5,382.4
+"Lower Frasnian","Devonian 4",382.4,383.7
+"Upper Emsian","Devonian 2",391.9,402.5
+"Lower Emsian","Devonian 2",402.5,409.1
+"Upper Givetian","Devonian 3",383.7,NA
+"Middle Givetian","Devonian 3",NA,NA
+"Lower Givetian","Devonian 3",NA,388.1
+"Dapingian","Ordovician 2",468.1,471.8
+"",NA,635,663
+"Nyborg",NA,580,635
+"Wulingian","Cambrian 3",501,513
+"Qiandongian","Cambrian 2",513,516
+"Diandongian",NA,516,542
+"Niuchehean","Cambrian 4",488.3,NA
+"Paibian","Cambrian 4",498.5,501
+"Guzhangian","Cambrian 4",501,NA
+"Tarantian","Cenozoic 6",0.012,0.126
+"Ionian","Cenozoic 6",0.126,0.781
+"Niagaran",NA,422.9,443.7
+"Salina","Silurian 2",416,422.9
+"Lockport","Silurian 2",422.9,NA
+"Clinton",NA,NA,NA
+"Medina","Silurian 1",NA,443.7
+"Kuimov","Silurian 2",418.7,422.9
+"Chagyrka","Silurian 2",422.9,426.2
+"Chesnokovka",NA,426.2,NA
+"Polaty","Silurian 1",NA,NA
+"Syrovaty","Silurian 1",NA,NA
+"Vtorye Utesy","Silurian 1",NA,443.7
+"Misikella","Triassic 4",201.6,NA
+"Misikella","Triassic 4",NA,NA
+"Misikella","Triassic 4",NA,NA
+"Misikella","Triassic 4",NA,205.6
+"Meishanian","Permian 4",252.3,253.5
+"Baoqingian","Permian 4",253.5,254
+"Laoshanian","Permian 4",254,258.1
+"Laibinian","Permian 4",258.1,259
+"Late Ordovician",NA,443.7,460.9
+"Early Ordovician",NA,471.8,488.3
+"Late Cretaceous",NA,66.043,99.7
+"Early Cretaceous",NA,99.7,145.5
+"Late Jurassic",NA,145.5,161.2
+"Early Jurassic",NA,175.6,201.6
+"Late Triassic",NA,201.6,235
+"Early Triassic","Triassic 1",247.2,252.3
+"Late Devonian",NA,360.7,383.7
+"Early Devonian",NA,391.9,416
+"Early Imbrian",NA,1650,3850
+"Late Pliocene","Cenozoic 6",2.588,3.6
+"Early Pliocene","Cenozoic 6",3.6,5.332
+"Late Miocene","Cenozoic 6",5.332,11.608
+"Early Miocene","Cenozoic 5",15.97,23.03
+"Late Oligocene","Cenozoic 4",23.03,28.4
+"Early Oligocene","Cenozoic 4",28.4,33.9
+"Late Eocene","Cenozoic 3",33.9,37.2
+"Early Eocene","Cenozoic 2",48.6,55.8
+"Late Paleocene","Cenozoic 1",55.8,58.7
+"Early Paleocene","Cenozoic 1",61.7,66.043
+"Late Llandeilo","Ordovician 4",449.5,NA
+"Early Llandeilo","Ordovician 3",460.9,466
+"Late Llanvirn","Ordovician 3",460.9,463.5
+"Early Llanvirn","Ordovician 3",463.5,466
+"Late Hemphillian","Cenozoic 6",4.9,NA
+"Late Clarendonian",NA,10.3,NA
+"Early Clarendonian",NA,NA,13.6
+"Early Barstovian","Cenozoic 5",NA,15.97
+"Late Hemingfordian","Cenozoic 5",15.97,NA
+"Early Hemingfordian","Cenozoic 5",NA,20.43
+"Late Chadronian","Cenozoic 3",33.9,NA
+"Early Chadronian","Cenozoic 3",NA,37.2
+"Late Uintan","Cenozoic 2",40.4,NA
+"Early Uintan","Cenozoic 2",NA,46.2
+"Late Callovian","Jurassic 5",161.2,NA
+"Early Callovian","Jurassic 5",NA,164.7
+"Late Bajocian","Jurassic 4",167.7,NA
+"Early Bajocian","Jurassic 4",NA,171.6
+"Late Toarcian","Jurassic 3",175.6,NA
+"Early Toarcian","Jurassic 3",182,183
+"Late Pliensbachian","Jurassic 2",183,NA
+"Early Pliensbachian","Jurassic 2",NA,189.6
+"Late Sinemurian","Jurassic 1",189.6,NA
+"Early Sinemurian","Jurassic 1",NA,196.5
+"Late Maastrichtian","Cretaceous 8",66.043,NA
+"Early Maastrichtian","Cretaceous 8",NA,70.6
+"Late Campanian","Cretaceous 7",70.6,NA
+"Early Campanian","Cretaceous 7",NA,84.9
+"Late Santonian","Cretaceous 6",84.9,NA
+"Early Santonian","Cretaceous 6",NA,85.8
+"Late Coniacian","Cretaceous 6",85.8,NA
+"Early Coniacian","Cretaceous 6",NA,89.3
+"Late Turonian","Cretaceous 6",89.3,NA
+"Early Turonian","Cretaceous 6",NA,94.3
+"Late Cenomanian","Cretaceous 5",94.3,NA
+"Early Cenomanian","Cretaceous 5",NA,99.7
+"Late Albian","Cretaceous 4",99.7,105.3
+"Early Albian","Cretaceous 4",109,112.6
+"Late Aptian","Cretaceous 3",112.6,122.46
+"Early Aptian","Cretaceous 3",122.46,125.45
+"Late Barremian","Cretaceous 2",125.45,NA
+"Early Barremian","Cretaceous 2",NA,130
+"Late Hauterivian","Cretaceous 2",130,NA
+"Early Hauterivian","Cretaceous 2",NA,136.4
+"Late Valanginian","Cretaceous 1",136.4,NA
+"Early Valanginian","Cretaceous 1",NA,140.2
+"Late Berriasian","Cretaceous 1",140.2,NA
+"Early Berriasian","Cretaceous 1",NA,145.5
+"Late Tithonian","Jurassic 6",145.5,NA
+"Early Tithonian","Jurassic 6",NA,150.8
+"Late Kimmeridgian","Jurassic 5",150.8,NA
+"Early Kimmeridgian","Jurassic 5",NA,155.7
+"Late Oxfordian","Jurassic 5",155.7,NA
+"Early Oxfordian","Jurassic 5",NA,161.2
+"Late Bathonian","Jurassic 4",164.7,NA
+"Early Bathonian","Jurassic 4",NA,167.7
+"Late Aalenian","Jurassic 3",171.6,NA
+"Early Aalenian","Jurassic 3",NA,175.6
+"Late Hettangian","Jurassic 1",196.5,NA
+"Early Hettangian","Jurassic 1",NA,NA
+"Late Pennsylvanian","Carboniferous 5",298.9,306.95
+"Early Pennsylvanian","Carboniferous 4",314.6,318.1
+"Late Mississippian","Carboniferous 3",318.1,326.4
+"Early Mississippian","Carboniferous 1",345.3,360.7
+"Early Cambrian",NA,513,542
+"Late Pleistocene","Cenozoic 6",0.012,0.126
+"Early Pleistocene","Cenozoic 6",0.781,2.588
+"Late Vyatkian",NA,252.3,NA
+"Early Vyatkian","Permian 4",NA,NA
+"Late Severodvinian",NA,NA,NA
+"Early Severodvinian",NA,NA,265
+"Late Urzhumian","Permian 3",265,NA
+"Early Urzhumian","Permian 3",NA,268
+"Late Kazanian","Permian 3",268,NA
+"Early Kazanian","Permian 3",NA,272.5
+"Late Famennian","Devonian 5",360.7,364.7
+"Early Famennian","Devonian 5",370.6,376.1
+"Late Frasnian","Devonian 4",376.1,379.5
+"Early Frasnian","Devonian 4",382.4,383.7
+"Late Emsian","Devonian 2",391.9,402.5
+"Early Emsian","Devonian 2",402.5,409.1
+"Late Givetian","Devonian 3",383.7,NA
+"Early Givetian","Devonian 3",NA,388.1

@@ -50,7 +50,7 @@ tbinInfo <- rbind(tbinInfo, temp)
 tbinInfo$name[tbinInfo$name == 'Cazenovia'] <- 'Cazenovian'
 
 ## remove time periods that do not fall completely within a 10my bin
-tbinInfo <- tbinInfo[!is.na(tbinInfo$tbin), ]
+# tbinInfo <- tbinInfo[!is.na(tbinInfo$tbin), ]
 
 ## write out
 write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
