@@ -49,6 +49,11 @@ tbins <- tbins[goodTimes, ]
 pbdb <- pbdb[pbdb$tbin %in% tbins$tbin, ]
 pbdb$tbin <- factor(as.character(pbdb$tbin), levels = tbins$tbin)
 
+## correct raw occs by 3 timer
+occs3T <- occsRaw / presProb
+dim(occsRaw)
+length(presProb)
+
 ## plot of preservation probability through time
 par(xpd = NA, mgp = c(1.5, 0.5, 0))
 plot(tbins$ma_mid, presProb, type = 'l', xlim = c(540, 0), ylim = 0:1,
@@ -67,8 +72,26 @@ plot(tbins$ma_mid, rowSums(occsRaw) / presProb, type = 'l', xlim = c(540, 0),
      xaxt = 'n', xaxs = 'i')
 paleoAxis(1)
 
+par(xpd = NA, mgp = c(1.5, 0.5, 0))
+plot(tbins$ma_mid, rowSums(occs3T), type = 'l', xlim = c(540, 0),
+     xaxt = 'n', xaxs = 'i')
+paleoAxis(1)
+
 
 ## correct for number of publications
-plot(tapply(pbdb$reference_no, pbdb$tbin, function(x) length(unique(x))), 
-     rowSums(occsRaw) / presProb, log = 'xy')
+logD <- log(rowSums(occs3T))
+logP <- log(tapply(pbdb$reference_no, pbdb$tbin, function(x) length(unique(x))))
 
+pubMod <- lm(logD ~ logP)
+pubCorFact <- as.numeric(pubMod$coefficients[1] * exp(logP) ^ pubMod$coefficients[2])
+occs3TPub <- occs3T / pubCorFact
+
+par(mar = c(2.5, 2.5, 0, 0) + 0.5, xpd = FALSE, mgp = c(1.75, 0.5, 0))
+plot(logP, logD)
+abline(pubMod, col = 'red')
+
+
+par(mar = c(4, 2.5, 0, 0) + 0.5, xpd = NA, mgp = c(1.5, 0.5, 0))
+plot(tbins$ma_mid, rowSums(occs3TPub), type = 'l', xlim = c(540, 0),
+     xaxt = 'n', xaxs = 'i')
+paleoAxis(1)
