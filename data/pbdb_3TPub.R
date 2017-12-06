@@ -115,5 +115,13 @@ occs3TbyOrd <- split(as.data.frame(t(occs3T)), occsNames2Ord)
 ordDiv <- lapply(occs3TbyOrd, colSums)
 logPOrd <- rep(logP, length(ordDiv))
 logOrdDiv <- log(unlist(ordDiv))
+logPOrd <- logPOrd[is.finite(logOrdDiv)]
+logOrdDiv <- logOrdDiv[is.finite(logOrdDiv)]
 
 plot(logPOrd, logOrdDiv)
+
+pubModOrd <- lm(logOrdDiv ~ logPOrd)
+abline(pubModOrd, col = 'red')
+
+pubCorFact <- as.numeric(pubModOrd$coefficients[1] * exp(logPOrd) ^ pubModOrd$coefficients[2])
+names(pubCorFact) <- names(logOrdDiv)
