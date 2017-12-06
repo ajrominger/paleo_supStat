@@ -46,8 +46,13 @@ occsFill <- occsFill[goodTimes, ]
 occsRaw <- occsRaw[goodTimes, ]
 presProb <- presProb[goodTimes]
 tbins <- tbins[goodTimes, ]
-# pbdb <- pbdb[pbdb$tbin %in% tbins$tbin, ]
-# pbdb$tbin <- factor(as.character(pbdb$tbin), levels = tbins$tbin)
+pbdb <- pbdb[pbdb$tbin %in% tbins$tbin, ]
+pbdb$tbin <- factor(as.character(pbdb$tbin), levels = tbins$tbin)
+
+## remove taxa that have occ only in first and last bins
+colnames(occsFill) <- colnames(occsRaw)
+occsFill <- occsFill[, colnames(occsFill) %in% unique(pbdb$otu)]
+occsRaw <- occsRaw[, colnames(occsRaw) %in% unique(pbdb$otu)]
 
 ## correct raw occs by 3 timer
 occs3T <- occsRaw / presProb
@@ -104,9 +109,11 @@ paleoAxis(1)
 ## corect for number of pubs, but at order level
 occsNames2Ord <- pbdb$order[match(colnames(occs3T), pbdb$otu)]
 occs3T <- occs3T[, occsNames2Ord != '']
+occsNames2Ord <- occsNames2Ord[occsNames2Ord != '']
 
+occs3TbyOrd <- split(as.data.frame(t(occs3T)), occsNames2Ord)
+ordDiv <- lapply(occs3TbyOrd, colSums)
+logPOrd <- rep(logP, length(ordDiv))
+logOrdDiv <- log(unlist(ordDiv))
 
-
-# occs3TOrd <- 
-lapply(unique(pbdb$order[]))
-
+plot(logPOrd, logOrdDiv)
