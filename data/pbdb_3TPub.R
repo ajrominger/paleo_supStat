@@ -34,7 +34,7 @@ gapRangeThrough <- sapply(1:ncol(txg), function(i) {
 
 ## tbin by genus matrix will filled-in durations
 occsFill <- gapRangeThrough[(1:nrow(tbins)) + 2 * nrow(tbins), ]
-occsRaw <- gapRangeThrough[(1:nrow(tbins)) + nrow(tbins), ]
+occsRaw <- txg
 
 ## probability of preservation
 gapRangeThrough <- rowSums(gapRangeThrough)
@@ -46,8 +46,8 @@ occsFill <- occsFill[goodTimes, ]
 occsRaw <- occsRaw[goodTimes, ]
 presProb <- presProb[goodTimes]
 tbins <- tbins[goodTimes, ]
-pbdb <- pbdb[pbdb$tbin %in% tbins$tbin, ]
-pbdb$tbin <- factor(as.character(pbdb$tbin), levels = tbins$tbin)
+# pbdb <- pbdb[pbdb$tbin %in% tbins$tbin, ]
+# pbdb$tbin <- factor(as.character(pbdb$tbin), levels = tbins$tbin)
 
 ## correct raw occs by 3 timer
 occs3T <- occsRaw / presProb
@@ -66,7 +66,7 @@ plot(tbins$ma_mid, rowSums(occsFill), type = 'l', xlim = c(540, 0),
      xaxt = 'n', xaxs = 'i')
 paleoAxis(1)
 
-## plot of 3timmer corrected genus richness through time
+## plot of 3timer corrected genus richness through time
 par(xpd = NA, mgp = c(1.5, 0.5, 0))
 plot(tbins$ma_mid, rowSums(occsRaw) / presProb, type = 'l', xlim = c(540, 0),
      xaxt = 'n', xaxs = 'i')
@@ -90,8 +90,23 @@ par(mar = c(2.5, 2.5, 0, 0) + 0.5, xpd = FALSE, mgp = c(1.75, 0.5, 0))
 plot(logP, logD)
 abline(pubMod, col = 'red')
 
+par(mar = c(4, 2.5, 0, 0) + 0.5, xpd = NA, mgp = c(1.5, 0.5, 0))
+plot(tbins$ma_mid, logD, type = 'l', xlim = c(540, 0), ylim = range(logP, logD),
+     xaxt = 'n', xaxs = 'i')
+lines(tbins$ma_mid, logP, col = 'red')
+paleoAxis(1)
 
 par(mar = c(4, 2.5, 0, 0) + 0.5, xpd = NA, mgp = c(1.5, 0.5, 0))
 plot(tbins$ma_mid, rowSums(occs3TPub), type = 'l', xlim = c(540, 0),
      xaxt = 'n', xaxs = 'i')
 paleoAxis(1)
+
+## corect for number of pubs, but at order level
+occsNames2Ord <- pbdb$order[match(colnames(occs3T), pbdb$otu)]
+occs3T <- occs3T[, occsNames2Ord != '']
+
+
+
+# occs3TOrd <- 
+lapply(unique(pbdb$order[]))
+
