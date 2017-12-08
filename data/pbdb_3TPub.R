@@ -88,7 +88,7 @@ logD <- log(rowSums(occs3T))
 logP <- log(tapply(pbdb$reference_no, pbdb$tbin, function(x) length(unique(x))))
 
 pubMod <- lm(logD ~ logP)
-pubCorFact <- as.numeric(pubMod$coefficients[1] * exp(logP) ^ pubMod$coefficients[2])
+pubCorFact <- as.numeric(exp(pubMod$coefficients[1]) * exp(logP) ^ pubMod$coefficients[2])
 occs3TPub <- occs3T / pubCorFact
 
 par(mar = c(2.5, 2.5, 0, 0) + 0.5, xpd = FALSE, mgp = c(1.75, 0.5, 0))
@@ -108,20 +108,37 @@ paleoAxis(1)
 
 ## corect for number of pubs, but at order level
 occsNames2Ord <- pbdb$order[match(colnames(occs3T), pbdb$otu)]
-occs3T <- occs3T[, occsNames2Ord != '']
-occsNames2Ord <- occsNames2Ord[occsNames2Ord != '']
+# occs3T <- occs3T[, occsNames2Ord != '']
+# occsNames2Ord <- occsNames2Ord[occsNames2Ord != '']
 
 occs3TbyOrd <- split(as.data.frame(t(occs3T)), occsNames2Ord)
 ordDiv <- lapply(occs3TbyOrd, colSums)
 logPOrd <- rep(logP, length(ordDiv))
 logOrdDiv <- log(unlist(ordDiv))
-logPOrd <- logPOrd[is.finite(logOrdDiv)]
-logOrdDiv <- logOrdDiv[is.finite(logOrdDiv)]
+presProbOrd <- rep(presProb, length(ordDiv))
+
+# logPOrd <- logPOrd[is.finite(logOrdDiv)]
+# logOrdDiv <- logOrdDiv[is.finite(logOrdDiv)]
 
 plot(logPOrd, logOrdDiv)
 
-pubModOrd <- lm(logOrdDiv ~ logPOrd)
+pubModOrd <- lm(logOrdDiv ~ logPOrd, data = data.frame(logOrdDiv = logOrdDiv, logPOrd = logPOrd)[is.finite(logOrdDiv), ])
 abline(pubModOrd, col = 'red')
 
-pubCorFact <- as.numeric(pubModOrd$coefficients[1] * exp(logPOrd) ^ pubModOrd$coefficients[2])
-names(pubCorFact) <- names(logOrdDiv)
+## now make correction factor and match it to correct place in occs3T to make pub-corrected occurrence matrix
+pubCorFactOrd <- as.numeric(pubModOrd$coefficients[1] * exp(logPOrd) ^ pubModOrd$coefficients[2])
+names(pubCorFactOrd) <- names(logOrdDiv)
+
+matchNames <- paste(rep(occsNames2Ord, each = nrow(occs3T)), rep(rownames(occs3T), length(occsNames2Ord)), sep = '.')
+occs3TVec <- as.vector(occs3T)
+
+occs3TVec <- exp(occs3TVec / pubCorFactOrd[matchNames])
+
+occs3TPubOrd <- matrix(occs3TVec, nrow = nrow(occs3T))
+colnames(occs3TPubOrd) <- colnames(occs3T)
+rownames(occs3TPubOrd) <- rownames(occs3T)
+
+par(mar = c(4, 2.5, 0, 0) + 0.5, xpd = NA, mgp = c(1.5, 0.5, 0))
+plot(tbins$ma_mid, rowSums(occs3TPubOrd), type = 'l', xlim = c(540, 0),
+     xaxt = 'n', xaxs = 'i')
+paleoAxis(1)
