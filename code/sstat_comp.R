@@ -1,8 +1,8 @@
-source("~/R_functions/my_ecdf.R")
+source('~/R_functions/my_ecdf.R')
 source("~/R_functions/normLS.R")
 source("~/R_functions/gammaLS.R")
 source("~/R_functions/logPlot.R")
-source('~/Dropbox/research/paleo_supStat/code/Px_gam.R')
+source('~/Dropbox/Research/paleo_supStat/code/Px_gam.R')
 
 library(distr)
 

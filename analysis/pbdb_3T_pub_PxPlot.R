@@ -9,7 +9,7 @@
 ##           sstat_methods.R
 ##           make_pbdb_3Tpub.R (maybe need migrate from this too)
 
-oldwd <- setwd('~/Desktop/Research/paleo_supStat/pbdb/pbdb_3Tpub')
+oldwd <- setwd('~/Dropbox/Research/paleo_supStat/pbdb/pbdb_3Tpub')
 source('../../code/sstat_plotting_par.R')
 
 ##  plot P(x) for orders with likelihood CI's
@@ -17,7 +17,7 @@ with(plot.pars, {
 	# quartz(width=width,height=height)
 	par(mar=mar, mgp=mgp)
 	# browser()
-	source('pbdb_3T_pub_lik_v2.R')
+    source('pbdb/pbdb_3Tpub/pbdb_3T_pub_lik_v2.R')
 	
 	mtext("Cumulative density",side=2,line=2,outer=TRUE)
 	mtext("|Fluctuations|",side=1,line=2,outer=TRUE)

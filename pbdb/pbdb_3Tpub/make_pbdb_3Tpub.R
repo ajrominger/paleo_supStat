@@ -1,8 +1,8 @@
 #######  corrects diversity by 3-timer then number of pubs  #######
-if(!exists("makePlot")) makePlot <- TRUE
+if(!exists("makePlot")) makePlot <- FALSE
 
 
-oldwd <- setwd('~/Dropbox/research/paleo_supStat')
+oldwd <- setwd('~/Dropbox/Research/paleo_supStat')
 
 ##  convenience function to produce a matrix of time by ord with cells
 ##  of corrected diversity
@@ -13,11 +13,11 @@ source("~/R_functions/paleoPlot.R")
 source("~/R_functions/samp2site_spp.R")
 source("~/R_functions/logPlot.R")
 source("~/R_functions/my_ecdf.R")
-source("code/sstat_comp.R")
+source('code/sstat_comp.R')
 source('code/sstat_methods.R')
 
 ##########  load data  ##########
-setwd("data/pbdb_2013-05-28")
+setwd('data/old/pbdb_2013-05-28')
 
 ##	raw occurence data
 pbdb.dat <- read.csv("marInv-occs.csv")
@@ -63,7 +63,7 @@ tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_
 ord.tbin.bias$tbin.pub <- tbin.pub[ord.tbin.bias$tbin]
 
 ######### PLOTTING!!!! ############
-setwd('../../code')
+setwd('../../../code/')
 ## makes `figSupp_divByPubOrd.pdf'
 
 ##	calculate corrected diversity
@@ -75,7 +75,7 @@ if(makePlot) {
 	})
 }
 pbdb.ord.div <- with(ord.tbin.bias,
-	pbdb.3t.pub(div,T3.stat,tbin.pub,ord,tbin,pbdb.time,min.pub=10,plotit=makePlot)
+	pbdb.3t.pub(div, T3.stat, tbin.pub, ord, tbin, pbdb.time, min.pub=10, plotit=makePlot)
 )
 rownames(pbdb.ord.div)
 
