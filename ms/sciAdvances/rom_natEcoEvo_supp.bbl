@@ -1,0 +1,201 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{none}{none}
+    \entry{keilson1970}{article}{}
+      \name{author}{2}{}{%
+        {{hash=283f81e7e8fa74b1f177634bbd001a54}{Keilson}{K\bibinitperiod}{Julian}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=17c805a5dbc8726db583db4bfa0179fe}{Rao}{R\bibinitperiod}{S\bibnamedelima Subba}{S\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{bf15509ab391c4404c55cb4d617eddc1}
+      \strng{fullhash}{bf15509ab391c4404c55cb4d617eddc1}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Applied Probability}
+      \field{number}{3}
+      \field{title}{A process with chain dependent growth rate}
+      \field{volume}{7}
+      \field{year}{1970}
+      \field{pages}{699\bibrangedash 711}
+      \range{pages}{13}
+    \endentry
+    \entry{grassmann1987}{article}{}
+      \name{author}{1}{}{%
+        {{hash=a6c8552361d1e6b5b3849a0f815abef3}{Grassmann}{G\bibinitperiod}{Winfried\bibnamedelima K}{W\bibinitperiod\bibinitdelim K\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a6c8552361d1e6b5b3849a0f815abef3}
+      \strng{fullhash}{a6c8552361d1e6b5b3849a0f815abef3}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Operations Research}
+      \field{number}{1}
+      \field{title}{The asymptotic variance of a time average in a birth-death process}
+      \field{volume}{8}
+      \field{year}{1987}
+      \field{pages}{165\bibrangedash 174}
+      \range{pages}{10}
+    \endentry
+    \entry{hannisdal2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=47afb6c28ea24f5d136ed6de0f0cd35a}{Hannisdal}{H\bibinitperiod}{Bjarte}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=a3243cb96ab018507d727f2aacc79087}{Peters}{P\bibinitperiod}{Shanan\bibnamedelima E.}{S\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{e1c122bfcc9c23a4dafab83fa409432d}
+      \strng{fullhash}{e1c122bfcc9c23a4dafab83fa409432d}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Phanerozoic fossil record of marine animal diversity covaries with the amount of marine sedimentary rock. The extent to which this covariation reflects a geologically controlled sampling bias remains unknown. We show that Phanerozoic records of seawater chemistry and continental flooding contain information on the diversity of marine animals that is independent of sedimentary rock quantity and sampling. Interrelationships among variables suggest long-term interactions among continental flooding, sulfur and carbon cycling, and macroevolution. Thus, mutual responses to interacting Earth systems, not sampling biases, explain much of the observed covariation between Phanerozoic patterns of sedimentation and fossil biodiversity. Linkages between biodiversity and environmental records likely reflect complex biotic responses to changing ocean redox conditions and long-term sea-level fluctuations driven by plate tectonics.}
+      \field{journaltitle}{Science}
+      \field{number}{6059}
+      \field{title}{Phanerozoic Earth System Evolution and Marine Biodiversity}
+      \field{volume}{334}
+      \field{year}{2011}
+      \field{pages}{1121\bibrangedash 1124}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.1210695
+      \endverb
+      \verb{eprint}
+      \verb http://www.sciencemag.org/content/334/6059/1121.full.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.sciencemag.org/content/334/6059/1121.abstract
+      \endverb
+      \keyw{entropy,information theory,information transfer,fossil record,biodiversity}
+    \endentry
+    \entry{sepkoski1992}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ac15c4030f31726c781cb5b377139815}{Sepkoski}{S\bibinitperiod}{J.\bibnamedelimi John}{J\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Milwaukee, WI}%
+      }
+      \list{publisher}{1}{%
+        {Milwaukee Public Museum}%
+      }
+      \strng{namehash}{ac15c4030f31726c781cb5b377139815}
+      \strng{fullhash}{ac15c4030f31726c781cb5b377139815}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A compendium of fossil marine animal families}
+      \field{year}{1992}
+    \endentry
+    \entry{alroy08}{article}{}
+      \name{author}{35}{}{%
+        {{hash=139258ecb448cbdd5d01bef611b8d985}{Alroy}{A\bibinitperiod}{John}{J\bibinitperiod}{}{}{}{}}%
+        {{hash=761fc6142f0314272dd542d68acf6bfb}{Aberhan}{A\bibinitperiod}{Martin}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=0c15afae33f11b4b22cdbde37ed70693}{Bottjer}{B\bibinitperiod}{David\bibnamedelima J.}{D\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=ab99be064192f9409924032ef936a04f}{Foote}{F\bibinitperiod}{Michael}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=e82b45d65664a87e48eff98875ca2a49}{F\"{u}rsich}{F\bibinitperiod}{Franz\bibnamedelima T.}{F\bibinitperiod\bibinitdelim T\bibinitperiod}{}{}{}{}}%
+        {{hash=4002d185d7b5f77d1c75ed366dec6515}{Harries}{H\bibinitperiod}{Peter\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=4c389ed3f57ef774c277f28d0522203a}{Hendy}{H\bibinitperiod}{Austin\bibnamedelimb J.\bibnamedelimi W.}{A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim W\bibinitperiod}{}{}{}{}}%
+        {{hash=f3fcac22215fe6b6e59f4eef8fa85497}{Holland}{H\bibinitperiod}{Steven\bibnamedelima M.}{S\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=7a07b576c3bc81bb3db926e1bb67ae69}{Ivany}{I\bibinitperiod}{Linda\bibnamedelima C.}{L\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+        {{hash=8d64c069ee1e4098c8ae987371387165}{Kiessling}{K\bibinitperiod}{Wolfgang}{W\bibinitperiod}{}{}{}{}}%
+        {{hash=ad5fe40c075b34c5e70ee1a08f0a5c25}{Kosnik}{K\bibinitperiod}{Matthew\bibnamedelima A.}{M\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=e7d5e2e47cb586c9b464216d130b5cb0}{Marshall}{M\bibinitperiod}{Charles\bibnamedelima R.}{C\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{hash=2e46677ba044211d971bffe2cf38dcba}{McGowan}{M\bibinitperiod}{Alistair\bibnamedelima J.}{A\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=3c93905b0f808eaf6ef5cdbd621ff635}{Miller}{M\bibinitperiod}{Arnold\bibnamedelima I.}{A\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+        {{hash=b3f411e518adff51c0b4e05c9e7620e6}{Olszewski}{O\bibinitperiod}{Thomas\bibnamedelima D.}{T\bibinitperiod\bibinitdelim D\bibinitperiod}{}{}{}{}}%
+        {{hash=ca633cab3dfd6e4f28db38164a6cbff9}{Patzkowsky}{P\bibinitperiod}{Mark\bibnamedelima E.}{M\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{hash=a3243cb96ab018507d727f2aacc79087}{Peters}{P\bibinitperiod}{Shanan\bibnamedelima E.}{S\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{hash=da78eedc80b5a08a3b844a43a2f93bcf}{Villier}{V\bibinitperiod}{Lo\"{\i{}}c}{L\bibinitperiod}{}{}{}{}}%
+        {{hash=bb0a5fbe4c854d4eca45761cfcbe9a6f}{Wagner}{W\bibinitperiod}{Peter\bibnamedelima J.}{P\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=e93ace0a504000082e58bd271e96f200}{Bonuso}{B\bibinitperiod}{Nicole}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=7d9d1caafaa1c7d831ed3c3bfd6dd404}{Borkow}{B\bibinitperiod}{Philip\bibnamedelima S.}{P\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+        {{hash=7f080afcc23bcf178ed97149ecb5aa82}{Brenneis}{B\bibinitperiod}{Benjamin}{B\bibinitperiod}{}{}{}{}}%
+        {{hash=ed4188bd7e566caae248b0ec0ad67f7a}{Clapham}{C\bibinitperiod}{Matthew\bibnamedelima E.}{M\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{hash=81a578350b908c6ad06bfc11b0cea597}{Fall}{F\bibinitperiod}{Leigh\bibnamedelima M.}{L\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=096426a10900e7bed2b3ca25619e06d9}{Ferguson}{F\bibinitperiod}{Chad\bibnamedelima A.}{C\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=cc66d1dcceb6b500792d7c092b74cfa7}{Hanson}{H\bibinitperiod}{Victoria\bibnamedelima L.}{V\bibinitperiod\bibinitdelim L\bibinitperiod}{}{}{}{}}%
+        {{hash=28628c52f8ddd079c4698c398c96dc15}{Krug}{K\bibinitperiod}{Andrew\bibnamedelima Z.}{A\bibinitperiod\bibinitdelim Z\bibinitperiod}{}{}{}{}}%
+        {{hash=e212ca13a267dbba9a0cb76e7fe2d38b}{Layou}{L\bibinitperiod}{Karen\bibnamedelima M.}{K\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=73cf5de3a8585a946fa1130986cd36a1}{Leckey}{L\bibinitperiod}{Erin\bibnamedelima H.}{E\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+        {{hash=1f27669f53e216d5ff99c97962018d1f}{N\"{u}rnberg}{N\bibinitperiod}{Sabine}{S\bibinitperiod}{}{}{}{}}%
+        {{hash=3b2a15744609835b89b1873eaa815228}{Powers}{P\bibinitperiod}{Catherine\bibnamedelima M.}{C\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{hash=b51d306b58241f16555013685e9b1d35}{Sessa}{S\bibinitperiod}{Jocelyn\bibnamedelima A.}{J\bibinitperiod\bibinitdelim A\bibinitperiod}{}{}{}{}}%
+        {{hash=21b6af629bc168836575391476615574}{Simpson}{S\bibinitperiod}{Carl}{C\bibinitperiod}{}{}{}{}}%
+        {{hash=08e0a80a5670a0dd3f4511b43fc0dd79}{Toma\v{s}ov\'{y}ch}{T\bibinitperiod}{Adam}{A\bibinitperiod}{}{}{}{}}%
+        {{hash=536e12ea152c4d3fee6e5ae491d981fb}{Visaggi}{V\bibinitperiod}{Christy\bibnamedelima C.}{C\bibinitperiod\bibinitdelim C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{7149a6dd8b097f4da60fb2d31032398f}
+      \strng{fullhash}{2121ca203f743b27aa669b6274005c74}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{It has previously been thought that there was a steep Cretaceous and Cenozoic radiation of marine invertebrates. This pattern can be replicated with a new data set of fossil occurrences representing 3.5 million specimens, but only when older analytical protocols are used. Moreover, analyses that employ sampling standardization and more robust counting methods show a modest rise in diversity with no clear trend after the mid-Cretaceous. Globally, locally, and at both high and low latitudes, diversity was less than twice as high in the Neogene as in the mid-Paleozoic. The ratio of global to local richness has changed little, and a latitudinal diversity gradient was present in the early Paleozoic.}
+      \field{journaltitle}{Science}
+      \field{title}{Phanerozoic Trends in the Global Diversity of Marine Invertebrates}
+      \field{volume}{321}
+      \field{year}{2008}
+      \field{pages}{97\bibrangedash 100}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.1156963
+      \endverb
+      \keyw{database,fossil record,evolutionary history}
+    \endentry
+    \entry{alroy2010}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b41b106c94a7142a4ec3408d8f212969}{Alroy}{A\bibinitperiod}{J.}{J\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{b41b106c94a7142a4ec3408d8f212969}
+      \strng{fullhash}{b41b106c94a7142a4ec3408d8f212969}
+      \field{sortinit}{0}
+      \field{sortinithash}{990108227b3316c02842d895999a0165}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The fossil record demonstrates that each major taxonomic group has a consistent net rate of diversification and a limit to its species richness. It has been thought that long-term changes in the dominance of major taxonomic groups can be predicted from these characteristics. However, new analyses show that diversity limits may rise or fall in response to adaptive radiations or extinctions. These changes are idiosyncratic and occur at different times in each taxa. For example, the end-Permian mass extinction permanently reduced the diversity of important, previously dominant groups such as brachiopods and crinoids. The current global crisis may therefore permanently alter the biosphere's taxonomic composition by changing the rules of evolution.}
+      \field{journaltitle}{Science}
+      \field{number}{5996}
+      \field{title}{The Shifting Balance of Diversity Among Major Marine Animal Groups}
+      \field{volume}{329}
+      \field{year}{2010}
+      \field{pages}{1191\bibrangedash 1194}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1126/science.1189910
+      \endverb
+      \verb{eprint}
+      \verb http://www.sciencemag.org/content/329/5996/1191.full.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.sciencemag.org/content/329/5996/1191.abstract
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
