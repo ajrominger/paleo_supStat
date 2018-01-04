@@ -140,7 +140,7 @@ Biodiversity has not remained constant nor followed a simple
 trajectory through geologic time \citep{raup1982, sepkoski1984,
   gilinsky1994, liow2007, alroy08, alroy2010}.  Instead, it has been
 marked by fluctuations in the number of extant taxa, both positive in
-the case of net origination or negative in the case of net
+the case of net origination, or negative in the case of net
 extinction. Major events, such as adaptive radiations and mass
 extinctions have received special attention \citep{benton1995,
   Erwin1998}, but fluctuations of all sizes are ubiquitous
@@ -152,10 +152,10 @@ biodiversity theoreticians.
 Several approaches have been taken to study the complex trajectory of
 paleo-biodiversity ranging from the hypothesis that biological systems
 self-organize to the brink of critical phase-transitions
-\citep{bak1993, sole1997} to invocations of non-linear environmental
+\citep{bak1993, sole1997}, to invocations of non-linear environmental
 perturbations \citep{newman1995} and escalatory co-evolutionary
 interactions \citep{vermeij1987}. New data and analyses have not
-supported any of these hypotheses at the scale of the entire
+supported these hypotheses at the scale of the entire
 Phanerozoic marine invertebrate fauna \citep{kirchner1998, madin2006,
   alroy08}. Other studies have modeled the mean trend in diversity as
 tracking a potentially evolving equilibrium \citep{sepkoski1984,
@@ -177,7 +177,7 @@ macroevolution:
   \citep{eldredgeGould1972, newman1985adaptive, hopkins2014}; and
 \item as a consequence of the interaction between their life history
   characteristics and the environments they inhabit
-  \citep{vrba1983} (conserved through niche conservatism) different
+  \citep{vrba1983} different
   clades experience different rates of morphological evolution,
   speciation and extinction \citep{simpson1953, sepkoski1984,
     holman1989, gilinsky1994}.
@@ -201,9 +201,7 @@ can be decomposed into many local sub-systems, each of which attains a
 unique dynamic equilibrium. The evolution of these dynamic equilibria
 across sub-systems evolves more slowly. This separation in time scale
 allows local systems to reach equilibrium while the system as a whole
-is far from equilibrium.  \citep{beck2003}. The superimposition of
-sub-systems following unique dynamic equilibria determines the nature
-of the non-equilibrium of the system as a whole. In the context of
+is far from equilibrium.  \citep{beck2003}. In the context of
 macroevolution we propose that a clade with conserved life history
 characteristics corresponds to a sub-system in dynamic equilibrial.
 We say dynamic equilibrium following MacArthur and Wilson
@@ -234,22 +232,23 @@ number of genera (the lowest reliably recorded taxonomic resolution)
 using two canonical databased of fossil biodiversity, the Paleobiology
 Database \citep[PBDB;][]{alroy08} and Sepkoski's compendium
 \citep{sepkoski1992} of fossil marine invertebrates (results from
-Sepkoski's compendium are presented in Appendix \ref{sec:suppSepk}).
+Sepkoski's compendium are presented in Appendix
+\ref{sec:suppSepk}). We used both data sources because concensus is
+lacking on the most accurate picture of Phanerozoic biodiversity
+\citep{marshall2010}.
+
 We define potentially equilibrial sub-systems based on taxonomic
 hierarchies, as a full phylogenetic hypothesis for all marine
 invertebrates is lacking.  Taxa ideally represent groups of organisms
 that descend from a common ancestor and share similar ecologically and
 evolutionary relevant morphological traits \citep{mayr1965systZool,
-  erwin2007}.  For Phanerozoic marine invertebrates, the taxonomic
-level of orders is a likely candidate for equilibrial sub-system
-delineation \citep{holman1989}. However, to evaluate the optimal
-taxonomic level for sub-system designation, we test our
-superstatistical theory using taxonomic levels from order to
-phylum. Additionally, we compare our results to randomized taxonomies
-and confirm that the observed fit of superstatistical theory is not an
-artifact of arbitrary classification but instead represent real,
-biologically relevant diversification processes within and between
-clades.
+  erwin2007}. To evaluate the optimal taxonomic level for sub-system
+designation, we test our superstatistical theory using taxonomic
+levels from order to phylum. Additionally, we compare our results to
+randomized taxonomies and confirm that the observed fit of
+superstatistical theory is not an artifact of arbitrary classification
+but instead represent real, biologically relevant diversification
+processes within and between clades.
 
 \section*{Results}
 
@@ -262,10 +261,10 @@ inverse variances of homogeneous origination-extinction processes,
 which will be approximately Gaussian if clades' diversification
 dynamics are independent and in local equilibrium (see Appendix
 \ref{sec:suppLimitDist}).  Three exemplar dynamics taken from a
-bias-corrected (see methods section) aggregation of the Paleobiology
+sampling-corrected (see methods section) aggregation of the Paleobiology
 Database (PBDB) \citep{alroy08} are shown in Figure \ref{fig:pk_f},
 and indeed all diversity fluctuations within orders are well
-characterized by a Gaussian distribution \ref{fig:pk_f}.
+characterized by a Gaussian distribution (Fig. \ref{fig:pk_f}).
 
 \begin{figure}[!h]
   \centering
@@ -285,7 +284,7 @@ characterized by a Gaussian distribution \ref{fig:pk_f}.
   \label{fig:pk_f}
 \end{figure}
 
-In independent and dynamically equilibrial dynamics suggested by these
+Independent and dynamically equilibrial dynamics suggested by these
 Gaussian fluctuations in genus richness could result from neutral-like
 processes \citep{hubbell2001}, where the dynamics of one taxon are
 unaffected by those of another, or from dampening mechanisms that
@@ -318,10 +317,21 @@ fluctuations for the entire marine Phanerozoic, $P(x)$, as
 \begin{equation}
   P(x) = \int_0^\infty p_k(x \mid \beta) f(\beta) d\beta \label{eq:PxInt}
 \end{equation}
-where $p_k(x \mid \beta)$ is the distribution of fluctuations within
-an order and $f(\beta)$ is the stationary distribution of inverse
-variance in the magnitude of order-level fluctuations in
-diversity. This leads to a non-Gaussian, fat-tailed prediction for
+where
+$p_k(x \mid \beta) = \sqrt{\frac{\beta}{2\pi}} e^{-\frac{\beta
+    x^2}{2}}$ is the distribution of fluctuations within an order and
+$f(\beta) = \frac{1}{\Gamma(b_1/2)}
+\left(\frac{b_1}{2b_0}\right)^{b_1/2} \beta^{(b_1/2) - 1}
+exp\left(-\frac{b_1 \beta}{2 b_0}\right)$ is the stationary
+distribution of inverse variances in the magnitude of order-level
+fluctuations in diversity. The integral in (\ref{eq:PxInt}) leads to
+\begin{equation}
+  P(x) = \frac{\Gamma\left(\frac{b_1 +
+        1}{2}\right)}{\Gamma\left(\frac{b_1}{2}\right)}
+  \sqrt{\frac{b_0}{\pi b_1}} \left(1 + \frac{b_0
+      x^2}{b_1}\right)^{-\frac{b_1 + 1}{2}}
+\end{equation}
+This corresponds to a non-Gaussian, fat-tailed prediction for
 $P(x)$ which matches both the PBDB and Sepkoski data closely
 (Fig. \ref{fig:Px} and Appendix \ref{sec:suppSepk}).
 
@@ -331,7 +341,7 @@ $P(x)$ which matches both the PBDB and Sepkoski data closely
   \caption[Order-level distribution of diversity
   fluctuations]{Distribution of fluctuations in genus diversity within
     orders of marine invertebrates in the Paleobiology Database
-    \citep{alroy08} after bias correction. The distribution is
+    \citep{alroy08} after sampling correction. The distribution is
     fat-tailed as compared to the maximum likelihood estimate of the
     normal distribution (blue line).  At the order level the empirical
     distribution of fluctuations are well described by our
@@ -350,7 +360,7 @@ fluctuations fall within this 95\% confidence envelope
 super-statistical prediction. For further comparison, we fit a
 Gaussian distribution to the observed fluctuations, which corresponds
 to the equilibrium hypothesis that all orders conform to the same
-statistic. Using Akaike Information Criterion (AIC) we find that
+dynamic. Using Akaike Information Criterion (AIC) we find that
 observed fluctuations are considerably better explained by the
 super-statistical prediction than by the Gaussian hypothesis ({\small
   $\Delta$}AIC = 11285.18). Thus, as expected under the
@@ -370,14 +380,14 @@ not represent dynamically equilibrial sub-systems in their fluctuation
 dynamics. Instead, classes aggregate increasingly disparate groups of
 organisms, and thus effectively mix their associated Gaussian
 fluctuations, meaning that one statistic should no longer be
-sufficient to describe class-level dynamics. Our analysis indicates
-that orders are evolutionarily equilibrial and independent entities,
-with all subsumed taxa sharing key ecological and evolutionary
-attributes allowing them to read steady state diversification
-independently from other orders. Both the good fit at the order level
-and worsening fit at higher taxonomic levels is confirmed in
-Sepkoski's compendium, which also allows analysis of phylum-level
-patterns (Fig. \ref{fig:supp_sepkPx}).
+sufficient to describe class-level dynamics. 
+
+Our analysis indicates that orders are evolutionarily equilibrial and
+independent entities, with all subsumed taxa sharing key ecological
+and evolutionary attributes allowing them to reach steady state
+diversification independently from other orders. Both the good fit at
+the order level and worsening fit at higher taxonomic levels is
+confirmed in Sepkoski's compendium.
 
 \begin{figure}[!h]
   \centering
@@ -409,11 +419,8 @@ of classification but carries important biological information.
 %% why orders
 Our analysis makes no assumption that orders should correspond to
 super-statistical subsystems, but identifies them as the appropriate
-level for marine invertebrates. Holman \citep{holman1989} has also
-shown that orders are ``evolutionarily coherent'' in that subtaxa
-within orders share common diversification dynamics. As we show,
-orders differ only in the variances of their diversity fluctuations
-(Fig. \ref{fig:pk_f}).
+level for marine invertebrates. As we show, orders differ only in the
+variances of their diversity fluctuations (Fig. \ref{fig:pk_f}).
 
 Our study is the first to demonstrate that complex patterns in the
 fluctuation of diversity resulting from the sequence of origination
@@ -428,29 +435,35 @@ orders.  Equilibrium could result from many processes, including
 neutrality \citep{macWilson, hubbell2001}, diversity-dependence
 \citep{gavrilets2005, rabosky2009ecolLett} and processes that
 dampen---rather than exacerbate---fluctuations in complex ecological
-networks \citep{berlow2009}. We then show that punctuated shifts to
-different equilibria between order, a consequence of punctuated
-exploration of niche space by newly evolving clades
-\citep{eldredgeGould1972, newman1985adaptive, hopkins2014}, leads to a
-characteristically non-equilibrial distribution of diversity
-fluctuations when the marine Phanerozoic fauna is viewed as a whole
-macro-system.
+networks \citep{berlow2009}. 
 
-The stationary distribution describing this process of punctuated
-non-equilibrium is clearly Gamma.  A Gamma distribution, while
-consistent with multiple processes \citep[e.g.][]{cir1985}, could
-result from evolution of diversification rates across an adaptive
-landscape that promotes niche conservatism and punctuated exploration
-of niche space.  Specifically, if $\beta_k$ values are associated with
-a clade's physiological and life history traits, and those traits
-evolve via Ornstein-Uhlenbeck-like exploration of an adaptive
-landscape, the resulting stationary distribution of $\beta_k$ will be
-Gamma \citep{cir1985, butler2004}.  For macroevolutionary rates to
-vary across an adaptive landscape, this landscape cannot be flat, and
-thus niche conservatism punctuated by adaptive exploration is
-inevitable \citep{newman1985adaptive}. However, if somehow rate
-variation could occur in a less peaky landscape, we would expect the
-distribution of $\beta_k$ to follow a chi-squared distribution.
+We then show that punctuated shifts to different equilibria between
+order, a consequence of punctuated exploration of niche space by newly
+evolving clades \citep{eldredgeGould1972, newman1985adaptive,
+  hopkins2014}, leads to a characteristically non-equilibrial
+distribution of diversity fluctuations when the marine Phanerozoic
+fauna is viewed as a whole macro-system.
+
+The distribution describing this process of evolution in equilibria
+between orders is clearly Gamma (Fig. \ref{fig:pk_f}.  A Gamma
+distribution, while consistent with multiple processes
+\citep[e.g.][]{cir1985}, could result from evolution of
+diversification rates across an adaptive landscape that promotes niche
+conservatism and punctuated exploration of niche space.  Specifically,
+if $\beta_k$ values are associated with a clade's physiological and
+life history traits, and those traits evolve via
+Ornstein-Uhlenbeck-like exploration of an adaptive landscape, the
+resulting stationary distribution of $\beta_k$ will be Gamma
+\citep{cir1985, butler2004}.  For macroevolutionary rates to vary
+across an adaptive landscape, this landscape cannot be flat, and thus
+niche conservatism punctuated by adaptive exploration is inevitable
+\citep{newman1985adaptive}. The specifics of how this adaptive
+lanscape is shaped and is traversed by evolving clades will likely
+determine the specific distribution (e.g. Gamma versus Chi-squared,
+etc.) describing punctuated evoltuion of clades' equilibria.  Our work
+thus motivates study of the trait spaces and evolutionary shifts
+consistent with Gamma-distributed equilibria in diversity
+fluctuations.
 
 %%% how this motivates future work in figuring out the details of
 %%% biotic evolution that are important for driving stasis and
@@ -508,7 +521,7 @@ exclude those occurrences without order-level taxonomy and those
 collections with age estimate resolutions outside the 10my default
 bins of the PBDB resulting in 189516 occurrences left for analysis. To
 avoid basic sampling concerns we excluded the earliest Cambrian and
-the Cenozoic.
+the latest Cenozoic.
 
 To focus attention on the variance of fluctuations we center each
 clade's fluctuation distribution. Because ``equilibrium'' in the
@@ -518,7 +531,7 @@ interest than deviations from it. We also note that most clades are
 already close to centered and so centering has little influence on
 clade-specific fluctuation distributions.
 
-\subsection*{Three-timer and publication bias correction} 
+\subsection*{Three-timer and publication sampling correction} 
 \label{sec:3TP}
 We use a new and flexible method, described below, to correct for
 known sampling biases in publication-based specimen databases
@@ -548,28 +561,32 @@ intensive sub-sampling procedures \citep{alroy08, alroy2010}. We
 directly compare our predicted time series of global genus diversity
 with results derived from SQS \citep{alroy2010} and the raw data
 (Fig. \ref{fig:supp_3TPub}).  Our method shows minor differences with
-the SQS prediction, However, these discrepancies do not have impact
-the distribution of fluctuations (Fig. \ref{fig:supp_3TPub}) and
+the SQS prediction, However, these discrepancies do not impact the
+distribution of fluctuations (Fig. \ref{fig:supp_3TPub}) and
 super-statistical analysis on uncorrected PBDB data (see section
 \ref{sec:rawPBDB}) produces a similar result to the analysis on
 corrected PBDB data presented in the main text.
 
-\subsection*{Numerical methods} \label{sec:numMeth} To fit our
-super-statistical prediction we use the method of least squares
-instead and maximum likelihood. When building the prediction for
-$P(x)$ by calculating order-level Gaussian distributions and
-integrating over them, we use least squares to fit the variance term
-to each order. We do so because orders potentially show asymmetries in
-their distribution of fluctuations. Least squares is more flexible in
-fitting such distributions compared to maximum likelihood which will
-always estimate the empirical variance as the best-fitting parameters.
+\subsection*{Numerical methods} \label{sec:numMeth} We first derive
+the super-statistical distribution $P(x)$ by fitting Gaussian
+distributions to clade-level distributions of fluctuations $p_k(x)$,
+extracting the variances inverse variances $\beta_k$ of those
+$p_k(x)$, testing the best function to describe the distribution of
+$\beta_k$, and then integrating
+$P(x) = \int_{\beta}p_k(x | \beta) f(\beta)$. This process allows to
+free parameters to hone the fit of $P(x)$ to the data.  However, each
+inverse variance must of course be estimated for each clade.  To do so
+we use least squares instead of maximum likelihood because the
+asymetric fluctuation distributions of small clades were more reliably
+fit with curve fitting than with the maximum likelihood estimator.
 
-We also estimate $P(x)$ directly from the raw data using maximum
+We then estimated $P(x)$ directly from the raw data using maximum
 likelihood to compare the fit of our super-statistical prediction and
 that of a simple Gaussian distribution using AIC. To calculate a
 likelihood-based confidence interval on our prediction we bootstrapped
 the data, subsampling fluctuations with replacement from all orders
-combined.
+combined, and calculating AIC of the superstatistical and Gaussian
+models on these bootstrapped datasets.
 
 \bibliographystyle{Science}
 \bibliography{../superStat}
