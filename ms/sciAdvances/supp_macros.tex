@@ -1,0 +1,35 @@
+%%  supplement specific macros
+
+%%  puts an S infront of sections, figs, etc
+\renewcommand{\thesection}{S\arabic{section}}   
+\renewcommand{\thetable}{S\arabic{table}}   
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+%%  puts an s infront of citations
+\makeatletter
+\renewcommand\@bibitem[1]{\item\if@filesw \immediate\write\@auxout
+   {\string\bibcite{#1}{\theenumiv}}\fi\ignorespaces}
+     %% to replace "\the\value{\@listctr}" with "\theenumiv"
+
+\renewenvironment{thebibliography}[1]
+     {\section*{\refname}%  %% use \bibname instead of \refname if using the 
+                            %% report or book document classes
+      \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}%
+      \list{\@biblabel{s\@arabic\c@enumiv}}% %% instead of "\@arabic\c@enumiv"
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{s\@arabic\c@enumiv}}% 
+                                    %% instead of "\@arabic\c@enumiv"
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+    {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
