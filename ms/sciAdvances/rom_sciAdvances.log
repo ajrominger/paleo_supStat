@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 12:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -274,75 +274,75 @@ Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 408.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
  [10 <./figs/fig_dStat(3TP).pdf>] [11] [12]
 [13] [14] (./rom_sciAdvances.bbl [15] [16] [17]) [18] [19]
-Overfull \hbox (9.19162pt too wide) in paragraph at lines 644--644
+Overfull \hbox (9.19162pt too wide) in paragraph at lines 649--649
 []\OT1/cmr/bx/n/17.28 Limit dis-tri-bu-tion of a time-averaged ho-mo-ge-neous
  []
 
 [20
 
-] <figs/figSupp_divByPub.jpg, id=240, 451.6875pt x 451.6875pt>
+] [21] <figs/figSupp_divByPub.jpg, id=243, 451.6875pt x 451.6875pt>
 File: figs/figSupp_divByPub.jpg Graphic file (type jpg)
 
 <use figs/figSupp_divByPub.jpg>
-Package pdftex.def Info: figs/figSupp_divByPub.jpg used on input line 718.
+Package pdftex.def Info: figs/figSupp_divByPub.jpg used on input line 723.
 (pdftex.def)             Requested size: 182.09485pt x 182.09848pt.
 
-<figs/figSupp_sqsRaw3tpub.jpg, id=241, 948.54375pt x 451.6875pt>
+<figs/figSupp_sqsRaw3tpub.jpg, id=244, 948.54375pt x 451.6875pt>
 File: figs/figSupp_sqsRaw3tpub.jpg Graphic file (type jpg)
 
 <use figs/figSupp_sqsRaw3tpub.jpg>
-Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.jpg used on input line 727.
+Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.jpg used on input line 732.
 (pdftex.def)             Requested size: 318.66946pt x 151.74529pt.
 
-<figs/figSupp_pbdbRaw_Px.jpg, id=242, 883.3pt x 883.3pt>
+<figs/figSupp_pbdbRaw_Px.jpg, id=245, 883.3pt x 883.3pt>
 File: figs/figSupp_pbdbRaw_Px.jpg Graphic file (type jpg)
 
 <use figs/figSupp_pbdbRaw_Px.jpg>
-Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.jpg used on input line 742.
+Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.jpg used on input line 747.
 (pdftex.def)             Requested size: 182.09485pt x 182.08852pt.
 
-<figs/figSupp_Px_cls.pdf, id=243, 270.00874pt x 270.00874pt>
+<figs/figSupp_Px_cls.pdf, id=246, 270.00874pt x 270.00874pt>
 File: figs/figSupp_Px_cls.pdf Graphic file (type pdf)
 
 <use figs/figSupp_Px_cls.pdf>
-Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 754.
+Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 759.
 (pdftex.def)             Requested size: 182.09485pt x 182.0997pt.
 
-<figs/figSupp_sepk_Px.jpg, id=244, 1336.995pt x 454.69875pt>
+<figs/figSupp_sepk_Px.jpg, id=247, 1336.995pt x 454.69875pt>
 File: figs/figSupp_sepk_Px.jpg Graphic file (type jpg)
 
 <use figs/figSupp_sepk_Px.jpg>
-Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 767.
+Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 772.
 (pdftex.def)             Requested size: 432.48048pt x 147.08153pt.
- [21] [22 <./figs/figSupp_divByPub.jpg> <./figs/figSupp_sqsRaw3tpub.jpg>] [23 <
-./figs/figSupp_pbdbRaw_Px.jpg> <./figs/figSupp_Px_cls.pdf>] [24 <./figs/figSupp
-_sepk_Px.jpg>] (./rom_sciAdvances.aux) ) 
+ [22 <./figs/figSupp_divByPub.jpg> <./figs/figSupp_sqsRaw3tpub.jpg>] [23 <./fig
+s/figSupp_pbdbRaw_Px.jpg> <./figs/figSupp_Px_cls.pdf>] [24 <./figs/figSupp_sepk
+_Px.jpg>] (./rom_sciAdvances.aux) ) 
 Here is how much of TeX's memory you used:
- 2703 strings out of 492995
- 37232 string characters out of 6132704
+ 2704 strings out of 492995
+ 37250 string characters out of 6132704
  106382 words of memory out of 5000000
- 6217 multiletter control sequences out of 15000+600000
- 12248 words of font info for 44 fonts, out of 8000000 for 9000
+ 6218 multiletter control sequences out of 15000+600000
+ 12555 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,6n,25p,254b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2017/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmtt12.pfb>
-Output written on rom_sciAdvances.pdf (24 pages, 1285773 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mtt12.pfb>
+Output written on rom_sciAdvances.pdf (24 pages, 1285822 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  222 compressed objects within 3 object streams
