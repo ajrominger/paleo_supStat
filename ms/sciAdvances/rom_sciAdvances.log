@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 11:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -94,24 +94,24 @@ Package: paralist 2017/01/22 v2.7 Extended list environments
 (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/xr.sty
 Package: xr 1994/05/28 v5.02 eXternal References (DPC)
 )
-Package xr Info: IMPORTING LABELS FROM rom_natEcoEvo_supp.aux on input line 29.
-
+Package xr Info: IMPORTING LABELS FROM rom_sciAdvances_supp.aux on input line 2
+9.
 
 (./rom_sciAdvances.aux)
 \openout1 = `rom_sciAdvances.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 90.
-LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -176,15 +176,15 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 98.
+(Font)              <14.4> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 98.
+(Font)              <7> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 98.
+(Font)              <12> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 98.
+(Font)              <8> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 98.
+(Font)              <6> on input line 99.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ³ in font cmr12!
 
@@ -194,7 +194,7 @@ Missing character: There is no ³ in font cmr12!
 [2
 
 ]
-Overfull \hbox (7.44pt too wide) in paragraph at lines 160--175
+Overfull \hbox (7.44pt too wide) in paragraph at lines 161--176
 []\OT1/cmr/m/n/12 Several ap-proaches have been taken to study the com-plex tra
 -jec-tory of paleo-biodiversity
  []
@@ -203,10 +203,10 @@ Overfull \hbox (7.44pt too wide) in paragraph at lines 160--175
 File: figs/fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use figs/fig_pkx-fbeta.pdf>
-Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 284.
+Package pdftex.def Info: figs/fig_pkx-fbeta.pdf used on input line 285.
 (pdftex.def)             Requested size: 461.2542pt x 382.21399pt.
 
-Overfull \hbox (6.01012pt too wide) in paragraph at lines 284--296
+Overfull \hbox (6.01012pt too wide) in paragraph at lines 285--297
  [][] 
  []
 
@@ -217,32 +217,32 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figs/fig_Px.pdf, id=91, 270.00874pt x 270.00874pt>
 File: figs/fig_Px.pdf Graphic file (type pdf)
  <use figs/fig_Px.pdf>
-Package pdftex.def Info: figs/fig_Px.pdf used on input line 353.
+Package pdftex.def Info: figs/fig_Px.pdf used on input line 354.
 (pdftex.def)             Requested size: 270.00807pt x 270.00807pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 379.
+(Font)              <10.95> on input line 380.
 [8] [9 <./figs/fig_Px.pdf>]
 <figs/fig_dStat(3TP).pdf, id=129, 235.46048pt x 216.81pt>
 File: figs/fig_dStat(3TP).pdf Graphic file (type pdf)
 
 <use figs/fig_dStat(3TP).pdf>
-Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 407.
+Package pdftex.def Info: figs/fig_dStat(3TP).pdf used on input line 408.
 (pdftex.def)             Requested size: 235.4599pt x 216.80946pt.
  [10 <./figs/fig_dStat(3TP).pdf>] [11] [12]
 [13] [14] (./rom_sciAdvances.bbl [15] [16] [17]) [18] [19]
 (./rom_sciAdvances.aux) ) 
 Here is how much of TeX's memory you used:
- 2084 strings out of 492995
- 29811 string characters out of 6132704
- 96158 words of memory out of 5000000
- 5618 multiletter control sequences out of 15000+600000
+ 2080 strings out of 492995
+ 29764 string characters out of 6132704
+ 96218 words of memory out of 5000000
+ 5614 multiletter control sequences out of 15000+600000
  10730 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,25p,276b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,6n,25p,254b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
@@ -259,7 +259,7 @@ r8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on rom_sciAdvances.pdf (19 pages, 849116 bytes).
+Output written on rom_sciAdvances.pdf (19 pages, 849756 bytes).
 PDF statistics:
  285 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
