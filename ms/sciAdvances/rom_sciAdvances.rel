@@ -1,0 +1,58 @@
+;; RefTeX parse info file
+;; File: /Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex
+;; User: ajr (ajrominger)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr ((nil . "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_natEcoEvo_supp.tex")) "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/")
+
+(label-numbers ("eq:" . 1))
+
+(bof "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex")
+
+(toc "toc" "    * Introduction" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 2 "*" "\\section*{Introduction}" 4542)
+
+(toc "toc" "    * Results" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 2 "*" "\\section*{Results}" 11539)
+
+("fig:pk_f" "f" "Variability in trajectories of within-order fluctuations in genus diversity" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+("eq:PxInt" "e" "P(x) = \\int_0^\\infty p_k(x \\mid \\beta) f(\\beta) d\\beta  " "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+("eq:1" "e" nil "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil "")
+
+("fig:Px" "f" "Order-level distribution of diversity fluctuations" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+("fig:dStat" "f" "Goodness of super-statistical theory fit" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+(toc "toc" "    * Discussion" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 2 "*" "\\section*{Discussion}" 20183)
+
+(toc "toc" "    * Methods" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 2 "*" "\\section*{Methods}" 25461)
+
+(toc "toc" "      * Paleobiology Database data download and filtering" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 3 "*" "\\subsection*{Paleobiology Database data download and filtering}" 25495)
+
+(toc "toc" "      * Three-timer and publication sampling correction" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 3 "*" "\\subsection*{Three-timer and publication sampling correction}" 26626)
+
+("sec:3TP" "s" "We use a new and flexible method, described below, to correct for known sampling biases in publicati" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+(toc "toc" "      * Numerical methods" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 3 "*" "\\subsection*{Numerical methods}" 28784)
+
+("sec:numMeth" "s" "We first derive the super-statistical distribution $P(x)$ by fitting Gaussian distributions to clade" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil)
+
+(toc "toc" "    * Acknowledgments" "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex" nil 2 "*" "\\section*{Acknowledgments}" 30062)
+
+(bib "/Users/ajr/Dropbox/Research/paleo_supStat/ms/superStat.bib")
+
+(xr-doc nil "rom_natEcoEvo_supp")
+
+(eof "/Users/ajr/Dropbox/Research/paleo_supStat/ms/sciAdvances/rom_sciAdvances.tex")
+))
+
