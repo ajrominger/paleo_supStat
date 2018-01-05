@@ -23,10 +23,11 @@
 \usepackage{authblk}
 \usepackage{lineno}
 \usepackage{paralist}
+\usepackage{amsmath}
 
 %% for citing stuff in the supp
-\usepackage{xr}
-\externaldocument{rom_sciAdvances_supp}
+% \usepackage{xr}
+% \externaldocument{rom_sciAdvances_supp}
 
 % The following parameters seem to provide a reasonable page setup.
 
@@ -335,7 +336,7 @@ $p_k(x \mid \beta) = \sqrt{\frac{\beta}{2\pi}} e^{-\frac{\beta
     x^2}{2}}$ is the distribution of fluctuations within an order and
 $f(\beta) = \frac{1}{\Gamma(b_1/2)}
 \left(\frac{b_1}{2b_0}\right)^{b_1/2} \beta^{(b_1/2) - 1}
-exp\left(-\frac{b_1 \beta}{2 b_0}\right)$ is the stationary
+\text{exp}\left(-\frac{b_1 \beta}{2 b_0}\right)$ is the stationary
 distribution of inverse variances in the magnitude of order-level
 fluctuations in diversity. The integral in (\ref{eq:PxInt}) leads to
 \begin{equation}
@@ -521,7 +522,7 @@ mechanisms. As such, applications of superstatistics from islands to
 populations to clades are ripe for exploration.
 
 
-\section*{Methods}
+\section*{Methods and Materials}
 
 \subsection*{Paleobiology Database data download and filtering}
 Data were downloaded from the Paleobiology Database (PBDB;
@@ -605,15 +606,174 @@ models on these bootstrapped datasets.
 
 
 \section*{Acknowledgments}
-We thank John Harte, Rosemary Gillespie, Linden Schneider, and Jun
-Ying Lim for helpful discussion. We thank the many contributors to the
-Paleobiology Database for making data availible, and Michael Foote
-provided a digitized copy of Sepkoski's compendium. AJR thanks funding
-from Fulbright Chile, the National Science Foundation Graduate
-Research Fellowship Program and the Omidyar Program at the Santa Fe
-Institute; MAF thanks FONDECYT 1140278; PM thanks CONICYT PFB-023,
-ICM-P05-002 and FONDECYT 1161023.
+\begin{itemize}
+\item[{\bf General:}] We thank John Harte, Rosemary Gillespie, Linden
+  Schneider, and Jun Ying Lim for helpful discussion. We thank the
+  many contributors to the Paleobiology Database for making data
+  availible, and Michael Foote for providing a digitized copy of
+  Sepkoski's compendium.
+\item[{\bf Funding:}] AJR thanks funding from Fulbright Chile, the
+  National Science Foundation Graduate Research Fellowship Program and
+  the Omidyar Program at the Santa Fe Institute; MAF thanks FONDECYT
+  1140278; PM thanks CONICYT PFB-023, ICM-P05-002 and FONDECYT
+  1161023.
+\item[{\bf Author contributions:}] AJR, MAF and PAM designed the
+  study; AJR and MAF preformed the analyses; AJR, MAF and PAM
+  interpreted the results and wrote the manuscript.
+\item[{\bf Competing interests:}] none.
+\item[{\bf Data and materials availability:}] Data are availible
+  through {\tt paleobiodb.org}, analysis scripts are availible online
+  at {\tt github.com/ajrominger/paleo\_supStat}.
+\end{itemize}
 
+
+\clearpage
+
+\newcommand{\beginsupplement}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+  \setcounter{section}{0}
+  \renewcommand{\thesection}{S\arabic{section}}%
+}
+
+\beginsupplement
+
+\section{Limit distribution of a time-averaged homogeneous
+  origination-extinction process}
+\label{sec:suppLimitDist}
+Fossil taxa gain and lose taxa according to an origination-extinction
+process. We assume that most fossil occurrences of a taxon come from
+the period of its history when it is dominant and in steady state. In
+a time slice of duration $\tau$ during such a period of steady state
+the latent per capita rates of origination and extinction would be
+equal (i.e. $\lambda = \mu \equiv \rho$) and the number of origination
+or extinctions events (call such events $Y$) each follow an
+inhomogeneous Poisson process with rate $\rho N_t$ where $N_t$ is the
+number of species or genera in the taxon of interest at time
+$t$. Allowing $N_t$ to vary smoothly with time, and invoking the
+communicative property of the Poisson distribution, we arrive at the
+number $Y$ of extinction \emph{or} origination events in $\tau$ being
+distributed
+\begin{equation}
+  \label{eq:eventPois1}
+  Y \sim \text{Pois}(\rho \int_{t=0}^\tau N(t) dt).
+\end{equation}
+Under the steady state assumption we can approximate $N(t)$ by
+$\bar{N}$, the steady state diversity, leading to
+\begin{equation}
+  \label{eq:eventPois2}
+  Y \sim \text{Pois}(\rho \bar{N} \tau).
+\end{equation}
+
+Assuming the $\tau$ of each time period in the Paleobiology Database
+or Sepkoski's compendium to be approximately equal (i.e. equal
+durations of major stratographic units) then the distribution of
+fluctuations within taxa will be asymptotically Gaussian.
+
+The Gaussian assymptotics of time-avereaged birth-death processes have
+been proven and explored elswhere as well \citep{keilson1970,
+  grassmann1987}.
+
+\section{Additional super-statistical analyses}
+To evaluate the sensitivity of our super-statistical analysis on the
+particular data used and we tested our predictions on different data
+sets (see below). The fact that it works in all different applications
+indicates that it is robust to vagaries of different recording
+strategies and bias corrections in paleobiology. This could mean that
+much of the raw signal in massive fossil datasets, at least signals
+regarding fluctuations, are not artifacts of sampling, as has been
+proposed before \citep{hannisdal2011}.
+
+\subsection{Raw PBDB data} \label{sec:rawPBDB}
+We calculated the super-statistical prediction at the order level from
+raw genus diversity recorded in the PBDB without correcting for
+taphonomic or sampling bias (Fig. \ref{fig:supp_rawPBDB_Px}). The
+super-statistical calculation also closely fits the raw data as in the
+case of sampling and publication bias-corrected data.
+
+\subsection{Different taxonomic ranks in PBDB data}
+As noted in the main text, the super-statistical prediction
+predictably breaks down at higher taxonomic scales. In Figure
+\ref{fig:supp_PBDB_Px_cls} we present this worsening fit graphically
+using class level data with three-timer and publication corrected PBDB
+data
+
+\subsection{Sepkoski's compendium} \label{sec:suppSepk}
+Sepkoski's compendium \citep{sepkoski1992} provided the first
+hypothesis of Phanerozoic diversification.  As such, it has served as
+a benchmark for further investigation into large-scale paleobiological
+patterns \citep{alroy08}.  We conducted the same super-statistical
+analysis as in the main text and find comparable results.
+Specifically, the super-statistical prediction far out preforms the
+null Gaussian model (Fig. \ref{fig:supp_sepkPx}) and worsens with
+increasing taxonomic scale (Fig. \ref{fig:supp_sepkPx}), again
+implying the uniqueness of orders.
+
+\section*{Supplemental Figures}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figs/figSupp_divByPub.jpg}
+  \caption[Relationship between number of publications and genus
+  diversity]{Relationship between number of publications and genus
+    diversity as recorded by the PBDB.}
+  \label{fig:divByPub}
+\end{figure}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figs/figSupp_sqsRaw3tpub.jpg}
+  \caption[Comparison of SQS method with the raw data and three-timer
+  bias correction method]{Comparison of SQS method \citep{alroy2010}
+    (solid black line) with the raw data (dashed black) and our
+    three-timer and publication bias correction method (red). The
+    time-series of all marine invertebrate genera shows general
+    agreement with the only major deviations toward the modern
+    (A). Despite these differences the distribution of fluctuations in
+    genus diversity across all marine invertebrates show good
+    agreement (B).}
+  \label{fig:supp_3TPub}
+\end{figure}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figs/figSupp_pbdbRaw_Px.jpg}
+  \caption[Super-statistical prediction of raw data]{Super-statistical
+    prediction of raw (i.e. not bias corrected) order-level
+    fluctuations in genus diversity recorded in the PBDB. Grey dots
+    are the full data of orders, while black ones are orders with more
+    than 15 points. The red line is our theoretical prediction and the
+    blue line the best Gaussian fit to the data.}
+  \label{fig:supp_rawPBDB_Px}
+\end{figure}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figs/figSupp_Px_cls.pdf}
+  \caption[Super-statistical prediction of bias corrected class-level
+  data]{Super-statistical prediction of bias corrected class-level
+    fluctuations in genus diversity recorded in the PBDB. Grey dots
+    are the full data of orders, while black ones are orders with more
+    than 15 points. The red line is our theoretical prediction and the
+    blue line the best Gaussian fit to the data. Note at the class
+    level the fit is predictably worse, see main text for discussion.}
+  \label{fig:supp_PBDB_Px_cls}
+\end{figure}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figs/figSupp_sepk_Px.jpg}
+  \caption[Super-statistical prediction for Sepkoski's
+  compendium]{Super-statistical prediction (red line) of fluctuations
+    in genus diversity recorded in Sepkoski's compendium of marine
+    invertebrates compared to maximum likelihood normal distribution
+    (blue line). Super-statistical theory explains order level
+    fluctuations well (A) with increasingly poorer fits at the class
+    (B) and phylum (C) levels.}
+  \label{fig:supp_sepkPx}
+\end{figure}
 
 \end{document}
 

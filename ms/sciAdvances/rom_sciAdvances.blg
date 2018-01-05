@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: rom_sciAdvances.aux
 The style file: Science.bst
 Database file #1: ../superStat.bib
-You've used 45 entries,
+You've used 48 entries,
             2300 wiz_defined-function locations,
-            1014 strings with 12944 characters,
-and the built_in function-call counts, 9295 in all, are:
-= -- 854
-> -- 328
+            1033 strings with 13369 characters,
+and the built_in function-call counts, 9884 in all, are:
+= -- 909
+> -- 348
 < -- 5
-+ -- 164
-- -- 82
-* -- 697
-:= -- 1405
-add.period$ -- 45
-call.type$ -- 45
++ -- 174
+- -- 87
+* -- 743
+:= -- 1496
+add.period$ -- 48
+call.type$ -- 48
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 504
-empty$ -- 891
-format.name$ -- 105
-if$ -- 2189
+cite$ -- 48
+duplicate$ -- 536
+empty$ -- 946
+format.name$ -- 112
+if$ -- 2327
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 49
-newline$ -- 138
-num.names$ -- 45
-pop$ -- 178
+int.to.str$ -- 48
+missing$ -- 52
+newline$ -- 147
+num.names$ -- 48
+pop$ -- 188
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 299
+skip$ -- 317
 stack$ -- 0
-substring$ -- 515
-swap$ -- 163
+substring$ -- 548
+swap$ -- 172
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 93
-width$ -- 47
-write$ -- 358
+while$ -- 99
+width$ -- 50
+write$ -- 382
