@@ -1,11 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 11:47
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**rom_sciAdvances_supp
+**\input rom_sciAdvances_supp.tex
 (./rom_sciAdvances_supp.tex
-LaTeX2e <2017-04-15>
-Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/size12.clo
@@ -314,61 +313,69 @@ Missing character: There is no ³ in font cmr12!
 
 ]
 (./rom_sciAdvances_supp.bbl) [3]
-<figs/figSupp_sqsRaw3tpub.jpg, id=23, 948.54375pt x 451.6875pt>
+<figs/figSupp_divByPub.jpg, id=23, 451.6875pt x 451.6875pt>
+File: figs/figSupp_divByPub.jpg Graphic file (type jpg)
+
+<use figs/figSupp_divByPub.jpg>
+Package pdftex.def Info: figs/figSupp_divByPub.jpg used on input line 138.
+(pdftex.def)             Requested size: 187.89914pt x 187.90169pt.
+
+<figs/figSupp_sqsRaw3tpub.jpg, id=24, 948.54375pt x 451.6875pt>
 File: figs/figSupp_sqsRaw3tpub.jpg Graphic file (type jpg)
 
 <use figs/figSupp_sqsRaw3tpub.jpg>
-Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.jpg used on input line 138.
+Package pdftex.def Info: figs/figSupp_sqsRaw3tpub.jpg used on input line 147.
 (pdftex.def)             Requested size: 328.82707pt x 156.5836pt.
 
-<figs/figSupp_pbdbRaw_Px.jpg, id=24, 883.3pt x 883.3pt>
+<figs/figSupp_pbdbRaw_Px.jpg, id=25, 883.3pt x 883.3pt>
 File: figs/figSupp_pbdbRaw_Px.jpg Graphic file (type jpg)
 
 <use figs/figSupp_pbdbRaw_Px.jpg>
-Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.jpg used on input line 153.
+Package pdftex.def Info: figs/figSupp_pbdbRaw_Px.jpg used on input line 162.
 (pdftex.def)             Requested size: 187.89914pt x 187.89757pt.
 
-<figs/figSupp_Px_cls.pdf, id=25, 270.00874pt x 270.00874pt>
+<figs/figSupp_Px_cls.pdf, id=26, 270.00874pt x 270.00874pt>
 File: figs/figSupp_Px_cls.pdf Graphic file (type pdf)
 
 <use figs/figSupp_Px_cls.pdf>
-Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 165.
+Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 174.
 (pdftex.def)             Requested size: 187.89914pt x 187.90067pt.
 
-<figs/figSupp_sepk_Px.jpg, id=26, 1336.995pt x 454.69875pt>
+<figs/figSupp_sepk_Px.jpg, id=27, 1336.995pt x 454.69875pt>
 File: figs/figSupp_sepk_Px.jpg Graphic file (type jpg)
 
 <use figs/figSupp_sepk_Px.jpg>
-Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 178.
+Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 187.
 (pdftex.def)             Requested size: 446.26582pt x 151.7717pt.
  [4
 
- <./figs/figSupp_sqsRaw3tpub.jpg> <./figs/figSupp_pbdbRaw_Px.jpg>] [5 <./figs/f
-igSupp_Px_cls.pdf> <./figs/figSupp_sepk_Px.jpg>] (./rom_sciAdvances_supp.aux) )
- 
+ <./figs/figSupp_divByPub.jpg> <./figs/figSupp_sqsRaw3tpub.jpg>] [5 <./figs/fig
+Supp_pbdbRaw_Px.jpg> <./figs/figSupp_Px_cls.pdf>] [6 <./figs/figSupp_sepk_Px.jp
+g>] (./rom_sciAdvances_supp.aux) ) 
 Here is how much of TeX's memory you used:
- 3390 strings out of 492995
- 46267 string characters out of 6132704
- 115673 words of memory out of 5000000
- 6880 multiletter control sequences out of 15000+600000
+ 3396 strings out of 492995
+ 46420 string characters out of 6132704
+ 115682 words of memory out of 5000000
+ 6885 multiletter control sequences out of 15000+600000
  13050 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,5n,32p,248b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on rom_sciAdvances_supp.pdf (5 pages, 455900 bytes).
+ 39i,5n,32p,259b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmti12.pfb>
+Output written on rom_sciAdvances_supp.pdf (6 pages, 548235 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
