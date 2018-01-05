@@ -6,9 +6,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-\usepackage[style=nature, natbib=true, autocite = superscript]{biblatex}
-\addbibresource{../superStat.bib}
-\let\citep=\autocite
+\usepackage{scicite}
+\let\citep=\cite
 
 \usepackage{lineno}
 \usepackage{paralist}
@@ -127,20 +126,12 @@ null Gaussian model (Fig. \ref{fig:supp_sepkPx}) and worsens with
 increasing taxonomic scale (Fig. \ref{fig:supp_sepkPx}), again
 implying the uniqueness of orders.
 
-\printbibliography
+\bibliographystyle{Science}
+\bibliography{../superStat}
 
 \clearpage
 
 \section*{Supplemental Figures}
-
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[width=0.4\textwidth]{figs/figSupp_divByPub.jpg}
-  \caption[Relationship between number of publications and genus
-  diversity]{Relationship between number of publications and genus
-    diversity as recorded by the PBDB.}
-  \label{fig:divByPub}
-\end{figure}
 
 \begin{figure}[!hp]
   \centering
