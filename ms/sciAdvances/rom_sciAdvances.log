@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  5 JAN 2018 12:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 JAN 2018 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -312,7 +312,7 @@ Package pdftex.def Info: figs/figSupp_Px_cls.pdf used on input line 759.
 File: figs/figSupp_sepk_Px.jpg Graphic file (type jpg)
 
 <use figs/figSupp_sepk_Px.jpg>
-Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 772.
+Package pdftex.def Info: figs/figSupp_sepk_Px.jpg used on input line 773.
 (pdftex.def)             Requested size: 432.48048pt x 147.08153pt.
  [22 <./figs/figSupp_divByPub.jpg> <./figs/figSupp_sqsRaw3tpub.jpg>] [23 <./fig
 s/figSupp_pbdbRaw_Px.jpg> <./figs/figSupp_Px_cls.pdf>] [24 <./figs/figSupp_sepk
@@ -342,7 +342,7 @@ cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb>
-Output written on rom_sciAdvances.pdf (24 pages, 1285822 bytes).
+Output written on rom_sciAdvances.pdf (24 pages, 1285845 bytes).
 PDF statistics:
  315 PDF objects out of 1000 (max. 8388607)
  222 compressed objects within 3 object streams
