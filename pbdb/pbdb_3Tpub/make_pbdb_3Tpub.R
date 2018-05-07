@@ -9,10 +9,26 @@ oldwd <- setwd('~/Dropbox/Research/paleo_supStat')
 source('code/pbdb_3t_pub.R')
 
 ##	load other needed funcitons
-source("~/R_functions/paleoPlot.R")
-source("~/R_functions/samp2site_spp.R")
-source("~/R_functions/logPlot.R")
-source("~/R_functions/my_ecdf.R")
+paleoPlot <- function(...) {
+    plot(...)
+    socorro::paleoAxis(1)
+}
+# source("~/R_functions/paleoPlot.R")
+
+samp2site.spp <- socorro::tidy2mat
+# source("~/R_functions/samp2site_spp.R")
+
+logPlot <- function(..., log) {
+    plot(..., log = log)
+    s <- (1:2)[c(grepl('x', log), grepl('y', log))]
+    
+    socorro::logAxis(s)
+}
+# source("~/R_functions/logPlot.R")
+
+my.ecdf <- socorro::simpECDF
+# source("~/R_functions/my_ecdf.R")
+
 source('code/sstat_comp.R')
 source('code/sstat_methods.R')
 
@@ -125,7 +141,7 @@ pbdb.div <- pbdb.div[order(pbdb.div$time, decreasing=TRUE),]
 if(makePlot) {
 	source('sstat_plotting_par.R')
 	with(plot.pars, {
-		quartz(width=width*2.1,height=height)
+		# quartz(width=width*2.1,height=height)
 		par(mar=mar, mgp=mgp, mfrow=c(1,2))
 
 		with(pbdb.div[2:48,], {
