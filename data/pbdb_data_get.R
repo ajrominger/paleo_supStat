@@ -1,5 +1,3 @@
-library(parallel)
-
 setwd('~/Dropbox/Research/paleo_supStat/data')
 
 ## call to the API
@@ -45,13 +43,14 @@ c2rm <- c('record_type', 'reid_no', 'flags', 'identified_name',
 x <- x[, !(names(x) %in% c2rm)]
 
 ## only well lithified specimens
-x <- x[x$lithification1 == 'lithified', ]
+x <- x[x$lithification1 %in% c('', 'lithified'), ]
+
 
 ## no basin-scale collections
-x <- x[!(x$geogscale %in% c('', 'basin')), ]
+x <- x[x$geogscale != 'basin', ]
 
 ## fine scale stratigraphy only
-x <- x[!(x$stratscale %in% c('', 'group', 'supergroup')), ]
+x <- x[!(x$stratscale %in% c('group', 'supergroup')), ]
 
 ## resolve taxonomy to genus or subgenus where availible
 otu <- x$genus
@@ -64,15 +63,11 @@ x <- x[x$otu != '', ]
 
 
 ## combine multiple records of same otu per collection
-x <- mclapply(split(x, x$collection_no), mc.cores = 6, FUN = function(coll) {
-    coll[match(unique(coll$otu), coll$otu), ]
-})
-x <- do.call(rbind, x)
+x <- x[!duplicated(x[, c('collection_no', 'otu')]), ]
 
 
 ## standard time bins
 stages <- read.csv('tbins_stages.csv', as.is = TRUE)
-
 earlyTbin <- stages$tbin[match(x$early_interval, stages$name)]
 lateTbin <- stages$tbin[match(x$late_interval, stages$name)]
 lateTbin[is.na(lateTbin)] <- earlyTbin[is.na(lateTbin)]
