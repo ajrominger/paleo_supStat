@@ -72,7 +72,13 @@ ord.tbin.bias <- aggregate(list(div=pbdb.dat$occurrences.genus_name),
                                 tbin=pbdb.dat$collections.10_my_bin),
                            function(x) length(unique(x)))
 
-ord.tbin.bias$T3.stat <- pbdb.curv$Three.timer.sampling.stat[match(ord.tbin.bias$tbin,pbdb.curv$Bin.name)]
+
+## need to re-create 3t stat from `pbdb.curve`
+#split(pbdb.dat$collections.10_my_bin, pbdb.dat$original.genus_name)
+
+#head(pbdb.curv)
+
+ord.tbin.bias$T3.stat <- pbdb.curv$Three.timer.sampling.stat[match(ord.tbin.bias$tbin, pbdb.curv$Bin.name)]
 ord.tbin.bias$T3.div <- ord.tbin.bias$div/ord.tbin.bias$T3.stat
 
 ##	record pubs per tbin
@@ -80,7 +86,7 @@ tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_
 ord.tbin.bias$tbin.pub <- tbin.pub[ord.tbin.bias$tbin]
 
 ######### PLOTTING!!!! ############
-setwd('../../../code/')
+# setwd('../../../code/')
 ## makes `figSupp_divByPubOrd.pdf'
 
 ##	calculate corrected diversity
