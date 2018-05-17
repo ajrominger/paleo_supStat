@@ -38,7 +38,20 @@ source('code/sstat_methods.R')
 setwd('data/old/pbdb_2013-05-28')
 
 ##	raw occurence data
-pbdb.dat <- read.csv('marInv-occs.csv', as.is = TRUE)
+# pbdb.dat <- read.csv('marInv-occs.csv', as.is = TRUE)
+
+pbdbNew <- read.csv('../../pbdb_data.csv', as.is = TRUE)
+
+## convert column names
+names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
+names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
+names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
+names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+pbdbNew$ma_mid <- (pbdbNew$max_ma + pbdbNew$min_ma) / 2
+
+## use new instead of old
+pbdb.dat <- pbdbNew
+
 
 ## get rid of poor temporal resolution
 pbdb.dat <- pbdb.dat[pbdb.dat$collections.10_my_bin != '', ]
