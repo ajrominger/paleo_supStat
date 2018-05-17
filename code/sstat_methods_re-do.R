@@ -28,33 +28,31 @@ sstatMLE <- function(x) {
 sstatBootMLE <- function(x, B = 1000) {
 	dat <- x$Px.sub
 	
-	boots <- replicate(B,
-				{
-					sub.dat <- sapply(these.dat,sample,size=1)
-					this.mle <- try(optim(c(0.55,0.17),sstat.lik,method='BFGS',hessian=TRUE,dat=sub.dat),silent=TRUE)
-					if(class(this.mle) != 'try-error') {
-						if(this.mle$convergence != 0) {
-							out <- rep(NA,2)
-						} else {
-							out <- this.mle$par
-						}
-					} else {
-						out <- rep(NA,2)
-					}
-					out
-				})
-	sstat.out <- rbind(quantile(boots[1,],c(0.025,0.975),na.rm=TRUE),quantile(boots[2,],c(0.025,0.975),na.rm=TRUE))
-	rownames(sstat.out) <- c('shape','rate')
-	
-	norm.boots <- replicate(B, {
-		sub.dat <- sapply(these.dat,sample,size=1)
-		
-		sd(sub.dat)
+	boots <- replicate(B, {
+	    subDat <- sapply(dat, sample, size = 1)
+	    
+	    thisMLE <- try(optim(c(0.55, 0.17), sstatLLFun, method = 'BFGS', hessian = TRUE, dat = subDat), 
+	                   silent = TRUE)
+	    
+	    if(class(this.mle) != 'try-error') {
+	        if(thisMLE$convergence != 0) {
+	            out <- rep(NA, 2)
+	        } else {
+	            out <- thisMLE$par
+	        }
+	    } else {
+	        out <- rep(NA, 2)
+	    }
+	    
+	    return(out)
 	})
-	norm.out <- rbind(0,quantile(norm.boots,c(0.025,0.975),na.rm=TRUE))
-	rownames(norm.out) <- c('mean','sd')
 	
-	return(list(sstat=sstat.out, norm=norm.out))
+	# output
+	o <- rbind(quantile(boots[1, ], c(0.025, 0.975), na.rm = TRUE),
+	                  quantile(boots[2, ], c(0.025, 0.975), na.rm = TRUE))
+	rownames(o) <- c('shape', 'rate')
+	
+	return(o)
 }
 
 
@@ -97,8 +95,8 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue', showNorm = TRUE,
 	plot(thisCDF, log='xy', #col='gray',pch=16,
 		 ...)
 	
-	if(dots$xaxt != 'n' | !('xaxt' %in% names(dots))) logAxis(1)
-	if(dots$yaxt != 'n' | !('yaxt' %in% names(dots))) logAxis(1)
+	if(dots$xaxt != 'n' | !('xaxt' %in% names(dots))) socorro::logAxis(1)
+	if(dots$yaxt != 'n' | !('yaxt' %in% names(dots))) socorro::logAxis(1)
 	
 	PPx <- x$PPx
 	curve(PPx(x, comp = TRUE), col = sstatCol, lwd = 2, add = TRUE)
