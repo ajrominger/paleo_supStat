@@ -1,14 +1,12 @@
-#######  corrects diversity by 3-timer then number of pubs  #######
 makePlot <- TRUE
-
 
 oldwd <- setwd('~/Dropbox/Research/paleo_supStat')
 
-##  convenience function to produce a matrix of time by ord with cells
-##  of corrected diversity
+# convenience function to produce a matrix of time by ord with cells
+# of corrected diversity
 source('code/pbdb_3t_pub.R')
 
-##	load other needed funcitons
+# load other needed funcitons
 paleoPlot <- function(...) {
     plot(..., xaxt = 'n')
     socorro::paleoAxis(1)
@@ -37,7 +35,7 @@ source('code/sstat_methods.R')
 ##########  load data  ##########
 setwd('data/old/pbdb_2013-05-28')
 
-##	raw occurence data
+# raw occurence data
 # pbdb.dat <- read.csv('marInv-occs.csv', as.is = TRUE)
 
 pbdbNew <- read.csv('../../pbdb_data.csv', as.is = TRUE)
@@ -56,18 +54,18 @@ pbdb.dat <- pbdbNew
 ## get rid of poor temporal resolution
 pbdb.dat <- pbdb.dat[pbdb.dat$collections.10_my_bin != '', ]
 
-##	get rid of bad taxonomy
+# get rid of bad taxonomy
 pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.order_name != '', ]
 pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.order_name != 'Ammonitida', ]
 pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.genus_name != '', ]
 
-##	get bin times
+# get bin times
 pbdb.time <- sort(tapply(pbdb.dat$ma_mid, pbdb.dat$collections.10_my_bin, mean))
 pbdb.dat$collections.10_my_bin <- factor(pbdb.dat$collections.10_my_bin, 
                                          levels = names(pbdb.time))
 
 
-##  data.frame of publication, diversity and 3T stat
+# data.frame of publication, diversity and 3T stat
 ord.tbin.bias <- aggregate(list(div=pbdb.dat$occurrences.genus_name),
                            list(ord=pbdb.dat$occurrences.order_name,
                                 tbin=pbdb.dat$collections.10_my_bin),
@@ -100,21 +98,21 @@ t3stat <- 1 - rowSums(timers[, 1, ]) / (rowSums(timers[, 1, ]) + rowSums(timers[
 ord.tbin.bias$T3.stat <- t3stat[match(ord.tbin.bias$tbin, levels(pbdb.dat$collections.10_my_bin))]
 ord.tbin.bias$T3.div <- ord.tbin.bias$div/ord.tbin.bias$T3.stat
 
-##	record pubs per tbin
+# record pubs per tbin
 tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_bin,function(x) length(unique(x)))
 ord.tbin.bias$tbin.pub <- tbin.pub[ord.tbin.bias$tbin]
 
 
-##	calculate corrected diversity
+# calculate corrected diversity
 
 pbdb.ord.div <- with(ord.tbin.bias,
                      pbdb.3t.pub(div, T3.stat, tbin.pub, ord, tbin, pbdb.time, min.pub=10, plotit=makePlot))
 
-##	corrected flux
+# corrected flux
 pbdb.ord.flux <- apply(pbdb.ord.div,2,function(x) {
     raw.flux <- diff(c(0,x))
     return(raw.flux[raw.flux != 0])
 })
 
-##	sstat analysis
+# sstat analysis
 pbdb.sstat.ord.cor <- sstat.comp(pbdb.ord.flux,minN=10,plotit=makePlot)
