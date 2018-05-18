@@ -1,0 +1,41 @@
+---
+title: "Paleo superstatistics notebook"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Getting the data
+
+### PBDB API
+
+To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`, which accesses the API and cleans the data by:
+
+- removing poorly lithified specimens
+- removing collections at the basin scale
+- including only fine-scale stratigraphy (below the "group" level)
+- resolving taxonomy to the genus or subgenus level where availible (storing genus or subgenus as `otu`)
+- combining multiple records of the same OTU per collection
+- importing standardized timebins from \url{fossilworks.org} (timebins are scraped with script `data/fossilworks_tbins_intervals.R`)
+
+
+```{r code=readLines('data/pbdb_data_get.R'), eval=FALSE}
+```
+
+
+### Scraping fossilworks
+
+The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is below: 
+
+```{r code=readLines('data/fossilworks_tbins_intervals.R'), eval=FALSE}
+```
+
+
+## Three timer and publication bias correction
+
+Once the data have been downloaded and cleaned, we correct for incomplete and biased sampling with the script `re-do.R`
+
+```{r code=readLines('re-do.R'), eval=FALSE}
+```
