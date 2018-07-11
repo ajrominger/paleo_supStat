@@ -20,6 +20,7 @@ To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`,
 - combining multiple records of the same OTU per collection
 - importing standardized timebins from \url{fossilworks.org} (timebins are scraped with script `data/fossilworks_tbins_intervals.R`)
 
+The data gathering script `data/pbdb_data_get.R` is shown below:
 
 ```{r code=readLines('data/pbdb_data_get.R'), eval=FALSE}
 ```
