@@ -26,7 +26,7 @@ sstat.comp <- function(grp.data,minN=15,xlab="Absolute Fluctuation",ylab="Cumula
 	
 	cat("computing P(x) \n")
 	this.Px <- function(x) Px.gam(x,f.beta.par[1],f.beta.par[2])
-	this.PPx <- function(x,comp=TRUE) PPx.gam(x,f.beta.par[1],f.beta.par[2],comp)
+	this.PPx <- function(x,comp=TRUE) PPxGam(x,f.beta.par[1],f.beta.par[2],comp)
 	
 	##	functions using library `distr'
 	sstat.dist <- "stub"#AbscontDistribution(d=this.Px)
