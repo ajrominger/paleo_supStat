@@ -31,14 +31,15 @@ my.ecdf <- socorro::simpECDF
 
 source('code/sstat_comp.R')
 source('code/sstat_methods.R')
+source('code/Px_gam.R')
 
 ##########  load data  ##########
-setwd('data/old/pbdb_2013-05-28')
+# setwd('data/old/pbdb_2013-05-28')
 
 # raw occurence data
 # pbdb.dat <- read.csv('marInv-occs.csv', as.is = TRUE)
 
-pbdbNew <- read.csv('../../pbdb_data.csv', as.is = TRUE)
+pbdbNew <- read.csv('data/pbdb_data.csv', as.is = TRUE)
 
 ## convert column names
 names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
@@ -75,7 +76,8 @@ ord.tbin.bias <- aggregate(list(div=pbdb.dat$occurrences.genus_name),
 ## three timer stat
 
 ## matrix to determine three timers and part timers (sensu alroy 2008)
-mt <- matrix(0, nrow = nlevels(pbdb.dat$collections.10_my_bin), ncol = nlevels(pbdb.dat$collections.10_my_bin))
+mt <- matrix(0, nrow = nlevels(pbdb.dat$collections.10_my_bin), 
+             ncol = nlevels(pbdb.dat$collections.10_my_bin))
 diag(mt) <- -10
 mt[abs(row(mt) - col(mt)) == 1] <- 1
 
@@ -95,24 +97,27 @@ timers <- array(unlist(timers), dim = c(nrow(timers[[1]]), 2, length(timers)))
 
 t3stat <- 1 - rowSums(timers[, 1, ]) / (rowSums(timers[, 1, ]) + rowSums(timers[, 2, ]))
 
-ord.tbin.bias$T3.stat <- t3stat[match(ord.tbin.bias$tbin, levels(pbdb.dat$collections.10_my_bin))]
+ord.tbin.bias$T3.stat <- t3stat[match(ord.tbin.bias$tbin, 
+                                      levels(pbdb.dat$collections.10_my_bin))]
 ord.tbin.bias$T3.div <- ord.tbin.bias$div/ord.tbin.bias$T3.stat
 
 # record pubs per tbin
-tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_bin,function(x) length(unique(x)))
+tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_bin,
+                   function(x) length(unique(x)))
 ord.tbin.bias$tbin.pub <- tbin.pub[ord.tbin.bias$tbin]
 
 
 # calculate corrected diversity
 
 pbdb.ord.div <- with(ord.tbin.bias,
-                     pbdb.3t.pub(div, T3.stat, tbin.pub, ord, tbin, pbdb.time, min.pub=10, plotit=makePlot))
+                     pbdb.3t.pub(div, T3.stat, tbin.pub, ord, tbin, pbdb.time, 
+                                 min.pub = 10, plotit = makePlot))
 
 # corrected flux
-pbdb.ord.flux <- apply(pbdb.ord.div,2,function(x) {
-    raw.flux <- diff(c(0,x))
+pbdb.ord.flux <- apply(pbdb.ord.div, 2, function(x) {
+    raw.flux <- diff(c(0, x))
     return(raw.flux[raw.flux != 0])
 })
 
 # sstat analysis
-pbdb.sstat.ord.cor <- sstat.comp(pbdb.ord.flux,minN=10,plotit=makePlot)
+pbdb.sstat.ord.cor <- sstat.comp(pbdb.ord.flux, minN = 10, plotit = makePlot)
