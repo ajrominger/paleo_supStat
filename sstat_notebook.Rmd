@@ -40,3 +40,26 @@ Once the data have been downloaded and cleaned, we correct for incomplete and bi
 
 ```{r code=readLines('re-do.R'), eval=FALSE}
 ```
+
+## To-do
+
+- make the 3TPub script seapparate and have it save:
+    1. the plot of diversity through time
+    2. the plot of diversity by publication
+    3. the corrected diversity
+    4. the corrected diversity fluctuations
+- make a sepparate script for the plotting of the sstat analysis including:
+    1. the main sstat style CDF
+        - need to remove the raw data from the plot
+        - need to make sure 95% CI still works
+    2. the f(beta) plot
+    3. the p_k(x) plot
+    4. example trajectories
+- get illustrations of the different exemplar families
+- do KS analysis with Families 
+- run clean functions on sepkoski
+- manuscript text
+    - add more recent citations
+    - add more thurough explaination and justification of correction approach 
+    - respond to other reviewer comments
+
