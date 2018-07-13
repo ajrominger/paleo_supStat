@@ -43,7 +43,7 @@ Once the data have been downloaded and cleaned, we correct for incomplete and bi
 
 ## To-do
 
-- make the 3TPub script seapparate and have it save:
+- make the 3TPub script seapparate and have it save (made script, haven't tried running):
     1. the plot of diversity through time
     2. the plot of diversity by publication
     3. the corrected diversity
