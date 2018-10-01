@@ -55,7 +55,6 @@ Once the data have been downloaded and cleaned, we correct for incomplete and bi
     2. the f(beta) plot
     3. the p_k(x) plot
     4. example trajectories
-- get illustrations of the different exemplar families
 - do KS analysis with Families 
 - run clean functions on sepkoski
 - manuscript text
