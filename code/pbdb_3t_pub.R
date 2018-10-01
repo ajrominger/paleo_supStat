@@ -1,5 +1,5 @@
 ##	convenience function to produce a matrix of time by ord with cells of corrected diversity
-pbdb.3t.pub <- function(raw.div,t3.stat,pub,ord,tbin,tbin.time,min.pub=4,plotit=FALSE) {
+make3TPub <- pbdb.3t.pub <- function(raw.div,t3.stat,pub,ord,tbin,tbin.time,min.pub=4,plotit=FALSE) {
 	##	put data together so can be universally manipulated
 	x <- data.frame(raw.div=raw.div,t3.stat=t3.stat,pub=pub,ord=ord,tbin=tbin)
 	x$tbin <- as.character(x$tbin)
