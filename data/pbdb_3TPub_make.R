@@ -38,10 +38,12 @@ source('code/Px_gam.R')
 pbdbNew <- read.csv('data/pbdb_data.csv', as.is = TRUE)
 
 ## convert column names
-names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
-names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
-names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
-names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+# names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
+# names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
+# names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
+# names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+
+# make column for midpoint ma
 pbdbNew$ma_mid <- (pbdbNew$max_ma + pbdbNew$min_ma) / 2
 
 ## use new instead of old
@@ -77,7 +79,7 @@ diag(mt) <- -10
 mt[abs(row(mt) - col(mt)) == 1] <- 1
 
 ## loop through and compute three timers and part timers
-timers <- lapply(split(pbdbDat$tbin, pbdbDat$occurrences.genus_name), 
+timers <- lapply(split(pbdbDat$tbin, pbdbDat$otu), 
                  function(x) {
                      # browser()
                      tbins <- integer(nlevels(x))
@@ -104,9 +106,11 @@ famTbinBias$tbinPub <- tbinPub[famTbinBias$tbin]
 
 # calculate corrected diversity
 
+pdf('ms/figSupp_divByPub.pdf', width = 4, height = 4)
 pbdbFamDiv <- with(famTbinBias,
-                   make3TPub(div, T3Stat, tbinPub, ord, tbin, pbdbTime, 
-                             minPub = 10, plotit = makePlot))
+                   make3TPub(div, T3Stat, tbinPub, fam, tbin, pbdbTime, 
+                             min.pub = 10, plotit = TRUE))
+dev.off()
 
 # corrected flux
 pbdbFamFlux <- apply(pbdbFamDiv, 2, function(x) {
