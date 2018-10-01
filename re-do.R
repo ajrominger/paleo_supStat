@@ -42,10 +42,12 @@ source('code/Px_gam.R')
 pbdbNew <- read.csv('data/pbdb_data.csv', as.is = TRUE)
 
 ## convert column names
-names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
-names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
-names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
-names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+# names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
+# names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
+# names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
+# names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+
+# make a column for the million yr midpoint
 pbdbNew$ma_mid <- (pbdbNew$max_ma + pbdbNew$min_ma) / 2
 
 ## use new instead of old
@@ -53,36 +55,36 @@ pbdb.dat <- pbdbNew
 
 
 ## get rid of poor temporal resolution
-pbdb.dat <- pbdb.dat[pbdb.dat$collections.10_my_bin != '', ]
+pbdb.dat <- pbdb.dat[pbdb.dat$tbin != '', ]
 
 # get rid of bad taxonomy
-pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.order_name != '', ]
-pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.order_name != 'Ammonitida', ]
-pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.genus_name != '', ]
+pbdb.dat <- pbdb.dat[pbdb.dat$family != '', ]
+# pbdb.dat <- pbdb.dat[pbdb.dat$occurrences.order_name != 'Ammonitida', ]
+pbdb.dat <- pbdb.dat[pbdb.dat$genus != '', ]
 
 # get bin times
-pbdb.time <- sort(tapply(pbdb.dat$ma_mid, pbdb.dat$collections.10_my_bin, mean))
-pbdb.dat$collections.10_my_bin <- factor(pbdb.dat$collections.10_my_bin, 
+pbdb.time <- sort(tapply(pbdb.dat$ma_mid, pbdb.dat$tbin, mean))
+pbdb.dat$tbin <- factor(pbdb.dat$tbin, 
                                          levels = names(pbdb.time))
 
 
 # data.frame of publication, diversity and 3T stat
-ord.tbin.bias <- aggregate(list(div=pbdb.dat$occurrences.genus_name),
-                           list(ord=pbdb.dat$occurrences.order_name,
-                                tbin=pbdb.dat$collections.10_my_bin),
+ord.tbin.bias <- aggregate(list(div=pbdb.dat$genus),
+                           list(ord=pbdb.dat$family,
+                                tbin=pbdb.dat$tbin),
                            function(x) length(unique(x)))
 
 
 ## three timer stat
 
 ## matrix to determine three timers and part timers (sensu alroy 2008)
-mt <- matrix(0, nrow = nlevels(pbdb.dat$collections.10_my_bin), 
-             ncol = nlevels(pbdb.dat$collections.10_my_bin))
+mt <- matrix(0, nrow = nlevels(pbdb.dat$tbin), 
+             ncol = nlevels(pbdb.dat$tbin))
 diag(mt) <- -10
 mt[abs(row(mt) - col(mt)) == 1] <- 1
 
 ## loop through and compute three timers and part timers
-timers <- lapply(split(pbdb.dat$collections.10_my_bin, pbdb.dat$occurrences.genus_name), 
+timers <- lapply(split(pbdb.dat$tbin, pbdb.dat$genus), 
                  function(x) {
                      # browser()
                      tbins <- integer(nlevels(x))
@@ -98,11 +100,11 @@ timers <- array(unlist(timers), dim = c(nrow(timers[[1]]), 2, length(timers)))
 t3stat <- 1 - rowSums(timers[, 1, ]) / (rowSums(timers[, 1, ]) + rowSums(timers[, 2, ]))
 
 ord.tbin.bias$T3.stat <- t3stat[match(ord.tbin.bias$tbin, 
-                                      levels(pbdb.dat$collections.10_my_bin))]
+                                      levels(pbdb.dat$tbin))]
 ord.tbin.bias$T3.div <- ord.tbin.bias$div/ord.tbin.bias$T3.stat
 
 # record pubs per tbin
-tbin.pub <- tapply(pbdb.dat$collections.reference_no,pbdb.dat$collections.10_my_bin,
+tbin.pub <- tapply(pbdb.dat$reference_no,pbdb.dat$tbin,
                    function(x) length(unique(x)))
 ord.tbin.bias$tbin.pub <- tbin.pub[ord.tbin.bias$tbin]
 
