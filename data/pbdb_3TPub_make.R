@@ -30,26 +30,10 @@ source('code/sstat_methods.R')
 source('code/Px_gam.R')
 
 ##########  load data  ##########
-# setwd('data/old/pbdb_2013-05-28')
-
-# raw occurence data
-# pbdb.dat <- read.csv('marInv-occs.csv', as.is = TRUE)
-
-pbdbNew <- read.csv('data/pbdb_data.csv', as.is = TRUE)
-
-## convert column names
-# names(pbdbNew)[names(pbdbNew) == 'tbin'] <- 'collections.10_my_bin'
-# names(pbdbNew)[names(pbdbNew) == 'family'] <- 'occurrences.order_name'
-# names(pbdbNew)[names(pbdbNew) == 'genus'] <- 'occurrences.genus_name'
-# names(pbdbNew)[names(pbdbNew) == 'reference_no'] <- 'collections.reference_no'
+pbdbDat <- read.csv('data/pbdb_data.csv', as.is = TRUE)
 
 # make column for midpoint ma
-pbdbNew$ma_mid <- (pbdbNew$max_ma + pbdbNew$min_ma) / 2
-
-## use new instead of old
-pbdb.dat <- pbdbNew
-
-pbdbDat <- pbdbNew
+pbdbDat$ma_mid <- (pbdbDat$max_ma + pbdbDat$min_ma) / 2
 
 ## get rid of poor temporal resolution
 pbdbDat <- pbdbDat[pbdbDat$tbin != '', ]
