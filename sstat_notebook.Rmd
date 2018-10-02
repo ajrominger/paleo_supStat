@@ -36,19 +36,22 @@ The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is b
 
 ## Three timer and publication bias correction
 
-Once the data have been downloaded and cleaned, we correct for incomplete and biased sampling with the script `re-do.R`
+Once the data have been downloaded and cleaned, we correct for incomplete and biased sampling with the script `data/pbdb_3TPub_make.R` which sources the function `R/make3TPub.R` to generate the main output: a matrix with time bins as rows, taxa (families in this case) as columns and bias-corrected richness as cells.
 
-```{r code=readLines('re-do.R'), eval=FALSE}
+```{r code=readLines('data/pbdb_3TPub_make.R'), eval=FALSE}
 ```
+
+Here is the guts of the `make3TPub` function
+```{r code=readLines('R/make3TPub.R'), eval=FALSE}
+```
+
 
 ## To-do
 
 - make the 3TPub script seapparate and have it save (made script, haven't tried running):
     1. the plot of diversity through time
-    2. the plot of diversity by publication
-    3. the corrected diversity
-    4. the corrected diversity fluctuations
 - make a sepparate script for the plotting of the sstat analysis including:
+    1. first it needs to make the corrected diversity fluctuations
     1. the main sstat style CDF
         - need to remove the raw data from the plot
         - need to make sure 95% CI still works
