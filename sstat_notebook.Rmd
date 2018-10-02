@@ -4,7 +4,7 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 ```
 
 ## Getting the data
@@ -22,7 +22,7 @@ To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`,
 
 The data gathering script `data/pbdb_data_get.R` is shown below:
 
-```{r code=readLines('data/pbdb_data_get.R'), eval=FALSE}
+```{r code=readLines('data/pbdb_data_get.R')}
 ```
 
 
@@ -30,7 +30,7 @@ The data gathering script `data/pbdb_data_get.R` is shown below:
 
 The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is below: 
 
-```{r code=readLines('data/fossilworks_tbins_intervals.R'), eval=FALSE}
+```{r code=readLines('data/fossilworks_tbins_intervals.R')}
 ```
 
 
@@ -38,18 +38,19 @@ The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is b
 
 Once the data have been downloaded and cleaned, we correct for incomplete and biased sampling with the script `data/pbdb_3TPub_make.R` which sources the function `R/make3TPub.R` to generate the main output: a matrix with time bins as rows, taxa (families in this case) as columns and bias-corrected richness as cells.
 
-```{r code=readLines('data/pbdb_3TPub_make.R'), eval=FALSE}
+```{r code=readLines('data/pbdb_3TPub_make.R')}
 ```
 
 Here is the guts of the `make3TPub` function
-```{r code=readLines('R/make3TPub.R'), eval=FALSE}
+```{r code=readLines('R/make3TPub.R')}
 ```
 
 
 ## To-do
 
+- remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
 - make the 3TPub script seapparate and have it save (made script, haven't tried running):
-    1. the plot of diversity through time
+    1. the plot of diversity through time (maybe not?)
 - make a sepparate script for the plotting of the sstat analysis including:
     1. first it needs to make the corrected diversity fluctuations
     1. the main sstat style CDF
