@@ -1,3 +1,6 @@
+# **this script produces diversity estimates per family per time bin from PBDB data
+# corrected by the '3 timers method' and for possible publication bias**
+
 # source function to produce a matrix of time by taxon with cells
 # of corrected diversity
 source('R/make3TPub.R')
@@ -79,11 +82,3 @@ dev.off()
 
 # write out corrected diversity
 write.csv(pbdbFamDiv, 'data/pbdb_3TPub-corrected.csv')
-
-# !!!!!!!!!move to script with sstat analysis!!!!!!!!!
-# corrected flux
-# pbdbFamFlux <- apply(pbdbFamDiv, 2, function(x) {
-#     flux <- diff(c(0, x)) 
-#     return(flux[flux != 0])
-# })
-
