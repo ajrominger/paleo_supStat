@@ -1,7 +1,7 @@
 # **script to run super stat analysis on PBDB data**
 
 # source needed functions
-R.utils::sourceDirectory('R')
+R.utils::sourceDirectory('R', modifiedOnly = FALSE)
 
 # load and prepare data
 # ---------------------
@@ -20,6 +20,8 @@ pbdbFamFlux <- apply(pbdbFamDiv, 2, function(x) {
     return(flux[flux != 0])
 })
 
+# make sstat object
+sstatPBDBord3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = FALSE)
 
-# sstat analysis
-sstatPBDBord3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = TRUE)
+# likelihood CI for family-level sstat analysis
+sstatPBDBord3TPCI <- bootMLE.sstat(sstatPBDBord3TP, B = 1000, useAll = FALSE)
