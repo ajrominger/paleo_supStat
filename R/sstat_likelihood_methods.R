@@ -23,7 +23,7 @@ bootMLE.sstat <- function(x, B = 1000, useAll = FALSE) {
     boots <- replicate(B, {
         subDat <- sapply(theseDat, sample, size = 1)
         
-        thisMLE <- try(optim(c(0.55, 0.17), sstat.lik, method = 'BFGS', hessian = TRUE, dat = subDat),
+        thisMLE <- try(optim(c(0.55, 0.17), sstatLL, method = 'BFGS', hessian = TRUE, dat = subDat),
                        silent = TRUE)
         
         if(class(thisMLE) !=  'try-error') {
