@@ -56,3 +56,29 @@ bootMLE.sstat <- function(x, B = 1000, useAll = FALSE) {
     return(list(sstat = sstatOut))
 }
 
+
+#' @description logLik for sstat class
+#' @param x the `sstat` object
+#' @param fitted logical, was the model fitted by max likelihood or computed from first principles
+#' @param useAll logical, should all data be used, or only those taxa that have greater than `minN` occurrences
+#' as specified in `sstatComp`
+
+logLik.sstat <- function(x, fitted = TRUE, useAll = FALSE) {
+    if(useAll) {
+        theseDat <- unlist(x$Px.raw)
+    } else {
+        theseDat <- unlist(x$Px.sub)
+    }
+    
+    lik <- sum(log(x$Px(theseDat)))
+    
+    if(fitted) {
+        attr(lik, 'df') <- 2
+    } else {
+        attr(lik, 'df') <- 0
+    }
+    
+    class(lik) <- 'logLik'
+    
+    return(lik)
+}
