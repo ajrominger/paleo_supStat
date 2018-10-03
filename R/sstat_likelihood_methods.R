@@ -1,18 +1,21 @@
 #' @description gives the log likelihood function under sstat model
+#' @param par the parameter values
+#' @param dat the data
+
 sstatLL <- function(par, dat) {
     -sum(log(Px.gam(dat,par[1], par[2])))
 }
 
-##	find the maximum likelihood estimate for sstat parameters
-MLE.sstat <- function(x, useAll = FALSE) {
-    if(useAll) {
-        theseDat <- unlist(x$Px.raw)
-    } else {
-        theseDat <- unlist(x$Px.sub)
-    }
-    
-    optim(c(0.55, 0.17), sstatLL, method = 'BFGS', hessian = TRUE, dat = theseDat)
-}
+# might not be needed
+# MLE.sstat <- function(x, useAll = FALSE) {
+#     if(useAll) {
+#         theseDat <- unlist(x$Px.raw)
+#     } else {
+#         theseDat <- unlist(x$Px.sub)
+#     }
+#     
+#     optim(c(0.55, 0.17), sstatLL, method = 'BFGS', hessian = TRUE, dat = theseDat)
+# }
 
 #' @description bootstrap likelihood for super stats model
 #' @param x the `sstat` object
@@ -20,7 +23,7 @@ MLE.sstat <- function(x, useAll = FALSE) {
 #' @param useAll logical, whether all orders, or only those with the minimum number of occurences as specified
 #' in `make3TPub` argument `minPub` should be used
 
-bootMLE.sstat <- boot.mle.sstat <- function(x, B = 1000, useAll = FALSE) {
+bootMLE.sstat <- function(x, B = 1000, useAll = FALSE) {
     if(useAll) {
         theseDat <- x$Px.raw
     } else {
@@ -30,9 +33,9 @@ bootMLE.sstat <- boot.mle.sstat <- function(x, B = 1000, useAll = FALSE) {
     boots <- replicate(B, {
         # browser()
         subDat <- sapply(theseDat, sample, size = 1)
-        thisMLE <- try(MLE.sstat(x, useAll), silent = TRUE)
-        # thisMLE <- try(optim(c(0.55, 0.17), sstat.lik, method = 'BFGS', hessian = TRUE, dat = subDat), 
-        #                silent = TRUE)
+        # thisMLE <- try(MLE.sstat(x, useAll), silent = TRUE)
+        thisMLE <- try(optim(c(0.55, 0.17), sstat.lik, method = 'BFGS', hessian = TRUE, dat = subDat),
+                       silent = TRUE)
         
         if(class(thisMLE) !=  'try-error') {
             if(thisMLE$convergence !=  0) {
@@ -52,3 +55,4 @@ bootMLE.sstat <- boot.mle.sstat <- function(x, B = 1000, useAll = FALSE) {
     
     return(list(sstat = sstatOut))
 }
+
