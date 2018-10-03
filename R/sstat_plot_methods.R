@@ -40,6 +40,8 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue',
     pargs$yaxt <- 'n'
     
     do.call(plot, c(list(x = thisECDF), pargs))
+    xaxfun(1)
+    yaxfun(2)
     
     PPx <- x$PPx
     curve(PPx(x, comp = TRUE), col = sstatCol, lwd = 2, add = TRUE)
@@ -83,12 +85,20 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue',
 
 
 #' @description function to add confidence interval polygon from ML analysis
-#' @param 
+#' @param ci the matrix of CI intervals for the parameter values returned by `bootMLE.sstat`
+#' @param fun the CDF function to plug the parameter values into
+#' @param ... further arguments passed to `polygon` (e.g. `col`, `boarder`, etc.)
 
-mle.poly <- function(ci.ma,fun,from=10^-2,to=10^2,...) {
-    these.x <- 10^c(seq(par("usr")[1],par("usr")[2],length=25),seq(par("usr")[2],par("usr")[1],length=25))
-    these.y <- c(fun(these.x[1:25],ci.ma[1,1],ci.ma[2,2]),fun(these.x[26:50],ci.ma[1,2],ci.ma[2,1]))
-    these.y[these.y < 10^par("usr")[3]] <- 10^par("usr")[3]
+mlePoly <- function(ci, fun, ...) {
+    n <- 50
+    x <- seq(par('usr')[1], par('usr')[2], length = n)
+    x <- c(x, rev(x))
     
-    polygon(x=these.x,y=these.y,...)
+    if(grepl('x', par('log'))) x <- 10^x
+    
+    y <- c(fun(x[1:n], ci[1, 1], ci[2, 2]), fun(x[(1:n) + n], ci[1, 2], ci[2, 1]))
+    
+    y[y < 10^par('usr')[3]] <- 10^par('usr')[3]
+    
+    polygon(x = x, y = y, ...)
 }
