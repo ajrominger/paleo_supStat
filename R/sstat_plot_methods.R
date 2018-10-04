@@ -33,6 +33,8 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue',
     
     pargs <- list(...)
     if(!('log' %in% names(pargs))) pargs$log <- 'xy'
+    if(!('xlab' %in% names(pargs))) pargs$xlab <- '|Fluctuations|'
+    if(!('ylab' %in% names(pargs))) pargs$ylab <- 'Cumulative density'
     .axissetup('x')
     .axissetup('y')
     
@@ -60,8 +62,8 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue',
         lwd <- c(NA, 2)
         
         if('panel.first' %in% names(list(...))) {
-            leg <- c(leg, 'Superstatistics likelihood CI')
-            col <- c(col, socorro::colAlpha(sstatCol, 0.5))
+            leg <- c(leg, 'Superstatistics CI')
+            col <- c(col, socorro::colAlpha(sstatCol, 0.25))
             pt.lwd <- c(pt.lwd, 1)
             pt.cex <- c(pt.cex, 2)
             lwd <- c(lwd, NA)
@@ -69,7 +71,7 @@ plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue',
         }
         
         if(showNorm) {
-            leg <- c(leg, 'ML Gaussian')
+            leg <- c(leg, 'Gaussian')
             col <- c(col, normCol)
             pt.lwd <- c(pt.lwd, NA)
             pt.cex <- c(pt.cex, NA)
@@ -94,11 +96,9 @@ mlePoly <- function(ci, fun, ...) {
     x <- seq(par('usr')[1], par('usr')[2], length = n)
     x <- c(x, rev(x))
     
-    if(grepl('x', par('log'))) x <- 10^x
+    if(par('xlog')) x <- 10^x
     
     y <- c(fun(x[1:n], ci[1, 1], ci[2, 2]), fun(x[(1:n) + n], ci[1, 2], ci[2, 1]))
-    
-    y[y < 10^par('usr')[3]] <- 10^par('usr')[3]
     
     polygon(x = x, y = y, ...)
 }
