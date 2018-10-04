@@ -59,12 +59,14 @@ write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
 
 
 # also write out summary of each time bin, most importantly (for plottin) 
-# it's midpoint
+# its midpoint
 
 tbinmid <- sapply(unique(tbinInfo$tbin[!is.na(tbinInfo$tbin)]), function(tbin) {
     tt <- unlist(tbinInfo[tbinInfo$tbin == tbin, c('ma_min', 'ma_max')])
     return(mean(range(tt, na.rm = TRUE)))
 })
 
-write.csv(data.frame(tbin = names(tbinmid), ma_mid = as.numeric(tbinmid)), 'tbinsMid.csv',
+tbinmid <- sort(tbinmid, decreasing = TRUE)
+
+write.csv(data.frame(tbin = names(tbinmid), ma_mid = as.numeric(tbinmid)), 'data/tbinsMid.csv',
           row.names = FALSE)
