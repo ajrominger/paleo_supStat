@@ -1,8 +1,9 @@
-# **script to run super stat analysis on PBDB data**
+# **script to run super stat analysis on PBDB data and make plots**
 
 # source needed functions
 R.utils::sourceDirectory('R', modifiedOnly = FALSE)
-library(socorro)
+library(socorro) # for plotting
+library(viridis) # colors for plotting
 
 # load and prepare data
 # ---------------------
@@ -18,6 +19,7 @@ tbinNames <- tbinMid$tbin
 tbinMid <- as.numeric(tbinMid[, 2])
 names(tbinMid) <- tbinNames
 
+tbinMid <- tbinMid[rownames(pbdbFamDiv)]
 
 # super stat analysis for families
 # --------------------------------
@@ -59,6 +61,15 @@ pAll <- lapply(sstatPBDBord3TP$raw.pk,
                function(x) simpECDF(scale(x)[, 1], complement = TRUE))
 pAll <- do.call(rbind, pAll)
 
+# function to help with individual trajectory plotting
+trajLines <- function(t, x, ...) {
+    x[x == 0] <- NA
+    x[min(which(!is.na(x))) - 1] <- 0
+    
+    lines(t, x, ...)
+}
+
+# the actual plotting
 
 layout(matrix(c(1, 2, 1, 3), nrow = 2))
 
@@ -66,15 +77,16 @@ par(oma = c(0, 3, 0, 0) + 0.25, mar = c(4, 0, 0, 0) + 0.25,
     mgp = c(2, 0.5, 0), cex.lab = 1.4)
 
 
-# low = Tainoceratidae
+# highlight individual trajectories
+lo <- pbdbFamDiv[, 'Tainoceratidae']
+mi <- pbdbFamDiv[, 'Lophospiridae']
+hi <- pbdbFamDiv[, 'Chonetidae']
+cols <- hsv(c(0.7, 0.1, 0.05))
+plot(1:3, col = cols, pch = 16)
 
-pbdbFamDiv[, 'Tainoceratidae']
+plot(1, xlim = c(540, 0), xaxt = 'n', xaxs = 'i', xlab = '', 
+     ylim = c(0, max(lo, mi, hi, na.rm = TRUE)), type = 'n')
 
-
-# mid = Lophospiridae
-# hi = Chonetidae
-
-plot(1, xlim = c(540, 0), xaxt = 'n', xaxs = 'i', xlab = '')
 paleoAxis(1)
 mtext('Millions of years ago', side = 1, line = 3.5)
 
@@ -95,10 +107,10 @@ curve(pgamma(x, sstatPBDBord3TP$gam.par[1], sstatPBDBord3TP$gam.par[2],
 # mid = Lophospiridae
 # hi = Chonetidae
 
-low <- which(sstatPBDBord3TP$beta < 2^-(2 - 0.25) & sstatPBDBord3TP$beta > 2^-(2 + 0.25))
-mid <- which(sstatPBDBord3TP$beta < 2^(0.5 + 0.25) & sstatPBDBord3TP$beta > 2^(0.5 - 0.25))
-hi <- which(sstatPBDBord3TP$beta < 2^(3 + 0.25) & sstatPBDBord3TP$beta > 2^(3 - 0.25))
-
-sort(colSums(pbdbFamDiv[, names(hi)] > 0))
-
-
+# low <- which(sstatPBDBord3TP$beta < 2^-(2 - 0.25) & sstatPBDBord3TP$beta > 2^-(2 + 0.25))
+# mid <- which(sstatPBDBord3TP$beta < 2^(0.5 + 0.25) & sstatPBDBord3TP$beta > 2^(0.5 - 0.25))
+# hi <- which(sstatPBDBord3TP$beta < 2^(3 + 0.25) & sstatPBDBord3TP$beta > 2^(3 - 0.25))
+# 
+# sort(colSums(pbdbFamDiv[, names(hi)] > 0))
+# 
+# 
