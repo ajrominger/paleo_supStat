@@ -1,7 +1,10 @@
+# **script to scrape time bins from fossilworks.org**
+
 options(stringsAsFactors = FALSE)
 
-setwd('~/Dropbox/Research/paleo_supStat/data')
+setwd('data')
 
+# loop through interval info on fossilworks.org
 coreURI <- 'http://fossilworks.org/bridge.pl?a=displayInterval&interval_no='
 
 tbinInfo <- lapply(1:1108, function(i) {
@@ -33,24 +36,35 @@ tbinInfo <- lapply(1:1108, function(i) {
 tbinInfo <- do.call(rbind, tbinInfo)
 
 
-## clean up
+# clean up
+# --------
 
 tbinInfo <- tbinInfo[!is.na(tbinInfo$name), ]
 
-## remove 'stage' and equivilant from name
+# remove 'stage' and equivilant from name
 tbinInfo$name <- gsub(' [[:lower:]].*', '', tbinInfo$name)
 
-## split up stages with a '/' into both names
+# split up stages with a '/' into both names
 temp <- tbinInfo[grep('/', tbinInfo$name), ]
 tbinInfo$name <- gsub('.*/', '', tbinInfo$name)
 temp$name <- gsub('/.* ', ' ', temp$name)
 tbinInfo <- rbind(tbinInfo, temp)
 
-## fix random typo
+# fix random typo
 tbinInfo$name[tbinInfo$name == 'Cazenovia'] <- 'Cazenovian'
 
-## remove time periods that do not fall completely within a 10my bin
-# tbinInfo <- tbinInfo[!is.na(tbinInfo$tbin), ]
 
-## write out
+# write out
 write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
+
+
+# also write out summary of each time bin, most importantly (for plottin) 
+# it's midpoint
+
+tbinmid <- sapply(unique(tbinInfo$tbin[!is.na(tbinInfo$tbin)]), function(tbin) {
+    tt <- unlist(tbinInfo[tbinInfo$tbin == tbin, c('ma_min', 'ma_max')])
+    return(mean(range(tt, na.rm = TRUE)))
+})
+
+write.csv(data.frame(tbin = names(tbinmid), ma_mid = as.numeric(tbinmid)), 'tbinsMid.csv',
+          row.names = FALSE)
