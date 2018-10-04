@@ -1,4 +1,4 @@
-setwd('~/Dropbox/Research/paleo_supStat/data')
+setwd('data')
 
 # call to the API
 show <- paste0(c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext',
