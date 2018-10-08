@@ -54,63 +54,90 @@ dev.off()
 
 # idea for normality test: sample 1 from each order and do ks test on that subsampled set
 
-# highlight these families
+# highlight individual trajectories
+loFam <- 'Tainoceratidae' # nautiloid
+miFam <- 'Lophospiridae' # sea snails
+hiFam <- 'Spondylidae' # bivalve
+lo <- pbdbFamDiv[, loFam]
+mi <- pbdbFamDiv[, miFam]
+hi <- pbdbFamDiv[, hiFam]
+cols <- hsv(h = c(0.7, 0.45, 0.12), s = c(0.7, 1, 1), v = c(0.8, 0.8, 1))
+names(cols) <- c('hi', 'mi', 'lo')
 
 # make CDF for all scale family-level fluctuations
 pAll <- lapply(sstatPBDBord3TP$raw.pk, 
                function(x) simpECDF(scale(x)[, 1], complement = TRUE))
+
+pHighlight <- pAll[c(loFam, miFam, hiFam)]
+
 pAll <- do.call(rbind, pAll)
 
 # function to help with individual trajectory plotting
 trajLines <- function(t, x, ...) {
     x[x == 0] <- NA
-    x[min(which(!is.na(x))) - 1] <- 0
+    alive <- range(which(!is.na(x)))
+    
+    x[min(alive) - 1] <- 0
+    x[max(alive) + 1] <- 0
+    
+    t <- t[!is.na(x)]
+    x <- x[!is.na(x)]
     
     lines(t, x, ...)
 }
 
 # the actual plotting
 
+pdf('ms/fig_pkx-fbeta.pdf', width = 4.25 * 1.25, height = 4 * 1.25)
+
 layout(matrix(c(1, 2, 1, 3), nrow = 2))
 
 par(oma = c(0, 3, 0, 0) + 0.25, mar = c(4, 0, 0, 0) + 0.25, 
     mgp = c(2, 0.5, 0), cex.lab = 1.4)
 
-
-# highlight individual trajectories
-lo <- pbdbFamDiv[, 'Tainoceratidae']
-mi <- pbdbFamDiv[, 'Lophospiridae']
-hi <- pbdbFamDiv[, 'Chonetidae']
-cols <- hsv(c(0.7, 0.1, 0.05))
-plot(1:3, col = cols, pch = 16)
-
 plot(1, xlim = c(540, 0), xaxt = 'n', xaxs = 'i', xlab = '', 
      ylim = c(0, max(lo, mi, hi, na.rm = TRUE)), type = 'n')
 
+trajLines(tbinMid, lo, col = cols['lo'], lwd = 2)
+trajLines(tbinMid, mi, col = cols['mi'], lwd = 2)
+trajLines(tbinMid, hi, col = cols['hi'], lwd = 2)
+
+text(c(450, 230, 10), c(4, 5.25, 2), labels = c(miFam, loFam, hiFam), 
+     col = cols[c('mi', 'lo', 'hi')], pos = c(3, 4, 2))
+
 paleoAxis(1)
 mtext('Millions of years ago', side = 1, line = 3.5)
+mtext('Standardized richness', side = 2, line = 2)
 
+legend('topright', legend = 'A', pch = NA, bty = 'n', cex = 1.4)
+
+# scale fluctuations
 par(mar = c(3, 0, 1, 0) + 0.25)
 plot(pAll, xlim = c(-4, 4), col = 'gray', ylim = c(0, 1.025),
-     xlab = 'Scaled fluctuations', ylab = 'Cumulative density')
+     xlab = 'Scaled fluctuations')
+mtext('Cumultive density', side = 2, line = 2)
+
+for(i in 1:length(pHighlight)) lines(pHighlight[[i]], col = cols[i], lwd = 2)
+
 curve(pnorm(x, lower.tail = FALSE), lwd = 2, add = TRUE)
 
-plot(simpECDF(sstatPBDBord3TP$beta, complement = TRUE), ylim = c(0, 1.025),
+legend('topright', legend = 'B', pch = NA, bty = 'n', cex = 1.4)
+
+# CDF of beta
+betaCDF <- simpECDF(sstatPBDBord3TP$beta, complement = TRUE)
+plot(betaCDF, ylim = c(0, 1.025),
      log = 'x', xaxt = 'n', yaxt = 'n',
      xlab = expression(beta), col = 'gray')
+
+theseBeta <- sstatPBDBord3TP$beta[c(loFam, miFam, hiFam)]
+points(theseBeta, approxfun(betaCDF)(theseBeta), bg = cols, pch = 21, cex = 1.2)
+
 logAxis(1, expLab = TRUE)
+
 curve(pgamma(x, sstatPBDBord3TP$gam.par[1], sstatPBDBord3TP$gam.par[2], 
              lower.tail = FALSE), 
       col = 'black', lwd = 2, add = TRUE)
 
-# low = Tainoceratidae
-# mid = Lophospiridae
-# hi = Chonetidae
+legend('topright', legend = 'C', pch = NA, bty = 'n', cex = 1.4)
 
-# low <- which(sstatPBDBord3TP$beta < 2^-(2 - 0.25) & sstatPBDBord3TP$beta > 2^-(2 + 0.25))
-# mid <- which(sstatPBDBord3TP$beta < 2^(0.5 + 0.25) & sstatPBDBord3TP$beta > 2^(0.5 - 0.25))
-# hi <- which(sstatPBDBord3TP$beta < 2^(3 + 0.25) & sstatPBDBord3TP$beta > 2^(3 - 0.25))
-# 
-# sort(colSums(pbdbFamDiv[, names(hi)] > 0))
-# 
-# 
+dev.off()
