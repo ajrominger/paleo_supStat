@@ -46,6 +46,14 @@ Here is the guts of the `make3TPub` function
 ```
 
 
+## Super statistical analysis of 3TPub-corrected PBDB data
+
+Once data have been bias-corrected we can complete their super-statistical analysis.  We do that in the script `analysis/pbdb_sstat.R` shown here:
+
+```{r code=readLines('analysis/pbdb_sstat.R')}
+```
+
+
 ## To-do
 
 - remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
