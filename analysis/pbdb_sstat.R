@@ -3,7 +3,6 @@
 # source needed functions
 R.utils::sourceDirectory('R', modifiedOnly = FALSE)
 library(socorro) # for plotting
-library(viridis) # colors for plotting
 
 # load and prepare data
 # ---------------------
