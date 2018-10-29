@@ -46,6 +46,15 @@ Here is the guts of the `make3TPub` function
 ```
 
 
+Our publication correction is simple: we take the exponential of the residual of this relationship:
+$$
+\text{log(3T-corrected richness)} = \beta_0 + \beta_1 \text{log(number of publications)} + \epsilon
+$$
+The exponentiated residual amounts to dividing the three-timer corrected richness by a publication correction factor: $\text{(3T-corrected richness)} / e^{\hat{y}}$ where $\hat{y}$ is the predicted trend line from the above relationship.
+
+So we can use this multiplicative publication correction factor in addition to the similarely multiplicative three-timer correction to bias-correct individual genus-level occurrences. This is important when we permute these bias-corrected genera across families to create a null set of d-statistics for our superstatistical fit.
+
+
 ## Super statistical analysis of 3TPub-corrected PBDB data
 
 Once data have been bias-corrected we can complete their super-statistical analysis.  We do that in the script `analysis/pbdb_sstat.R` shown here:
