@@ -9,7 +9,29 @@ library(socorro) # for plotting
 
 pbdbFamDiv <- read.csv('data/pbdb_3TPub-corrected.csv', row.names = 1)
 
+
 # coarsen to higher taxonomic groupings
+
+pbdbTax <- read.csv('data/pbdb_taxa.csv', as.is = TRUE)
+
+#' helper function to coarsen taxonomic resolution of `pbdbFamDiv` object
+#' @param level a character string specifying the taxonomic level (from order through phylum)
+
+coarsenTaxa <- function(level) {
+    m <- tidy2mat(pbdbTax$family[match(colnames(pbdbFamDiv), pbdbTax$family)], 
+                  pbdbTax[match(colnames(pbdbFamDiv), pbdbTax$family), level], 
+                  rep(1, ncol(pbdbFamDiv)))
+    m <- m[colnames(pbdbFamDiv), ]
+    
+    out <- as.matrix(pbdbFamDiv) %*% m
+    out <- out[, colnames(out) != '']
+    
+    return(out)
+}
+
+pbdbOrdDiv <- coarsenTaxa('order')
+pbdbClsDiv <- coarsenTaxa('class')
+pbdbPhyDiv <- coarsenTaxa('phylum')
 
 
 # tbin midpoints
@@ -20,32 +42,75 @@ names(tbinMid) <- tbinNames
 
 tbinMid <- tbinMid[rownames(pbdbFamDiv)]
 
-# super stat analysis for families
-# --------------------------------
 
-# corrected flux
-pbdbFamFlux <- apply(pbdbFamDiv, 2, function(x) {
-    flux <- diff(c(0, x))
-    return(flux[flux != 0])
-})
+# super stat analysis
+# -------------------
 
-# make sstat object
-sstatPBDBord3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = FALSE)
+#' helper function to calculate corrected flux
+#' @param x the matrix of corrected diversities over which to calculate fluxes
+
+calcFlux <- function(x) {
+    apply(x, 2, function(X) {
+        flux <- diff(c(0, X))
+        return(flux[flux != 0])
+    })
+}
+
+
+# calculate flux for families
+pbdbFamFlux <- calcFlux(pbdbFamDiv)
+
+# make sstat object for families
+sstatPBDBfam3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = FALSE)
 
 # likelihood CI for family-level sstat analysis
-sstatPBDBord3TPCI <- bootMLE.sstat(sstatPBDBord3TP, B = 1000, useAll = FALSE)
+sstatPBDBfam3TPCI <- bootMLE.sstat(sstatPBDBfam3TP, B = 1000, useAll = FALSE)
 
-# plot it
-pdf('ms/fig_Px.pdf', width = 4.25, height = 4)
 
-par(mar = c(3, 3, 0, 0) + 0.5, mgp = c(2, 0.5, 0), cex.lab = 1.4)
-plot(sstatPBDBord3TP, xlim = c(1e-04, 4e+01), ylim = c(8e-05, 1),
+# do the same for higher taxo levels
+pbdbOrdFlux <- calcFlux(pbdbOrdDiv)
+sstatPBDBOrd <- sstatComp(pbdbOrdFlux, minN = 10, plotit = FALSE)
+
+pbdbClsFlux <- calcFlux(pbdbClsDiv)
+sstatPBDBCls <- sstatComp(pbdbClsFlux, minN = 10, plotit = FALSE)
+
+pbdbPhyFlux <- calcFlux(pbdbPhyDiv)
+sstatPBDBPhy <- sstatComp(pbdbPhyFlux, minN = 10, plotit = FALSE)
+
+
+# plot all sstat analyses
+pdf('ms/fig_Px.pdf', width = 4.25 * 1.25, height = 4 * 1.25)
+
+layout(matrix(1:4, nrow = 2, byrow = TRUE))
+par(oma = c(3, 3, 0, 0) + 0.5, mar = c(0.1, 0.1, 1.51, 0.1), 
+    mgp = c(2, 0.5, 0), cex.lab = 1.4)
+
+plot(sstatPBDBfam3TP, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1),
      xaxt = 'n', yaxt = 'n',
-     panel.first = quote(mlePoly(sstatPBDBord3TPCI$sstat, PPx.gam,
+     panel.first = quote(mlePoly(sstatPBDBfam3TPCI$sstat, PPx.gam,
                                  col = hsv(alpha = 0.25), border = NA)))
+mtext('Families', side = 3, line = 0)
+logAxis(2, expLab = TRUE)
+
+plot(sstatPBDBOrd, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
+     addLegend = FALSE)
+mtext('Orders', side = 3, line = 0)
+
+plot(sstatPBDBCls, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
+     addLegend = FALSE)
+mtext('Classes', side = 3, line = 0)
 logAxis(1:2, expLab = TRUE)
 
+plot(sstatPBDBPhy, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
+     addLegend = FALSE)
+mtext('Phyla', side = 3, line = 0)
+logAxis(1, expLab = TRUE)
+
+mtext('|Fluctuations|', side = 1, outer = TRUE, line = 2)
+mtext('Cumulative density', side = 2, outer = TRUE, line = 2)
 dev.off()
+
+
 
 
 # plot p_k(x|b) and f(beta) for families
@@ -64,7 +129,7 @@ cols <- hsv(h = c(0.7, 0.45, 0.12), s = c(0.7, 1, 1), v = c(0.8, 0.8, 1))
 names(cols) <- c('hi', 'mi', 'lo')
 
 # make CDF for all scale family-level fluctuations
-pAll <- lapply(sstatPBDBord3TP$raw.pk, 
+pAll <- lapply(sstatPBDBfam3TP$raw.pk, 
                function(x) simpECDF(scale(x)[, 1], complement = TRUE))
 
 pHighlight <- pAll[c(loFam, miFam, hiFam)]
@@ -123,17 +188,17 @@ curve(pnorm(x, lower.tail = FALSE), lwd = 2, add = TRUE)
 legend('topright', legend = 'B', pch = NA, bty = 'n', cex = 1.4)
 
 # CDF of beta
-betaCDF <- simpECDF(sstatPBDBord3TP$beta, complement = TRUE)
+betaCDF <- simpECDF(sstatPBDBfam3TP$beta, complement = TRUE)
 plot(betaCDF, ylim = c(0, 1.025),
      log = 'x', xaxt = 'n', yaxt = 'n',
      xlab = expression(beta), col = 'gray')
 
-theseBeta <- sstatPBDBord3TP$beta[c(loFam, miFam, hiFam)]
+theseBeta <- sstatPBDBfam3TP$beta[c(loFam, miFam, hiFam)]
 points(theseBeta, approxfun(betaCDF)(theseBeta), bg = cols, pch = 21, cex = 1.2)
 
 logAxis(1, expLab = TRUE)
 
-curve(pgamma(x, sstatPBDBord3TP$gam.par[1], sstatPBDBord3TP$gam.par[2], 
+curve(pgamma(x, sstatPBDBfam3TP$gam.par[1], sstatPBDBfam3TP$gam.par[2], 
              lower.tail = FALSE), 
       col = 'black', lwd = 2, add = TRUE)
 
