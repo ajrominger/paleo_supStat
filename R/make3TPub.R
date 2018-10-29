@@ -13,7 +13,7 @@
 
 make3TPub <- function(rawDiv,  t3stat,  pub,  taxa,  tbin,  tbinTime,  
                       minPub = 10,  plotit = FALSE) {
-	#	put data together so can be universally manipulated
+	# put data together so can be universally manipulated
 	x <- data.frame(rawDiv = rawDiv, t3stat = t3stat, pub = pub, taxa = taxa, tbin = tbin)
 	x$tbin <- as.character(x$tbin)
 	x$taxa <- as.character(x$taxa)
@@ -22,17 +22,17 @@ make3TPub <- function(rawDiv,  t3stat,  pub,  taxa,  tbin,  tbinTime,
 	
 	tbinTime <- tbinTime[names(tbinTime) %in% x$tbin]
 	
-	#	3-timer correction
+	# 3-timer correction
 	t3cor <- x$rawDiv/x$t3stat
 	
-	#	publication correction
+	# publication correction
 	logPub <- log(x$pub)
 	pubLM <- lm(log(t3cor)~logPub)
 	pbdbPubLM <<- pubLM	# save regression to global env
 	
 	pubResid <- exp(pubLM$residuals)
 	
-	#	plot so you can verify cuttoff etc.
+	# plot so you can verify cuttoff etc.
 	if(plotit) {
 		plot(log(x$pub), log(t3cor),  
 			 xlab = 'log(Number of publications)', 
