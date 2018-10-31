@@ -87,11 +87,13 @@ write.csv(pbdbFamDiv, 'data/pbdb_3TPub-corrected.csv')
 # for permutational d-stat tests we need diversity at the genus level;
 # make that here
 
-x <- proc.time()
-genTbinBias <- parallel::mclapply(which(!is.nan(famTbinBias$T3Stat))[1:100], mc.cores = 3, 
+# a data.frame holding only one record per genus per family per time bin
+pbdbOcc <- pbdbDat[!duplicated(pbdbDat[, c('tbin', 'family', 'otu')]), ]
+
+genTbinBias <- parallel::mclapply(which(!is.nan(famTbinBias$T3Stat)), mc.cores = 8, 
                                   FUN = function(i) {
-                                      dat <- pbdbDat[pbdbDat$family == famTbinBias$fam[i] & 
-                                                         pbdbDat$tbin == famTbinBias$tbin[i], 
+                                      dat <- pbdbOcc[pbdbOcc$family == famTbinBias$fam[i] & 
+                                                         pbdbOcc$tbin == famTbinBias$tbin[i], 
                                                      c('tbin', 'family', 'otu')]
                                       dat$T3Occ <- 1 / famTbinBias$T3Stat[i]
                                       dat$tbinPub <- famTbinBias$tbinPub[i]
@@ -104,19 +106,5 @@ genTbinBias <- do.call(rbind, genTbinBias)
 pbdbGenDiv <- genTbinBias$T3Occ / 
     exp(predict(pbdbPubLM, newdata = data.frame(logPub = log(genTbinBias$tbinPub))))
 
-proc.time() - x
-
-# genTbinBias <- merge(pbdbDat[, c('family', 'otu', 'tbin')], famTbinBias, 
-#                      x.by = c('family', 'tbin'), y.by = c('fam', 'tbin'))
-
-head(pbdbDat[, c('family', 'otu', 'tbin')])
-head(pbdbDat$otu)
-head(pbdbDat$tbin)
-
-head(famTbinBias)
 
 
-############ !!!!!!!!!!!!!! NEEDS WORK....HOW DO WE GET THE GENUS LEVEL SHIT????
-pbdbGenDiv <- with(famTbinBias, 
-                   make3TPub(div, T3Stat, tbinPub, fam, tbin, pbdbTime, 
-                             minPub = 10, plotit = TRUE))
