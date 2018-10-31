@@ -90,7 +90,7 @@ write.csv(pbdbFamDiv, 'data/pbdb_3TPub-corrected.csv')
 # a data.frame holding only one record per genus per family per time bin
 pbdbOcc <- pbdbDat[!duplicated(pbdbDat[, c('tbin', 'family', 'otu')]), ]
 
-genTbinBias <- parallel::mclapply(which(!is.nan(famTbinBias$T3Stat)), mc.cores = 8, 
+genTbinBias <- parallel::mclapply(which(!is.nan(famTbinBias$T3Stat)), mc.cores = 3, 
                                   FUN = function(i) {
                                       dat <- pbdbOcc[pbdbOcc$family == famTbinBias$fam[i] & 
                                                          pbdbOcc$tbin == famTbinBias$tbin[i], 
@@ -103,8 +103,12 @@ genTbinBias <- parallel::mclapply(which(!is.nan(famTbinBias$T3Stat)), mc.cores =
 )
 
 genTbinBias <- do.call(rbind, genTbinBias)
-pbdbGenDiv <- genTbinBias$T3Occ / 
-    exp(predict(pbdbPubLM, newdata = data.frame(logPub = log(genTbinBias$tbinPub))))
+pbdbGenDiv <- data.frame(genTbinBias[, c('tbin', 'family', 'otu')], 
+                         T3PubDiv = genTbinBias$T3Occ / 
+                             exp(predict(pbdbPubLM, 
+                                         newdata = data.frame(
+                                             logPub = log(genTbinBias$tbinPub)))))
 
-
-
+# write it out as a tidy data frame (not turned into a matrix) this will be easier
+# for permuting
+write.csv(pbdbGenDiv, file = 'data/pbdb_3TPub_genera.csv', row.names = FALSE)
