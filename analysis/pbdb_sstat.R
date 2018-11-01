@@ -67,6 +67,9 @@ sstatPBDBCls <- sstatComp(pbdbClsFlux, minN = 10, plotit = FALSE)
 pbdbPhyFlux <- calcFlux(pbdbPhyDiv)
 sstatPBDBPhy <- sstatComp(pbdbPhyFlux, minN = 10, plotit = FALSE)
 
+# save the sstat analyses for future use
+save(sstatPBDBfam3TP, sstatPBDBOrd, sstatPBDBCls, sstatPBDBPhy, file = 'data/sstat_objects.RData')
+
 
 # plot all sstat analyses
 pdf('ms/fig_Px.pdf', width = 4.25 * 1.25, height = 4 * 1.25)
