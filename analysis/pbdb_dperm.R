@@ -19,39 +19,23 @@ genHash <- match(pbdbGenDiv$otu, pbdbTax$otu)
 
 ks.sstat <- function(x, ...) {
     # browser()
-    dat <- abs(unlist(x$Px.sub))
-    # dat <- dat
-    # `PPx(x)` was designed to be plotted as inverse CDF on absolute values 
-    # as in `plot.sstat`, so undo that with `1 - 0.5 * PPx`
-    # pfun <- function(X) 1 - 0.5 * x$PPx(X)
-    # pfun <- function(X) x$PPx(exp(X))
-    # pfun <- function(X) 0.5 + 0.5 * x$PPx(X, comp = FALSE)
-    pfun <- function(X, ...) log(x$PPx(X, ...))
+    dat <- unlist(x$Px.sub)
+    dat <- abs(dat)
     
+    log <- function(x) x ############# TEMPPPPPPP ##############
+    # look at complement of `PPx(x)` in log prob space
+    pfun <- function(X, ...) log(x$PPx(X, comp = TRUE))
+    
+    # cumulative prob observed and from theory
     n <- length(dat)
-    pobs <- log(rev((1:n) / n))
-    out <- pfun(sort(dat), comp = TRUE, ...) #- pobs
+    pobs <- log((n:1) / n)
+    pthr <- pfun(sort(dat), ...)
     
-    plot(sort(dat), pobs)
-    points(sort(dat), out, col = 'red')
-    range(out - pobs)
-
-     
-    # plot(simpECDF(dat), type = 'l')
-    # lines(sort(dat), pfun(sort(dat)), col = 'red')
+    # the statisic is the difference between obs and thr
+    out <- pthr - pobs
     
-    # plot(out)
-    # points(1 / n - out, col = 'red')
-    
-    return(max(out, 1 / n - out))
+    return(max(out, 1 / n - out, na.rm = TRUE))
 }
-
-
-foo <- sstatPBDBPhy
-ks.sstat(foo)
-
-
-plot(simpECDF(unlist(foo$Px.sub)))
 
 
 # sstat on real (non-permuted) data
@@ -61,33 +45,48 @@ dObsCls <- ks.sstat(sstatPBDBCls)
 dObsPhy <- ks.sstat(sstatPBDBPhy)
 
 
-
-n <- length(unlist(sstatPBDBPhy$Px.sub))
-foo <- max(abs((1 - 0.5 * sstatPBDBfam3TP$PPx(sort(unlist(sstatPBDBfam3TP$Px.sub))) - (1:n) / n)))
-
-
-plot(1 - 0.5 * sstatPBDBPhy$PPx(sort(unlist(sstatPBDBPhy$Px.sub))), (1:n) / n)
-abline(0, 1, col = 'red')
-
-plot(simpECDF(unlist(sstatPBDBfam3TP$Px.sub)))
-curve(1 - 0.5 * sstatPBDBfam3TP$PPx(x), col = 'red', add = TRUE)
-segments(0.7, 0.7, 0.7, 0.7-foo)
-
-curve(0.5 + 0.5 * sstatPBDBfam3TP$PPx(x), from = -10, to = 10)
-
-
 # repeatedly permute data and calculate null ks statistics
-B <- 999
+B <- 500
 dNull <- parallel::mclapply(1:B, mc.cores = 3, FUN = function(i) {
     newFam <- sample(pbdbTax$family)
     newDiv <- tidy2mat(pbdbGenDiv$tbin, newFam[genHash], pbdbGenDiv$T3PubDiv)
     newFlux <- calcFlux(newDiv)
     newSstat <- sstatComp(newFlux, minN = 10, plotit = FALSE)
     
-    return(ks.sstat(newSstat))
+    ks.sstat(newSstat)
+    # return(ks.sstat(newSstat))
 })
 
-dNull <- c(unlist(dNull), dObs)
+dNull <- unlist(dNull)
 
 
-save(dNull, file = 'dnull_temp.RData')
+# save output in case it's ever needed
+save(dNull, file = 'data/dnull.RData')
+
+
+# plotting
+pdf('ms/fig_dStat.pdf', width = 4, height = 4)
+# colors for plotting taxa
+tcols <- colorRampPalette(hsv(c(0.12, 0, 0.02), c(1, 0.9, 0.7), c(1, 0.8, 0.3)))(4)
+
+par(mar = c(3, 3, 0, 0) + 0.5, mgp = c(2, 0.75, 0))
+denFill(dNull, xlim = range(dNull, dObsFam, dObsOrd, dObsCls, dObsPhy) * c(0.9, 1.1), 
+        xlab = 'D-statistic', main = '')
+
+abline(v = dObsFam, lwd = 2, col = tcols[1])
+text(dObsFam, 1.25 * mean(par('usr')[3:4]), labels = 'Families', col = tcols[1],
+     srt = 90, pos = 4)
+
+abline(v = dObsOrd, lwd = 2, col = tcols[2])
+text(dObsOrd, 1.25 * mean(par('usr')[3:4]), labels = 'Orders', col = tcols[2],
+     srt = 90, pos = 4)
+
+abline(v = dObsCls, lwd = 2, col = tcols[3])
+text(dObsCls, 1.25 * mean(par('usr')[3:4]), labels = 'Classes', col = tcols[3],
+     srt = 90, pos = 4)
+
+abline(v = dObsPhy, lwd = 2, col = tcols[4])
+text(dObsPhy, 1.25 * mean(par('usr')[3:4]), labels = 'Phyla', col = tcols[4],
+     srt = 90, adj = c(0, -0.5))
+
+dev.off()
