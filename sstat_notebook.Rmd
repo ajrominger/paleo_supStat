@@ -63,20 +63,14 @@ Once data have been bias-corrected we can complete their super-statistical analy
 ```
 
 
+Now we can calculate a measure of goodness of fit with the Komolgorov-Smirnov test statistics $D$. That is done in the script `analysis/pbdb_dperm.R`. This script uses a permutational approach to create a null distribution of test statistics.  The goal is to see if the good fit of super-statistics at the family and order levels is purely from the number of different groupings at those levels, regardless of the biology that might be going on to make those levels actually mechanistically meaningful.  So to achieve such a null, we permute orders across families, calculate the D-statistics of those permuted groupings, and compare to the real D-statistics from the actual biological groupings.  The script is shown below:
+
+```{r code=readLines('analysis/pbdb_dperm.R')}
+```
+
 ## To-do
 
 - remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
-- make the 3TPub script seapparate and have it save (made script, haven't tried running):
-    1. the plot of diversity through time (maybe not?)
-- make a sepparate script for the plotting of the sstat analysis including:
-    1. first it needs to make the corrected diversity fluctuations
-    1. the main sstat style CDF
-        - need to remove the raw data from the plot
-        - need to make sure 95% CI still works
-    2. the f(beta) plot
-    3. the p_k(x) plot
-    4. example trajectories
-- do KS analysis with Families 
 - run clean functions on sepkoski
 - manuscript text
     - add more recent citations
