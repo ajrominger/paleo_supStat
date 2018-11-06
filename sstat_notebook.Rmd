@@ -72,6 +72,7 @@ Now we can calculate a measure of goodness of fit with the Komolgorov-Smirnov te
 
 - remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
 - sstat on non-3TPub
+- diversity curve comparisons (sqs using new R package in paperpile 2read)
 - run clean functions on sepkoski
 - manuscript text
     - add more recent citations
