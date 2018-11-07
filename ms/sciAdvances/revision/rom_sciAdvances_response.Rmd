@@ -44,6 +44,8 @@ extinction over these timespans. If the authors did allow for this,
 would the equilibrium model still be favored, and would this change
 any of the subsequent analysis?
 
+> need to make clear that we're only looking at fluctuations, so everything is 0-centered. Thus when we say equilibrium we mean no wild changes and all coherent w/n an order
+
 I suppose another way to ask the question would be: what happens if
 the authors do try to fit independent birth and death rates to the
 time series for each order?
@@ -72,7 +74,7 @@ I would assume it matters when plotting fluctuation sizes in e.g. Fig
 of this in the SI, but I'd like to understand if the variation in
 timeslices is enough to affect these analyses.
 
-> Should we include simulations??
+> make clear that we're using standard 10 (or 11?) MY bins used prebiously in the literature
 
 
 Do the authors acknowledge that there is any room for bias in the
