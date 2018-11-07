@@ -55,6 +55,12 @@ The exponentiated residual amounts to dividing the three-timer corrected richnes
 So we can use this multiplicative publication correction factor in addition to the similarely multiplicative three-timer correction to bias-correct individual genus-level occurrences. This is important when we permute these bias-corrected genera across families to create a null set of d-statistics for our superstatistical fit.
 
 
+We can check our correction against other popular methods.  In the script `analysis/pbdb_divCurve.R` we specifically compare simple rarifaction, with the SQS method, with our three-time and publication bias correction methods.  All these various methods have close agreement.  The script `analysis/pbdb_divCurve.R` is shown below:
+
+```{r code=readLines('analysis/pbdb_divCurve.R')}
+```
+
+
 ## Super statistical analysis of 3TPub-corrected PBDB data
 
 Once data have been bias-corrected we can complete their super-statistical analysis.  We do that in the script `analysis/pbdb_sstat.R` shown here:
