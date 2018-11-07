@@ -77,11 +77,11 @@ Now we can calculate a measure of goodness of fit with the Komolgorov-Smirnov te
 ## To-do
 
 - remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
-- sstat on non-3TPub
 - remove sepkoski
+- Fig 1 (especially scaled Gaussian and f(beta) for higher taxa) to be put in supp and discussed
 - manuscript text
     - add more recent citations
     - add more thurough explaination and justification of correction approach 
-    - respond to other reviewer comments
-        - make sure it's clear why we're removing sepkoski
+    - hammer home the adaptive landscape idea--use it instead of "niche" or "ecological strategy"
+    - make sure it's clear why we're removing sepkoski
 
