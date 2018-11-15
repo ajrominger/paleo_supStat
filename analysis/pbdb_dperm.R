@@ -47,7 +47,7 @@ dObsPhy <- ks.sstat(sstatPBDBPhy)
 
 # repeatedly permute data and calculate null ks statistics
 B <- 500
-dNull <- parallel::mclapply(1:B, mc.cores = 3, FUN = function(i) {
+dNull <- parallel::mclapply(1:B, mc.cores = 8, FUN = function(i) {
     newFam <- sample(pbdbTax$family)
     newDiv <- tidy2mat(pbdbGenDiv$tbin, newFam[genHash], pbdbGenDiv$T3PubDiv)
     newFlux <- calcFlux(newDiv)
