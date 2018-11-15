@@ -1,0 +1,87 @@
+;; RefTeX parse info file
+;; File: /Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex
+;; User: andyrominger (Andy Rominger)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/")
+
+(label-numbers ("eq:" . 1))
+
+(bof "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex")
+
+(toc "toc" "    * Introduction" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "*" "\\section*{Introduction}" 4398)
+
+(toc "toc" "    * Results" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "*" "\\section*{Results}" 11677)
+
+("fig:pk_f" "f" "Variability in trajectories of within-order fluctuations in genus diversity" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("eq:PxInt" "e" "P(x) = \\int_0^\\infty p_k(x \\mid \\beta) f(\\beta) d\\beta  " "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:Px" "f" "Order-level distribution of diversity fluctuations" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:dStat" "f" "Goodness of super-statistical theory fit" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(toc "toc" "    * Discussion" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "*" "\\section*{Discussion}" 19924)
+
+(toc "toc" "    * Methods and Materials" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "*" "\\section*{Methods and Materials}" 25742)
+
+(toc "toc" "      * Paleobiology Database data download and filtering" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "*" "\\subsection*{Paleobiology Database data download and filtering}" 25776)
+
+(toc "toc" "      * Correcting for imperfect and potentially biased sampling" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "*" "\\subsection*{Correcting for imperfect and potentially biased sampling}" 27496)
+
+("sec:3TP" "s" "We use a new and flexible method to correct for known sampling incompleteness and biases in publicat" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("eq:1" "e" nil "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil "")
+
+(toc "toc" "      * Numerical methods" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "*" "\\subsection*{Numerical methods}" 31654)
+
+("sec:numMeth" "s" "We first derive the super-statistical distribution $P(x)$ by fitting Gaussian distributions to clade" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(toc "toc" "    * Acknowledgments" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "*" "\\section*{Acknowledgments}" 32932)
+
+(toc "toc" "    1 Limit distribution of a time-averaged homogeneous origination-extinction process" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "1" "\\section{Limit distribution of a time-averaged homogeneous
+  origination-extinction process}" 34550)
+
+("sec:suppLimitDist" "s" "Fossil taxa gain and lose taxa according to an origination-extinction process. We assume that most f" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("eq:eventPois1" "e" "Y \\sim \\text{Pois}(\\rho \\int_{t=0}^\\tau N(t) dt). " "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("eq:eventPois2" "e" "Y \\sim \\text{Pois}(\\rho \\bar{N} \\tau). " "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(toc "toc" "    2 Additional super-statistical analyses" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "2" "\\section{Additional super-statistical analyses}" 36220)
+
+(toc "toc" "      2.1 Raw PBDB data" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "2.1" "\\subsection{Raw PBDB data}" 36785)
+
+("sec:rawPBDB" "s" "We calculated the super-statistical prediction at the order level from raw genus diversity recorded " "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(toc "toc" "      2.2 Different taxonomic ranks in PBDB data" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "2.2" "\\subsection{Different taxonomic ranks in PBDB data}" 37159)
+
+(toc "toc" "      2.3 Sepkoski's compendium" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 3 "2.3" "\\subsection{Sepkoski's compendium}" 37479)
+
+("sec:suppSepk" "s" "Sepkoski's compendium \\citep{sepkoski1992} provided the first hypothesis of Phanerozoic diversificat" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(toc "toc" "      * Supplemental Figures" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil 2 "  *" "\\section*{Supplemental Figures}" 38096)
+
+("fig:divByPub" "f" "Relationship between number of publications and genus diversity" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:supp_3TPub" "f" "Comparison of SQS method with the raw data and three-timer bias correction method" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:supp_rawPBDB_Px" "f" "Super-statistical prediction of raw data" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:supp_PBDB_Px_cls" "f" "Super-statistical prediction of bias corrected class-level data" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+("fig:supp_sepkPx" "f" "Super-statistical prediction for Sepkoski's compendium" "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex" nil)
+
+(eof "/Users/andyrominger/Dropbox/Research/paleo_supStat/ms/sciAdvances/revision/rom_sciAdvances_rev.tex")
+))
+
