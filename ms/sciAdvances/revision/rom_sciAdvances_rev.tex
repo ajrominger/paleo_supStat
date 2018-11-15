@@ -2,22 +2,11 @@
 
 \documentclass[12pt]{article}
 
-% Users of the {thebibliography} environment or BibTeX should use the
-% scicite.sty package, downloadable from *Science* at
-% http://www.sciencemag.org/authors/preparing-manuscripts-using-latex 
-% This package should properly format in-text
-% reference calls and reference-list numbers.
-
 \usepackage{scicite}
 \let\citep=\cite
 
 % \usepackage{times}
 
-% The preamble here sets up a lot of new/revised commands and
-% environments.  It's annoying, but please do *not* try to strip these
-% out into a separate .sty file (which could lead to the loss of some
-% information when we convert the file to other formats).  Instead, keep
-% them in the preamble of your main LaTeX source file.
 
 \usepackage{graphicx}
 \usepackage{authblk}
@@ -244,7 +233,7 @@ biota.
 To uncover the superstatistical nature of the marine invertebrate
 Phanerozoic fauna we analyze the distribution of fluctuations in the
 number of genera (the lowest reliably recorded taxonomic resolution)
-using the Paleobiology Database (PBDB; \url{paleobiodb.org}). We
+using the Paleobiology Database (PBDB; {\tt paleobiodb.org}). We
 correct these raw data for incomplete sampling and bias using a new
 approach described in the methods section.
 
@@ -280,7 +269,7 @@ within orders are well characterized by a Gaussian distribution
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=0.8]{figs/fig_pkx-fbeta.pdf}
+  \includegraphics[scale=0.8]{../../fig_pkx-fbeta.pdf}
   \caption[Variability in trajectories of within-order fluctuations in
   genus richness]{The distributions of within-order fluctuations in
     genus richness shown for the trajectories of three exemplar
@@ -345,7 +334,7 @@ $P(x)$ which matches both the PBDB and Sepkoski data closely
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=1]{figs/fig_Px.pdf} 
+  \includegraphics[scale=1]{../../fig_Px.pdf} 
   \caption[Order-level distribution of richness
   fluctuations]{Distribution of fluctuations in genus richness within
     orders of marine invertebrates in the Paleobiology Database
@@ -399,7 +388,7 @@ confirmed in Sepkoski's compendium.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[scale=1]{figs/fig_dStat(3TP).pdf}
+  \includegraphics[scale=1]{../../fig_dStat.pdf}
   \caption[Goodness of super-statistical theory fit]{Distribution of
     Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
     within orders (gray shading represents 95\% confidence
@@ -533,7 +522,7 @@ populations to clades are ripe for exploration.
 
 \subsection*{Paleobiology Database data download and filtering}
 Data were downloaded from the Paleobiology Database (PBDB;
-\url{https://paleobiodb.org}) on 15 November 2018 via the database's
+{\tt https://paleobiodb.org}) on 15 November 2018 via the database's
 API (data retrival and processing script in the
 supplement). Collections were filtered using the same approach as
 Alroy \citep{alroy08} to insure that only well preserved marine
@@ -543,7 +532,7 @@ filtered to exclude those occurrences without family-level taxonomy
 and those collections with age estimate resolutions outside the 10MY
 time bins proposed by Alroy \citep{alroy08} resulting in 189516
 occurrences. These timebins were querried from
-\url{http://fossilworks.org} with a custum script reproduced in the
+{\tt http://fossilworks.org} with a custum script reproduced in the
 supplement. The correspondence of these time bins to real
 stratographic intervals is reported in Supplamental Table
 \ref{tab:suppTbin}. The first and last of these time bins,
@@ -631,7 +620,7 @@ clades to more computationally intensive subsampling procedures
 even be advisable for clades with few genera. We directly compare our
 predicted time series of global fluctuations in genus richness with
 results derived from rarifaction and shareholder quarum subsampling
-\citep[SQS;][]{kocsis2018} in Figure \ref{fig:supp_3TPub}.  Our method
+(SQS; \citep{kocsis2018}) in Figure \ref{fig:supp_3TPub}.  Our method
 shows very minor differences with these subsampling-based predictions
 and any discrepancies do not impact the statistical distribution of
 fluctuations (Fig. \ref{fig:supp_3TPub}).
@@ -661,7 +650,7 @@ combined, and calculating AIC of the superstatistical and Gaussian
 models on these bootstrapped datasets.
 
 \bibliographystyle{Science}
-\bibliography{../superStat}
+\bibliography{../../superStat}
 
 
 \section*{Acknowledgments}
@@ -783,7 +772,7 @@ implying the uniqueness of orders.
 
 \begin{figure}[!hp]
   \centering
-  \includegraphics[width=0.4\textwidth]{figs/figSupp_divByPub.jpg}
+  \includegraphics[width=0.4\textwidth]{../../figSupp_divByPub.pdf}
   \caption[Relationship between number of publications and genus
   richness]{Relationship between number of publications and genus
     richness as recorded by the PBDB.}
@@ -792,7 +781,7 @@ implying the uniqueness of orders.
 
 \begin{figure}[!hp]
   \centering
-  \includegraphics[width=0.7\textwidth]{figs/figSupp_sqsRaw3tpub.jpg}
+  \includegraphics[width=0.7\textwidth]{../../figSupp_divEstComp.pdf}
   \caption[Comparison of SQS method with the raw data and three-timer
   bias correction method]{Comparison of SQS method \citep{alroy2010}
     (solid black line) with the raw data (dashed black) and our
@@ -805,44 +794,6 @@ implying the uniqueness of orders.
   \label{fig:supp_3TPub}
 \end{figure}
 
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[width=0.4\textwidth]{figs/figSupp_pbdbRaw_Px.jpg}
-  \caption[Super-statistical prediction of raw data]{Super-statistical
-    prediction of raw (i.e. not bias corrected) order-level
-    fluctuations in genus richness recorded in the PBDB. Grey dots
-    are the full data of orders, while black ones are orders with more
-    than 15 points. The red line is our theoretical prediction and the
-    blue line the best Gaussian fit to the data.}
-  \label{fig:supp_rawPBDB_Px}
-\end{figure}
-
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[width=0.4\textwidth]{figs/figSupp_Px_cls.pdf}
-  \caption[Super-statistical prediction of bias corrected class-level
-  data]{Super-statistical prediction of bias corrected class-level
-    fluctuations in genus richness recorded in the PBDB. Grey dots
-    are the full data for orders, while black dots represent only
-    orders with more than 10 observations. The red line is our
-    theoretical prediction and the blue line, the best Gaussian fit to
-    the data. Note at the class level the fit is predictably worse,
-    see main text for discussion.}
-  \label{fig:supp_PBDB_Px_cls}
-\end{figure}
-
-\begin{figure}[!hp]
-  \centering
-  \includegraphics[width=0.95\textwidth]{figs/figSupp_sepk_Px.jpg}
-  \caption[Super-statistical prediction for Sepkoski's
-  compendium]{Super-statistical prediction (red line) of fluctuations
-    in genus richness recorded in Sepkoski's compendium of marine
-    invertebrates compared to maximum likelihood normal distribution
-    (blue line). Super-statistical theory explains order level
-    fluctuations well (A) with increasingly poorer fits at the class
-    (B) and phylum (C) levels.}
-  \label{fig:supp_sepkPx}
-\end{figure}
 
 \end{document}
 
