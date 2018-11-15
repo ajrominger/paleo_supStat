@@ -498,6 +498,8 @@ what they actually mean. And then, in the discussion, they can worry
 about positing connections between the phenomenology they have
 discovered to other ideas.
 
+> we have re-worked much of the paper to avoid over-reach
+
 5) Lines 36-38. The casual (sounding?) dismal of escalation (Vermeij,
 [13]) is poor. The Madin et al. paper is weak, and has not gained
 traction. Moreover, the evidence of escalation is deeply supported,
@@ -507,6 +509,8 @@ described is that it consists of many, many, separate events, which,
 due to the nature of escalatory dynamics, leads to a long-term ratchet
 in the diversity dynamics). So, this needs to be re-written with a
 little more nuance.
+
+> see around where we cite vermeij2008 now
 
 6) Line 231. This section is labeled: "Three-timer and publication
 sampling correction", yet in the SM the authors claim that their
@@ -526,6 +530,8 @@ view).
 that cleaning)? To be frank, this statement comes across as lazy and
 dismissive.
 
+> This statment has been extended to ensure that any reader can reproduce our results.
+
 Minor suggestions for improvement
 
 I have not been exhaustive here, there are too many little places
@@ -539,30 +545,49 @@ societal to physical to biological." I don't see that the authors’
 superstatiscal approaches (i.e., societal, physical) has any relevance
 with respect to this application to the paleontological record. It is
 distracting. If they really feel the need to say it, it should go
-elsewhere in the paper.  Line 23. I think the authors might mean
-"punctuated by innovations that lead to new orders". Line 26. ‘extant’
-tends to mean those living today, so maybe say "in the number of taxa
+elsewhere in the paper.  
+
+> removed.
+
+Line 23. I think the authors might mean
+"punctuated by innovations that lead to new orders". 
+
+> changed accordingly 
+
+Line 26. ‘extant’ tends to mean those living today, so maybe say "in the number of taxa
 alive at any given time’.
+
+> changed to "richness of taxa"
 
 Line 30. In the line before, ‘distribution’ is singular, so should
 ‘tail’ be singular on this line?
+
+> changed to "fat-tailed distribution"
 
 Line 31. I’m not sure any one has tried to actually ‘predict’
 unusually large fluctuations in diversity. This sentence feels like it
 needs a re-write.
 
+> changed to "Understanding
+the fat-tailed nature of these fluctuations..."
+
 Line 101-102. It is stated that "The $\beta_k$ thus represent the inverse
 variances of homogeneous origination-extinction processes, ...". Of
 what? Genus richness?
+
+> yes, genus richness has been specified
 
 Lines 107-111. The discussion of the possible relationship between the
 Guassian fluctuations in genus richness and neutral-like process (in
 contrast to the largely dead idea of SOC [self organized criticality])
 is distracting, and should be moved to the discussion.
 
+> moved to Discussion
 
 Line 116. Insert "by" after characterized? And why not remind us of
 what $\beta_k$ means in the paleontological context?
+
+> done
 
 Lines 116-118. The speculation that "[t]he form of this stationary
 distribution could shed light on ....." is distracting, and should be
@@ -576,8 +601,12 @@ the field, I think just undermines the credibility of the authors,
 largely through the failure in their knowledge of the literature of
 the paleontological record and its interpretation.
 
+> moved to the discussion
+
 Line 224-225. What exactly does latest Cenozoic mean? The Holocene,
 the Neogene, the last 10 million years?
+
+> we now specify that this means the most recent ~11my bin as advanced by Alroy 2008
 
 Line 240–242: It is stated: "To eliminate further bias due to
 preferential publication of novel taxa we divide observed number of
@@ -585,11 +614,18 @@ genera per order per time period by the expected number of genera
 given publications in that time period". I don’t understand this
 hypothesized bias – please explain!
 
+> This is a concern first proposed by Alroy (2010). We agree with the priciple that researcers might show preference for publishing on new groups, thus leading to a possible correlation between number of publications for a given interval and number of taxa. We find only very weak evidence that more publications lead to more taxa regardless of toxon identity and time interval. We report this weak correlation and have now added a citation to Alroy (2010) to further justify the possibility of publication bias.
+
+
 Line 257: Is some punctuation missing here?
+
+> this sentence has been rewritten
 
 Between line 348 and 349: I assume you mean commutative property of
 the Poisson distribution where the text says "communicative property
 of the Poisson distribution"
+
+> corrected
 
 Lines 358–360. This is a sloppy sentence – in this paper the authors
 claim that much of the raw signal in massive fossil datasets, at least
@@ -597,6 +633,9 @@ signals regarding fluctuations, are not artifacts of sampling, as has
 been proposed before [48]. But surely this depends on the type of
 signal being measured, so the conclusions of this paper need not be at
 odds with the conclusions of ref [48].
+
+> this section has been removed
+
 
 Figure
 
@@ -608,4 +647,6 @@ the class- level, which is what the icons will evoke. (ii) I presume
 the red curve is a group of nautiloids, not ammonites, given that the
 groups persists into the early Paleogene – please confirm, or correct
 the position of the curve.
+
+> this figure now contains different clades and their names are made clear
 

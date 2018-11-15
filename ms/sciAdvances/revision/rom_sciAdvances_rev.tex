@@ -133,12 +133,9 @@ account for both small and extreme fluctuations in the richess of
 fossil taxa.
 % 
 Its success opens up new research directions to better understand the
-potentially convergent nature of non-equilibrium dynamics across
-disparate systems of interest---from societal to physical to
-biological.  Specifically in the biological case, research is
-motivated to understand the evolutionary processes leading to the
-stasis of order- and family-level occupancy in an adaptive landscape
-interrupted by innovations between orders.
+evolutionary processes leading to the stasis of order- and
+family-level occupancy in an adaptive landscape interrupted by
+innovations that lead to new orders and families.
 \end{sciabstract}
 
 \section*{Introduction}
@@ -146,17 +143,16 @@ interrupted by innovations between orders.
 %% Diversity changes
 Biodiversity has not remained constant nor followed a simple
 trajectory through geologic time \citep{raup1982, sepkoski1984,
-  gilinsky1994, liow2007, alroy08}.  Instead, it has been
-marked by fluctuations in the number of extant taxa, both positive in
-the case of net origination, or negative in the case of net
-extinction. Major events, such as adaptive radiations and mass
-extinctions have received special attention \citep{benton1995,
-  Erwin1998}, but fluctuations of all sizes are ubiquitous
-\citep{sepkoski1984, alroy08, quental2013} and follow a distribution
-with fat tails, i.e. where large events are more probable compared to
-models such as the Gaussian distribution. Predicting the magnitude
-of these fluctuations continues to elude paleobiologists and
-biodiversity theoreticians.
+  gilinsky1994, liow2007, alroy08}.  Instead, it has been marked by
+fluctuations in the richness of taxa, both positive in the case of net
+origination, or negative in the case of net extinction. Major events,
+such as adaptive radiations and mass extinctions have received special
+attention \citep{benton1995, Erwin1998}, but fluctuations of all sizes
+are ubiquitous \citep{sepkoski1984, alroy08, quental2013} and follow a
+fat-tailed distribution, i.e. where large events are more probable
+compared to models such as the Gaussian distribution. Understanding
+the fat-tailed nature of these fluctuations continues to elude
+paleobiologists and biodiversity theoreticians.
 
 %% What drives diversity dynamics?
 The fat-tailed distribution of fluctuations inspired earlier
@@ -266,14 +262,15 @@ statistical parameter $\beta$ often corresponding to inverse
 temperature. In the context of macroevolution we define the $\beta_k$
 of clade $k$ as the inverse variance of fluctuations $x_k$ in the
 number of genera within that clade.  The $\beta_k$ thus represent the
-inverse variances of homogeneous origination-extinction processes,
-which will be approximately Gaussian if clades' diversification
-dynamics are independent and in local equilibrium (see Appendix
-\ref{sec:suppLimitDist}).  Three exemplar dynamics taken from a
-sampling-corrected (see methods section) aggregation of the Paleobiology
-Database (PBDB) \citep{alroy08} are shown in Figure \ref{fig:pk_f},
-and indeed all diversity fluctuations within orders are well
-characterized by a Gaussian distribution (Fig. \ref{fig:pk_f}).
+inverse variances of homogeneous origination-extinction processes of
+genus richness withing a clade, which will be approximately Gaussian
+if the clades' diversification dynamics are independent and in local
+equilibrium (see Appendix \ref{sec:suppLimitDist}).  Three exemplar
+dynamics taken from a sampling-corrected (see methods section)
+aggregation of the Paleobiology Database (PBDB) \citep{alroy08} are
+shown in Figure \ref{fig:pk_f}, and indeed all diversity fluctuations
+within orders are well characterized by a Gaussian distribution
+(Fig. \ref{fig:pk_f}).
 
 \begin{figure}[!h]
   \centering
@@ -293,25 +290,21 @@ characterized by a Gaussian distribution (Fig. \ref{fig:pk_f}).
   \label{fig:pk_f}
 \end{figure}
 
-Independent and dynamically equilibrial dynamics suggested by these
-Gaussian fluctuations in genus richness could result from neutral-like
-processes \citep{hubbell2001}, where the dynamics of one taxon are
-unaffected by those of another, or from dampening mechanisms that
-stabilize complex networks of interacting taxa \citep{brose2005}. This
-is in direct contrast to the instability hypothesis underlying the
-self-organized criticality theory of paleo-biodiversity
-\citep{bak1993, sole1997}.
 
 To predict the super-statistical behavior of the entire marine
 invertebrate Phanerozoic fauna we must integrate over all possible
 local equilibria that each clade could experience. The stationary
 distribution of $\beta_k$ values describes these possible equilibria,
 specifying the probability that a given clade, chosen at random, will
-occupy a region of niche space characterized $\beta_k$. The form of
-this stationary distribution could shed interesting light on the
-biological processes that lead different clades to explore different
-regions of adaptive landscapes, and thus different equilibria, as
-discussed below.
+occupy a region of niche space characterized by $\beta_k$.
+
+%%% move elsewhere if not said already
+% The form of
+% this stationary distribution could shed interesting light on the
+% biological processes that lead different clades to explore different
+% regions of adaptive landscapes, and thus different equilibria, as
+% discussed below.
+%%%
 
 We estimate the distribution of $\beta_k$'s simply as the maximum
 likelihood distribution describing the set of inverse variances for
@@ -446,6 +439,19 @@ neutrality \citep{macWilson, hubbell2001}, diversity-dependence
 dampen---rather than exacerbate---fluctuations in complex ecological
 networks \citep{berlow2009}. 
 
+%%%% this could go here or elsewhere
+Independent and dynamically equilibrial dynamics suggested by these
+Gaussian fluctuations in genus richness could result from neutral-like
+processes \citep{hubbell2001}, where the dynamics of one taxon are
+unaffected by those of another, or from dampening mechanisms that
+stabilize complex networks of interacting taxa \citep{brose2005}. This
+is in direct contrast to the instability hypothesis underlying the
+self-organized criticality theory of paleo-biodiversity
+\citep{bak1993, sole1997}.
+%%%%%
+
+
+
 We then show that punctuated shifts to different equilibria between
 order, a consequence of punctuated exploration of niche space by newly
 evolving clades \citep{eldredgeGould1972, newman1985adaptive,
@@ -528,8 +534,11 @@ resulting in 221202 genus occurrences. These were further filtered to
 exclude those occurrences without order-level taxonomy and those
 collections with age estimate resolutions outside the 10my default
 bins of the PBDB resulting in 189516 occurrences left for analysis. To
-avoid basic sampling concerns we excluded the earliest Cambrian and
-the latest Cenozoic.
+avoid basic sampling concerns we excluded the first and last 11 MY
+time bins corresponding to the earliest Cambrian and the latest
+Cenozoic. These time bins were.
+
+%%%%%%% FIX THE ABOVE!!!!!
 
 To focus attention on the variance of fluctuations we center each
 clade's fluctuation distribution. Because ``equilibrium'' in the
@@ -539,28 +548,42 @@ interest than deviations from it. We also note that most clades are
 already close to centered and so centering has little influence on
 clade-specific fluctuation distributions.
 
-\subsection*{Three-timer and publication sampling correction} 
+\subsection*{Correcting for imperfect and potentially biased sampling} 
 \label{sec:3TP}
-We use a new and flexible method, described below, to correct for
-known sampling biases in publication-based specimen databases
-\citep{alroy08, alroy2010}.  We were motivated to use this method
-because rarefaction has been shown to under-perform compared to the
-more data-intensive shareholder quorum subsampling (SQS) method
-\citep{alroy2010}.  However, subsampling cannot be applied to small
-orders (i.e. the majority) because SQS becomes increasingly unreliable
-as sample size decreases \citep{alroy2010}.  We therefore develop a
-simple method based on first correcting for detection bias using the
-``three timer'' correction \citep{alroy08} in which the rate of failure
-to observe a genus is estimated by the number of times a gap occurs in
-the occurrence history of each genus. To eliminate further bias due to
-preferential publication of novel taxa we divide observed number of
-genera per order per time period by the expected number of genera
-given publications in that time period.  The expected number is
-calculated by regressing the log-transformed number of genera on
-log-transformed number of publications. There is a weak trend toward
-higher diversity with more publications (Fig. \ref{fig:divByPub})
-meaning that the most important correction comes from the three timer
-correction.
+We use a new and flexible method to correct for known sampling
+incompleteness and biases in publication-based specimen databases
+\citep{alroy08, alroy2010}. Incompleteness is inherent in all
+biodiversity samples, the fossil record being no exception
+\citep{foote2016}. This incompleteness is only an issue if it varies
+across the fossil record, as indeed it does \citep{alroy2010,
+  foote2016, others}.  In addition to variable incompleteness, bias
+may result from preferential publication of novel taxa
+\citep{alroy2010} which exacerbates the difference between
+poorly-sampled and well-sampled time periods. We therefore develop a
+simple two-step method: we first correct for incomplete sampling using
+the ``three timer'' correction \citep{alroy08} in which the
+probability of failure to observe a genus is estimated by the number
+of gaps in the occurrence history of each genus.
+
+- talk about how this is mimics the MLE for binomial
+
+- talk about how the sliding three-timer window means we stay close to
+the real data instead of invoking some distribution of gappiness
+
+- cite some foote stuff and the TRiPS and the R package with
+rarifaction, etc in it for incompleteness too so we're not citing
+alroy up the hazoo
+
+
+To eliminate further
+bias due to preferential publication of novel taxa \citep{alroy2010}
+we divide observed number of genera per order per time period by the
+expected number of genera given publications in that time period.  The
+expected number is calculated by regressing the log-transformed number
+of genera on log-transformed number of publications. There is a weak
+trend toward higher diversity with more publications
+(Fig. \ref{fig:divByPub}) meaning that the most important correction
+comes from the three timer correction.
 
 Our new method effectively re-scales each genus occurrence from 0/1
 (absent/present), to a weighted number continuously ranging between 0
@@ -578,15 +601,15 @@ corrected PBDB data presented in the main text.
 \subsection*{Numerical methods} \label{sec:numMeth} We first derive
 the super-statistical distribution $P(x)$ by fitting Gaussian
 distributions to clade-level distributions of fluctuations $p_k(x)$,
-extracting the variances inverse variances $\beta_k$ of those
-$p_k(x)$, testing the best function to describe the distribution of
-$\beta_k$, and then integrating
-$P(x) = \int_{\beta}p_k(x | \beta) f(\beta)$. This process allows to
-free parameters to hone the fit of $P(x)$ to the data.  However, each
-inverse variance must of course be estimated for each clade.  To do so
-we use least squares instead of maximum likelihood because the
-asymmetric fluctuation distributions of small clades were more reliably
-fit with curve fitting than with the maximum likelihood estimator.
+extracting the inverse variances $\beta_k$ of those $p_k(x)$, testing
+the best function to describe the distribution of $\beta_k$, and then
+integrating $P(x) = \int_{\beta}p_k(x | \beta) f(\beta)$. This process
+allows to free parameters to hone the fit of $P(x)$ to the data.
+However, each inverse variance must of course be estimated for each
+clade.  To do so we use least squares instead of maximum likelihood
+because the asymmetric fluctuation distributions of small clades were
+more reliably fit with curve fitting than with the maximum likelihood
+estimator.
 
 We then estimated $P(x)$ directly from the raw data using maximum
 likelihood to compare the fit of our super-statistical prediction and
@@ -657,8 +680,8 @@ equal (i.e. $\lambda = \mu \equiv \rho$) and the number of origination
 or extinctions events (call such events $Y$) each follow an
 inhomogeneous Poisson process with rate $\rho N_t$ where $N_t$ is the
 number of species or genera in the taxon of interest at time
-$t$. Allowing $N_t$ to vary smoothly with time, and invoking the
-communicative property of the Poisson distribution, we arrive at the
+$t$. Allowing $N_t$ to vary smoothly with time, and recognizing that
+the sum of Poisson random variables remains Poisson, we arrive at the
 number $Y$ of extinction \emph{or} origination events in $\tau$ being
 distributed
 \begin{equation}
