@@ -155,7 +155,7 @@ the fat-tailed nature of these fluctuations continues to elude
 paleobiologists and biodiversity theoreticians.
 
 %% What drives diversity dynamics?
-The fat-tailed distribution of fluctuations inspired earlier
+The fat-tailed distribution of fluctuations in taxon richness inspired earlier
 researchers to invoke ideas from complex systems with similar
 distributions. Such ideas include the hypotheses that biological
 systems self-organize to the brink of critical phase-transitions
@@ -163,18 +163,18 @@ systems self-organize to the brink of critical phase-transitions
 highly non-linear \citep{newman1995}. New data and analyses have not,
 however, supported these hypotheses at the scale of the entire
 Phanerozoic marine invertebrate fauna \citep{kirchner1998, alroy08}.
-Other studies have modeled the mean trend in diversity as tracking a
+Other studies have modeled the mean trend in taxon richness as tracking a
 potentially evolving equilibrium \citep{sepkoski1984, alroy2010,
-  rabosky2009ecolLett} and yet ignore the potential role of
-stochasticity and non-equilibrium dynamics in producing observed
-patterns \citep{erwin2012, liow2007, quental2013}. Individual,
-population, and local ecosystem scale processes that could produce
-complex dynamics, such as escalatory co-evolutionary interactions
-\citep{vermeij1987}, have not been documented to scale to global
-patterns \citep{madin2006} and indeed should not be expected to scale
-as such \citep{vermeij2008}. As such, we still lack a new hypothesis
-to describe the striking fat-tailed pattern of fluctuations throught
-the Panerozoic.
+  rabosky2009ecolLett, marshall2016} and yet ignore the potential role
+of stochasticity and non-equilibrium dynamics in producing observed
+patterns \citep{erwin2012, liow2007, quental2013, harmon2015,
+  jordan2016}. Individual, population, and local ecosystem scale
+processes that could produce complex dynamics, such as escalatory
+co-evolutionary interactions \citep{vermeij1987}, have not been
+documented to scale to global patterns \citep{madin2006} and indeed
+should not be expected to scale as such \citep{vermeij2008}.  Thus, we
+still lack a new hypothesis to describe the striking fat-tailed nature
+of fluctuations throught the Panerozoic.
 
 
 Despite the heterogeneity of explanations of Phanerozoic biodiversity,
@@ -182,15 +182,15 @@ consensus has emerged on one property of macroevolution: clades
 experience different rates of morphological evolution, speciation and
 extinction \citep{simpson1953, sepkoski1984, holman1989, gilinsky1994,
   stadler2011, rabosky2014}. Here we show that the simple fact of
-conserved rates within clades, and variable rates across clades, is
-sufficient to describe pervasive, fat-tailed fluctuations in diversity
-throughout the marine Phanerozoic.  This biological mechanism has a
-precise correspondence to non-equilibrial theory, known as
+conserved rates within clades and variable rates across clades is
+sufficient to describe pervasive, fat-tailed fluctuations in taxonomic
+richness throughout the marine Phanerozoic.  This biological mechanism
+has a precise correspondence to non-equilibrial theory, known as
 ``superstatistics'' derived in statistical mechanics \citep{beck2003}
 and applied across the physical and social sciences \citep{beck2004,
   fuentes2009}. We leverage this correspondence to derive a robust
 prediction of the distribution of fluctuations in the standing
-diversity of marine invertebrates preserved in the Phanerozoic fossil
+richness of marine invertebrates preserved in the Phanerozoic fossil
 record. We further show that the specific mathematical derivation of
 this superstatistical mechanism is consistent with niche conservatism
 \citep{roy2009range, hopkins2014} and pulsed exploration on an
@@ -208,7 +208,7 @@ macroevolution we propose that a clade with conserved evolutionary
 rates and life history characteristics corresponds to a sub-system in
 dynamic equilibrial.  We say dynamic equilibrium following MacArthur
 and Wilson \citep{macWilson} in recognition that while the identity
-and exact number of taxa will fluctuate stochasticity from random
+and exact number of taxa will fluctuate stochastically from random
 origination and extinction (taking the place of local immigration and
 extinction in \citep{macWilson}), the overall process determining the
 number of taxa, and by extension, fluctuations in that number, is in
@@ -216,31 +216,37 @@ equilibrium. Indeed, the different regions of adaptive space occupied
 by different clades can be conceptualized as different islands with
 different dynamic equilibria, albeit with macroevolutionary processes
 determining the colonization of adaptive peaks, as opposed to short
-timescale biogeographic processes in \citep{macWilson}.
+timescale biogeographic processes.
 
-Variation in magnitudes of origination and extinction across these
-islands of adaptive space should correspond to life history and
-ecological characteristics that define that island or region occupied
-by a given clade. Larval type \citep{jablonski2008}, body plan
-\citep{erwin2012}, body size \citep{harnik2011}, range size
-\citep{harnik2011, foote2008paleobiol} and substrate preference
-\citep{hopkins2014} have all been shown to influence such rates. Thus
-different regions of niche space, and the clades occupying them, will
-experience different magnitudes of stochastic fluctuation in
-diversity. As clades occasionally split to fill new regions of niche
-space their punctuated diversification determines the non-equilibrium
-nature of the entire biota.
+Variation in the magnitudes of origination and extinction rates across
+these islands of adaptive space will correspond to the life histories,
+ecologies, and evolutionary histories that characterize each
+region. We do not attempt to disagnose which characteristics of
+different regions of adaptive space account for rate differences, but
+others have found relationships between larval type
+\citep{jablonski2008}, body plan \citep{erwin2012}, body size
+\citep{harnik2011}, range size \citep{harnik2011, foote2008paleobiol},
+and substrate preference \citep{hopkins2014} on rates of origination
+and extinction. Not all of these traits would be considered dimensions
+of an ecological niche or characteristics of a guild \citep{bambach},
+but they all point to different ecological strategies that may be more
+or less favorable macroevlutionarily and that result from interactions
+between heritable traits and environments, which may also be viewed as
+semi-heritable \citep{nicheCons}. Thus different regions of adaptive
+space, and the clades occupying them, will experience different
+magnitudes of stochastic fluctuations in taxonomic richness. Indeed,
+there is evidence that extinction rate as a trait is phylogenetically
+conserved \citep{rabosky2009heritability}. As clades occasionally
+split to fill new regions of adaptive space their pulsed
+diversification determines the non-equilibrium nature of the entire
+biota.
 
 To uncover the superstatistical nature of the marine invertebrate
 Phanerozoic fauna we analyze the distribution of fluctuations in the
 number of genera (the lowest reliably recorded taxonomic resolution)
-using two canonical databased of fossil biodiversity, the Paleobiology
-Database (PBDB; \citep{alroy08}) and Sepkoski's compendium
-\citep{sepkoski1992} of fossil marine invertebrates (results from
-Sepkoski's compendium are presented in Appendix
-\ref{sec:suppSepk}). We used both data sources because consensus is
-lacking on the most accurate picture of Phanerozoic biodiversity
-\citep{marshall2010}.
+using the Paleobiology Database (PBDB; \url{paleobiodb.org}). We
+correct these raw data for incomplete sampling and bias using a new
+approach described in the methods section.
 
 We define potentially equilibrial sub-systems based on taxonomic
 hierarchies, as a full phylogenetic hypothesis for all marine
@@ -268,7 +274,7 @@ if the clades' diversification dynamics are independent and in local
 equilibrium (see Appendix \ref{sec:suppLimitDist}).  Three exemplar
 dynamics taken from a sampling-corrected (see methods section)
 aggregation of the Paleobiology Database (PBDB) \citep{alroy08} are
-shown in Figure \ref{fig:pk_f}, and indeed all diversity fluctuations
+shown in Figure \ref{fig:pk_f}, and indeed all richness fluctuations
 within orders are well characterized by a Gaussian distribution
 (Fig. \ref{fig:pk_f}).
 
@@ -276,8 +282,8 @@ within orders are well characterized by a Gaussian distribution
   \centering
   \includegraphics[scale=0.8]{figs/fig_pkx-fbeta.pdf}
   \caption[Variability in trajectories of within-order fluctuations in
-  genus diversity]{The distributions of within-order fluctuations in
-    genus diversity shown for the trajectories of three exemplar
+  genus richness]{The distributions of within-order fluctuations in
+    genus richness shown for the trajectories of three exemplar
     orders (A) and shown as an empirical cumulative density aggregated
     across all orders (B). To display all orders simultaneously we
     simply collapse their fluctuation distributions by dividing by
@@ -326,7 +332,7 @@ $f(\beta) = \frac{1}{\Gamma(b_1/2)}
 \left(\frac{b_1}{2b_0}\right)^{b_1/2} \beta^{(b_1/2) - 1}
 \text{exp}\left(-\frac{b_1 \beta}{2 b_0}\right)$ is the stationary
 distribution of inverse variances in the magnitude of order-level
-fluctuations in diversity. The integral in (\ref{eq:PxInt}) leads to
+fluctuations in richness. The integral in (\ref{eq:PxInt}) leads to
 \begin{equation}
   P(x) = \frac{\Gamma\left(\frac{b_1 +
         1}{2}\right)}{\Gamma\left(\frac{b_1}{2}\right)}
@@ -340,8 +346,8 @@ $P(x)$ which matches both the PBDB and Sepkoski data closely
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=1]{figs/fig_Px.pdf} 
-  \caption[Order-level distribution of diversity
-  fluctuations]{Distribution of fluctuations in genus diversity within
+  \caption[Order-level distribution of richness
+  fluctuations]{Distribution of fluctuations in genus richness within
     orders of marine invertebrates in the Paleobiology Database
     \citep{alroy08} after sampling correction. The distribution is
     fat-tailed as compared to the maximum likelihood estimate of the
@@ -422,10 +428,10 @@ of classification but carries important biological information.
 Our analysis makes no assumption that orders should correspond to
 super-statistical subsystems, but identifies them as the appropriate
 level for marine invertebrates. As we show, orders differ only in the
-variances of their diversity fluctuations (Fig. \ref{fig:pk_f}).
+variances of their richness fluctuations (Fig. \ref{fig:pk_f}).
 
 Our study is the first to demonstrate that complex patterns in the
-fluctuation of diversity resulting from the sequence of origination
+fluctuation of taxon richness resulting from the sequence of origination
 and extinction events in the fossil record are the result of a simple
 underlying process analogous to the statistical mechanisms by which
 complexity emerges in large, non-equilibrium physical \citep{beck2004}
@@ -456,7 +462,7 @@ We then show that punctuated shifts to different equilibria between
 order, a consequence of punctuated exploration of niche space by newly
 evolving clades \citep{eldredgeGould1972, newman1985adaptive,
   hopkins2014}, leads to a characteristically non-equilibrial
-distribution of diversity fluctuations when the marine Phanerozoic
+distribution of richness fluctuations when the marine Phanerozoic
 fauna is viewed as a whole macro-system.
 
 The distribution describing this process of evolution in equilibria
@@ -477,7 +483,7 @@ evolving clades will likely determine the specific distribution
 (e.g. Gamma versus Chi-squared, etc.) describing punctuated evolution
 of clades' equilibria.  Our work thus motivates study of the trait
 spaces and evolutionary shifts consistent with Gamma-distributed
-equilibria in diversity fluctuations.
+equilibria in richness fluctuations.
 
 %%% how this motivates future work in figuring out the details of
 %%% biotic evolution that are important for driving stasis and
@@ -503,7 +509,7 @@ heterogeneous rates of diversification (e.g.,
 landscapes could provide a means to build efficient models that
 jointly predict morphological change and diversification. This
 framework could also provide a new paradigm in modeling the
-distributions of diversity, abundance and resource use in non-neutral
+distributions of richness, abundance and resource use in non-neutral
 communities. Non-neutral models in ecology are criticized for their
 over-parameterization \citep{rosindell2011}, yet a persistent counter
 argument to neutral theory \citep{hubbell2001} is the unrealistic
@@ -527,16 +533,23 @@ populations to clades are ripe for exploration.
 
 \subsection*{Paleobiology Database data download and filtering}
 Data were downloaded from the Paleobiology Database (PBDB;
-www.pbdb.org) on 28 May 2013. Collections were filtered using the same
-approach as Alroy \citep{alroy08} to insure that only well preserved
-marine invertebrate occurrences were used in subsequent analysis
-resulting in 221202 genus occurrences. These were further filtered to
-exclude those occurrences without order-level taxonomy and those
-collections with age estimate resolutions outside the 10my default
-bins of the PBDB resulting in 189516 occurrences left for analysis. To
-avoid basic sampling concerns we excluded the first and last 11 MY
-time bins corresponding to the earliest Cambrian and the latest
-Cenozoic. These time bins were.
+\url{https://paleobiodb.org}) on 15 November 2018 via the database's
+API (data retrival and processing script in the
+supplement). Collections were filtered using the same approach as
+Alroy \citep{alroy08} to insure that only well preserved marine
+invertebrate occurrences were used in subsequent analyses. This
+filtering resulted in 221202 genus occurrences. These were further
+filtered to exclude those occurrences without family-level taxonomy
+and those collections with age estimate resolutions outside the 10MY
+time bins proposed by Alroy \citep{alroy08} resulting in 189516
+occurrences. These timebins were querried from
+\url{http://fossilworks.org} with a custum script reproduced in the
+supplement. The correspondence of these time bins to real
+stratographic intervals is reported in Supplamental Table
+\ref{tab:suppTbin}. The first and last of these time bins,
+corresponding to the earliest Cambrian and the latest Cenozoic, were
+excluded from analysis because their sampling completeness (see below)
+could not be assessed..
 
 %%%%%%% FIX THE ABOVE!!!!!
 
@@ -544,9 +557,10 @@ To focus attention on the variance of fluctuations we center each
 clade's fluctuation distribution. Because ``equilibrium'' in the
 statistical mechanical sense means a system undergoes coherent,
 concerted responses to perturbation the mean trend line is of less
-interest than deviations from it. We also note that most clades are
-already close to centered and so centering has little influence on
-clade-specific fluctuation distributions.
+interest than deviations from it. We also note that the distributions
+of fluctuations for most clades are already close to a mean of 0 (mean
+across families: $0.038 \pm 0.176 \text{ SD}$), and so centering has
+little influence on clade-specific fluctuation distributions.
 
 \subsection*{Correcting for imperfect and potentially biased sampling} 
 \label{sec:3TP}
@@ -554,61 +568,88 @@ We use a new and flexible method to correct for known sampling
 incompleteness and biases in publication-based specimen databases
 \citep{alroy08, alroy2010}. Incompleteness is inherent in all
 biodiversity samples, the fossil record being no exception
-\citep{foote2016}. This incompleteness is only an issue if it varies
-across the fossil record, as indeed it does \citep{alroy2010,
-  foote2016, others}.  In addition to variable incompleteness, bias
-may result from preferential publication of novel taxa
+\citep{miller1996, alroy2010, foote2016, starrfelt2016,
+  close2018}. This incompleteness is only an issue if it varies across
+the fossil record, as indeed it does \citep{alroy2010, foote2016,
+  starrfelt2016, close2018}.  In addition to variable incompleteness,
+bias may result from preferential publication of novel taxa
 \citep{alroy2010} which exacerbates the difference between
 poorly-sampled and well-sampled time periods. We therefore develop a
 simple two-step method: we first correct for incomplete sampling using
-the ``three timer'' correction \citep{alroy08} in which the
-probability of failure to observe a genus is estimated by the number
-of gaps in the occurrence history of each genus.
+the ``three-timer'' correction \citep{alroy08} and then further
+correct this three-timer estimate by accounting for any correlation
+between the number of genera and the number of publications in a time
+period.
 
-- talk about how this is mimics the MLE for binomial
+The three-timer correction estimates the probability of failure to
+observe a genus in a given time period $p_t$ as the number of times
+any genus is recorded before and after that period but not during,
+divided by the number of genera whoes occurrence histories span the
+period in question.  To calculate the sampling-corrected richness
+$\hat{D}_{kt}$ of a clade $k$ in the time period in question, the observed
+genera within that clade and time period are divided by $1 - p_t$ and
+their occurrences summed:
+\begin{equation}
+  \hat{D}_{kt} = \sum_{j \in k} \frac{I_{jt}}{1 - p_t}
+\end{equation}
+where $j \in k$ designates genera in clade $k$ and $I_{jt}$ is an
+indicator equal to 1 if the genus $j$ occurs in time period $t$.
 
-- talk about how the sliding three-timer window means we stay close to
-the real data instead of invoking some distribution of gappiness
+The estimator $\hat{D}_{kt}$ is the maximum likelihood estimator of
+richness in a simple occupancy through time type model assuming
+binomial sampling \citep{}, and in that way mimics other proposed
+methods for the fossil record \citep{foote2016, starrfelt2016}. We
+avoid parametrically modeling the sampling process through time by
+instead taking a sliding window of time bins from the Cambrian to the
+Cenozoic. It should be noted that the three-timer correction compares
+favorably to other similar methods to account for imperfect detection
+\citep{alroy2014}
 
-- cite some foote stuff and the TRiPS and the R package with
-rarifaction, etc in it for incompleteness too so we're not citing
-alroy up the hazoo
-
-
-To eliminate further
-bias due to preferential publication of novel taxa \citep{alroy2010}
-we divide observed number of genera per order per time period by the
-expected number of genera given publications in that time period.  The
-expected number is calculated by regressing the log-transformed number
-of genera on log-transformed number of publications. There is a weak
-trend toward higher diversity with more publications
+To eliminate further bias due to preferential publication of novel
+taxa \citep{alroy2010} we divide the three-timer-corrected number of
+genera per family per time period by the expected number of genera
+given publications in that time period.  The expected number is
+calculated by regressing the log-transformed three-timer-corrected
+number of genera on log-transformed number of publications. There is
+only a weak trend toward higher richness with more publications
 (Fig. \ref{fig:divByPub}) meaning that the most important correction
 comes from the three timer correction.
 
-Our new method effectively re-scales each genus occurrence from 0/1
-(absent/present), to a weighted number continuously ranging between 0
-and 1.  This method achieves similar results to more computationally
-intensive sub-sampling procedures \citep{alroy08, alroy2010}. We
-directly compare our predicted time series of global genus diversity
-with results derived from SQS \citep{alroy2010} and the raw data
-(Fig. \ref{fig:supp_3TPub}).  Our method shows minor differences with
-the SQS prediction, However, these discrepancies do not impact the
-distribution of fluctuations (Fig. \ref{fig:supp_3TPub}) and
-super-statistical analysis on uncorrected PBDB data (see section
-\ref{sec:rawPBDB}) produces a similar result to the analysis on
-corrected PBDB data presented in the main text.
+Our new method re-scales each genus occurrence from 0 or 1 (absent or
+present) to a weighted number continuously ranging between 0 and
+1. Because these weighted numbers represent sampling and
+bias-corrected {\it occurrences} we can add them arbitrarilly,
+corresponding to the membership of a genera in any given taxonomic
+group from the level of family and above.  We must, however, choose a
+taxonomic level at which to evaluate the relationship between richness
+and publications; we choose the level of family because this is the
+most finely resolved option.
 
-\subsection*{Numerical methods} \label{sec:numMeth} We first derive
-the super-statistical distribution $P(x)$ by fitting Gaussian
-distributions to clade-level distributions of fluctuations $p_k(x)$,
-extracting the inverse variances $\beta_k$ of those $p_k(x)$, testing
-the best function to describe the distribution of $\beta_k$, and then
-integrating $P(x) = \int_{\beta}p_k(x | \beta) f(\beta)$. This process
-allows to free parameters to hone the fit of $P(x)$ to the data.
-However, each inverse variance must of course be estimated for each
-clade.  To do so we use least squares instead of maximum likelihood
-because the asymmetric fluctuation distributions of small clades were
-more reliably fit with curve fitting than with the maximum likelihood
+This method achieves similar results at the global scale across all
+clades to more computationally intensive subsampling procedures
+\citep{miller1996, alroy2010, kocsis2018}. These subsampling would not
+even be advisable for clades with few genera. We directly compare our
+predicted time series of global fluctuations in genus richness with
+results derived from rarifaction and shareholder quarum subsampling
+\citep[SQS;][]{kocsis2018} in Figure \ref{fig:supp_3TPub}.  Our method
+shows very minor differences with these subsampling-based predictions
+and any discrepancies do not impact the statistical distribution of
+fluctuations (Fig. \ref{fig:supp_3TPub}).
+
+
+\subsection*{Super-statistical methods} \label{sec:numMeth}
+
+We first derive the super-statistical distribution $P(x)$ by fitting
+Gaussian distributions to clade-level distributions of fluctuations
+$p_k(x)$, extracting the inverse variances $\beta_k$ of those
+$p_k(x)$, testing the best function to describe the distribution of
+$\beta_k$, and then integrating
+$P(x) = \int_{\beta}p_k(x | \beta) f(\beta)$. This process allows to
+free parameters to hone the fit of $P(x)$ to the data.  However, each
+inverse variance must of course be estimated for each clade.  To do so
+we use least squares instead of maximum likelihood because the
+asymmetric fluctuation distributions of small clades were more
+reliably fit with curve fitting than with the maximum likelihood
 estimator.
 
 We then estimated $P(x)$ directly from the raw data using maximum
@@ -628,8 +669,7 @@ models on these bootstrapped datasets.
 \item[{\bf General:}] We thank John Harte, Rosemary Gillespie, Linden
   Schneider, and Jun Ying Lim for helpful discussion. We thank the
   many contributors to the Paleobiology Database for making data
-  available, and Michael Foote for providing a digitized copy of
-  Sepkoski's compendium.
+  available.
 \item[{\bf Funding:}] AJR thanks funding from Fulbright Chile, the
   National Science Foundation Graduate Research Fellowship Program and
   the Omidyar Program at the Santa Fe Institute; MAF thanks FONDECYT
@@ -641,8 +681,8 @@ models on these bootstrapped datasets.
 \item[{\bf Competing interests:}] none.
 \item[{\bf Data and materials availability:}] Data are available
   through the Paleobiology Database ({\tt paleobiodb.org}) and all
-  code needed to query the {\tt paleobiodb.org} API, process, clean,
-  and ultimately analyze the data are available online at {\tt
+  code needed to interface with the {\tt paleobiodb.org} API, process,
+  clean, and ultimately analyze the data are available online at {\tt
     github.com/ajrominger/paleo\_supStat}. This github repository also
   hosts the exact download from {\tt paleobiodb.org} used in this
   analysis. Scripts are also availible and explained in the
@@ -689,7 +729,7 @@ distributed
   Y \sim \text{Pois}(\rho \int_{t=0}^\tau N(t) dt).
 \end{equation}
 Under the steady state assumption we can approximate $N(t)$ by
-$\bar{N}$, the steady state diversity, leading to
+$\bar{N}$, the steady state richness, leading to
 \begin{equation}
   \label{eq:eventPois2}
   Y \sim \text{Pois}(\rho \bar{N} \tau).
@@ -716,7 +756,7 @@ proposed before \citep{hannisdal2011}.
 
 \subsection{Raw PBDB data} \label{sec:rawPBDB}
 We calculated the super-statistical prediction at the order level from
-raw genus diversity recorded in the PBDB without correcting for
+raw genus richness recorded in the PBDB without correcting for
 taphonomic or sampling bias (Fig. \ref{fig:supp_rawPBDB_Px}). The
 super-statistical calculation also closely fits the raw data as in the
 case of sampling and publication bias-corrected data.
@@ -745,8 +785,8 @@ implying the uniqueness of orders.
   \centering
   \includegraphics[width=0.4\textwidth]{figs/figSupp_divByPub.jpg}
   \caption[Relationship between number of publications and genus
-  diversity]{Relationship between number of publications and genus
-    diversity as recorded by the PBDB.}
+  richness]{Relationship between number of publications and genus
+    richness as recorded by the PBDB.}
   \label{fig:divByPub}
 \end{figure}
 
@@ -760,7 +800,7 @@ implying the uniqueness of orders.
     time-series of all marine invertebrate genera shows general
     agreement with the only major deviations toward the modern
     (A). Despite these differences the distribution of fluctuations in
-    genus diversity across all marine invertebrates show good
+    genus richness across all marine invertebrates show good
     agreement (B).}
   \label{fig:supp_3TPub}
 \end{figure}
@@ -770,7 +810,7 @@ implying the uniqueness of orders.
   \includegraphics[width=0.4\textwidth]{figs/figSupp_pbdbRaw_Px.jpg}
   \caption[Super-statistical prediction of raw data]{Super-statistical
     prediction of raw (i.e. not bias corrected) order-level
-    fluctuations in genus diversity recorded in the PBDB. Grey dots
+    fluctuations in genus richness recorded in the PBDB. Grey dots
     are the full data of orders, while black ones are orders with more
     than 15 points. The red line is our theoretical prediction and the
     blue line the best Gaussian fit to the data.}
@@ -782,7 +822,7 @@ implying the uniqueness of orders.
   \includegraphics[width=0.4\textwidth]{figs/figSupp_Px_cls.pdf}
   \caption[Super-statistical prediction of bias corrected class-level
   data]{Super-statistical prediction of bias corrected class-level
-    fluctuations in genus diversity recorded in the PBDB. Grey dots
+    fluctuations in genus richness recorded in the PBDB. Grey dots
     are the full data for orders, while black dots represent only
     orders with more than 10 observations. The red line is our
     theoretical prediction and the blue line, the best Gaussian fit to
@@ -796,7 +836,7 @@ implying the uniqueness of orders.
   \includegraphics[width=0.95\textwidth]{figs/figSupp_sepk_Px.jpg}
   \caption[Super-statistical prediction for Sepkoski's
   compendium]{Super-statistical prediction (red line) of fluctuations
-    in genus diversity recorded in Sepkoski's compendium of marine
+    in genus richness recorded in Sepkoski's compendium of marine
     invertebrates compared to maximum likelihood normal distribution
     (blue line). Super-statistical theory explains order level
     fluctuations well (A) with increasingly poorer fits at the class
