@@ -50,6 +50,12 @@ tbinMid <- tbinMid[rownames(pbdbFamDiv)]
 # calculate flux for families
 pbdbFamFlux <- calcFlux(pbdbFamDiv)
 
+# calculate the mean flux
+famMeans <- sapply(pbdbFamFlux, mean)
+mean(famMeans)
+sd(famMeans) / sqrt(length(famMeans))
+
+
 # make sstat object for families
 sstatPBDBfam3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = FALSE)
 
