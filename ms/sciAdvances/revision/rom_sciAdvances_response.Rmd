@@ -23,7 +23,7 @@ Overall, I think the manuscript would benefit from:
 
 - a clear description of the model assumptions
 
-> foo
+> We do this now more clearly in the introduction first in lines XXX and again re-affirm our assumptions in line XXX (around where we cite mayr1965systZool)
 
 - some more discussion of possible explanations for the observed patterns
 
@@ -31,7 +31,7 @@ Overall, I think the manuscript would benefit from:
 
 - a clearer unwrapping of the proposed connections to punctuated equilibrium (and other evolutionary hypotheses discussed).
 
-> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explaination for our results.  This siminal concept in the field is still relevent, however, and we expand our discussion of it, as well as other concepts such as the Red Queen, in lines XXXXX
+> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explaination for our results.  This siminal concept in the field is still relevent, however, and we expand our discussion of it, as well as other concepts such as the Red Queen, in the discussion in lines XXXXX
 
 
 If I understand correctly, the authors assume that all orders undergo
@@ -50,7 +50,7 @@ I suppose another way to ask the question would be: what happens if
 the authors do try to fit independent birth and death rates to the
 time series for each order?
 
-> The reviewer is indeed correct that net diversification or extinciton could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries.  This means we focus on fluctuations about any possible trend toward net diversificaiton or extinction. This zero-centering is made clear in the methods, and also indtroduced earlier (lines XXXX) to help readers understand our approach. Relatedly, we define "equilibrial" in the statistical sense and make that clear earlier as well (lines XXXX)
+> The reviewer is indeed correct that net diversification or extinciton could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries. This means we focus on fluctuations about any possible trend toward net diversificaiton or extinction. This zero-centering is made clear in the methods, and also indtroduced earlier (lines XXXX; near 'To focus attention on the varianc') to help readers understand our approach. In the same section we define "equilibrial" in the statistical sense and make that will be our working definition
 
 
 Related, am I understanding that the authors use the fit of beta_k for
@@ -66,7 +66,7 @@ This might be confusing, because readers may think of diversification
 rate as being a net diversification rate, which here is assumed to be
 zero, IIUC.
 
-> Thanks for pointing out this inconsistency, you are indeed correct that this could confuse readers. The $\beta_k$ should be interpreted as the inverse variance in diversification as defined as (originations - extinctions). The variance of the difference between these two random variables will increase as *both* speciation and extinction rates increase.  We have replaced "rate" with "volatility," where appropriate, to signify the variance of origination - extinction. We have further updated our discussion on XXXXXX to more accurately reflect the idea that evolution across an adaptive landscape can change the volatility of diversification by changing the magnitude of speciation and extinction rates.
+> Thanks for pointing out this inconsistency, you are indeed correct that this could confuse readers. The $\beta_k$ should be interpreted as the inverse variance in diversification as defined as (originations - extinctions). The variance of the difference between these two random variables will increase as *both* speciation and extinction rates increase.  We have replaced "rate" with "volatility," where appropriate---including in the title---to signify the variance of origination - extinction, and clearly defined volatility on line XXXX (where we ref suppLimitDist). We have further updated our discussion on XXXXXX to more accurately reflect the idea that evolution across an adaptive landscape can change the volatility of diversification by changing the magnitude of speciation and extinction rates.
 
 
 I would assume it matters when plotting fluctuation sizes in e.g. Fig
@@ -74,7 +74,7 @@ I would assume it matters when plotting fluctuation sizes in e.g. Fig
 of this in the SI, but I'd like to understand if the variation in
 timeslices is enough to affect these analyses.
 
-> We have made clear earlier on (XXXX) that we use 11 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
+> We have made clear earlier on XXXX (where we say '49 standard timebins') that we use 11 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
 
 
 Do the authors acknowledge that there is any room for bias in the
@@ -135,9 +135,9 @@ be related to an average of various important traits of lineages
 wihtin a clade? Again, this connection is not adequately spelled out
 for readers to form an opinion.
 
-> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "ecological strategy" and carefully define what we mean by that (XXXXXXXX). We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region.
+> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines XXXXX. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region.
 
-
+FIXUP!
 
 In summary, I think the authors have found a very striking pattern,
 which has the potential to aid our understanding of fluctuations in
