@@ -74,7 +74,7 @@ I would assume it matters when plotting fluctuation sizes in e.g. Fig
 of this in the SI, but I'd like to understand if the variation in
 timeslices is enough to affect these analyses.
 
-> We have made clear earlier on (XXXX) that we use standard 10 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
+> We have made clear earlier on (XXXX) that we use 11 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
 
 
 Do the authors acknowledge that there is any room for bias in the
