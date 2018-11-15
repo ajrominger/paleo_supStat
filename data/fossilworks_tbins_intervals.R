@@ -68,5 +68,16 @@ tbinmid <- sapply(unique(tbinInfo$tbin[!is.na(tbinInfo$tbin)]), function(tbin) {
 
 tbinmid <- sort(tbinmid, decreasing = TRUE)
 
-write.csv(data.frame(tbin = names(tbinmid), ma_mid = as.numeric(tbinmid)), 'data/tbinsMid.csv',
-          row.names = FALSE)
+write.csv(data.frame(tbin = names(tbinmid), ma_mid = as.numeric(tbinmid)), 
+          'data/tbinsMid.csv', row.names = FALSE)
+
+
+# lastly confirm the durations of tbins
+length(tbinmid)
+
+tbinrange <- sapply(unique(tbinInfo$tbin[!is.na(tbinInfo$tbin)]), function(tbin) {
+    tt <- unlist(tbinInfo[tbinInfo$tbin == tbin, c('ma_min', 'ma_max')])
+    return(diff(range(tt, na.rm = TRUE)))
+})
+
+mean(tbinrange)
