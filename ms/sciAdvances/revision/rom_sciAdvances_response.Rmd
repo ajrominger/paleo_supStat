@@ -312,7 +312,7 @@ Figure. 1. There still is no indication of what these orders are.
 SQS Analyses: Again, there is no mention of what the coverage levels
 were, or how exactly they were chosen.
 
-> We have specified the coverage which was set at 0.75 to relect a similar average richness as produced with rarifacton and our new bias correction method, this is made clear in the supplement in the section "Comparison of sampling bias correction methods".
+> We have specified the coverage which was set at 0.75 to relect a similar average richness as produced with rarifacton and our new bias correction method, this is made clear in the supplement in the section "Evaluation of sampling bias correction methods".
 
 As I noted last time, I think that this paper offers a really
 interesting methodological advancement. However, I also think that
