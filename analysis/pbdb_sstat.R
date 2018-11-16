@@ -53,7 +53,7 @@ pbdbFamFlux <- calcFlux(pbdbFamDiv)
 # calculate the mean flux
 famMeans <- sapply(pbdbFamFlux, mean)
 mean(famMeans)
-sd(famMeans) / sqrt(length(famMeans))
+sd(famMeans)
 
 
 # make sstat object for families
