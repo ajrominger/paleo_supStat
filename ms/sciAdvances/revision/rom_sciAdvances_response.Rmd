@@ -137,7 +137,7 @@ for readers to form an opinion.
 
 > We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines XXXXX. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region.
 
-FIXUP!
+FIXUP!--around line 231 and that paragraph
 
 In summary, I think the authors have found a very striking pattern,
 which has the potential to aid our understanding of fluctuations in
