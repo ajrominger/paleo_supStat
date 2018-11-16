@@ -91,20 +91,24 @@ plot(sstatPBDBfam3TP, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1),
                                  col = hsv(alpha = 0.25), border = NA)))
 mtext('Families', side = 3, line = 0)
 logAxis(2, expLab = TRUE)
+legend('topright', legend = 'A', bty = 'n', cex = 1.4)
 
 plot(sstatPBDBOrd, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
      addLegend = FALSE)
 mtext('Orders', side = 3, line = 0)
+legend('topright', legend = 'B', bty = 'n', cex = 1.4)
 
 plot(sstatPBDBCls, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
      addLegend = FALSE)
 mtext('Classes', side = 3, line = 0)
 logAxis(1:2, expLab = TRUE)
+legend('topright', legend = 'C', bty = 'n', cex = 1.4)
 
 plot(sstatPBDBPhy, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
      addLegend = FALSE)
 mtext('Phyla', side = 3, line = 0)
 logAxis(1, expLab = TRUE)
+legend('topright', legend = 'D', bty = 'n', cex = 1.4)
 
 mtext('|Fluctuations|', side = 1, outer = TRUE, line = 2)
 mtext('Cumulative density', side = 2, outer = TRUE, line = 2)
