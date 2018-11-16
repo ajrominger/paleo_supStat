@@ -3,6 +3,9 @@
 # package with diversity dynamics subsampling functions
 library(divDyn)
 
+# package for plotting
+library(socorro)
+
 # load and prep data
 pbdbFamDiv <- read.csv('data/pbdb_3TPub-corrected.csv', row.names = 1)
 pbdbDat <- read.csv('data/pbdb_data.csv', as.is = TRUE)
