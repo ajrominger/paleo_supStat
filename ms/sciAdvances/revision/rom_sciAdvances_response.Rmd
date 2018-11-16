@@ -135,9 +135,7 @@ be related to an average of various important traits of lineages
 wihtin a clade? Again, this connection is not adequately spelled out
 for readers to form an opinion.
 
-> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines XXXXX. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region.
-
-FIXUP!--around line 231 and that paragraph
+> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines XXXXX. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region. (around where we cite erwin2012)
 
 In summary, I think the authors have found a very striking pattern,
 which has the potential to aid our understanding of fluctuations in
@@ -201,7 +199,7 @@ macroevolutionary processes, including constant-rates birth-death,
 diversity dependence, and neutrality. These span most of of the
 scenarios considered seriously in macroevolutionary studies.
 
-> foo
+> We certainly agree with the reviewer. We have introduced the statistical mechanical idea of equilibrium sooner so as to avoid confusing readers of our intentions and interpretations (lines XXXX) (where we first say 'zero-centered')
 
 Another example concerns their interpretation of uniform regimes
 within orders, and thus that it is only rare events -- the formation of
@@ -218,14 +216,14 @@ families have low generic diversity), but it showing that families do
 worse than orders would support the scenario favored in the manuscript
 (although there may be issues of sample size and statistical power).
 
-> True that we can't distinguish discrete jumps from continuous transition foooo fooooo
+> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the family level.  As the reviewer indicates, this adds creedence to our idea.  We discuss this in greater depth in lines XXXX
 
 ## Reviewer 3
 
 I reviewed an earlier version of this manuscript for another journal, 
 and I was ill-pleased to see that my review was largely ignored. 
 
-> Firstly, we would like to thank this reviewer for their thurough job, both for this submission and the previous version. We indeed deeply considered their detailed comments and we are grateful for this oppurtunity to respond, which was not afforded in the previous review process. Many of their conceptual points we heed at face value; their methodological reservations we thuroughly consider and use to better present our existing methods for dealing with sampling differences.  We in fact do not ignore sampling, nor do we use shareholder quorum subsampling (SQS) to account for it.  Instead we present a new method.  We retain our method in favor of adopting Reviewer 3's alternative suggestion because 1) we nor the other reviewers find fault with this method (Reviewer 3 did not comment on our approach to accounting for sampling differences, though we would welcome their thoughts); and 2) the proposed alternative approaches contain their own assumptions and biases which we deem inappropriate for our analysis.
+> First and foremost, we would like to thank this reviewer for their thurough critique, both for this submission and the previous version. We indeed deeply considered their detailed comments and we are grateful for this oppurtunity to respond, which was not afforded in the previous review process. Many of their conceptual points we heed at face value; their methodological reservations we thuroughly consider and used to better present our existing methods for dealing with sampling differences.  We in fact do not ignore sampling, nor do we use shareholder quorum subsampling (SQS) to account for it.  Instead we present a new method.  We retain our method in favor of adopting Reviewer 3's alternative suggestion because 1) we nor the other reviewers find fault with this method (Reviewer 3 did not comment on our approach to accounting for sampling differences, though we would welcome their thoughts); and 2) the proposed alternative approaches contain their own assumptions and biases which we deem inappropriate for our analysis.  We explain our reasoning in more detail below.
 
 1. The hypotheses that the authors wish to test are best framed in
 terms of richness: i.e., numbers of taxa. However, what they really
@@ -244,7 +242,7 @@ concerns with the SQS model: see Hannisdal et al. 2017 Proc. R. Soc. B
 press)
 
 > We apologize for imprecise wording; we are indeed using fluctuations in *richness* and not *diversity*. We have changed all instances of "diversity" to "richness" where appropriate.  We are also not making use of SQS in any analysis.  Instead we use our own method for accounting for sampling differences (which is detailed in the Methods section).  The comparison of our sampling standardization routine to SQS in the supplement is intended only to show that our more efficient approach compares favorable to the more established (but computationally and informatically wasteful) SQS method. \newline\newline
-It should be noted, however, that the paleontological literature tends to conflate richness and diversity.  Indeed *diversity* dynamics is used to describe Sepkoski's curve of genus *richness.* A recent R package `divDyn` (https://cran.r-project.org/web/packages/divDyn/vignettes/handout.pdf) reports SQS, among other similar estimates, as within bin *richness.* In some sense this is fine: richness is one of many diversity estimates (for example richness is the Hill number with alpha = 0). But following Hurlbert's legacy, ecologists do indeed reserve special, different meanings for richness versus diversity. We initially embraced the paleontological literature's conflation of diversity and richness, but we agree that erring on the side of clarity is prefered and we have made the needed edits.
+It should be noted, however, that the paleontological literature tends to conflate richness and diversity.  Indeed *diversity* dynamics is used to describe Sepkoski's curve of genus *richness.* A recent R package `divDyn` (https://cran.r-project.org/web/packages/divDyn/vignettes/handout.pdf) reports SQS, among other similar estimates, as within bin *richness.* In some sense this is fine: richness is one of many diversity estimates (for example richness is the Hill number with alpha = 0). But ecologists do indeed reserve special, different meanings for richness versus diversity. We initially embraced the paleontological literature's conflation of diversity and richness, but we agree that erring on the side of clarity is prefered and we have made the needed edits.
 
 2. Because of this, SQS is not the panacea for the sampling issue. I
 went on at some length in my last review about the importance of
@@ -284,9 +282,8 @@ provided R-code for doing this below: I strongly encourage the authors
 to take advantage of these data! Alternatively, the data used in
 papers such as Bush et al. (2007 Paleobiol. 33:76) could be used.
 
-> It is indeed a great resource that Bambach's guild designations are availible through the PBDB. We XXXXXXXXX
-
-> We also find it neccesary to confront the semantics of "niche" versus "guild." We conceed that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confussion we opt to not use either of the terms and instead replace all instances of "niche" with "ecological strategy," defining carefully what we mean by that term at the first instance of its use XXXXXX
+> It is indeed a great resource that Bambach's guild designations are availible through the PBDB. We detail our utilization of these data in our response to the next comment. \newline\newline
+We also find it neccesary to confront the semantics of "niche" versus "guild." We conceed that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confussion we opt to not use either of the terms and instead replace all instances of "niche" with "adaptive landscape," defining carefully what we mean by that term at the first instance of its use (lines XXXX) (where we first say 'macroecological')
 
 4. Following point 3, I am very skeptical that orders are going to be
 homogeneous ecological units. Indeed, one of the explanations for why
@@ -315,7 +312,7 @@ Figure. 1. There still is no indication of what these orders are.
 SQS Analyses: Again, there is no mention of what the coverage levels
 were, or how exactly they were chosen.
 
-> We have specified the coverage which was set at XXXX
+> We have specified the coverage which was set at 0.75 to relect a similar average richness as produced with rarifacton and our new bias correction method, this is made clear in the supplement in the section .
 
 As I noted last time, I think that this paper offers a really
 interesting methodological advancement. However, I also think that
