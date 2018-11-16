@@ -17,19 +17,17 @@ genHash <- match(pbdbGenDiv$otu, pbdbTax$otu)
 #' function to calculate KS test d-stat on sstat objects
 #' @param x an sstat object
 
-ks.sstat <- function(x, ...) {
-    # browser()
+ks.sstat <- function(x) {
     dat <- unlist(x$Px.sub)
     dat <- abs(dat)
     
-    log <- function(x) x ############# TEMPPPPPPP ##############
-    # look at complement of `PPx(x)` in log prob space
-    pfun <- function(X, ...) log(x$PPx(X, comp = TRUE))
+    # cumulative density function
+    pfun <- function(X) x$PPx(X, comp = TRUE)
     
     # cumulative prob observed and from theory
     n <- length(dat)
-    pobs <- log((n:1) / n)
-    pthr <- pfun(sort(dat), ...)
+    pobs <- (n:1) / n
+    pthr <- pfun(sort(dat))
     
     # the statisic is the difference between obs and thr
     out <- pthr - pobs
