@@ -2,8 +2,6 @@
 
 options(stringsAsFactors = FALSE)
 
-setwd('data')
-
 # loop through interval info on fossilworks.org
 coreURI <- 'http://fossilworks.org/bridge.pl?a=displayInterval&interval_no='
 
@@ -55,7 +53,7 @@ tbinInfo$name[tbinInfo$name == 'Cazenovia'] <- 'Cazenovian'
 
 
 # write out
-write.csv(tbinInfo, 'tbins_stages.csv', row.names = FALSE)
+write.csv(tbinInfo, 'data/tbins_stages.csv', row.names = FALSE)
 
 
 # also write out summary of each time bin, most importantly (for plottin) 

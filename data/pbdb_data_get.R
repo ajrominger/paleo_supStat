@@ -1,4 +1,4 @@
-setwd('data')
+# **script to interface with PBDB API and clean resulting data**
 
 # call to the API
 show <- paste0(c('ident', 'phylo', 'lith', 'loc', 'time', 'geo', 'stratext',
@@ -30,7 +30,7 @@ uri <- sprintf(bbURI,
 x <- read.csv(uri, as.is = TRUE)
 
 # write out raw data
-write.csv(x, 'pbdb_data_raw.csv', row.names = FALSE)
+write.csv(x, 'data/pbdb_data_raw.csv', row.names = FALSE)
 
 
 # clean up
@@ -71,7 +71,7 @@ x <- x[!duplicated(x[, c('collection_no', 'otu')]), ]
 
 
 # standard time bins
-stages <- read.csv('tbins_stages.csv', as.is = TRUE)
+stages <- read.csv('data/tbins_stages.csv', as.is = TRUE)
 earlyTbin <- stages$tbin[match(x$early_interval, stages$name)]
 lateTbin <- stages$tbin[match(x$late_interval, stages$name)]
 lateTbin[is.na(lateTbin)] <- earlyTbin[is.na(lateTbin)]
@@ -82,4 +82,4 @@ x <- x[!is.na(x$tbin), ]
 
 
 # write out fully processed data
-write.csv(x, 'pbdb_data.csv', row.names = FALSE)
+write.csv(x, 'data/pbdb_data.csv', row.names = FALSE)
