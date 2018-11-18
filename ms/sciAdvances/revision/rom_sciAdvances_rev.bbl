@@ -106,14 +106,6 @@ N.~Eldredge, S.~J. Gould, {\it Models in paleobiology\/} {\bf 82}, 115 (1972).
 \bibitem{newman1985adaptive}
 C.~Newman, J.~Cohen, C.~Kipnis, {\it Nature\/} {\bf 315}, 400 (1985).
 
-\bibitem{macWilson}
-R.~H. MacArthur, E.~O. Wilson, {\it The theory of island biogeography\/}
-  (Princeton University Press, 1967).
-
-\bibitem{jablonski2008}
-D.~Jablonski, {\it Annual Review of Ecology, Evolution, and Systematics\/} {\bf
-  39}, 501 (2008).
-
 \bibitem{harnik2011}
 P.~G. Harnik, {\it Proceedings of the National Academy of Sciences\/} {\bf
   108}, 13594 (2011).
@@ -122,8 +114,24 @@ P.~G. Harnik, {\it Proceedings of the National Academy of Sciences\/} {\bf
 M.~Foote, J.~S. Crampton, A.~G. Beu, R.~A. Cooper, {\it Paleobiology\/} {\bf
   34}, 421 (2008).
 
-\bibitem{rabosky2009heritability}
-D.~L. Rabosky, {\it Systematic Biology\/} {\bf 58}, 629 (2009).
+\bibitem{keilson1970}
+J.~Keilson, S.~S. Rao, {\it Journal of Applied Probability\/} {\bf 7}, 699
+  (1970).
+
+\bibitem{grassmann1987}
+W.~K. Grassmann, {\it Annals of Operations Research\/} {\bf 8}, 165 (1987).
+
+\bibitem{macWilson}
+R.~H. MacArthur, E.~O. Wilson, {\it The theory of island biogeography\/}
+  (Princeton University Press, 1967).
+
+\bibitem{jablonski2008}
+D.~Jablonski, {\it Annual Review of Ecology, Evolution, and Systematics\/} {\bf
+  39}, 501 (2008).
+
+\bibitem{foote2010Chapter}
+M.~Foote, {\it Evolution since Darwin: the first 150 years\/} pp. 479--510
+  (2010).
 
 \bibitem{mayr1965systZool}
 E.~Mayr, {\it Systematic Zoology\/} {\bf 14}, 73 (1965).
@@ -131,21 +139,28 @@ E.~Mayr, {\it Systematic Zoology\/} {\bf 14}, 73 (1965).
 \bibitem{erwin2007}
 D.~H. Erwin, {\it Palaeontology\/} {\bf 50}, 57 (2007).
 
+\bibitem{ezard2016}
+T.~H.~G. Ezard, T.~B. Quental, M.~J. Benton, {\it Philos. Trans. R. Soc. Lond.
+  B Biol. Sci.\/} {\bf 371}, 20150216 (2016).
+
 \bibitem{hubbell2001}
 S.~P. Hubbell, {\it The unified neutral theory of biodiversity and biogeography
   (MPB-32)\/}, vol.~32 (Princeton University Press, 2001).
 
-\bibitem{gavrilets2005}
-S.~Gavrilets, A.~Vose, {\it Proceedings of the National academy of Sciences of
-  the United States of America\/} {\bf 102}, 18040 (2005).
+\bibitem{olszewski2004}
+T.~D. Olszewski, D.~H. Erwin, {\it Nature\/} {\bf 428}, 738 (2004).
+
+\bibitem{moen2014}
+D.~Moen, H.~Morlon, {\it Trends in Ecology \& Evolution\/} {\bf 29}, 190
+  (2014).
+
+\bibitem{foote2018}
+M.~Foote, R.~A. Cooper, J.~S. Crampton, P.~M. Sadler, {\it Proc. R. Soc. B\/}
+  {\bf 285}, 20180122 (2018).
 
 \bibitem{berlow2009}
 E.~L. Berlow, {\it et~al.\/}, {\it Proceedings of the National Academy of
   Sciences\/} {\bf 106}, 187 (2009).
-
-\bibitem{brose2005}
-U.~Brose, E.~L. Berlow, N.~D. Martinez, {\it Ecology Letters\/} {\bf 8}, 1317
-  (2005).
 
 \bibitem{cir1985}
 J.~C. Cox, J.~E. Ingersoll~Jr, S.~A. Ross, {\it Econometrica: Journal of the
@@ -155,8 +170,12 @@ J.~C. Cox, J.~E. Ingersoll~Jr, S.~A. Ross, {\it Econometrica: Journal of the
 M.~A. Butler, A.~A. King, {\it The American Naturalist\/} {\bf 164}, 683
   (2004).
 
-\bibitem{rabosky2006laser}
-D.~L. Rabosky, {\it Evolutionary bioinformatics online\/} {\bf 2}, 247 (2006).
+\bibitem{gavrilets2004book}
+S.~Gavrilets, {\it Fitness landscapes and the origin of species (MPB-41)\/},
+  vol.~41 (Princeton University Press, 2004).
+
+\bibitem{rabosky2017fisse}
+D.~L. Rabosky, E.~E. Goldberg, {\it Evolution\/} {\bf 71}, 1432 (2017).
 
 \bibitem{rosindell2011}
 J.~Rosindell, S.~P. Hubbell, R.~S. Etienne, {\it Trends in ecology \&
@@ -168,8 +187,15 @@ J.~Chave, {\it Ecology letters\/} {\bf 7}, 241 (2004).
 \bibitem{ricklefs2006neutral}
 R.~E. Ricklefs, {\it Ecology\/} {\bf 87}, 1424 (2006).
 
+\bibitem{rcite}
+{R Core Team}, {\it R: A Language and Environment for Statistical Computing\/},
+  R Foundation for Statistical Computing, Vienna, Austria (2018).
+
 \bibitem{miller1996}
 A.~I. Miller, M.~Foote, {\it Paleobiology\/} {\bf 22}, 304 (1996).
+
+\bibitem{foote2016}
+M.~Foote, {\it Paleobiology\/} {\bf 42}, 707 (2016).
 
 \bibitem{starrfelt2016}
 J.~Starrfelt, L.~H. Liow, {\it Phil. Trans. R. Soc. B\/} {\bf 371}, 20150219
@@ -179,25 +205,16 @@ J.~Starrfelt, L.~H. Liow, {\it Phil. Trans. R. Soc. B\/} {\bf 371}, 20150219
 R.~A. Close, S.~W. Evers, J.~Alroy, R.~J. Butler, {\it Methods in Ecology and
   Evolution\/} {\bf 9}, 1386 (2018).
 
+\bibitem{royleDorazio}
+J.~A. Royle, R.~M. Dorazio, {\it Hierarchical modeling and inference in
+  ecology: the analysis of data from populations, metapopulations and
+  communities\/} (Academic Press, 2008).
+
 \bibitem{alroy2014}
 J.~Alroy, {\it Paleobiology\/} {\bf 40}, 374 (2014).
 
 \bibitem{kocsis2018}
 A.~T. Kocsis, C.~J. Reddin, J.~Alroy, W.~Kiessling, {\it bioRxiv\/} p. 423780
   (2018).
-
-\bibitem{keilson1970}
-J.~Keilson, S.~S. Rao, {\it Journal of Applied Probability\/} {\bf 7}, 699
-  (1970).
-
-\bibitem{grassmann1987}
-W.~K. Grassmann, {\it Annals of Operations Research\/} {\bf 8}, 165 (1987).
-
-\bibitem{hannisdal2011}
-B.~Hannisdal, S.~E. Peters, {\it Science\/} {\bf 334}, 1121 (2011).
-
-\bibitem{sepkoski1992}
-J.~J. Sepkoski, {\it A compendium of fossil marine animal families\/}
-  (Milwaukee Public Museum, Milwaukee, WI, 1992).
 
 \end{thebibliography}

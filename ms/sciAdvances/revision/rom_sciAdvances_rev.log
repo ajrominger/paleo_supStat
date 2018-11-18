@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  15 NOV 2018 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 NOV 2018 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,124 +233,116 @@ e
 
 ]
 
-LaTeX Warning: Citation `vermeij2008' on page 3 undefined on input line 164.
-
-[3]
-
-LaTeX Warning: Citation `bambach' on page 4 undefined on input line 220.
+LaTeX Warning: Citation `vermeij2008' on page 3 undefined on input line 171.
 
 
-LaTeX Warning: Citation `nicheCons' on page 4 undefined on input line 224.
+LaTeX Warning: Citation `bambach' on page 3 undefined on input line 197.
 
-[4]
-Overfull \hbox (8.69098pt too wide) in paragraph at lines 233--239
-\OT1/cmr/m/n/12 recorded tax-o-nomic res-o-lu-tion) us-ing the Pa-le-o-bi-ol-og
-y Database (PBDB; \OT1/cmtt/m/n/12 paleobiodb.org\OT1/cmr/m/n/12 ).
- []
 
-[5]
-<../../fig_pkx-fbeta.pdf, id=27, 383.4325pt x 361.35pt>
+LaTeX Warning: Citation `jablonski' on page 3 undefined on input line 198.
+
+[3] [4]
+
+LaTeX Warning: Citation `nicheCons' on page 5 undefined on input line 259.
+
+[5] [6]
+
+LaTeX Warning: Reference `figSupp:pkx_allTaxa' on page 7 undefined on input lin
+e 332.
+
+<../../fig_pkx-fbeta.pdf, id=33, 383.4325pt x 361.35pt>
 File: ../../fig_pkx-fbeta.pdf Graphic file (type pdf)
 <use ../../fig_pkx-fbeta.pdf>
-Package pdftex.def Info: ../../fig_pkx-fbeta.pdf  used on input line 272.
+Package pdftex.def Info: ../../fig_pkx-fbeta.pdf  used on input line 343.
 (pdftex.def)             Requested size: 306.74641pt x 289.0804pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6] [7 <../../fig_pkx-fbeta.pdf>]
-<../../fig_Px.pdf, id=49, 383.4325pt x 361.35pt>
+[7]
+
+LaTeX Warning: Reference `figSupp:fbeta_allTaxa' on page 8 undefined on input l
+ine 381.
+
+[8 <../../fig_pkx-fbeta.pdf>]
+<../../fig_Px.pdf, id=48, 383.4325pt x 361.35pt>
 File: ../../fig_Px.pdf Graphic file (type pdf)
 <use ../../fig_Px.pdf>
-Package pdftex.def Info: ../../fig_Px.pdf  used on input line 337.
+Package pdftex.def Info: ../../fig_Px.pdf  used on input line 411.
 (pdftex.def)             Requested size: 383.43156pt x 361.34912pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig:supp_PBDB_Px_cls' on page 8 undefined on input li
-ne 371.
+Overfull \hbox (0.52063pt too wide) in paragraph at lines 445--457
+[]\OT1/cmr/m/n/12 Computing the dis-tri-bu-tion of ag-gre-gated fluc-tu-a-tions
+ us-ing or-ders also closely matches
+ []
 
-[8] [9 <../../fig_Px.pdf>]
-<../../fig_dStat.pdf, id=66, 289.08pt x 289.08pt>
+[9] [10 <../../fig_Px.pdf>]
+
+LaTeX Warning: Reference `figSupp:pkx_allTaxa' on page 11 undefined on input li
+ne 467.
+
+<../../fig_dStat.pdf, id=69, 289.08pt x 289.08pt>
 File: ../../fig_dStat.pdf Graphic file (type pdf)
 <use ../../fig_dStat.pdf>
-Package pdftex.def Info: ../../fig_dStat.pdf  used on input line 391.
+Package pdftex.def Info: ../../fig_dStat.pdf  used on input line 490.
 (pdftex.def)             Requested size: 289.07928pt x 289.07928pt.
- [10 <../../fig_dStat.pdf>] [11] [12]
 
-LaTeX Warning: Reference `tab:suppTbin' on page 13 undefined on input line 538.
-
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (8.83736pt too wide) in paragraph at lines 524--542
+LaTeX Warning: Citation `YuleSomething' on page 11 undefined on input line 509.
+
+
+[11] [12 <../../fig_dStat.pdf>] [13] [14]
+Overfull \hbox (8.83736pt too wide) in paragraph at lines 618--633
 \OT1/cmr/m/n/12 Data were down-loaded from the Pa-le-o-bi-ol-ogy Database (PBDB
 ; \OT1/cmtt/m/n/12 https://paleobiodb.org\OT1/cmr/m/n/12 )
  []
 
-[13]
-
-LaTeX Warning: Citation `foote2016' on page 14 undefined on input line 561.
-
-[14] [15] (./rom_sciAdvances_rev.bbl [16] [17] [18] [19]) [20]
-Overfull \hbox (6.36977pt too wide) in paragraph at lines 671--679
+[15] [16] [17] (./rom_sciAdvances_rev.bbl [18] [19] [20] [21]) [22]
+Overfull \hbox (6.36977pt too wide) in paragraph at lines 753--761
 []\OT1/cmr/m/n/12 Data are avail-able through the Pa-le-o-bi-ol-ogy Database
  []
 
 
-Overfull \hbox (140.69667pt too wide) in paragraph at lines 671--679
+Overfull \hbox (140.69667pt too wide) in paragraph at lines 753--761
 \OT1/cmr/m/n/12 pro-cess, clean, and ul-ti-mately an-a-lyze the data are avail-
 able on-line at \OT1/cmtt/m/n/12 github.com/ajrominger/paleo[]supStat\OT1/cmr/m
 /n/12 .
  []
 
-[21]
-Overfull \hbox (9.19162pt too wide) in paragraph at lines 701--701
+[23]
+Overfull \hbox (9.19162pt too wide) in paragraph at lines 783--783
 []\OT1/cmr/bx/n/17.28 Limit dis-tri-bu-tion of a time-averaged ho-mo-ge-neous
  []
 
-[22
+[24
 
 ]
-
-LaTeX Warning: Reference `fig:supp_rawPBDB_Px' on page 23 undefined on input li
-ne 749.
-
-
-LaTeX Warning: Reference `fig:supp_PBDB_Px_cls' on page 23 undefined on input l
-ine 756.
-
-
-LaTeX Warning: Reference `fig:supp_sepkPx' on page 23 undefined on input line 7
-67.
-
-
-LaTeX Warning: Reference `fig:supp_sepkPx' on page 23 undefined on input line 7
-68.
-
-[23]
-<../../figSupp_divByPub.pdf, id=119, 289.08pt x 289.08pt>
+<../../figSupp_divByPub.pdf, id=122, 289.08pt x 289.08pt>
 File: ../../figSupp_divByPub.pdf Graphic file (type pdf)
 <use ../../figSupp_divByPub.pdf>
-Package pdftex.def Info: ../../figSupp_divByPub.pdf  used on input line 775.
+Package pdftex.def Info: ../../figSupp_divByPub.pdf  used on input line 828.
 (pdftex.def)             Requested size: 182.09485pt x 182.0949pt.
-<../../figSupp_divEstComp.pdf, id=120, 542.025pt x 289.08pt>
+<../../figSupp_divEstComp.pdf, id=123, 578.16pt x 289.08pt>
 File: ../../figSupp_divEstComp.pdf Graphic file (type pdf)
 <use ../../figSupp_divEstComp.pdf>
-Package pdftex.def Info: ../../figSupp_divEstComp.pdf  used on input line 784.
-(pdftex.def)             Requested size: 318.66946pt x 169.96022pt.
- [24 <../../figSupp_divByPub.pdf> <../../figSupp_divEstComp.pdf>]
+Package pdftex.def Info: ../../figSupp_divEstComp.pdf  used on input line 837.
+(pdftex.def)             Requested size: 318.66946pt x 159.33412pt.
+ [25 <../../figSupp_divByPub.pdf>] [26 <../../figSupp_divEstComp.pdf>]
 (./rom_sciAdvances_rev.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2643 strings out of 492649
- 36382 string characters out of 6129622
- 107643 words of memory out of 5000000
- 6491 multiletter control sequences out of 15000+600000
+ 2648 strings out of 492649
+ 36441 string characters out of 6129622
+ 108715 words of memory out of 5000000
+ 6496 multiletter control sequences out of 15000+600000
  12555 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,6n,25p,293b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -370,10 +362,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on rom_sciAdvances_rev.pdf (24 pages, 357262 bytes).
+Output written on rom_sciAdvances_rev.pdf (26 pages, 376730 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
+ 194 PDF objects out of 1000 (max. 8388607)
+ 138 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
