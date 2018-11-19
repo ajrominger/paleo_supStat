@@ -59,6 +59,9 @@ sd(famMeans)
 # make sstat object for families
 sstatPBDBfam3TP <- sstatComp(pbdbFamFlux, minN = 10, plotit = FALSE)
 
+# deltaAIC
+logLik(sstatPBDBfam3TP) - sum(dnorm(unlist(sstatPBDBfam3TP$Px.sub), log = TRUE))
+
 # likelihood CI for family-level sstat analysis
 sstatPBDBfam3TPCI <- bootMLE.sstat(sstatPBDBfam3TP, B = 1000, useAll = FALSE)
 
