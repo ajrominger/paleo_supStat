@@ -74,14 +74,25 @@ Now we can calculate a measure of goodness of fit with the Komolgorov-Smirnov te
 ```{r code=readLines('analysis/pbdb_dperm.R')}
 ```
 
-## To-do
 
-- remove all deprecated files and folders...do it in one fell swoop so we can roll back if needed ever
-- remove sepkoski
-- Fig 1 (especially scaled Gaussian and f(beta) for higher taxa) to be put in supp and discussed
-- manuscript text
-    - add more recent citations
-    - add more thurough explaination and justification of correction approach 
-    - hammer home the adaptive landscape idea--use it instead of "niche" or "ecological strategy"
-    - make sure it's clear why we're removing sepkoski
+This permutational null test is in part motivated by the correlation between the genus richness of a family and its $\beta_k$ value.  We demonstrate this correlation in the script `analysis/pbdb_betaRichness.R` which is reproduced below:
 
+```{r code=readLines('analysis/pbdb_betaRichness.R')}
+```
+
+
+Now that we are reasonably convinced that these superstatistical findings are not just an artifact of taxonomy or clade size, we can explore why we see deviations from super statistics with increasing taxonomic level. We first explore how well the Gaussian $p_k(x | \beta_k)$ fit at each taxonomic level in the script `analysis/pkx_diffK.R` shown here:
+
+```{r code=readLines('analysis/pkx_diffK.R')}
+```
+
+We can also explore how well the $f(\beta_k)$ fit at different taxonomic levels in the script `analysis/pbeta_diffK.R` reproduced below:
+
+```{r code=readLines('analysis/pbeta_diffK.R')}
+```
+
+
+Part of our argument about the failure of superstatistics at higher taxonomic levels is that these higher taxa aggregate increasingly disperate subtaxa.  To investigate this idea we look at the number of guilds represented by the average taxon at each taxonomic level in the script `analysis/pbdb_ecoEvoSpace.R` shown here:
+
+```{r code=readLines('analysis/pbdb_ecoEvoSpace.R')}
+```
