@@ -500,19 +500,27 @@ each permutation, we calculated the super-statistical prediction and
 its Kolmogorov-Smirnov statistic. The permutation simulates a null
 model in which common evolutionary history is stripped away (genera
 are placed in random families) but the total number of observed genera
-per family is held constant, thus controlling for the distribution of
-genera per family which could result from arbitrary taxonomic
-desicions \citep{YuleSomething}.  Repeating this permutation 500 times
-yields a null distribution of Kolmogorov-Smirnov statistics that is
-far separated from the observed values at the family and order levels
+per family is held constant. Controlling for the total number of
+genera per family is key because this could be purely an artifact of
+an arbitrary taxonomic process \citep{YuleSomething} and could also be
+solely responsible for differences in the $\beta_k$ across
+clades. Indeed, the number of genera in a family and that families
+$\beta_k$ value are correlated (Fig. \ref{figSupp:betaByRich}). Thus
+we want to know if this correlation alone accounts for all downstream
+stuperstatistical results.
+
+Repeating the null permutation of genera in families 500 times yields
+a null distribution of Kolmogorov-Smirnov statistics that is far
+separated from the observed values at the family and order levels
 (Fig. \ref{fig:dStat}) suggesting the good fit at these levels is not
-merely a statistical artifact of classification but carries important
-biological information. It should also be noted that the width of 95\%
-confidence interval of this null distribution is not far from the
-distance between the Kolmogorov-Smirnov statistics of orders versus
-families, suggesting that differences of fit between these taxonomic
-levels is at least partially accounted for by the randomness of the
-sampling distribution of Kolmogorov-Smirnov statistics.
+merely a statistical artifact of classification or the richness of
+clades, but carries important biological information. It should also
+be noted that the width of 95\% confidence interval of this null
+distribution is not far from the distance between the
+Kolmogorov-Smirnov statistics of orders versus families, suggesting
+that differences of fit between these taxonomic levels is at least
+partially accounted for by the randomness of the sampling distribution
+of Kolmogorov-Smirnov statistics.
 
 \section{Discussion}
 

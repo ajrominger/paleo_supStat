@@ -87,7 +87,7 @@ a clear relationship between fitted beta and the mean order size. Is
 it possible that the distribution of mean order sizes underlies the
 distribution in order fluctuation sizes?
 
-> We were also concerned with the potential arbitrariness of orders. This is the motivation for our permutation experiment in which we mantain the size of orders, but permute the identities of their constituant taxa.  This experiment shows that real orders contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the contituant taxa of real orders diversiy similarely. We could look at beta vs size XXXXXXXXXXXXX
+> We were also concerned with the potential arbitrariness of orders. This is the motivation for our permutation experiment in which we mantain the size of orders, but permute the identities of their constituant taxa.  This experiment shows that real orders contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the contituant taxa of real orders diversiy similarely. We have also added in the supplement an analysis of the correlation between genus richness in families and their associated $\beta_k$ values. This is referenced in our motivation for the permutation experiment (around figSupp:betaByRich). 
 
 
 As stated in the text and shown in S4, the analysis when performed at
