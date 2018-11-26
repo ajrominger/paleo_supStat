@@ -22,9 +22,9 @@ knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 \beginappendix
 
 
-The easiest way to reproduce this study is to download, clone, or fork the GitHub repository at `github.com/ajrominger/paleo_supStat`. All scripts can then be run on new downloads of the PBDB and modifications to the analysese can be made. The repository is organized into directories `data` containing data and data-cleaning scripts; `R` containing R functions for general use; and `analysis` containing analysis scripts that use the data and R functions. The GitHub repository also contains a manuscript directory (`ms`), this document (`sstat_notebook.Rmd`), and an R script (`sstat_make.R`) that calls each data cleaning and analysis script in sequence to automatically reproduce the entire study. The `data`, `R`, and `analysis` directories can also be recreated from the scripts reproduced below.  
+The easiest way to reproduce this study is to download, clone, or fork the GitHub repository at `github.com/ajrominger/paleo_supStat`. All scripts can then be run on new downloads of the PBDB and modifications to the analyses can be made. The repository is organized into directories `data` containing data and data-cleaning scripts; `R` containing R functions for general use; and `analysis` containing analysis scripts that use the data and R functions. The GitHub repository also contains a manuscript directory (`ms`), this document (`sstat_notebook.Rmd`), and an R script (`sstat_make.R`) that calls each data cleaning and analysis script in sequence to automatically reproduce the entire study. The `data`, `R`, and `analysis` directories can also be recreated from the scripts reproduced below.  
 
-The accompanying explainations below (organized by the flow of data aquisition, cleaning, and then analysis) will help the user understand the purpose of each script/function such that they can reproduce the results, or modify the routine.
+The accompanying explanations below (organized by the flow of data acquisition, cleaning, and then analysis) will help the user understand the purpose of each script/function such that they can reproduce the results, or modify the routine.
 
 Lastly, this study depends on the contributed packages *divDyn*, *parallel*, and *R.utils* which should be installed from CRAN, and on a custom package *socorro* which must be installed from GitHub:
 
@@ -42,7 +42,7 @@ To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`,
 - removing poorly lithified specimens
 - removing collections at the basin scale
 - including only fine-scale stratigraphy (below the "group" level)
-- resolving taxonomy to the genus or subgenus level where availible (storing genus or subgenus as `otu`)
+- resolving taxonomy to the genus or subgenus level where available (storing genus or subgenus as `otu`)
 - combining multiple records of the same OTU per collection
 - importing standardized timebins from \url{fossilworks.org} (timebins are scraped with script `data/fossilworks_tbins_intervals.R`)
 
@@ -78,10 +78,10 @@ $$
 $$
 The exponentiated residual amounts to dividing the three-timer corrected richness by a publication correction factor: $\text{(3T-corrected richness)} / e^{\hat{y}}$ where $\hat{y}$ is the predicted trend line from the above relationship.
 
-So we can use this multiplicative publication correction factor in addition to the similarely multiplicative three-timer correction to bias-correct individual genus-level occurrences. This is important when we permute these bias-corrected genera across families to create a null set of d-statistics for our superstatistical fit.
+So we can use this multiplicative publication correction factor in addition to the similarly multiplicative three-timer correction to bias-correct individual genus-level occurrences. This is important when we permute these bias-corrected genera across families to create a null set of d-statistics for our superstatistical fit.
 
 
-We can check our correction against other popular methods.  In the script `analysis/pbdb_divCurve.R` we specifically compare simple rarifaction, with the SQS method, with our three-time and publication bias correction methods.  All these various methods have close agreement.  The script `analysis/pbdb_divCurve.R` is shown below:
+We can check our correction against other popular methods.  In the script `analysis/pbdb_divCurve.R` we specifically compare simple rarefaction, with the SQS method, with our three-time and publication bias correction methods.  All these various methods have close agreement.  The script `analysis/pbdb_divCurve.R` is shown below:
 
 ```{r code=readLines('analysis/pbdb_divCurve.R')}
 ```
@@ -95,13 +95,13 @@ Once data have been bias-corrected we can complete their super-statistical analy
 ```
 
 
-Now we can calculate a measure of goodness of fit with the Komolgorov-Smirnov test statistics $D$. That is done in the script `analysis/pbdb_dperm.R`. This script uses a permutational approach to create a null distribution of test statistics.  The goal is to see if the good fit of super-statistics at the family and order levels is purely from the number of different groupings at those levels, regardless of the biology that might be going on to make those levels actually mechanistically meaningful.  So to achieve such a null, we permute orders across families, calculate the D-statistics of those permuted groupings, and compare to the real D-statistics from the actual biological groupings.  The script is shown below:
+Now we can calculate a measure of goodness of fit with the Kolmogorov-Smirnov test statistics $D$. That is done in the script `analysis/pbdb_dperm.R`. This script uses a permutation approach to create a null distribution of test statistics.  The goal is to see if the good fit of super-statistics at the family and order levels is purely from the number of different groupings at those levels, regardless of the biology that might be going on to make those levels actually mechanistically meaningful.  So to achieve such a null, we permute orders across families, calculate the D-statistics of those permuted groupings, and compare to the real D-statistics from the actual biological groupings.  The script is shown below:
 
 ```{r code=readLines('analysis/pbdb_dperm.R')}
 ```
 
 
-This permutational null test is in part motivated by the correlation between the genus richness of a family and its $\beta_k$ value.  We demonstrate this correlation in the script `analysis/pbdb_betaRichness.R` which is reproduced below:
+This permutation null test is in part motivated by the correlation between the genus richness of a family and its $\beta_k$ value.  We demonstrate this correlation in the script `analysis/pbdb_betaRichness.R` which is reproduced below:
 
 ```{r code=readLines('analysis/pbdb_betaRichness.R')}
 ```
@@ -118,7 +118,7 @@ We can also explore how well the $f(\beta_k)$ fit at different taxonomic levels 
 ```
 
 
-Part of our argument about the failure of superstatistics at higher taxonomic levels is that these higher taxa aggregate increasingly disperate subtaxa.  To investigate this idea we look at the number of guilds represented by the average taxon at each taxonomic level in the script `analysis/pbdb_ecoEvoSpace.R` shown here:
+Part of our argument about the failure of superstatistics at higher taxonomic levels is that these higher taxa aggregate increasingly disparate subtaxa.  To investigate this idea we look at the number of guilds represented by the average taxon at each taxonomic level in the script `analysis/pbdb_ecoEvoSpace.R` shown here:
 
 ```{r code=readLines('analysis/pbdb_ecoEvoSpace.R')}
 ```

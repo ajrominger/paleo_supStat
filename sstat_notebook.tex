@@ -24,7 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
-            pdftitle={Appendix A: Code to reproduce the study},
+            pdftitle={Appendix A: R code to reproduce the study},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -113,7 +113,7 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{Appendix A: Code to reproduce the study}
+  \title{Appendix A: R code to reproduce the study}
     \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
     \author{}
@@ -139,7 +139,7 @@
 The easiest way to reproduce this study is to download, clone, or fork
 the GitHub repository at \texttt{github.com/ajrominger/paleo\_supStat}.
 All scripts can then be run on new downloads of the PBDB and
-modifications to the analysese can be made. The repository is organized
+modifications to the analyses can be made. The repository is organized
 into directories \texttt{data} containing data and data-cleaning
 scripts; \texttt{R} containing R functions for general use; and
 \texttt{analysis} containing analysis scripts that use the data and R
@@ -150,15 +150,15 @@ analysis script in sequence to automatically reproduce the entire study.
 The \texttt{data}, \texttt{R}, and \texttt{analysis} directories can
 also be recreated from the scripts reproduced below.
 
-The accompanying explainations below (organized by the flow of data
-aquisition, cleaning, and then analysis) will help the user understand
+The accompanying explanations below (organized by the flow of data
+acquisition, cleaning, and then analysis) will help the user understand
 the purpose of each script/function such that they can reproduce the
 results, or modify the routine.
 
 Lastly, this study depends on the contributed packages \emph{divDyn},
-\emph{parallel}, and \emph{R.utils} which should be downloaded from
-CRAN, and on a custom package \emph{socorro} which must be downloaded
-from GitHub:
+\emph{parallel}, and \emph{R.utils} which should be installed from CRAN,
+and on a custom package \emph{socorro} which must be installed from
+GitHub:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -183,7 +183,7 @@ data by:
 \item
   including only fine-scale stratigraphy (below the ``group'' level)
 \item
-  resolving taxonomy to the genus or subgenus level where availible
+  resolving taxonomy to the genus or subgenus level where available
   (storing genus or subgenus as \texttt{otu})
 \item
   combining multiple records of the same OTU per collection
@@ -567,14 +567,14 @@ corrected richness by a publication correction factor:
 the predicted trend line from the above relationship.
 
 So we can use this multiplicative publication correction factor in
-addition to the similarely multiplicative three-timer correction to
+addition to the similarly multiplicative three-timer correction to
 bias-correct individual genus-level occurrences. This is important when
 we permute these bias-corrected genera across families to create a null
 set of d-statistics for our superstatistical fit.
 
 We can check our correction against other popular methods. In the script
 \texttt{analysis/pbdb\_divCurve.R} we specifically compare simple
-rarifaction, with the SQS method, with our three-time and publication
+rarefaction, with the SQS method, with our three-time and publication
 bias correction methods. All these various methods have close agreement.
 The script \texttt{analysis/pbdb\_divCurve.R} is shown below:
 
@@ -872,11 +872,11 @@ super-statistical analysis. We do that in the script
 \end{Shaded}
 
 Now we can calculate a measure of goodness of fit with the
-Komolgorov-Smirnov test statistics \(D\). That is done in the script
-\texttt{analysis/pbdb\_dperm.R}. This script uses a permutational
-approach to create a null distribution of test statistics. The goal is
-to see if the good fit of super-statistics at the family and order
-levels is purely from the number of different groupings at those levels,
+Kolmogorov-Smirnov test statistics \(D\). That is done in the script
+\texttt{analysis/pbdb\_dperm.R}. This script uses a permutation approach
+to create a null distribution of test statistics. The goal is to see if
+the good fit of super-statistics at the family and order levels is
+purely from the number of different groupings at those levels,
 regardless of the biology that might be going on to make those levels
 actually mechanistically meaningful. So to achieve such a null, we
 permute orders across families, calculate the D-statistics of those
@@ -978,7 +978,7 @@ biological groupings. The script is shown below:
 \end{Highlighting}
 \end{Shaded}
 
-This permutational null test is in part motivated by the correlation
+This permutation null test is in part motivated by the correlation
 between the genus richness of a family and its \(\beta_k\) value. We
 demonstrate this correlation in the script
 \texttt{analysis/pbdb\_betaRichness.R} which is reproduced below:
@@ -1220,7 +1220,7 @@ reproduced below:
 
 Part of our argument about the failure of superstatistics at higher
 taxonomic levels is that these higher taxa aggregate increasingly
-disperate subtaxa. To investigate this idea we look at the number of
+disparate subtaxa. To investigate this idea we look at the number of
 guilds represented by the average taxon at each taxonomic level in the
 script \texttt{analysis/pbdb\_ecoEvoSpace.R} shown here:
 
