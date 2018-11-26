@@ -1,5 +1,5 @@
 ---
-title: "Appendix A: Code to reproduce the study"
+title: "Appendix A: R code to reproduce the study"
 output: 
     pdf_document:
         number_sections: true
