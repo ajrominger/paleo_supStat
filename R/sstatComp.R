@@ -1,9 +1,3 @@
-# source('~/R_functions/my_ecdf.R')
-# source("~/R_functions/normLS.R")
-# source("~/R_functions/gammaLS.R")
-# source("~/R_functions/logPlot.R")
-# source('~/Dropbox/Research/paleo_supStat/code/Px_gam.R')
-
 library(distr)
 
 sstatComp <- function(grp.data,minN=15,xlab="Absolute Fluctuation",ylab="Cumulative Density",leg=TRUE,plotit=TRUE) {

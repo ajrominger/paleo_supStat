@@ -8,7 +8,7 @@
 
 plot.sstat <- function(x, sstatCol = 'red', normCol = 'blue', 
                        showNorm = TRUE, addLegend = TRUE, ...) {
-    thisECDF <- my.ecdf(abs(unlist(x$Px.sub)), complement = TRUE)
+    thisECDF <- socorro::simpECDF(abs(unlist(x$Px.sub)), complement = TRUE)
     
     # helper function to deal with optional axis arguments
     .axissetup <- function(side) {
