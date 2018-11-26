@@ -1,5 +1,3 @@
-% Use only LaTeX2e, calling the article.cls class and 12-point type.
-
 \documentclass[12pt]{article}
 
 \usepackage{scicite}
@@ -14,12 +12,6 @@
 \usepackage{paralist}
 \usepackage{amsmath}
 
-%% for citing stuff in the supp
-% \usepackage{xr}
-% \externaldocument{rom_sciAdvances_supp}
-
-% The following parameters seem to provide a reasonable page setup.
-
 \topmargin 0.0cm
 \oddsidemargin 0.2cm
 \textwidth 16cm 
@@ -27,15 +19,12 @@
 \footskip 1.0cm
 
 
-%The next command sets up an environment for the abstract to your paper.
+% environment for the abstract
 
 \newenvironment{sciabstract} 
 {\bfseries}
 {}
 
-
-
-% Include your paper's title here
 
 \title{Non-equilibrium evolution of volatility in origination and extinction explains fat-tailed
   fluctuations in Phanerozoic biodiversity}
@@ -67,71 +56,70 @@ Chile}}
 \affil[7]{\normalsize{Centro Cambio Global UC, Av.~Vicu\~na Mackenna 4860, Campus
 San Vicu\~na, Santiago, Chile}}
 %
-\affil[{*}]{\normalsize{To whom correspondence should be addressed; E-mail: rominger@santafe.edu}}
+\affil[{*}]{\normalsize{To whom correspondence should be addressed,
+    e-mail: rominger@santafe.edu}}
 
 \date{}
 
 
 
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+%%%% END OF PREAMBLE %%%%
 
 
 
 \begin{document} 
 
-% Double-space the manuscript.
-
+% double-space the manuscript
 \baselineskip24pt
 
-% Make the title.
 
 \maketitle 
 \clearpage
 \linenumbers
 
 \begin{sciabstract}
-Fluctuations in biodiversity, both large and small, are pervasive
-through the fossil record, yet we do not understand the processes
-generating them.
+  Fluctuations in biodiversity, both large and small, are pervasive
+  through the fossil record, yet we do not understand the processes
+  generating them.
 % 
-Here we extend theory from non-equilibrium
-statistical physics to describe the previously unaccounted for
-fat-tailed form of fluctuations in marine invertabrate richness
-through the Phanerozoic.
+  Here we extend theory from non-equilibrium statistical physics to
+  describe the previously unaccounted for fat-tailed form of
+  fluctuations in marine invertabrate richness through the
+  Phanerozoic.
 %
-Using this theory, known as superstatistics, we show that the simple
-fact of heterogeneous rates or origination and extinction between
-clades and conserved rates within clades is sufficient to account for
-this fat-tailed form. We identifiy orders and the families they
-subsume as the taxonomic level at which clades experience inter-clade
-heterogeneity and within clade homogeneity of rates. Following
-superstatistics we would thus posit that orders and families are
-subsystems in local statistical equilibrium while the entire system is
-not in equilibrium.
+  Using this theory, known as superstatistics, we show that the simple
+  fact of heterogeneous rates or origination and extinction between
+  clades and conserved rates within clades is sufficient to account
+  for this fat-tailed form. We identifiy orders and the families they
+  subsume as the taxonomic level at which clades experience
+  inter-clade heterogeneity and within clade homogeneity of
+  rates. Following superstatistics we would thus posit that orders and
+  families are subsystems in local statistical equilibrium while the
+  entire system is not in equilibrium.
 %
-The separation of timescales between background origination and
-extinction within clades compared to the origin of major ecological
-and evolutionary innovations leading to new orders and families allows
-within-clade dynamics to reach equilibrium, while between-clade
-diversification is non-equilibrial.
+  The separation of timescales between background origination and
+  extinction within clades compared to the origin of major ecological
+  and evolutionary innovations leading to new orders and families
+  allows within-clade dynamics to reach equilibrium, while
+  between-clade diversification is non-equilibrial.
 %
-This between clade non-equilibrium accounts for the fat-tailed nature
-of the system as a whole.
+  This between clade non-equilibrium accounts for the fat-tailed
+  nature of the system as a whole.
 %
-The distribution of shifts in diversification dynamics across orders
-and families is consistent with niche conservatism and pulsed
-exploration of adaptive landscapes by higher taxa.
+  The distribution of shifts in diversification dynamics across orders
+  and families is consistent with niche conservatism and pulsed
+  exploration of adaptive landscapes by higher taxa.
 %
-Compared to other approaches that have used simple birth-death
-processes, equilibrial dynamics, or non-linear theories from
-complexity science, super-statistics is superior in its ability to
-account for both small and extreme fluctuations in the richess of
-fossil taxa.
+  Compared to other approaches that have used simple birth-death
+  processes, equilibrial dynamics, or non-linear theories from
+  complexity science, super-statistics is superior in its ability to
+  account for both small and extreme fluctuations in the richess of
+  fossil taxa.
 % 
-Its success opens up new research directions to better understand the
-evolutionary processes leading to the stasis of order- and
-family-level occupancy in an adaptive landscape interrupted by
-innovations that lead to new orders and families.
+  Its success opens up new research directions to better understand
+  the evolutionary processes leading to the stasis of order- and
+  family-level occupancy in an adaptive landscape interrupted by
+  innovations that lead to new orders and families.
 \end{sciabstract}
 
 \section{Introduction}
@@ -199,11 +187,7 @@ substrate preference \citep{bambach, hopkins2014}, morphological
 size \citep{harnik2011, foote2008paleobiol}).
 
 
-
 \subsection{Superstatistics of fossil biodiversity}
-
-
-
 
 Superstatistics \citep{beck2003} proposes that non-equilibrial systems
 can be decomposed into many local sub-systems, each of which attains a
@@ -309,11 +293,11 @@ evolutionary relevant traits \citep{mayr1965systZool, erwin2007,
 level, within-taxon fluctuations in richness are driven by
 equillibrial processes characterized by Gaussian distributions. We
 further assume that new higher taxa arrise due to the emergence of
-sufficiently novel traits (be they ecological, morphological, life history, or
-macroecological) so that those new taxa occupy a new region of an
-adaptive landscape. We lastly assume that different regions of
-adaptive space are characterized by different volatilities in
-origination and extinction.
+sufficiently novel traits (be they ecological, morphological, life
+history, or macroecological) so that those new taxa occupy a new
+region of an adaptive landscape. We lastly assume that different
+regions of adaptive space are characterized by different volatilities
+in origination and extinction.
 
 To evaluate the optimal taxonomic level for sub-system designation, we
 test our superstatistical theory using taxonomic levels from family to
@@ -363,14 +347,6 @@ local equilibria that each clade could experience. The stationary
 distribution of $\beta_k$ values describes these possible equilibria,
 specifying the probability that a given clade, chosen at random, will
 occupy a region of adaptive space characterized by $\beta_k$.
-
-%%% move elsewhere if not said already
-% The form of
-% this stationary distribution could shed interesting light on the
-% biological processes that lead different clades to explore different
-% regions of adaptive landscapes, and thus different equilibria, as
-% discussed below.
-%%%
 
 We estimate the distribution of $\beta_k$'s simply as the maximum
 likelihood distribution describing the set of volatilities for all
@@ -743,8 +719,9 @@ fluction distribution of each bootstrap replicate.
 \begin{itemize}
 \item[{\bf General:}] We thank John Harte, Rosemary Gillespie, Linden
   Schneider, Jun Ying Lim, and David Jablonski for helpful
-  discussion. We thank the many contributors to the Paleobiology
-  Database for making data available.
+  discussion. We thank Aaron Clauset and four annonomous reviewers for
+  greatly improving the quality of this manuscript. We thank the many
+  contributors to the Paleobiology Database for making data available.
 \item[{\bf Funding:}] AJR thanks funding from Fulbright Chile, the
   National Science Foundation Graduate Research Fellowship Program and
   the Omidyar Program at the Santa Fe Institute; MAF thanks FONDECYT
@@ -825,7 +802,12 @@ birth-death processes have been proven and explored elsewhere as well
 \section{Evaluation of sampling bias correction methods}
 \label{sec:suppBiasEval}
 
-\citep{kocsis2018}
+Our sampling and bias-correction method first accounts for imperfect
+detection within a binomial sampling framework as described in the
+main text, and then further corrects for potential publication bias
+using simple log-log regression.  We reproduce that regresion of
+log-richness versus log-number of publications here
+(Fig. \ref{figSubb:divByPub}). 
 
 \begin{figure}[!hp]
   \centering
@@ -833,9 +815,23 @@ birth-death processes have been proven and explored elsewhere as well
   \caption[Relationship between number of publications and genus
   richness]{Relationship between number of publications and genus
     richness as recorded by the PBDB.}
-  \label{fig:divByPub}
+  \label{figSupp:divByPub}
 \end{figure}
 
+
+We compare our sampling and bias-correction method to other more
+established approaches. Specifically we use the newly availible R
+package {\it divDyn} \citep{kocsis2018} to produce subsampling-based
+richness estimates for the Phanerozoic timeseries of marine
+invertabrates. In Figure \ref{figSubb:3TPub} we comare classical
+rarifaction with shareholder quorum subsampling (SQS) with our
+method. All samples were rarified to 120 occurrences, which is
+approximately the maximum sample size across all time bins, and the
+SQS quorum was set to 0.75 to similarely approximate this common
+sampling denominator across time bins. For both rarifaction and SQS we
+produced 50 subsample replicates.
+
+  
 \begin{figure}[!hp]
   \centering
   \includegraphics[width=0.7\textwidth]{../../figSupp_divEstComp.pdf}
@@ -848,7 +844,7 @@ birth-death processes have been proven and explored elsewhere as well
     (A). Despite these differences the distribution of fluctuations in
     genus richness across all marine invertebrates show good
     agreement (B).}
-  \label{fig:supp_3TPub}
+  \label{figSupp:3TPub}
 \end{figure}
 
 
@@ -856,18 +852,89 @@ birth-death processes have been proven and explored elsewhere as well
   taxonomic levels}
 \label{sec:suppSstatTaxLevels}
 
+To explore why deviations from super statistics increase with
+increasing taxonomic level we explore how the distributions of
+richness fluctautions $p_k(x | \beta_k)$ and fluctuation volatilies
+$f(\beta_k)$ change with chaning taxonomic level. We find that
+richness fluctuation distributions experience increasing frequencies
+of outliers (increasing kurtosis) with higher taxonomic level
+(Fig. \ref{figSupp:pkx_allTaxa}). We also find that observed
+fluctuation volatility distributions increasingly depart from a Gamma
+distribution at the level of classes and phyla
+(Fig. \ref{figSupp:fbeta_allTaxa}).
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../../figSupp_pkx_allTaxa.pdf}
+  \caption{Change in within clade richness fluctuation distributions
+    with increasing taxonomic level. The percentile-percentile plots
+    show how the percentiles of observed re-scaled fluctuation
+    distributions compare to expected percentiles from a Gaussian
+    distribution with mean 0 and variance 1. We can see that families
+    conform to a linear relationship while higher taxa, even at the
+    order level, begin to show s-shaped relationships. Inset plots
+    show how kurtosis increases from 0 (the value for a Gaussian
+    distribution) at the family level to increasingingly larger values
+    at higher taxonomic levels.}
+  \label{figSupp:pkx_allTaxa}
+\end{figure}
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../../figSupp_fbeta_allTaxa.pdf}
+  \caption{Change in the distributions of $\beta_k$ across clades with
+    increasing taxonomic level. Points are observed $\beta_k$ values
+    and red lines are the best-fit Gamma distributions. Deviations
+    increase particularely at the class and phylum levels.}
+  \label{figSupp:fbeta_allTaxa}
+\end{figure}
+
 
 \section{Guild composition of higher taxa}
 \label{sec:suppGuilds} 
 
+We posit that part of the increasing divergence between
+superstatistics and observed fluctations and the increase in
+fluctation outliers at higher taxonomic levels is that these higher
+taxa increasingly aggregate disperate types of organisms. One way to
+evaluate this idea is to count the ecological guilds comprised by taxa
+at different levels. We do that if Figure \ref{figSupp:eeSpaceOcc} and
+find that families comprise, on average, 1 Bambachian guild, families
+comprise 2 guilds on average, and classes and phyla comprise many
+more. 
+
 \begin{figure}[!hp]
   \centering
   \includegraphics[width=0.4\textwidth]{../../figSupp_eeSpaceOcc.pdf} 
-  \caption[Relationship between number of Bambachian guild hypercubes
-  and taxonomic level]{Relationship between number of Bambachian guild hypercubes
-  and taxonomic level.}
+  \caption{Relationship between number of Bambachian guild hypercubes
+    and taxonomic level.}
   \label{figSupp:eeSpaceOcc}
 \end{figure}
+
+
+\section{Relationship between $\beta_k$ and clade richness}
+\label{sec:suppBetaRichness} 
+
+There is likely to be a relationship between richness of clade $k$ and
+its fluctuation volatility $\beta_k$ because both extinction and
+origination (i.e. the formation of new genera) contribute to
+volatility. Thus we expect that higher variance in richness
+fluctuations (i.e. smaller $\beta_k = 1/\text{variance}$) will be
+correlated with higher richness.  Indeed, Figure
+\ref{figSupp:betaByRich} shows this to be true. In the main text we
+use permutation to evaluate whether this correlation is responsible
+for the observed good fit of superstatistics, and find that this
+correlation alone is not sufficient.
+
+\begin{figure}[!hp]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../../figSupp_betaByRich.pdf} 
+  \caption{Relationship between fluctation volatility $\beta_k$ and
+    genus richness at the family level.}
+  \label{figSupp:betaByRich}
+\end{figure}
+
+
 
 \end{document}
 
