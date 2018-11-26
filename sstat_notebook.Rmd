@@ -1,15 +1,17 @@
 ---
-title: "Paleo superstatistics notebook"
-output: pdf_document
+output: 
+    pdf_document:
+        keep_tex: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 ```
 
-## Reproducing the study
 
-The easiest way to reproduce this study is to download, clone, or fork the GitHub repository at [github.com/ajrominger/paleo_supStat](github.com/ajrominger/paleo_supStat). All scripts can then be run on new downloads of the PBDB and modifications to the analysese can be made. The repository is organized into directories `data` containing data and data-cleaning scripts; `R` containing R functions for general use; and `analysis` containing analysis scripts that use the data and R functions. The GitHub repository also contains a manuscript directory (`ms`), this document (`sstat_notebook.Rmd`), and an R script (`sstat_make.R`) that calls each data cleaning and analysis script in sequence to automatically reproduce the entire study. The `data`, `R`, and `analysis` directories can also be recreated from the scripts reproduced below.  
+# Reproducing the study
+
+The easiest way to reproduce this study is to download, clone, or fork the GitHub repository at `github.com/ajrominger/paleo_supStat`. All scripts can then be run on new downloads of the PBDB and modifications to the analysese can be made. The repository is organized into directories `data` containing data and data-cleaning scripts; `R` containing R functions for general use; and `analysis` containing analysis scripts that use the data and R functions. The GitHub repository also contains a manuscript directory (`ms`), this document (`sstat_notebook.Rmd`), and an R script (`sstat_make.R`) that calls each data cleaning and analysis script in sequence to automatically reproduce the entire study. The `data`, `R`, and `analysis` directories can also be recreated from the scripts reproduced below.  
 
 The accompanying explainations below (organized by the flow of data aquisition, cleaning, and then analysis) will help the user understand the purpose of each script/function such that they can reproduce the results, or modify the routine.
 

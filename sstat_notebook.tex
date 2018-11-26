@@ -1,0 +1,1681 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{}
+    \pretitle{\vspace{\droptitle}}
+  \posttitle{}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+
+\section{Reproducing the study}\label{reproducing-the-study}
+
+The easiest way to reproduce this study is to download, clone, or fork
+the GitHub repository at \texttt{github.com/ajrominger/paleo\_supStat}.
+All scripts can then be run on new downloads of the PBDB and
+modifications to the analysese can be made. The repository is organized
+into directories \texttt{data} containing data and data-cleaning
+scripts; \texttt{R} containing R functions for general use; and
+\texttt{analysis} containing analysis scripts that use the data and R
+functions. The GitHub repository also contains a manuscript directory
+(\texttt{ms}), this document (\texttt{sstat\_notebook.Rmd}), and an R
+script (\texttt{sstat\_make.R}) that calls each data cleaning and
+analysis script in sequence to automatically reproduce the entire study.
+The \texttt{data}, \texttt{R}, and \texttt{analysis} directories can
+also be recreated from the scripts reproduced below.
+
+The accompanying explainations below (organized by the flow of data
+aquisition, cleaning, and then analysis) will help the user understand
+the purpose of each script/function such that they can reproduce the
+results, or modify the routine.
+
+Lastly, this study depends on the contributed packages \emph{divDyn},
+\emph{parallel}, and \emph{R.utils} which should be downloaded from
+CRAN, and on a custom package \emph{socorro} which must be downloaded
+from GitHub:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{devtools}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{(}\StringTok{'ajrominger/socorro'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Getting the data}\label{getting-the-data}
+
+\subsubsection{PBDB API}\label{pbdb-api}
+
+To obtain the PBDB data we make use of the API in script
+\texttt{data/pbdb\_data\_get.R}, which accesses the API and cleans the
+data by:
+
+\begin{itemize}
+\tightlist
+\item
+  removing poorly lithified specimens
+\item
+  removing collections at the basin scale
+\item
+  including only fine-scale stratigraphy (below the ``group'' level)
+\item
+  resolving taxonomy to the genus or subgenus level where availible
+  (storing genus or subgenus as \texttt{otu})
+\item
+  combining multiple records of the same OTU per collection
+\item
+  importing standardized timebins from \url{fossilworks.org} (timebins
+  are scraped with script \texttt{data/fossilworks\_tbins\_intervals.R})
+\end{itemize}
+
+The data gathering script \texttt{data/pbdb\_data\_get.R} is shown
+below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to interface with PBDB API and clean resulting data**}
+
+\CommentTok{# call to the API}
+\NormalTok{show <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{'ident'}\NormalTok{, }\StringTok{'phylo'}\NormalTok{, }\StringTok{'lith'}\NormalTok{, }\StringTok{'loc'}\NormalTok{, }\StringTok{'time'}\NormalTok{, }\StringTok{'geo'}\NormalTok{, }\StringTok{'stratext'}\NormalTok{,}
+                 \StringTok{'ecospace'}\NormalTok{),}
+               \DataTypeTok{collapse =} \StringTok{','}\NormalTok{)}
+\NormalTok{version <-}\StringTok{ '1.2'}
+\NormalTok{base_name <-}\StringTok{ 'Animalia^Craniata'}
+\NormalTok{min_ma <-}\StringTok{ }\DecValTok{0}
+\NormalTok{max_ma <-}\StringTok{ }\DecValTok{560}
+\NormalTok{timerule <-}\StringTok{ 'contain'}
+\NormalTok{envtype <-}\StringTok{ 'marine'}
+
+\CommentTok{# break-up backbone URI just so it can be nicely displayed}
+\NormalTok{bbURI <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{'https://paleobiodb.org/data%s/occs/list.csv?'}\NormalTok{,}
+                \StringTok{'base_name=%s&show=%s&limit=all&min_ma=%s&max_ma=%s&'}\NormalTok{,}
+                \StringTok{'timerule=%s&envtype=%s'}\NormalTok{)}
+
+\CommentTok{# the actual call to the URI}
+\NormalTok{uri <-}\StringTok{ }\KeywordTok{sprintf}\NormalTok{(bbURI,}
+\NormalTok{               version,}
+\NormalTok{               base_name,}
+\NormalTok{               show,}
+\NormalTok{               min_ma,}
+\NormalTok{               max_ma,}
+\NormalTok{               timerule,}
+\NormalTok{               envtype)}
+
+\CommentTok{# get pbdb occurences}
+\NormalTok{x <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(uri, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{# write out raw data}
+\KeywordTok{write.csv}\NormalTok{(x, }\StringTok{'data/pbdb_data_raw.csv'}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+
+
+\CommentTok{# clean up}
+
+\CommentTok{# remove unnecceary columns}
+\NormalTok{c2rm <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'record_type'}\NormalTok{, }\StringTok{'reid_no'}\NormalTok{, }\StringTok{'flags'}\NormalTok{, }\StringTok{'identified_name'}\NormalTok{,}
+          \StringTok{'identified_rank'}\NormalTok{, }\StringTok{'identified_no'}\NormalTok{, }\StringTok{'difference'}\NormalTok{, }\StringTok{'species_name'}\NormalTok{,}
+          \StringTok{'species_reso'}\NormalTok{, }\StringTok{'lithdescript'}\NormalTok{, }\StringTok{'lithology1'}\NormalTok{, }\StringTok{'minor_lithology1'}\NormalTok{,}
+          \StringTok{'lithology2'}\NormalTok{, }\StringTok{'lithification2'}\NormalTok{, }\StringTok{'minor_lithology2'}\NormalTok{, }\StringTok{'cc'}\NormalTok{, }\StringTok{'state'}\NormalTok{,}
+          \StringTok{'county'}\NormalTok{, }\StringTok{'latlng_basis'}\NormalTok{, }\StringTok{'geogcomments'}\NormalTok{, }\StringTok{'geology_comments'}\NormalTok{,}
+          \StringTok{'zone'}\NormalTok{, }\StringTok{'localsection'}\NormalTok{, }\StringTok{'localbed'}\NormalTok{, }\StringTok{'localorder'}\NormalTok{,}
+          \StringTok{'regionalsection'}\NormalTok{, }\StringTok{'regionalbed'}\NormalTok{, }\StringTok{'regionalorder'}\NormalTok{,}
+          \StringTok{'stratcomments'}\NormalTok{)}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[, }\OperatorTok{!}\NormalTok{(}\KeywordTok{names}\NormalTok{(x) }\OperatorTok{%in%}\StringTok{ }\NormalTok{c2rm)]}
+
+\CommentTok{# only well lithified specimens}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[x}\OperatorTok{$}\NormalTok{lithification1 }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{''}\NormalTok{, }\StringTok{'lithified'}\NormalTok{), ]}
+
+
+\CommentTok{# no basin-scale collections}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[x}\OperatorTok{$}\NormalTok{geogscale }\OperatorTok{!=}\StringTok{ 'basin'}\NormalTok{, ]}
+
+\CommentTok{# fine scale stratigraphy only}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\NormalTok{(x}\OperatorTok{$}\NormalTok{stratscale }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'group'}\NormalTok{, }\StringTok{'supergroup'}\NormalTok{)), ]}
+
+\CommentTok{# resolve taxonomy to genus or subgenus where availible}
+\NormalTok{otu <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{genus}
+\NormalTok{otu[x}\OperatorTok{$}\NormalTok{subgenus_name }\OperatorTok{!=}\StringTok{ ''}\NormalTok{] <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(x}\OperatorTok{$}\NormalTok{subgenus_reso[x}\OperatorTok{$}\NormalTok{subgenus_name }\OperatorTok{!=}\StringTok{ ''}\NormalTok{] }\OperatorTok{==}\StringTok{ ''}\NormalTok{,}
+\NormalTok{                                     x}\OperatorTok{$}\NormalTok{subgenus_name[x}\OperatorTok{$}\NormalTok{subgenus_name }\OperatorTok{!=}\StringTok{ ''}\NormalTok{],}
+\NormalTok{                                     otu[x}\OperatorTok{$}\NormalTok{subgenus_name }\OperatorTok{!=}\StringTok{ ''}\NormalTok{])}
+\NormalTok{otu[x}\OperatorTok{$}\NormalTok{primary_reso }\OperatorTok{!=}\StringTok{ ''}\NormalTok{] <-}\StringTok{ ''}
+\NormalTok{x}\OperatorTok{$}\NormalTok{otu <-}\StringTok{ }\NormalTok{otu}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[x}\OperatorTok{$}\NormalTok{otu }\OperatorTok{!=}\StringTok{ ''}\NormalTok{, ]}
+
+
+\CommentTok{# combine multiple records of same otu per collection}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(x[, }\KeywordTok{c}\NormalTok{(}\StringTok{'collection_no'}\NormalTok{, }\StringTok{'otu'}\NormalTok{)]), ]}
+
+
+\CommentTok{# standard time bins}
+\NormalTok{stages <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/tbins_stages.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{earlyTbin <-}\StringTok{ }\NormalTok{stages}\OperatorTok{$}\NormalTok{tbin[}\KeywordTok{match}\NormalTok{(x}\OperatorTok{$}\NormalTok{early_interval, stages}\OperatorTok{$}\NormalTok{name)]}
+\NormalTok{lateTbin <-}\StringTok{ }\NormalTok{stages}\OperatorTok{$}\NormalTok{tbin[}\KeywordTok{match}\NormalTok{(x}\OperatorTok{$}\NormalTok{late_interval, stages}\OperatorTok{$}\NormalTok{name)]}
+\NormalTok{lateTbin[}\KeywordTok{is.na}\NormalTok{(lateTbin)] <-}\StringTok{ }\NormalTok{earlyTbin[}\KeywordTok{is.na}\NormalTok{(lateTbin)]}
+\NormalTok{earlyTbin[earlyTbin }\OperatorTok{!=}\StringTok{ }\NormalTok{lateTbin] <-}\StringTok{ }\OtherTok{NA}
+
+\NormalTok{x}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\NormalTok{earlyTbin}
+\NormalTok{x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(x}\OperatorTok{$}\NormalTok{tbin), ]}
+
+
+\CommentTok{# write out fully processed data}
+\KeywordTok{write.csv}\NormalTok{(x, }\StringTok{'data/pbdb_data.csv'}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Scraping fossilworks}\label{scraping-fossilworks}
+
+The script to pull Alory's time bins
+(\texttt{data/fossilworks\_tbins\_intervals.R}) is below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to scrape time bins from fossilworks.org**}
+
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+
+\CommentTok{# loop through interval info on fossilworks.org}
+\NormalTok{coreURI <-}\StringTok{ 'http://fossilworks.org/bridge.pl?a=displayInterval&interval_no='}
+
+\NormalTok{tbinInfo <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{1108}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(i) \{}
+    \KeywordTok{print}\NormalTok{(i)}
+\NormalTok{    linfo <-}\StringTok{ }\KeywordTok{try}\NormalTok{(}\KeywordTok{readLines}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(coreURI, i), }\DataTypeTok{n =} \DecValTok{150}\NormalTok{))}
+    
+    \ControlFlowTok{if}\NormalTok{(}\StringTok{'try-error'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{class}\NormalTok{(linfo)) }
+\NormalTok{        linfo <-}\StringTok{ }\KeywordTok{try}\NormalTok{(}\KeywordTok{readLines}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(coreURI, i), }\DataTypeTok{n =} \DecValTok{150}\NormalTok{))}
+    
+    \ControlFlowTok{if}\NormalTok{(}\StringTok{'try-error'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{class}\NormalTok{(linfo)) \{}
+\NormalTok{        thisTbin <-}\StringTok{ }\NormalTok{thisMax <-}\StringTok{ }\NormalTok{thisMin <-}\StringTok{ }\NormalTok{thisName <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        thisTbin <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{'^.*10 million year bin: |<br>.*$'}\NormalTok{, }\StringTok{''}\NormalTok{, }
+\NormalTok{                         linfo[}\KeywordTok{grep}\NormalTok{(}\StringTok{'10 million year bin'}\NormalTok{, linfo)])}
+\NormalTok{        thisMax <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{gsub}\NormalTok{(}\StringTok{'^.*Lower boundary: equal to | Ma.*$|[^0-9}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.]'}\NormalTok{, }\StringTok{''}\NormalTok{,}
+\NormalTok{                                   linfo[}\KeywordTok{grep}\NormalTok{(}\StringTok{'Lower boundary: equal to'}\NormalTok{, linfo)]))}
+\NormalTok{        thisMin <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{gsub}\NormalTok{(}\StringTok{'^.*Upper boundary: equal to | Ma.*$|[^0-9}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{.]'}\NormalTok{, }\StringTok{''}\NormalTok{,}
+\NormalTok{                                   linfo[}\KeywordTok{grep}\NormalTok{(}\StringTok{'Upper boundary: equal to'}\NormalTok{, linfo)]))}
+\NormalTok{        thisName <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{'^.*<p class="pageTitle">|</p>.*$'}\NormalTok{, }\StringTok{''}\NormalTok{, }
+\NormalTok{                         linfo[}\KeywordTok{grep}\NormalTok{(}\StringTok{'class="pageTitle"'}\NormalTok{, linfo)])}
+\NormalTok{    \}}
+    
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{name =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{length}\NormalTok{(thisName) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, }\OtherTok{NA}\NormalTok{, thisName),}
+                      \DataTypeTok{tbin =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{length}\NormalTok{(thisTbin) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, }\OtherTok{NA}\NormalTok{, thisTbin), }
+                      \DataTypeTok{ma_min =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{length}\NormalTok{(thisMin) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, }\OtherTok{NA}\NormalTok{, thisMin),}
+                      \DataTypeTok{ma_max =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{length}\NormalTok{(thisMax) }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{, }\OtherTok{NA}\NormalTok{, thisMax)))}
+\NormalTok{\})}
+
+\NormalTok{tbinInfo <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, tbinInfo)}
+
+
+\CommentTok{# clean up}
+\CommentTok{# --------}
+
+\NormalTok{tbinInfo <-}\StringTok{ }\NormalTok{tbinInfo[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(tbinInfo}\OperatorTok{$}\NormalTok{name), ]}
+
+\CommentTok{# remove 'stage' and equivilant from name}
+\NormalTok{tbinInfo}\OperatorTok{$}\NormalTok{name <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{' [[:lower:]].*'}\NormalTok{, }\StringTok{''}\NormalTok{, tbinInfo}\OperatorTok{$}\NormalTok{name)}
+
+\CommentTok{# split up stages with a '/' into both names}
+\NormalTok{temp <-}\StringTok{ }\NormalTok{tbinInfo[}\KeywordTok{grep}\NormalTok{(}\StringTok{'/'}\NormalTok{, tbinInfo}\OperatorTok{$}\NormalTok{name), ]}
+\NormalTok{tbinInfo}\OperatorTok{$}\NormalTok{name <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{'.*/'}\NormalTok{, }\StringTok{''}\NormalTok{, tbinInfo}\OperatorTok{$}\NormalTok{name)}
+\NormalTok{temp}\OperatorTok{$}\NormalTok{name <-}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{'/.* '}\NormalTok{, }\StringTok{' '}\NormalTok{, temp}\OperatorTok{$}\NormalTok{name)}
+\NormalTok{tbinInfo <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(tbinInfo, temp)}
+
+\CommentTok{# fix random typo}
+\NormalTok{tbinInfo}\OperatorTok{$}\NormalTok{name[tbinInfo}\OperatorTok{$}\NormalTok{name }\OperatorTok{==}\StringTok{ 'Cazenovia'}\NormalTok{] <-}\StringTok{ 'Cazenovian'}
+
+
+\CommentTok{# write out}
+\KeywordTok{write.csv}\NormalTok{(tbinInfo, }\StringTok{'data/tbins_stages.csv'}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+
+
+\CommentTok{# also write out summary of each time bin, most importantly (for plottin) }
+\CommentTok{# its midpoint}
+
+\NormalTok{tbinmid <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(}\KeywordTok{unique}\NormalTok{(tbinInfo}\OperatorTok{$}\NormalTok{tbin[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(tbinInfo}\OperatorTok{$}\NormalTok{tbin)]), }\ControlFlowTok{function}\NormalTok{(tbin) \{}
+\NormalTok{    tt <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(tbinInfo[tbinInfo}\OperatorTok{$}\NormalTok{tbin }\OperatorTok{==}\StringTok{ }\NormalTok{tbin, }\KeywordTok{c}\NormalTok{(}\StringTok{'ma_min'}\NormalTok{, }\StringTok{'ma_max'}\NormalTok{)])}
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{mean}\NormalTok{(}\KeywordTok{range}\NormalTok{(tt, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)))}
+\NormalTok{\})}
+
+\NormalTok{tbinmid <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(tbinmid, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)}
+
+\KeywordTok{write.csv}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tbin =} \KeywordTok{names}\NormalTok{(tbinmid), }\DataTypeTok{ma_mid =} \KeywordTok{as.numeric}\NormalTok{(tbinmid)), }
+          \StringTok{'data/tbinsMid.csv'}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+
+
+\CommentTok{# lastly confirm the durations of tbins}
+\KeywordTok{length}\NormalTok{(tbinmid)}
+
+\NormalTok{tbinrange <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(}\KeywordTok{unique}\NormalTok{(tbinInfo}\OperatorTok{$}\NormalTok{tbin[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(tbinInfo}\OperatorTok{$}\NormalTok{tbin)]), }\ControlFlowTok{function}\NormalTok{(tbin) \{}
+\NormalTok{    tt <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(tbinInfo[tbinInfo}\OperatorTok{$}\NormalTok{tbin }\OperatorTok{==}\StringTok{ }\NormalTok{tbin, }\KeywordTok{c}\NormalTok{(}\StringTok{'ma_min'}\NormalTok{, }\StringTok{'ma_max'}\NormalTok{)])}
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{diff}\NormalTok{(}\KeywordTok{range}\NormalTok{(tt, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)))}
+\NormalTok{\})}
+
+\KeywordTok{mean}\NormalTok{(tbinrange)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Three timer and publication bias
+correction}\label{three-timer-and-publication-bias-correction}
+
+Once the data have been downloaded and cleaned, we correct for
+incomplete and biased sampling with the script
+\texttt{data/pbdb\_3TPub\_make.R} which sources the function
+\texttt{R/make3TPub.R} to generate the main output: a matrix with time
+bins as rows, taxa (families in this case) as columns and bias-corrected
+richness as cells.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **this script produces diversity estimates per family per time bin from PBDB data}
+\CommentTok{# corrected by the '3 timers method' and for possible publication bias**}
+
+\CommentTok{# source function to produce a matrix of time by taxon with cells}
+\CommentTok{# of corrected diversity}
+\KeywordTok{source}\NormalTok{(}\StringTok{'R/make3TPub.R'}\NormalTok{)}
+
+\CommentTok{# load other needed funcitons}
+
+\CommentTok{# source('code/sstat_comp.R')}
+\CommentTok{# source('code/sstat_methods.R')}
+\CommentTok{# source('code/Px_gam.R')}
+
+\CommentTok{# load and prepare data}
+\CommentTok{# ---------------------}
+
+\NormalTok{pbdbDat <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_data.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{# make column for midpoint ma}
+\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{ma_mid <-}\StringTok{ }\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{max_ma }\OperatorTok{+}\StringTok{ }\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{min_ma) }\OperatorTok{/}\StringTok{ }\DecValTok{2}
+
+\CommentTok{# get rid of poor temporal resolution}
+\NormalTok{pbdbDat <-}\StringTok{ }\NormalTok{pbdbDat[pbdbDat}\OperatorTok{$}\NormalTok{tbin }\OperatorTok{!=}\StringTok{ ''}\NormalTok{, ]}
+
+\CommentTok{# get rid of bad taxonomy}
+\NormalTok{pbdbDat <-}\StringTok{ }\NormalTok{pbdbDat[pbdbDat}\OperatorTok{$}\NormalTok{family }\OperatorTok{!=}\StringTok{ ''}\NormalTok{, ]}
+\NormalTok{pbdbDat <-}\StringTok{ }\NormalTok{pbdbDat[pbdbDat}\OperatorTok{$}\NormalTok{otu }\OperatorTok{!=}\StringTok{ ''}\NormalTok{, ]}
+
+\CommentTok{# get bin times}
+\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{mid_ma <-}\StringTok{ }\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{min_ma }\OperatorTok{+}\StringTok{ }\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{max_ma) }\OperatorTok{/}\StringTok{ }\DecValTok{2}
+\NormalTok{pbdbTime <-}\StringTok{ }\KeywordTok{sort}\NormalTok{(}\KeywordTok{tapply}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{mid_ma, pbdbDat}\OperatorTok{$}\NormalTok{tbin, mean))}
+\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin, }\DataTypeTok{levels =} \KeywordTok{names}\NormalTok{(pbdbTime))}
+
+
+\CommentTok{# data.frame to hold publication, diversity and 3T stat}
+\NormalTok{famTbinBias <-}\StringTok{ }\KeywordTok{aggregate}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\DataTypeTok{div =}\NormalTok{ pbdbDat}\OperatorTok{$}\NormalTok{otu), }\KeywordTok{list}\NormalTok{(}\DataTypeTok{fam =}\NormalTok{ pbdbDat}\OperatorTok{$}\NormalTok{family,}
+                                                       \DataTypeTok{tbin =}\NormalTok{ pbdbDat}\OperatorTok{$}\NormalTok{tbin),}
+                         \ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(x)))}
+
+
+\CommentTok{# three timer stat and publication bias}
+\CommentTok{# -------------------------------------}
+
+\CommentTok{# matrix to determine three timers and part timers (sensu alroy 2008)}
+\NormalTok{mt <-}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{nrow =} \KeywordTok{nlevels}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin), }
+             \DataTypeTok{ncol =} \KeywordTok{nlevels}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin))}
+\KeywordTok{diag}\NormalTok{(mt) <-}\StringTok{ }\OperatorTok{-}\DecValTok{10}
+\NormalTok{mt[}\KeywordTok{abs}\NormalTok{(}\KeywordTok{row}\NormalTok{(mt) }\OperatorTok{-}\StringTok{ }\KeywordTok{col}\NormalTok{(mt)) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{] <-}\StringTok{ }\DecValTok{1}
+
+\CommentTok{# loop through and compute three timers and part timers}
+\NormalTok{timers <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(}\KeywordTok{split}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin, pbdbDat}\OperatorTok{$}\NormalTok{otu), }
+                 \ControlFlowTok{function}\NormalTok{(x) \{}
+                     \CommentTok{# browser()}
+\NormalTok{                     tbins <-}\StringTok{ }\KeywordTok{integer}\NormalTok{(}\KeywordTok{nlevels}\NormalTok{(x))}
+\NormalTok{                     tbins[}\KeywordTok{as.integer}\NormalTok{(}\KeywordTok{unique}\NormalTok{(x))] <-}\StringTok{ }\DecValTok{1}
+\NormalTok{                     t3 <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(mt }\OperatorTok{%*%}\StringTok{ }\NormalTok{tbins }\OperatorTok{==}\StringTok{ }\DecValTok{2}\NormalTok{)}
+\NormalTok{                     tp <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(mt }\OperatorTok{%*%}\StringTok{ }\NormalTok{tbins }\OperatorTok{==}\StringTok{ }\OperatorTok{-}\DecValTok{8}\NormalTok{)}
+                     
+                     \KeywordTok{return}\NormalTok{(}\KeywordTok{cbind}\NormalTok{(t3, tp))}
+\NormalTok{                 \})}
+
+\CommentTok{# compute 3 timer stat from 3 timers and part timers}
+\NormalTok{timers <-}\StringTok{ }\KeywordTok{array}\NormalTok{(}\KeywordTok{unlist}\NormalTok{(timers), }\DataTypeTok{dim =} \KeywordTok{c}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(timers[[}\DecValTok{1}\NormalTok{]]), }\DecValTok{2}\NormalTok{, }\KeywordTok{length}\NormalTok{(timers)))}
+\NormalTok{t3stat <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(timers[, }\DecValTok{1}\NormalTok{, ]) }\OperatorTok{/}\StringTok{ }\NormalTok{(}\KeywordTok{rowSums}\NormalTok{(timers[, }\DecValTok{1}\NormalTok{, ]) }\OperatorTok{+}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(timers[, }\DecValTok{2}\NormalTok{, ]))}
+
+\CommentTok{# add to data.frame holding all info to be saved}
+\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{T3Stat <-}\StringTok{ }\NormalTok{t3stat[}\KeywordTok{match}\NormalTok{(famTbinBias}\OperatorTok{$}\NormalTok{tbin, }
+                                      \KeywordTok{levels}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin))]}
+\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{T3Div <-}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{div }\OperatorTok{/}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{T3Stat}
+
+\CommentTok{# record pubs per tbin}
+\NormalTok{tbinPub <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{reference_no, pbdbDat}\OperatorTok{$}\NormalTok{tbin,}
+                   \ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(x)))}
+\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{tbinPub <-}\StringTok{ }\NormalTok{tbinPub[famTbinBias}\OperatorTok{$}\NormalTok{tbin]}
+
+\CommentTok{# calculate corrected diversity}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_divByPub_foo.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{4}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4}\NormalTok{)}
+\NormalTok{pbdbFamDiv <-}\StringTok{ }\KeywordTok{with}\NormalTok{(famTbinBias,}
+                   \KeywordTok{make3TPub}\NormalTok{(div, T3Stat, tbinPub, fam, tbin, pbdbTime, }
+                             \DataTypeTok{minPub =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{TRUE}\NormalTok{))}
+\KeywordTok{dev.off}\NormalTok{()}
+
+\CommentTok{# write out corrected diversity}
+\KeywordTok{write.csv}\NormalTok{(pbdbFamDiv, }\StringTok{'data/pbdb_3TPub-corrected.csv'}\NormalTok{)}
+
+
+\CommentTok{# for permutational d-stat tests we need diversity at the genus level;}
+\CommentTok{# make that here}
+
+\CommentTok{# a data.frame holding only one record per genus per family per time bin}
+\NormalTok{pbdbOcc <-}\StringTok{ }\NormalTok{pbdbDat[}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(pbdbDat[, }\KeywordTok{c}\NormalTok{(}\StringTok{'tbin'}\NormalTok{, }\StringTok{'family'}\NormalTok{, }\StringTok{'otu'}\NormalTok{)]), ]}
+
+\NormalTok{genTbinBias <-}\StringTok{ }\NormalTok{parallel}\OperatorTok{::}\KeywordTok{mclapply}\NormalTok{(}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.nan}\NormalTok{(famTbinBias}\OperatorTok{$}\NormalTok{T3Stat)), }\DataTypeTok{mc.cores =} \DecValTok{3}\NormalTok{, }
+                                  \DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i) \{}
+\NormalTok{                                      dat <-}\StringTok{ }\NormalTok{pbdbOcc[pbdbOcc}\OperatorTok{$}\NormalTok{family }\OperatorTok{==}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{fam[i] }\OperatorTok{&}\StringTok{ }
+\StringTok{                                                         }\NormalTok{pbdbOcc}\OperatorTok{$}\NormalTok{tbin }\OperatorTok{==}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{tbin[i], }
+                                                     \KeywordTok{c}\NormalTok{(}\StringTok{'tbin'}\NormalTok{, }\StringTok{'family'}\NormalTok{, }\StringTok{'otu'}\NormalTok{)]}
+\NormalTok{                                      dat}\OperatorTok{$}\NormalTok{T3Occ <-}\StringTok{ }\DecValTok{1} \OperatorTok{/}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{T3Stat[i]}
+\NormalTok{                                      dat}\OperatorTok{$}\NormalTok{tbinPub <-}\StringTok{ }\NormalTok{famTbinBias}\OperatorTok{$}\NormalTok{tbinPub[i]}
+                                      
+                                      \KeywordTok{return}\NormalTok{(dat)}
+\NormalTok{                                  \}}
+\NormalTok{)}
+
+\NormalTok{genTbinBias <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, genTbinBias)}
+\NormalTok{pbdbGenDiv <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(genTbinBias[, }\KeywordTok{c}\NormalTok{(}\StringTok{'tbin'}\NormalTok{, }\StringTok{'family'}\NormalTok{, }\StringTok{'otu'}\NormalTok{)], }
+                         \DataTypeTok{T3PubDiv =}\NormalTok{ genTbinBias}\OperatorTok{$}\NormalTok{T3Occ }\OperatorTok{/}\StringTok{ }
+\StringTok{                             }\KeywordTok{exp}\NormalTok{(}\KeywordTok{predict}\NormalTok{(pbdbPubLM, }
+                                         \DataTypeTok{newdata =} \KeywordTok{data.frame}\NormalTok{(}
+                                             \DataTypeTok{logPub =} \KeywordTok{log}\NormalTok{(genTbinBias}\OperatorTok{$}\NormalTok{tbinPub)))))}
+
+\CommentTok{# write it out as a tidy data frame (not turned into a matrix) this will be easier}
+\CommentTok{# for permuting}
+\KeywordTok{write.csv}\NormalTok{(pbdbGenDiv, }\DataTypeTok{file =} \StringTok{'data/pbdb_3TPub_genera.csv'}\NormalTok{, }\DataTypeTok{row.names =} \OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Here is the guts of the \texttt{make3TPub} function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' @description function to produce a matrix of time by taxa with cells of corrected diversity}
+\CommentTok{#' @param rawDiv the raw diversity of each taxon in each time interval}
+\CommentTok{#' @param t3stat the 3 timer stat for each diversity record}
+\CommentTok{#' @param pub the number of publications associated with each diversity record}
+\CommentTok{#' @param taxa the taxon names for each diversity record}
+\CommentTok{#' @param tbin the time interval of each diversity record}
+\CommentTok{#' @param tbinTime times associated with each `tbin`}
+\CommentTok{#' @param minPub minimum number of publications for inclusion in regression analysis}
+\CommentTok{#' @param plotit logical, should plot of taxon richness versus number of publications be made}
+\CommentTok{#' @return a matrix with rows corresponding to time intervals and columns to the given taxa}
+\CommentTok{#' each cell in the matrix represents corrected taxon richness}
+
+
+\NormalTok{make3TPub <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(rawDiv,  t3stat,  pub,  taxa,  tbin,  tbinTime,  }
+                      \DataTypeTok{minPub =} \DecValTok{10}\NormalTok{,  }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{) \{}
+    \CommentTok{# put data together so can be universally manipulated}
+\NormalTok{    x <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{rawDiv =}\NormalTok{ rawDiv, }\DataTypeTok{t3stat =}\NormalTok{ t3stat, }\DataTypeTok{pub =}\NormalTok{ pub, }\DataTypeTok{taxa =}\NormalTok{ taxa, }\DataTypeTok{tbin =}\NormalTok{ tbin)}
+\NormalTok{    x}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(x}\OperatorTok{$}\NormalTok{tbin)}
+\NormalTok{    x}\OperatorTok{$}\NormalTok{taxa <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(x}\OperatorTok{$}\NormalTok{taxa)}
+    
+\NormalTok{    x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(t3stat) }\OperatorTok{&}\StringTok{ }\NormalTok{pub }\OperatorTok{>=}\StringTok{  }\NormalTok{minPub, ]}
+    
+\NormalTok{    tbinTime <-}\StringTok{ }\NormalTok{tbinTime[}\KeywordTok{names}\NormalTok{(tbinTime) }\OperatorTok{%in%}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{tbin]}
+    
+    \CommentTok{# 3-timer correction}
+\NormalTok{    t3cor <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{rawDiv}\OperatorTok{/}\NormalTok{x}\OperatorTok{$}\NormalTok{t3stat}
+    
+    \CommentTok{# publication correction}
+\NormalTok{    logPub <-}\StringTok{ }\KeywordTok{log}\NormalTok{(x}\OperatorTok{$}\NormalTok{pub)}
+\NormalTok{    pubLM <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\KeywordTok{log}\NormalTok{(t3cor)}\OperatorTok{~}\NormalTok{logPub)}
+\NormalTok{    pbdbPubLM <<-}\StringTok{ }\NormalTok{pubLM }\CommentTok{# save regression to global env}
+    
+\NormalTok{    pubResid <-}\StringTok{ }\KeywordTok{exp}\NormalTok{(pubLM}\OperatorTok{$}\NormalTok{residuals)}
+    
+    \CommentTok{# plot so you can verify cuttoff etc.}
+    \ControlFlowTok{if}\NormalTok{(plotit) \{}
+        \KeywordTok{plot}\NormalTok{(}\KeywordTok{log}\NormalTok{(x}\OperatorTok{$}\NormalTok{pub), }\KeywordTok{log}\NormalTok{(t3cor),  }
+             \DataTypeTok{xlab =} \StringTok{'log(Number of publications)'}\NormalTok{, }
+             \DataTypeTok{ylab =} \StringTok{'log(3T-corrected number of genera)'}\NormalTok{)}
+        \KeywordTok{abline}\NormalTok{(pubLM, }\DataTypeTok{col =} \StringTok{'red'}\NormalTok{)}
+\NormalTok{    \}}
+    
+\NormalTok{    tbinTaxa <-}\StringTok{ }\NormalTok{socorro}\OperatorTok{::}\KeywordTok{tidy2mat}\NormalTok{(x}\OperatorTok{$}\NormalTok{tbin, x}\OperatorTok{$}\NormalTok{taxa, pubResid)}
+
+    \KeywordTok{return}\NormalTok{(tbinTaxa[}\KeywordTok{names}\NormalTok{(}\KeywordTok{sort}\NormalTok{(tbinTime, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)), ])}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Our publication correction is simple: we take the exponential of the
+residual of this relationship: \[
+\text{log(3T-corrected richness)} = \beta_0 + \beta_1 \text{log(number of publications)} + \epsilon
+\] The exponentiated residual amounts to dividing the three-timer
+corrected richness by a publication correction factor:
+\(\text{(3T-corrected richness)} / e^{\hat{y}}\) where \(\hat{y}\) is
+the predicted trend line from the above relationship.
+
+So we can use this multiplicative publication correction factor in
+addition to the similarely multiplicative three-timer correction to
+bias-correct individual genus-level occurrences. This is important when
+we permute these bias-corrected genera across families to create a null
+set of d-statistics for our superstatistical fit.
+
+We can check our correction against other popular methods. In the script
+\texttt{analysis/pbdb\_divCurve.R} we specifically compare simple
+rarifaction, with the SQS method, with our three-time and publication
+bias correction methods. All these various methods have close agreement.
+The script \texttt{analysis/pbdb\_divCurve.R} is shown below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **a script to compare our 3TPub curve to other estimates of richness through }
+\CommentTok{# the Phanerozoic**}
+
+\CommentTok{# package with diversity dynamics subsampling functions}
+\KeywordTok{library}\NormalTok{(divDyn)}
+
+\CommentTok{# package for plotting}
+\KeywordTok{library}\NormalTok{(socorro)}
+
+\CommentTok{# load and prep data}
+\NormalTok{pbdbFamDiv <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_3TPub-corrected.csv'}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{)}
+\NormalTok{pbdbDat <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_data.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{tbin <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/tbinsMid.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{tbin}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(tbin}\OperatorTok{$}\NormalTok{tbin, }\DataTypeTok{levels =}\NormalTok{ tbin}\OperatorTok{$}\NormalTok{tbin)}
+\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin, }\DataTypeTok{levels =} \KeywordTok{levels}\NormalTok{(tbin}\OperatorTok{$}\NormalTok{tbin))}
+\NormalTok{pbdbDat}\OperatorTok{$}\NormalTok{tbinNum <-}\StringTok{ }\KeywordTok{as.integer}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{tbin)}
+
+\NormalTok{pbdbDatUnique <-}\StringTok{ }\NormalTok{pbdbDat[}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(}\KeywordTok{paste0}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{collection_no, pbdbDat}\OperatorTok{$}\NormalTok{otu)), ]}
+
+\CommentTok{# subsampled richness}
+\NormalTok{pbdbCR <-}\StringTok{ }\KeywordTok{subsample}\NormalTok{(pbdbDatUnique, }\DataTypeTok{bin =} \StringTok{'tbinNum'}\NormalTok{, }\DataTypeTok{tax =} \StringTok{'otu'}\NormalTok{, }\DataTypeTok{iter =} \DecValTok{50}\NormalTok{, }\DataTypeTok{q =} \DecValTok{120}\NormalTok{, }
+                    \DataTypeTok{type =} \StringTok{'cr'}\NormalTok{, }\DataTypeTok{unit =} \StringTok{'reference_no'}\NormalTok{)}
+\NormalTok{pbdbSQS <-}\StringTok{ }\KeywordTok{subsample}\NormalTok{(pbdbDatUnique, }\DataTypeTok{bin =} \StringTok{'tbinNum'}\NormalTok{, }\DataTypeTok{tax =} \StringTok{'otu'}\NormalTok{, }\DataTypeTok{iter =} \DecValTok{50}\NormalTok{, }\DataTypeTok{q =} \FloatTok{0.75}\NormalTok{, }
+                     \DataTypeTok{ref =} \StringTok{'reference_no'}\NormalTok{, }\DataTypeTok{type =} \StringTok{'sqs'}\NormalTok{, }\DataTypeTok{singleton =} \StringTok{'ref'}\NormalTok{)}
+
+\CommentTok{# our new richness estimate}
+\NormalTok{pbdbT3Pub <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(pbdbFamDiv)}
+
+
+\CommentTok{# plot fluctuations to see that they're comprable}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_divEstComp.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{8}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{1}\NormalTok{))}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{4.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{0.5}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.75}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{540}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{400}\NormalTok{, }\DecValTok{400}\NormalTok{), }\DataTypeTok{type =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }
+     \DataTypeTok{xlab =} \StringTok{''}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{'Richness fluctuations'}\NormalTok{, }\DataTypeTok{xaxs =} \StringTok{'i'}\NormalTok{)}
+\KeywordTok{paleoAxis}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Millions of years ago'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{line =} \FloatTok{3.5}\NormalTok{)}
+
+\KeywordTok{lines}\NormalTok{(tbin}\OperatorTok{$}\NormalTok{ma_mid[}\OperatorTok{-}\DecValTok{1}\NormalTok{], }\KeywordTok{diff}\NormalTok{(pbdbCR}\OperatorTok{$}\NormalTok{divCSIB), }\DataTypeTok{col =} \StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(tbin}\OperatorTok{$}\NormalTok{ma_mid[}\OperatorTok{-}\DecValTok{1}\NormalTok{], }\KeywordTok{diff}\NormalTok{(pbdbSQS}\OperatorTok{$}\NormalTok{divCSIB), }\DataTypeTok{col =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{lines}\NormalTok{(tbin}\OperatorTok{$}\NormalTok{ma_mid[}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\KeywordTok{nrow}\NormalTok{(tbin))], }\KeywordTok{diff}\NormalTok{(pbdbT3Pub), }\DataTypeTok{col =} \StringTok{'red'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.75}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\KeywordTok{abs}\NormalTok{(}\KeywordTok{diff}\NormalTok{(pbdbT3Pub))), }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{col =} \StringTok{'red'}\NormalTok{, }\DataTypeTok{log =} \StringTok{'xy'}\NormalTok{, }
+     \DataTypeTok{type =} \StringTok{'l'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{500}\NormalTok{),}
+     \DataTypeTok{panel.first =}\NormalTok{ \{}
+         \KeywordTok{lines}\NormalTok{(}\KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\KeywordTok{abs}\NormalTok{(}\KeywordTok{diff}\NormalTok{(pbdbCR}\OperatorTok{$}\NormalTok{divCSIB))), }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{), }
+               \DataTypeTok{col =} \StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+         \KeywordTok{lines}\NormalTok{(}\KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\KeywordTok{abs}\NormalTok{(}\KeywordTok{diff}\NormalTok{(pbdbSQS}\OperatorTok{$}\NormalTok{divCSIB))), }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{), }
+               \DataTypeTok{col =} \StringTok{'blue'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\NormalTok{     \}, }
+     \DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{frame.plot =} \OtherTok{TRUE}\NormalTok{, }
+     \DataTypeTok{xlab =} \StringTok{'|Fluctuations|'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{'Cumulative density'}\NormalTok{)}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{)}
+
+
+\KeywordTok{legend}\NormalTok{(}\StringTok{'bottomleft'}\NormalTok{, }\DataTypeTok{legend =} \KeywordTok{c}\NormalTok{(}\StringTok{'Rarefaction'}\NormalTok{, }\StringTok{'SQS'}\NormalTok{, }\StringTok{'3 timer pub'}\NormalTok{), }
+       \DataTypeTok{lty =} \DecValTok{1}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =} \KeywordTok{c}\NormalTok{(}\StringTok{'black'}\NormalTok{, }\StringTok{'blue'}\NormalTok{, }\StringTok{'red'}\NormalTok{), }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{)}
+
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Super statistical analysis of 3TPub-corrected PBDB
+data}\label{super-statistical-analysis-of-3tpub-corrected-pbdb-data}
+
+Once data have been bias-corrected we can complete their
+super-statistical analysis. We do that in the script
+\texttt{analysis/pbdb\_sstat.R} shown here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to run super stat analysis on PBDB data and make plots**}
+
+\CommentTok{# source needed functions}
+\NormalTok{R.utils}\OperatorTok{::}\KeywordTok{sourceDirectory}\NormalTok{(}\StringTok{'R'}\NormalTok{, }\DataTypeTok{modifiedOnly =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(socorro) }\CommentTok{# for plotting}
+
+\CommentTok{# load and prepare data}
+\CommentTok{# ---------------------}
+
+\NormalTok{pbdbFamDiv <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_3TPub-corrected.csv'}\NormalTok{, }\DataTypeTok{row.names =} \DecValTok{1}\NormalTok{)}
+
+
+\CommentTok{# coarsen to higher taxonomic groupings}
+
+\NormalTok{pbdbTax <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_taxa.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{#' helper function to coarsen taxonomic resolution of `pbdbFamDiv` object}
+\CommentTok{#' @param level a character string specifying the taxonomic level (from order through phylum)}
+
+\NormalTok{coarsenTaxa <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(level) \{}
+\NormalTok{    m <-}\StringTok{ }\KeywordTok{tidy2mat}\NormalTok{(pbdbTax}\OperatorTok{$}\NormalTok{family[}\KeywordTok{match}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(pbdbFamDiv), pbdbTax}\OperatorTok{$}\NormalTok{family)], }
+\NormalTok{                  pbdbTax[}\KeywordTok{match}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(pbdbFamDiv), pbdbTax}\OperatorTok{$}\NormalTok{family), level], }
+                  \KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\KeywordTok{ncol}\NormalTok{(pbdbFamDiv)))}
+\NormalTok{    m <-}\StringTok{ }\NormalTok{m[}\KeywordTok{colnames}\NormalTok{(pbdbFamDiv), ]}
+    
+\NormalTok{    out <-}\StringTok{ }\KeywordTok{as.matrix}\NormalTok{(pbdbFamDiv) }\OperatorTok{%*%}\StringTok{ }\NormalTok{m}
+\NormalTok{    out <-}\StringTok{ }\NormalTok{out[, }\KeywordTok{colnames}\NormalTok{(out) }\OperatorTok{!=}\StringTok{ ''}\NormalTok{]}
+    
+    \KeywordTok{return}\NormalTok{(out)}
+\NormalTok{\}}
+
+\NormalTok{pbdbOrdDiv <-}\StringTok{ }\KeywordTok{coarsenTaxa}\NormalTok{(}\StringTok{'order'}\NormalTok{)}
+\NormalTok{pbdbClsDiv <-}\StringTok{ }\KeywordTok{coarsenTaxa}\NormalTok{(}\StringTok{'class'}\NormalTok{)}
+\NormalTok{pbdbPhyDiv <-}\StringTok{ }\KeywordTok{coarsenTaxa}\NormalTok{(}\StringTok{'phylum'}\NormalTok{)}
+
+
+\CommentTok{# tbin midpoints}
+\NormalTok{tbinMid <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/tbinsMid.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{tbinNames <-}\StringTok{ }\NormalTok{tbinMid}\OperatorTok{$}\NormalTok{tbin}
+\NormalTok{tbinMid <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(tbinMid[, }\DecValTok{2}\NormalTok{])}
+\KeywordTok{names}\NormalTok{(tbinMid) <-}\StringTok{ }\NormalTok{tbinNames}
+
+\NormalTok{tbinMid <-}\StringTok{ }\NormalTok{tbinMid[}\KeywordTok{rownames}\NormalTok{(pbdbFamDiv)]}
+
+
+\CommentTok{# super stat analysis}
+\CommentTok{# -------------------}
+
+
+\CommentTok{# calculate flux for families}
+\NormalTok{pbdbFamFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbFamDiv)}
+
+\CommentTok{# calculate the mean flux}
+\NormalTok{famMeans <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(pbdbFamFlux, mean)}
+\KeywordTok{mean}\NormalTok{(famMeans)}
+\KeywordTok{sd}\NormalTok{(famMeans)}
+
+
+\CommentTok{# make sstat object for families}
+\NormalTok{sstatPBDBfam3TP <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbFamFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
+
+\CommentTok{# deltaAIC}
+\KeywordTok{logLik}\NormalTok{(sstatPBDBfam3TP) }\OperatorTok{-}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{dnorm}\NormalTok{(}\KeywordTok{unlist}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{Px.sub), }\DataTypeTok{log =} \OtherTok{TRUE}\NormalTok{))}
+
+\CommentTok{# likelihood CI for family-level sstat analysis}
+\NormalTok{sstatPBDBfam3TPCI <-}\StringTok{ }\KeywordTok{bootMLE.sstat}\NormalTok{(sstatPBDBfam3TP, }\DataTypeTok{B =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{useAll =} \OtherTok{FALSE}\NormalTok{)}
+
+
+\CommentTok{# do the same for higher taxo levels}
+\NormalTok{pbdbOrdFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbOrdDiv)}
+\NormalTok{sstatPBDBOrd <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbOrdFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
+
+\NormalTok{pbdbClsFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbClsDiv)}
+\NormalTok{sstatPBDBCls <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbClsFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
+
+\NormalTok{pbdbPhyFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbPhyDiv)}
+\NormalTok{sstatPBDBPhy <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbPhyFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
+
+\CommentTok{# save the sstat analyses for future use}
+\KeywordTok{save}\NormalTok{(sstatPBDBfam3TP, sstatPBDBOrd, sstatPBDBCls, sstatPBDBPhy, }
+     \DataTypeTok{file =} \StringTok{'data/pbdb_sstat_objects.RData'}\NormalTok{)}
+
+
+\CommentTok{# plot all sstat analyses}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/fig_Px.pdf'}\NormalTok{, }\DataTypeTok{width =} \FloatTok{4.25} \OperatorTok{*}\StringTok{ }\FloatTok{1.25}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4} \OperatorTok{*}\StringTok{ }\FloatTok{1.25}\NormalTok{)}
+
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{))}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{1.51}\NormalTok{, }\FloatTok{0.1}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{cex.lab =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(sstatPBDBfam3TP, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\FloatTok{1e-04}\NormalTok{, }\FloatTok{5e+02}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\FloatTok{8e-05}\NormalTok{, }\DecValTok{1}\NormalTok{),}
+     \DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{,}
+     \DataTypeTok{panel.first =} \KeywordTok{quote}\NormalTok{(}\KeywordTok{mlePoly}\NormalTok{(sstatPBDBfam3TPCI}\OperatorTok{$}\NormalTok{sstat, PPx.gam,}
+                                 \DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.25}\NormalTok{), }\DataTypeTok{border =} \OtherTok{NA}\NormalTok{)))}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Families'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'A'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(sstatPBDBOrd, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\FloatTok{1e-04}\NormalTok{, }\FloatTok{5e+02}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\FloatTok{8e-05}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }
+     \DataTypeTok{addLegend =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Orders'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'B'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(sstatPBDBCls, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\FloatTok{1e-04}\NormalTok{, }\FloatTok{5e+02}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\FloatTok{8e-05}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }
+     \DataTypeTok{addLegend =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Classes'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'C'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(sstatPBDBPhy, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\FloatTok{1e-04}\NormalTok{, }\FloatTok{5e+02}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\FloatTok{8e-05}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }
+     \DataTypeTok{addLegend =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Phyla'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \DecValTok{0}\NormalTok{)}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'D'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'|Fluctuations|'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Cumulative density'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{dev.off}\NormalTok{()}
+
+
+
+
+\CommentTok{# plot p_k(x|b) and f(beta) for families}
+\CommentTok{# --------------------------------------}
+
+\CommentTok{# idea for normality test: sample 1 from each order and do ks test on that subsampled set}
+
+\CommentTok{# highlight individual trajectories}
+\NormalTok{loFam <-}\StringTok{ 'Tainoceratidae'} \CommentTok{# nautiloid}
+\NormalTok{miFam <-}\StringTok{ 'Lophospiridae'} \CommentTok{# sea snails}
+\NormalTok{hiFam <-}\StringTok{ 'Spondylidae'} \CommentTok{# bivalve}
+\NormalTok{lo <-}\StringTok{ }\NormalTok{pbdbFamDiv[, loFam]}
+\NormalTok{mi <-}\StringTok{ }\NormalTok{pbdbFamDiv[, miFam]}
+\NormalTok{hi <-}\StringTok{ }\NormalTok{pbdbFamDiv[, hiFam]}
+\NormalTok{cols <-}\StringTok{ }\KeywordTok{hsv}\NormalTok{(}\DataTypeTok{h =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\FloatTok{0.45}\NormalTok{, }\FloatTok{0.12}\NormalTok{), }\DataTypeTok{s =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.7}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{v =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.8}\NormalTok{, }\FloatTok{0.8}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\KeywordTok{names}\NormalTok{(cols) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'hi'}\NormalTok{, }\StringTok{'mi'}\NormalTok{, }\StringTok{'lo'}\NormalTok{)}
+
+\CommentTok{# make CDF for all scale family-level fluctuations}
+\NormalTok{pAll <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{raw.pk, }
+               \ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{scale}\NormalTok{(x)[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{))}
+
+\NormalTok{pHighlight <-}\StringTok{ }\NormalTok{pAll[}\KeywordTok{c}\NormalTok{(loFam, miFam, hiFam)]}
+
+\NormalTok{pAll <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, pAll)}
+
+\CommentTok{# function to help with individual trajectory plotting}
+\NormalTok{trajLines <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(t, x, ...) \{}
+\NormalTok{    x[x }\OperatorTok{==}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{    alive <-}\StringTok{ }\KeywordTok{range}\NormalTok{(}\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(x)))}
+    
+\NormalTok{    x[}\KeywordTok{min}\NormalTok{(alive) }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{    x[}\KeywordTok{max}\NormalTok{(alive) }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
+    
+\NormalTok{    t <-}\StringTok{ }\NormalTok{t[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(x)]}
+\NormalTok{    x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(x)]}
+    
+    \KeywordTok{lines}\NormalTok{(t, x, ...)}
+\NormalTok{\}}
+
+\CommentTok{# the actual plotting}
+
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/fig_pkx-fbeta.pdf'}\NormalTok{, }\DataTypeTok{width =} \FloatTok{4.25} \OperatorTok{*}\StringTok{ }\FloatTok{1.25}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4} \OperatorTok{*}\StringTok{ }\FloatTok{1.25}\NormalTok{)}
+
+\KeywordTok{layout}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{), }\DataTypeTok{nrow =} \DecValTok{2}\NormalTok{))}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.25}\NormalTok{, }\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.25}\NormalTok{, }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{cex.lab =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\DecValTok{540}\NormalTok{, }\DecValTok{0}\NormalTok{), }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxs =} \StringTok{'i'}\NormalTok{, }\DataTypeTok{xlab =} \StringTok{''}\NormalTok{, }
+     \DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\KeywordTok{max}\NormalTok{(lo, mi, hi, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)), }\DataTypeTok{type =} \StringTok{'n'}\NormalTok{)}
+
+\KeywordTok{trajLines}\NormalTok{(tbinMid, lo, }\DataTypeTok{col =}\NormalTok{ cols[}\StringTok{'lo'}\NormalTok{], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{trajLines}\NormalTok{(tbinMid, mi, }\DataTypeTok{col =}\NormalTok{ cols[}\StringTok{'mi'}\NormalTok{], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{trajLines}\NormalTok{(tbinMid, hi, }\DataTypeTok{col =}\NormalTok{ cols[}\StringTok{'hi'}\NormalTok{], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{text}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{450}\NormalTok{, }\DecValTok{230}\NormalTok{, }\DecValTok{10}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\FloatTok{5.25}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(miFam, loFam, hiFam), }
+     \DataTypeTok{col =}\NormalTok{ cols[}\KeywordTok{c}\NormalTok{(}\StringTok{'mi'}\NormalTok{, }\StringTok{'lo'}\NormalTok{, }\StringTok{'hi'}\NormalTok{)], }\DataTypeTok{pos =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+
+\KeywordTok{paleoAxis}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Millions of years ago'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{line =} \FloatTok{3.5}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Standardized richness'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'A'}\NormalTok{, }\DataTypeTok{pch =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\CommentTok{# scale fluctuations}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.25}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(pAll, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{col =} \StringTok{'gray'}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.025}\NormalTok{),}
+     \DataTypeTok{xlab =} \StringTok{'Scaled fluctuations'}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Cumultive density'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(pHighlight)) }\KeywordTok{lines}\NormalTok{(pHighlight[[i]], }\DataTypeTok{col =}\NormalTok{ cols[i], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+
+\KeywordTok{curve}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(x, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'B'}\NormalTok{, }\DataTypeTok{pch =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\CommentTok{# CDF of beta}
+\NormalTok{betaCDF <-}\StringTok{ }\KeywordTok{simpECDF}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta, }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{plot}\NormalTok{(betaCDF, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.025}\NormalTok{),}
+     \DataTypeTok{log =} \StringTok{'x'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{,}
+     \DataTypeTok{xlab =} \KeywordTok{expression}\NormalTok{(beta), }\DataTypeTok{col =} \StringTok{'gray'}\NormalTok{)}
+
+\NormalTok{theseBeta <-}\StringTok{ }\NormalTok{sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta[}\KeywordTok{c}\NormalTok{(loFam, miFam, hiFam)]}
+\KeywordTok{points}\NormalTok{(theseBeta, }\KeywordTok{approxfun}\NormalTok{(betaCDF)(theseBeta), }\DataTypeTok{bg =}\NormalTok{ cols, }\DataTypeTok{pch =} \DecValTok{21}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
+
+\KeywordTok{curve}\NormalTok{(}\KeywordTok{pgamma}\NormalTok{(x, sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{1}\NormalTok{], sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{2}\NormalTok{], }
+             \DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), }
+      \DataTypeTok{col =} \StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+
+\KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'C'}\NormalTok{, }\DataTypeTok{pch =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
+
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Now we can calculate a measure of goodness of fit with the
+Komolgorov-Smirnov test statistics \(D\). That is done in the script
+\texttt{analysis/pbdb\_dperm.R}. This script uses a permutational
+approach to create a null distribution of test statistics. The goal is
+to see if the good fit of super-statistics at the family and order
+levels is purely from the number of different groupings at those levels,
+regardless of the biology that might be going on to make those levels
+actually mechanistically meaningful. So to achieve such a null, we
+permute orders across families, calculate the D-statistics of those
+permuted groupings, and compare to the real D-statistics from the actual
+biological groupings. The script is shown below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to caculate d stats on sstat objects and null permutations**}
+
+\KeywordTok{library}\NormalTok{(socorro)}
+\NormalTok{R.utils}\OperatorTok{::}\KeywordTok{sourceDirectory}\NormalTok{(}\StringTok{'R'}\NormalTok{, }\DataTypeTok{modifiedOnly =} \OtherTok{FALSE}\NormalTok{)}
+
+\CommentTok{# read in data}
+\NormalTok{pbdbGenDiv <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_3TPub_genera.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{pbdbTax <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_taxa.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{# pbdbFamDiv <- read.csv('data/pbdb_3TPub-corrected.csv', row.names = 1)}
+\KeywordTok{load}\NormalTok{(}\StringTok{'data/pbdb_sstat_objects.RData'}\NormalTok{)}
+
+\CommentTok{# the indeces of otu names in `pbdbTax` ordered by their occurence in `pbdbGenDiv`}
+\CommentTok{# needed to match permuted families to genera}
+\NormalTok{genHash <-}\StringTok{ }\KeywordTok{match}\NormalTok{(pbdbGenDiv}\OperatorTok{$}\NormalTok{otu, pbdbTax}\OperatorTok{$}\NormalTok{otu)}
+
+
+\CommentTok{#' function to calculate KS test d-stat on sstat objects}
+\CommentTok{#' @param x an sstat object}
+
+\NormalTok{ks.sstat <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{    dat <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(x}\OperatorTok{$}\NormalTok{Px.sub)}
+\NormalTok{    dat <-}\StringTok{ }\KeywordTok{abs}\NormalTok{(dat)}
+    
+    \CommentTok{# cumulative density function}
+\NormalTok{    pfun <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(X) x}\OperatorTok{$}\KeywordTok{PPx}\NormalTok{(X, }\DataTypeTok{comp =} \OtherTok{TRUE}\NormalTok{)}
+    
+    \CommentTok{# cumulative prob observed and from theory}
+\NormalTok{    n <-}\StringTok{ }\KeywordTok{length}\NormalTok{(dat)}
+\NormalTok{    pobs <-}\StringTok{ }\NormalTok{(n}\OperatorTok{:}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{n}
+\NormalTok{    pthr <-}\StringTok{ }\KeywordTok{pfun}\NormalTok{(}\KeywordTok{sort}\NormalTok{(dat))}
+    
+    \CommentTok{# the statisic is the difference between obs and thr}
+\NormalTok{    out <-}\StringTok{ }\NormalTok{pthr }\OperatorTok{-}\StringTok{ }\NormalTok{pobs}
+    
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{max}\NormalTok{(out, }\DecValTok{1} \OperatorTok{/}\StringTok{ }\NormalTok{n }\OperatorTok{-}\StringTok{ }\NormalTok{out, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
+\NormalTok{\}}
+
+
+\CommentTok{# sstat on real (non-permuted) data}
+\NormalTok{dObsFam <-}\StringTok{ }\KeywordTok{ks.sstat}\NormalTok{(sstatPBDBfam3TP)}
+\NormalTok{dObsOrd <-}\StringTok{ }\KeywordTok{ks.sstat}\NormalTok{(sstatPBDBOrd)}
+\NormalTok{dObsCls <-}\StringTok{ }\KeywordTok{ks.sstat}\NormalTok{(sstatPBDBCls)}
+\NormalTok{dObsPhy <-}\StringTok{ }\KeywordTok{ks.sstat}\NormalTok{(sstatPBDBPhy)}
+
+
+\CommentTok{# repeatedly permute data and calculate null ks statistics}
+\NormalTok{B <-}\StringTok{ }\DecValTok{500}
+\NormalTok{dNull <-}\StringTok{ }\NormalTok{parallel}\OperatorTok{::}\KeywordTok{mclapply}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{B, }\DataTypeTok{mc.cores =} \DecValTok{8}\NormalTok{, }\DataTypeTok{FUN =} \ControlFlowTok{function}\NormalTok{(i) \{}
+\NormalTok{    newFam <-}\StringTok{ }\KeywordTok{sample}\NormalTok{(pbdbTax}\OperatorTok{$}\NormalTok{family)}
+\NormalTok{    newDiv <-}\StringTok{ }\KeywordTok{tidy2mat}\NormalTok{(pbdbGenDiv}\OperatorTok{$}\NormalTok{tbin, newFam[genHash], pbdbGenDiv}\OperatorTok{$}\NormalTok{T3PubDiv)}
+\NormalTok{    newFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(newDiv)}
+\NormalTok{    newSstat <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(newFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
+    
+    \KeywordTok{ks.sstat}\NormalTok{(newSstat)}
+    \CommentTok{# return(ks.sstat(newSstat))}
+\NormalTok{\})}
+
+\NormalTok{dNull <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(dNull)}
+
+
+\CommentTok{# save output in case it's ever needed}
+\KeywordTok{save}\NormalTok{(dNull, }\DataTypeTok{file =} \StringTok{'data/dnull.RData'}\NormalTok{)}
+
+
+\CommentTok{# plotting}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/fig_dStat.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{4}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4}\NormalTok{)}
+\CommentTok{# colors for plotting taxa}
+\NormalTok{tcols <-}\StringTok{ }\KeywordTok{colorRampPalette}\NormalTok{(}\KeywordTok{hsv}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.12}\NormalTok{, }\DecValTok{0}\NormalTok{, }\FloatTok{0.02}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\FloatTok{0.9}\NormalTok{, }\FloatTok{0.7}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\FloatTok{0.8}\NormalTok{, }\FloatTok{0.3}\NormalTok{)))(}\DecValTok{4}\NormalTok{)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.75}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{denFill}\NormalTok{(dNull, }\DataTypeTok{xlim =} \KeywordTok{range}\NormalTok{(dNull, dObsFam, dObsOrd, dObsCls, dObsPhy) }\OperatorTok{*}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.9}\NormalTok{, }\FloatTok{1.1}\NormalTok{), }
+        \DataTypeTok{xlab =} \StringTok{'D-statistic'}\NormalTok{, }\DataTypeTok{main =} \StringTok{''}\NormalTok{)}
+
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =}\NormalTok{ dObsFam, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{1}\NormalTok{])}
+\KeywordTok{text}\NormalTok{(dObsFam, }\FloatTok{1.25} \OperatorTok{*}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]), }\DataTypeTok{labels =} \StringTok{'Families'}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{1}\NormalTok{],}
+     \DataTypeTok{srt =} \DecValTok{90}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{4}\NormalTok{)}
+
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =}\NormalTok{ dObsOrd, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{2}\NormalTok{])}
+\KeywordTok{text}\NormalTok{(dObsOrd, }\FloatTok{1.25} \OperatorTok{*}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]), }\DataTypeTok{labels =} \StringTok{'Orders'}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{2}\NormalTok{],}
+     \DataTypeTok{srt =} \DecValTok{90}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{4}\NormalTok{)}
+
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =}\NormalTok{ dObsCls, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{3}\NormalTok{])}
+\KeywordTok{text}\NormalTok{(dObsCls, }\FloatTok{1.25} \OperatorTok{*}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]), }\DataTypeTok{labels =} \StringTok{'Classes'}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{3}\NormalTok{],}
+     \DataTypeTok{srt =} \DecValTok{90}\NormalTok{, }\DataTypeTok{pos =} \DecValTok{4}\NormalTok{)}
+
+\KeywordTok{abline}\NormalTok{(}\DataTypeTok{v =}\NormalTok{ dObsPhy, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{4}\NormalTok{])}
+\KeywordTok{text}\NormalTok{(dObsPhy, }\FloatTok{1.25} \OperatorTok{*}\StringTok{ }\KeywordTok{mean}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{]), }\DataTypeTok{labels =} \StringTok{'Phyla'}\NormalTok{, }\DataTypeTok{col =}\NormalTok{ tcols[}\DecValTok{4}\NormalTok{],}
+     \DataTypeTok{srt =} \DecValTok{90}\NormalTok{, }\DataTypeTok{adj =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\OperatorTok{-}\FloatTok{0.5}\NormalTok{))}
+
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+This permutational null test is in part motivated by the correlation
+between the genus richness of a family and its \(\beta_k\) value. We
+demonstrate this correlation in the script
+\texttt{analysis/pbdb\_betaRichness.R} which is reproduced below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(socorro)}
+
+\KeywordTok{load}\NormalTok{(}\StringTok{'data/pbdb_sstat_objects.RData'}\NormalTok{)}
+\NormalTok{pbdbDat <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_data.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+
+\NormalTok{divFamRaw <-}\StringTok{ }\KeywordTok{tapply}\NormalTok{(pbdbDat}\OperatorTok{$}\NormalTok{otu, pbdbDat}\OperatorTok{$}\NormalTok{family, }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{length}\NormalTok{(}\KeywordTok{unique}\NormalTok{(x)))}
+
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_betaByRich.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{4}\NormalTok{, }\DataTypeTok{height =} \DecValTok{4}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.75}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(divFamRaw[}\KeywordTok{names}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta)], sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta, }\DataTypeTok{log =} \StringTok{'xy'}\NormalTok{, }
+     \DataTypeTok{xlab =} \StringTok{'Number of genera'}\NormalTok{, }\DataTypeTok{ylab =} \KeywordTok{expression}\NormalTok{(beta), }
+     \DataTypeTok{axes =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{frame.plot =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{2}\NormalTok{)}
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Now that we are reasonably convinced that these superstatistical
+findings are not just an artifact of taxonomy or clade size, we can
+explore why we see deviations from super statistics with increasing
+taxonomic level. We first explore how well the Gaussian
+\(p_k(x | \beta_k)\) fit at each taxonomic level in the script
+\texttt{analysis/pkx\_diffK.R} shown here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to compare within clade fluctuation distributions at different taxonomic levels**}
+
+\KeywordTok{library}\NormalTok{(socorro)}
+
+\CommentTok{# source needed functions}
+\NormalTok{R.utils}\OperatorTok{::}\KeywordTok{sourceDirectory}\NormalTok{(}\StringTok{'R'}\NormalTok{, }\DataTypeTok{modifiedOnly =} \OtherTok{FALSE}\NormalTok{)}
+
+\KeywordTok{load}\NormalTok{(}\StringTok{'data/pbdb_sstat_objects.RData'}\NormalTok{)}
+
+
+\CommentTok{# for each family, calculate aggregated eCDF and distribution of kurtosis values}
+\NormalTok{famECDF <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{Px.sub, }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{scale}\NormalTok{(x)[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\NormalTok{famECDF <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, famECDF)}
+\NormalTok{famKurt <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{Px.sub, kurt)}
+
+\NormalTok{ordECDF <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(sstatPBDBOrd}\OperatorTok{$}\NormalTok{Px.sub, }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{scale}\NormalTok{(x)[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\NormalTok{ordECDF <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, ordECDF)}
+\NormalTok{ordKurt <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(sstatPBDBOrd}\OperatorTok{$}\NormalTok{Px.sub, kurt)}
+
+\NormalTok{clsECDF <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(sstatPBDBCls}\OperatorTok{$}\NormalTok{Px.sub, }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{scale}\NormalTok{(x)[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\NormalTok{clsECDF <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, clsECDF)}
+\NormalTok{clsKurt <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(sstatPBDBCls}\OperatorTok{$}\NormalTok{Px.sub, kurt)}
+
+\NormalTok{phyECDF <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(sstatPBDBPhy}\OperatorTok{$}\NormalTok{Px.sub, }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{scale}\NormalTok{(x)[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{\})}
+\NormalTok{phyECDF <-}\StringTok{ }\KeywordTok{do.call}\NormalTok{(rbind, phyECDF)}
+\NormalTok{phyKurt <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(sstatPBDBPhy}\OperatorTok{$}\NormalTok{Px.sub, kurt)}
+
+
+\CommentTok{#' @description function to plot theoretical and observed percentiles}
+\CommentTok{#' @param x aggregated eCDF}
+\CommentTok{#' @param ... additional plotting parameters}
+
+\NormalTok{ppECDF <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, ...) \{}
+\NormalTok{    alpha <-}\StringTok{ }\FloatTok{0.75} \OperatorTok{/}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\KeywordTok{exp}\NormalTok{(}\FloatTok{0.0003} \OperatorTok{*}\StringTok{ }\NormalTok{(}\KeywordTok{nrow}\NormalTok{(x) }\OperatorTok{-}\StringTok{ }\DecValTok{300}\NormalTok{))) }\CommentTok{# nicely scale transparency}
+    \KeywordTok{plot}\NormalTok{(}\KeywordTok{pnorm}\NormalTok{(x[, }\DecValTok{1}\NormalTok{], }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), x[, }\DecValTok{2}\NormalTok{], }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{,}
+         \DataTypeTok{col =} \KeywordTok{gray}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{alpha =}\NormalTok{ alpha), }\DataTypeTok{xlim =} \DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, }\DataTypeTok{ylim =} \DecValTok{0}\OperatorTok{:}\DecValTok{1}\NormalTok{, ...)}
+    
+    \KeywordTok{abline}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DataTypeTok{col =} \StringTok{'red'}\NormalTok{)}
+\NormalTok{\}}
+
+
+\CommentTok{#' @description function to plot summary of kurtosis values distribution}
+\CommentTok{#' @param x kurtosis values}
+\CommentTok{#' @param ... additional plotting parameters}
+
+\NormalTok{kurtInset <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, ...) \{}
+\NormalTok{    allMean <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{mean}\NormalTok{(famKurt), }\KeywordTok{mean}\NormalTok{(ordKurt), }\KeywordTok{mean}\NormalTok{(clsKurt), }\KeywordTok{mean}\NormalTok{(phyKurt))}
+\NormalTok{    allSD <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{sd}\NormalTok{(famKurt), }\KeywordTok{sd}\NormalTok{(ordKurt), }\KeywordTok{sd}\NormalTok{(clsKurt), }\KeywordTok{sd}\NormalTok{(phyKurt))}
+    
+    \KeywordTok{plot}\NormalTok{(}\DecValTok{1}\NormalTok{, }\KeywordTok{mean}\NormalTok{(x), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }
+         \DataTypeTok{ylim =} \KeywordTok{range}\NormalTok{(allMean }\OperatorTok{-}\StringTok{ }\NormalTok{allSD, allMean }\OperatorTok{+}\StringTok{ }\NormalTok{allSD) }\OperatorTok{*}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{1.5}\NormalTok{, }\FloatTok{1.25}\NormalTok{), }
+         \DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{frame.plot =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{yaxs =} \StringTok{'i'}\NormalTok{, }
+\NormalTok{         ...)}
+    \KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{1}\NormalTok{, }\DataTypeTok{y0 =} \KeywordTok{mean}\NormalTok{(x) }\OperatorTok{-}\StringTok{ }\KeywordTok{sd}\NormalTok{(x), }\DataTypeTok{y1 =} \KeywordTok{mean}\NormalTok{(x) }\OperatorTok{+}\StringTok{ }\KeywordTok{sd}\NormalTok{(x))}
+\NormalTok{\}}
+
+
+
+
+\CommentTok{# plot it}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_pkx_allTaxa.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{9}\NormalTok{, }\DataTypeTok{height =} \DecValTok{3}\NormalTok{)}
+
+\KeywordTok{split.screen}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+
+\CommentTok{# first plots of the ECDF's}
+\KeywordTok{screen}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{ppECDF}\NormalTok{(famECDF)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Families'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{ppECDF}\NormalTok{(ordECDF, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Orders'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{ppECDF}\NormalTok{(clsECDF, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Classes'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{ppECDF}\NormalTok{(phyECDF, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Phyla'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'N(0, 1) percentiles'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \FloatTok{1.25}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Observed percentiles'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \FloatTok{1.25}\NormalTok{)}
+
+\KeywordTok{close.screen}\NormalTok{(}\DataTypeTok{all.screens =} \OtherTok{TRUE}\NormalTok{)}
+
+
+\CommentTok{# now inset plots of kurtosis}
+
+\NormalTok{start <-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{4} \OperatorTok{+}\StringTok{ }\FloatTok{0.01}
+\NormalTok{swidth <-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{32}
+\NormalTok{increment <-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{4} \OperatorTok{-}\StringTok{ }\DecValTok{1}\OperatorTok{/}\DecValTok{64}
+\NormalTok{s <-}\StringTok{ }\KeywordTok{split.screen}\NormalTok{(}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(start }\OperatorTok{+}\StringTok{ }\DecValTok{0} \OperatorTok{*}\StringTok{ }\NormalTok{increment, start }\OperatorTok{+}\StringTok{ }\DecValTok{0} \OperatorTok{*}\StringTok{ }\NormalTok{increment }\OperatorTok{+}\StringTok{ }\NormalTok{swidth, }\FloatTok{0.25}\NormalTok{, }\FloatTok{0.6}\NormalTok{, }
+\NormalTok{                           start }\OperatorTok{+}\StringTok{ }\DecValTok{1} \OperatorTok{*}\StringTok{ }\NormalTok{increment, start }\OperatorTok{+}\StringTok{ }\DecValTok{1} \OperatorTok{*}\StringTok{ }\NormalTok{increment }\OperatorTok{+}\StringTok{ }\NormalTok{swidth, }\FloatTok{0.25}\NormalTok{, }\FloatTok{0.6}\NormalTok{, }
+\NormalTok{                           start }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{increment, start }\OperatorTok{+}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{increment }\OperatorTok{+}\StringTok{ }\NormalTok{swidth, }\FloatTok{0.25}\NormalTok{, }\FloatTok{0.6}\NormalTok{, }
+\NormalTok{                           start }\OperatorTok{+}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{increment, start }\OperatorTok{+}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{increment }\OperatorTok{+}\StringTok{ }\NormalTok{swidth, }\FloatTok{0.25}\NormalTok{, }\FloatTok{0.6}\NormalTok{),}
+                         \DataTypeTok{ncol =} \DecValTok{4}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{erase =} \OtherTok{FALSE}\NormalTok{)}
+
+\ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{) \{}
+    \KeywordTok{screen}\NormalTok{(s[i], }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+    \KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\FloatTok{0.25}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+    \KeywordTok{kurtInset}\NormalTok{(}\ControlFlowTok{switch}\NormalTok{(i, }
+                     \StringTok{`}\DataTypeTok{1}\StringTok{`}\NormalTok{ =}\StringTok{ }\NormalTok{famKurt, }
+                     \StringTok{`}\DataTypeTok{2}\StringTok{`}\NormalTok{ =}\StringTok{ }\NormalTok{ordKurt, }
+                     \StringTok{`}\DataTypeTok{3}\StringTok{`}\NormalTok{ =}\StringTok{ }\NormalTok{clsKurt, }
+                     \StringTok{`}\DataTypeTok{4}\StringTok{`}\NormalTok{ =}\StringTok{ }\NormalTok{phyKurt), }
+              \DataTypeTok{tcl =} \OperatorTok{-}\FloatTok{0.1}\NormalTok{)}
+    \KeywordTok{mtext}\NormalTok{(}\StringTok{'Kurtosis'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{line =} \FloatTok{1.25}\NormalTok{)}
+\NormalTok{\}}
+
+
+\KeywordTok{close.screen}\NormalTok{(}\DataTypeTok{all.screens =} \OtherTok{TRUE}\NormalTok{)}
+
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+We can also explore how well the \(f(\beta_k)\) fit at different
+taxonomic levels in the script \texttt{analysis/pbeta\_diffK.R}
+reproduced below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **script to compare within clade volatility distributions at different taxonomic levels**}
+
+\KeywordTok{library}\NormalTok{(socorro)}
+
+\CommentTok{# source needed functions}
+\NormalTok{R.utils}\OperatorTok{::}\KeywordTok{sourceDirectory}\NormalTok{(}\StringTok{'R'}\NormalTok{, }\DataTypeTok{modifiedOnly =} \OtherTok{FALSE}\NormalTok{)}
+
+\KeywordTok{load}\NormalTok{(}\StringTok{'data/pbdb_sstat_objects.RData'}\NormalTok{)}
+
+
+\CommentTok{#' @description function to plot f(beta) distribution}
+\CommentTok{#' @param obj the sstat object}
+\CommentTok{#' @param thrCol color for plotting of theoretical curve}
+
+\NormalTok{fbetaPlot <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(obj, }\DataTypeTok{thrCol =} \StringTok{'red'}\NormalTok{, ...) \{}
+\NormalTok{    betaCDF <-}\StringTok{ }\KeywordTok{simpECDF}\NormalTok{(obj}\OperatorTok{$}\NormalTok{beta, }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+    \KeywordTok{plot}\NormalTok{(betaCDF, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{1.025}\NormalTok{),}
+         \DataTypeTok{log =} \StringTok{'x'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{,}
+         \DataTypeTok{xlab =} \KeywordTok{expression}\NormalTok{(beta), ...)}
+    
+    \KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
+    
+    \KeywordTok{curve}\NormalTok{(}\KeywordTok{pgamma}\NormalTok{(x, obj}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{1}\NormalTok{], obj}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{2}\NormalTok{], }
+                 \DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), }
+          \DataTypeTok{col =}\NormalTok{ thrCol, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+    
+\NormalTok{\}}
+
+
+\CommentTok{# the plotting}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_fbeta_allTaxa.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{9}\NormalTok{, }\DataTypeTok{height =} \DecValTok{3}\NormalTok{)}
+
+\KeywordTok{split.screen}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{4}\NormalTok{))}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{fbetaPlot}\NormalTok{(sstatPBDBfam3TP)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Families'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{fbetaPlot}\NormalTok{(sstatPBDBOrd)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Oders'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{fbetaPlot}\NormalTok{(sstatPBDBCls)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Classes'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{screen}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DataTypeTok{new =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{1.5}\NormalTok{, }\FloatTok{0.3}\NormalTok{), }\DataTypeTok{oma =} \KeywordTok{c}\NormalTok{(}\FloatTok{2.5}\NormalTok{, }\FloatTok{2.5}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{), }
+    \DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.5}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{fbetaPlot}\NormalTok{(sstatPBDBPhy)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Phyla'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \FloatTok{0.5}\NormalTok{)}
+
+\KeywordTok{mtext}\NormalTok{(}\KeywordTok{expression}\NormalTok{(beta), }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \FloatTok{1.25}\NormalTok{)}
+\KeywordTok{mtext}\NormalTok{(}\StringTok{'Cumulative density'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \FloatTok{1.25}\NormalTok{)}
+
+\KeywordTok{close.screen}\NormalTok{(}\DataTypeTok{all.screens =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Part of our argument about the failure of superstatistics at higher
+taxonomic levels is that these higher taxa aggregate increasingly
+disperate subtaxa. To investigate this idea we look at the number of
+guilds represented by the average taxon at each taxonomic level in the
+script \texttt{analysis/pbdb\_ecoEvoSpace.R} shown here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# **a script to evaluate hour occupancy of eco-evolutionary space changes }
+\CommentTok{# across taxonomy**}
+
+\KeywordTok{library}\NormalTok{(socorro)}
+
+\NormalTok{pbdbDat <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'data/pbdb_data.csv'}\NormalTok{, }\DataTypeTok{as.is =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{# extract only the eco/evo/life history data and remove duplicates}
+\CommentTok{# `taxon_environment`, `reproduction`, `ontogeny`}
+\NormalTok{eeSpaceDat <-}\StringTok{ }\NormalTok{pbdbDat[, }\KeywordTok{c}\NormalTok{(}\StringTok{'phylum'}\NormalTok{, }\StringTok{'class'}\NormalTok{, }\StringTok{'order'}\NormalTok{, }\StringTok{'family'}\NormalTok{, }\StringTok{'otu'}\NormalTok{, }
+                          \StringTok{'taxon_environment'}\NormalTok{, }\StringTok{'motility'}\NormalTok{, }\StringTok{'life_habit'}\NormalTok{,}
+                          \StringTok{'vision'}\NormalTok{, }\StringTok{'diet'}\NormalTok{, }\StringTok{'reproduction'}\NormalTok{, }\StringTok{'ontogeny'}\NormalTok{)]}
+\NormalTok{eeSpaceDat <-}\StringTok{ }\NormalTok{eeSpaceDat[}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(eeSpaceDat), ]}
+
+\CommentTok{# remove entries that are all missing}
+\NormalTok{eeSpaceDat <-}\StringTok{ }\NormalTok{eeSpaceDat[}\KeywordTok{rowSums}\NormalTok{(eeSpaceDat[, }\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)] }\OperatorTok{!=}\StringTok{ ''}\NormalTok{) }\OperatorTok{!=}\StringTok{ }\DecValTok{0}\NormalTok{, ]}
+
+
+\CommentTok{#' function to determine how many eco-evo hypercubes are occupied by each taxonomic level}
+\CommentTok{#' @param tax the taxonomic unit to consider}
+\CommentTok{#' @param eeDat a data.frame containing eco-evo data}
+\NormalTok{eeOcc <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(tax, eeDat) \{}
+    \KeywordTok{sapply}\NormalTok{(}\KeywordTok{split}\NormalTok{(eeDat[tax }\OperatorTok{!=}\StringTok{ ''}\NormalTok{, ], tax[tax }\OperatorTok{!=}\StringTok{ ''}\NormalTok{]), }
+           \ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{sum}\NormalTok{(}\OperatorTok{!}\KeywordTok{duplicated}\NormalTok{(x)))}
+\NormalTok{\}}
+
+\CommentTok{#' bootstraps ee space occupancy}
+\CommentTok{#' @param x the vector of niche occupancies}
+\CommentTok{#' @param B number of bootrap replicates}
+\CommentTok{#' @param fun the function to apply to each replicate}
+\NormalTok{eeOccBoot <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, B, fun) \{}
+    \KeywordTok{replicate}\NormalTok{(B, }\KeywordTok{fun}\NormalTok{(}\KeywordTok{sample}\NormalTok{(x, }\KeywordTok{length}\NormalTok{(x), }\DataTypeTok{replace =} \OtherTok{TRUE}\NormalTok{)))}
+\NormalTok{\}}
+
+
+\CommentTok{# calculate eco-evolutionary space occupancy of each taxonomic level}
+\NormalTok{famEE <-}\StringTok{ }\KeywordTok{eeOccBoot}\NormalTok{(}\KeywordTok{eeOcc}\NormalTok{(eeSpaceDat}\OperatorTok{$}\NormalTok{family, eeSpaceDat[, }\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)]), }\DecValTok{500}\NormalTok{, mean)}
+\NormalTok{ordEE <-}\StringTok{ }\KeywordTok{eeOccBoot}\NormalTok{(}\KeywordTok{eeOcc}\NormalTok{(eeSpaceDat}\OperatorTok{$}\NormalTok{order, eeSpaceDat[, }\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)]), }\DecValTok{500}\NormalTok{, mean)}
+\NormalTok{clsEE <-}\StringTok{ }\KeywordTok{eeOccBoot}\NormalTok{(}\KeywordTok{eeOcc}\NormalTok{(eeSpaceDat}\OperatorTok{$}\NormalTok{class, eeSpaceDat[, }\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)]), }\DecValTok{500}\NormalTok{, mean)}
+\NormalTok{phyEE <-}\StringTok{ }\KeywordTok{eeOccBoot}\NormalTok{(}\KeywordTok{eeOcc}\NormalTok{(eeSpaceDat}\OperatorTok{$}\NormalTok{phylum, eeSpaceDat[, }\OperatorTok{-}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{)]), }\DecValTok{500}\NormalTok{, mean)}
+
+
+\CommentTok{# plotting}
+\KeywordTok{pdf}\NormalTok{(}\StringTok{'ms/figSupp_eeSpaceOcc.pdf'}\NormalTok{, }\DataTypeTok{width =} \DecValTok{4}\NormalTok{, }\DataTypeTok{height =} \FloatTok{3.5}\NormalTok{)}
+
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{) }\OperatorTok{+}\StringTok{ }\FloatTok{0.5}\NormalTok{, }\DataTypeTok{mgp =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\FloatTok{0.75}\NormalTok{, }\DecValTok{0}\NormalTok{))}
+\KeywordTok{plot}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{100}\NormalTok{), }\DataTypeTok{type =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{log =} \StringTok{'y'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{,}
+     \DataTypeTok{xlab =} \StringTok{'Taxonomic level'}\NormalTok{, }\DataTypeTok{ylab =} \StringTok{'Number of Bambach guilds'}\NormalTok{)}
+\KeywordTok{axis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{at =} \DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(}\StringTok{'Families'}\NormalTok{, }\StringTok{'Orders'}\NormalTok{, }\StringTok{'Classes'}\NormalTok{, }\StringTok{'Phyla'}\NormalTok{))}
+\KeywordTok{logAxis}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\KeywordTok{segments}\NormalTok{(}\DataTypeTok{x0 =} \DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\DataTypeTok{y0 =} \KeywordTok{c}\NormalTok{(}\KeywordTok{min}\NormalTok{(famEE), }\KeywordTok{min}\NormalTok{(ordEE), }\KeywordTok{min}\NormalTok{(clsEE), }\KeywordTok{min}\NormalTok{(phyEE)), }
+         \DataTypeTok{y1 =} \KeywordTok{c}\NormalTok{(}\KeywordTok{max}\NormalTok{(famEE), }\KeywordTok{max}\NormalTok{(ordEE), }\KeywordTok{max}\NormalTok{(clsEE), }\KeywordTok{max}\NormalTok{(phyEE)), }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
+\KeywordTok{points}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\KeywordTok{mean}\NormalTok{(famEE), }\KeywordTok{mean}\NormalTok{(ordEE), }\KeywordTok{mean}\NormalTok{(clsEE), }\KeywordTok{mean}\NormalTok{(phyEE)), }\DataTypeTok{pch =} \DecValTok{16}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+
+\KeywordTok{dev.off}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Helper functions}\label{helper-functions}
+
+All the above analyses make use of helpful functions in the \texttt{R}
+directory. We reproduce those functions below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' helper function to calculate corrected flux}
+\CommentTok{#' @param x the matrix of corrected diversities over which to calculate fluxes}
+
+\NormalTok{calcFlux <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \KeywordTok{apply}\NormalTok{(x, }\DecValTok{2}\NormalTok{, }\ControlFlowTok{function}\NormalTok{(X) \{}
+\NormalTok{        flux <-}\StringTok{ }\KeywordTok{diff}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, X))}
+        \KeywordTok{return}\NormalTok{(flux[flux }\OperatorTok{!=}\StringTok{ }\DecValTok{0}\NormalTok{])}
+\NormalTok{    \})}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gammaLS <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(data,}\DataTypeTok{comp=}\OtherTok{FALSE}\NormalTok{) \{}
+\NormalTok{    par.init <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{mean}\NormalTok{(data)}\OperatorTok{^}\DecValTok{2}\NormalTok{,}\KeywordTok{mean}\NormalTok{(data))}\OperatorTok{/}\KeywordTok{var}\NormalTok{(data)}
+    \KeywordTok{optim}\NormalTok{(par.init,gamma.ss,}\DataTypeTok{data=}\NormalTok{data,}\DataTypeTok{comp=}\NormalTok{comp)}
+\NormalTok{\}}
+
+\NormalTok{gamma.ss <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(pars,data,comp) \{}
+\NormalTok{    shape <-}\StringTok{ }\NormalTok{pars[}\DecValTok{1}\NormalTok{]}
+\NormalTok{    rate <-}\StringTok{ }\NormalTok{pars[}\DecValTok{2}\NormalTok{]}
+\NormalTok{    tabz <-}\StringTok{ }\KeywordTok{table}\NormalTok{(data)}
+\NormalTok{    xval <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{names}\NormalTok{(tabz))}
+\NormalTok{    yval <-}\StringTok{ }\KeywordTok{cumsum}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(tabz))}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(tabz)}
+    \ControlFlowTok{if}\NormalTok{(comp) \{}
+\NormalTok{        yval <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{yval}
+\NormalTok{        yval <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,yval[}\OperatorTok{-}\KeywordTok{length}\NormalTok{(yval)])}
+\NormalTok{        lower <-}\StringTok{ }\OtherTok{FALSE}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        lower <-}\StringTok{ }\OtherTok{TRUE}
+\NormalTok{    \}}
+\NormalTok{    difz <-}\StringTok{ }\KeywordTok{pgamma}\NormalTok{(xval,}\DataTypeTok{shape=}\NormalTok{shape,}\DataTypeTok{rate=}\NormalTok{rate,}\DataTypeTok{lower.tail=}\NormalTok{lower) }\OperatorTok{-}\StringTok{ }\NormalTok{yval}
+    \KeywordTok{sum}\NormalTok{(difz}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' @description function to produce a matrix of time by taxa with cells of corrected diversity}
+\CommentTok{#' @param rawDiv the raw diversity of each taxon in each time interval}
+\CommentTok{#' @param t3stat the 3 timer stat for each diversity record}
+\CommentTok{#' @param pub the number of publications associated with each diversity record}
+\CommentTok{#' @param taxa the taxon names for each diversity record}
+\CommentTok{#' @param tbin the time interval of each diversity record}
+\CommentTok{#' @param tbinTime times associated with each `tbin`}
+\CommentTok{#' @param minPub minimum number of publications for inclusion in regression analysis}
+\CommentTok{#' @param plotit logical, should plot of taxon richness versus number of publications be made}
+\CommentTok{#' @return a matrix with rows corresponding to time intervals and columns to the given taxa}
+\CommentTok{#' each cell in the matrix represents corrected taxon richness}
+
+
+\NormalTok{make3TPub <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(rawDiv,  t3stat,  pub,  taxa,  tbin,  tbinTime,  }
+                      \DataTypeTok{minPub =} \DecValTok{10}\NormalTok{,  }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{) \{}
+    \CommentTok{# put data together so can be universally manipulated}
+\NormalTok{    x <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{rawDiv =}\NormalTok{ rawDiv, }\DataTypeTok{t3stat =}\NormalTok{ t3stat, }\DataTypeTok{pub =}\NormalTok{ pub, }\DataTypeTok{taxa =}\NormalTok{ taxa, }\DataTypeTok{tbin =}\NormalTok{ tbin)}
+\NormalTok{    x}\OperatorTok{$}\NormalTok{tbin <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(x}\OperatorTok{$}\NormalTok{tbin)}
+\NormalTok{    x}\OperatorTok{$}\NormalTok{taxa <-}\StringTok{ }\KeywordTok{as.character}\NormalTok{(x}\OperatorTok{$}\NormalTok{taxa)}
+    
+\NormalTok{    x <-}\StringTok{ }\NormalTok{x[}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(t3stat) }\OperatorTok{&}\StringTok{ }\NormalTok{pub }\OperatorTok{>=}\StringTok{  }\NormalTok{minPub, ]}
+    
+\NormalTok{    tbinTime <-}\StringTok{ }\NormalTok{tbinTime[}\KeywordTok{names}\NormalTok{(tbinTime) }\OperatorTok{%in%}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{tbin]}
+    
+    \CommentTok{# 3-timer correction}
+\NormalTok{    t3cor <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{rawDiv}\OperatorTok{/}\NormalTok{x}\OperatorTok{$}\NormalTok{t3stat}
+    
+    \CommentTok{# publication correction}
+\NormalTok{    logPub <-}\StringTok{ }\KeywordTok{log}\NormalTok{(x}\OperatorTok{$}\NormalTok{pub)}
+\NormalTok{    pubLM <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\KeywordTok{log}\NormalTok{(t3cor)}\OperatorTok{~}\NormalTok{logPub)}
+\NormalTok{    pbdbPubLM <<-}\StringTok{ }\NormalTok{pubLM }\CommentTok{# save regression to global env}
+    
+\NormalTok{    pubResid <-}\StringTok{ }\KeywordTok{exp}\NormalTok{(pubLM}\OperatorTok{$}\NormalTok{residuals)}
+    
+    \CommentTok{# plot so you can verify cuttoff etc.}
+    \ControlFlowTok{if}\NormalTok{(plotit) \{}
+        \KeywordTok{plot}\NormalTok{(}\KeywordTok{log}\NormalTok{(x}\OperatorTok{$}\NormalTok{pub), }\KeywordTok{log}\NormalTok{(t3cor),  }
+             \DataTypeTok{xlab =} \StringTok{'log(Number of publications)'}\NormalTok{, }
+             \DataTypeTok{ylab =} \StringTok{'log(3T-corrected number of genera)'}\NormalTok{)}
+        \KeywordTok{abline}\NormalTok{(pubLM, }\DataTypeTok{col =} \StringTok{'red'}\NormalTok{)}
+\NormalTok{    \}}
+    
+\NormalTok{    tbinTaxa <-}\StringTok{ }\NormalTok{socorro}\OperatorTok{::}\KeywordTok{tidy2mat}\NormalTok{(x}\OperatorTok{$}\NormalTok{tbin, x}\OperatorTok{$}\NormalTok{taxa, pubResid)}
+
+    \KeywordTok{return}\NormalTok{(tbinTaxa[}\KeywordTok{names}\NormalTok{(}\KeywordTok{sort}\NormalTok{(tbinTime, }\DataTypeTok{decreasing =} \OtherTok{TRUE}\NormalTok{)), ])}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{normLS <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(data,}\DataTypeTok{comp=}\OtherTok{FALSE}\NormalTok{) \{}
+\NormalTok{    par.init <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{mean}\NormalTok{(data),}\KeywordTok{sd}\NormalTok{(data))}
+    \KeywordTok{optim}\NormalTok{(par.init,norm.ss,}\DataTypeTok{data=}\NormalTok{data,}\DataTypeTok{comp=}\NormalTok{comp)}
+\NormalTok{\}}
+
+\NormalTok{norm.ss <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(pars,data,comp) \{}
+\NormalTok{    mean <-}\StringTok{ }\NormalTok{pars[}\DecValTok{1}\NormalTok{]}
+\NormalTok{    sd <-}\StringTok{ }\NormalTok{pars[}\DecValTok{2}\NormalTok{]}
+\NormalTok{    tabz <-}\StringTok{ }\KeywordTok{table}\NormalTok{(data)}
+\NormalTok{    xval <-}\StringTok{ }\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{names}\NormalTok{(tabz))}
+\NormalTok{    yval <-}\StringTok{ }\KeywordTok{cumsum}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(tabz))}\OperatorTok{/}\KeywordTok{sum}\NormalTok{(tabz)}
+    \ControlFlowTok{if}\NormalTok{(comp) \{}
+\NormalTok{        yval <-}\StringTok{ }\DecValTok{1} \OperatorTok{-}\StringTok{ }\NormalTok{yval}
+\NormalTok{        yval <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,yval[}\OperatorTok{-}\KeywordTok{length}\NormalTok{(yval)])}
+\NormalTok{        lower <-}\StringTok{ }\OtherTok{FALSE}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        lower <-}\StringTok{ }\OtherTok{TRUE}
+\NormalTok{    \}}
+\NormalTok{    difz <-}\StringTok{ }\KeywordTok{pnorm}\NormalTok{(xval,}\DataTypeTok{mean=}\NormalTok{mean,}\DataTypeTok{sd=}\NormalTok{sd,}\DataTypeTok{lower.tail=}\NormalTok{lower) }\OperatorTok{-}\StringTok{ }\NormalTok{yval}
+    \KeywordTok{sum}\NormalTok{(difz}\OperatorTok{^}\DecValTok{2}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# pdf for P(x) with f(beat) ~ Gamma}
+\CommentTok{#' @param x diversity fluctuation value}
+\CommentTok{#' @param shape the shape parameter of the gamma distribution}
+\CommentTok{#' @param rate the rate parameter  of the gamma distribution}
+
+\NormalTok{Px.gam <-}\StringTok{ }\NormalTok{PxGam <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, shape, rate) \{}
+\NormalTok{    scale <-}\StringTok{ }\DecValTok{1} \OperatorTok{/}\StringTok{ }\NormalTok{rate}
+\NormalTok{    n <-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{shape}
+\NormalTok{    b0 <-}\StringTok{ }\NormalTok{scale }\OperatorTok{*}\StringTok{ }\NormalTok{shape}
+    
+\NormalTok{    t1 <-}\StringTok{ }\KeywordTok{gamma}\NormalTok{((n}\OperatorTok{+}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\DecValTok{2}\NormalTok{) }\OperatorTok{/}\StringTok{ }\KeywordTok{gamma}\NormalTok{(n }\OperatorTok{/}\StringTok{ }\DecValTok{2}\NormalTok{)}
+\NormalTok{    t2 <-}\StringTok{ }\KeywordTok{sqrt}\NormalTok{(b0 }\OperatorTok{/}\StringTok{ }\NormalTok{(pi }\OperatorTok{*}\StringTok{ }\NormalTok{n))}
+\NormalTok{    t3 <-}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{(b0 }\OperatorTok{*}\StringTok{ }\NormalTok{x}\OperatorTok{^}\DecValTok{2}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{n)}\OperatorTok{^-}\NormalTok{((n }\OperatorTok{+}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\DecValTok{2}\NormalTok{)}
+    
+\NormalTok{    t1 }\OperatorTok{*}\StringTok{ }\NormalTok{t2 }\OperatorTok{*}\StringTok{ }\NormalTok{t3}
+\NormalTok{\}}
+
+\CommentTok{# cdf for P(x) with f(beat) ~ Gamma}
+\CommentTok{#' @param x diversity fluctuation value}
+\CommentTok{#' @param shape the shape parameter of the gamma distribution}
+\CommentTok{#' @param rate the rate parameter  of the gamma distribution}
+\CommentTok{#' @param comp logical, whether to compute the complement or not (`comp = TRUE` is }
+\CommentTok{#' equivilant to `lower.tail = FALSE` for typical `p` functions [e.g. `pnorm`])}
+
+\NormalTok{PPx.gam <-}\StringTok{ }\NormalTok{PPxGam <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, shape, rate, }\DataTypeTok{comp=}\OtherTok{TRUE}\NormalTok{) \{}
+    \ControlFlowTok{if}\NormalTok{(}\KeywordTok{length}\NormalTok{(x) }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{) \{}
+\NormalTok{        intgral <-}\StringTok{ }\KeywordTok{integrate}\NormalTok{(PxGam, }\DecValTok{0}\NormalTok{, x, }\DataTypeTok{shape =}\NormalTok{ shape, }\DataTypeTok{rate =}\NormalTok{ rate)}
+        \ControlFlowTok{if}\NormalTok{(intgral}\OperatorTok{$}\NormalTok{message }\OperatorTok{!=}\StringTok{ 'OK'}\NormalTok{) }\KeywordTok{print}\NormalTok{(intrgral}\OperatorTok{$}\NormalTok{message)}
+\NormalTok{        val <-}\StringTok{ }\NormalTok{intgral}\OperatorTok{$}\NormalTok{value}
+        
+        \ControlFlowTok{if}\NormalTok{(comp) \{}
+            \KeywordTok{return}\NormalTok{(}\DecValTok{1} \OperatorTok{-}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{val)}
+\NormalTok{        \} }\ControlFlowTok{else}\NormalTok{ \{}
+            \KeywordTok{return}\NormalTok{(}\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{val)}
+\NormalTok{        \}}
+        
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+        \CommentTok{# recursive handeling for multiple `x` values}
+        \KeywordTok{return}\NormalTok{(}\KeywordTok{sapply}\NormalTok{(x, }\ControlFlowTok{function}\NormalTok{(X) }\KeywordTok{PPxGam}\NormalTok{(X, shape, rate, comp)))}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' @description gives the log likelihood function under sstat model}
+\CommentTok{#' @param par the parameter values}
+\CommentTok{#' @param dat the data}
+
+\NormalTok{sstatLL <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(par, dat) \{}
+    \OperatorTok{-}\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(}\KeywordTok{Px.gam}\NormalTok{(dat,par[}\DecValTok{1}\NormalTok{], par[}\DecValTok{2}\NormalTok{])))}
+\NormalTok{\}}
+
+
+\CommentTok{#' @description finds the maximum likelihood estimate of the superstats model}
+\CommentTok{#' @param dat the data to fit}
+
+\NormalTok{sstatMLE <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(dat) \{}
+    \KeywordTok{optim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{0.55}\NormalTok{, }\FloatTok{0.17}\NormalTok{), sstatLL, }\DataTypeTok{method =} \StringTok{'BFGS'}\NormalTok{, }\DataTypeTok{hessian =} \OtherTok{TRUE}\NormalTok{, }
+          \DataTypeTok{dat =}\NormalTok{ dat)}
+\NormalTok{\}}
+
+
+\CommentTok{#' @description bootstrap likelihood for super stats model}
+\CommentTok{#' @param x the `sstat` object}
+\CommentTok{#' @param B the number of boostrap replicates}
+\CommentTok{#' @param useAll logical, whether all orders, or only those with the minimum number of }
+\CommentTok{#' occurences as specified}
+\CommentTok{#' in `make3TPub` argument `minPub` should be used}
+
+\NormalTok{bootMLE.sstat <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, }\DataTypeTok{B =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{useAll =} \OtherTok{FALSE}\NormalTok{) \{}
+    \ControlFlowTok{if}\NormalTok{(useAll) \{}
+\NormalTok{        theseDat <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{Px.raw}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        theseDat <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{Px.sub}
+\NormalTok{    \}}
+    
+\NormalTok{    boots <-}\StringTok{ }\KeywordTok{replicate}\NormalTok{(B, \{}
+\NormalTok{        subDat <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(theseDat, sample, }\DataTypeTok{size =} \DecValTok{1}\NormalTok{)}
+        
+\NormalTok{        thisMLE <-}\StringTok{ }\KeywordTok{try}\NormalTok{(}\KeywordTok{sstatMLE}\NormalTok{(subDat), }\DataTypeTok{silent =} \OtherTok{TRUE}\NormalTok{)}
+        
+        \ControlFlowTok{if}\NormalTok{(}\KeywordTok{class}\NormalTok{(thisMLE) }\OperatorTok{!=}\StringTok{  'try-error'}\NormalTok{) \{}
+            \ControlFlowTok{if}\NormalTok{(thisMLE}\OperatorTok{$}\NormalTok{convergence }\OperatorTok{!=}\StringTok{  }\DecValTok{0}\NormalTok{) \{}
+\NormalTok{                out <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{            \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{                out <-}\StringTok{ }\NormalTok{thisMLE}\OperatorTok{$}\NormalTok{par}
+\NormalTok{            \}}
+\NormalTok{        \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{            out <-}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+\NormalTok{        \}}
+\NormalTok{        out}
+\NormalTok{    \})}
+    
+\NormalTok{    sstatOut <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(}\KeywordTok{quantile}\NormalTok{(boots[}\DecValTok{1}\NormalTok{, ], }\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{), }
+                      \KeywordTok{quantile}\NormalTok{(boots[}\DecValTok{2}\NormalTok{, ], }\KeywordTok{c}\NormalTok{(}\FloatTok{0.025}\NormalTok{, }\FloatTok{0.975}\NormalTok{), }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{))}
+    \KeywordTok{rownames}\NormalTok{(sstatOut) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'shape'}\NormalTok{, }\StringTok{'rate'}\NormalTok{)}
+    
+    \KeywordTok{return}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\DataTypeTok{sstat =}\NormalTok{ sstatOut))}
+\NormalTok{\}}
+
+
+\CommentTok{#' @description logLik for sstat class}
+\CommentTok{#' @param x the `sstat` object}
+\CommentTok{#' @param fitted logical, was the model fitted by max likelihood or computed from first }
+\CommentTok{#' principles}
+\CommentTok{#' @param useAll logical, should all data be used, or only those taxa that have greater }
+\CommentTok{#' than `minN` occurrences}
+\CommentTok{#' as specified in `sstatComp`}
+
+\NormalTok{logLik.sstat <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, }\DataTypeTok{fitted =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{useAll =} \OtherTok{FALSE}\NormalTok{) \{}
+    \ControlFlowTok{if}\NormalTok{(useAll) \{}
+\NormalTok{        theseDat <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(x}\OperatorTok{$}\NormalTok{Px.raw)}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+\NormalTok{        theseDat <-}\StringTok{ }\KeywordTok{unlist}\NormalTok{(x}\OperatorTok{$}\NormalTok{Px.sub)}
+\NormalTok{    \}}
+    
+\NormalTok{    lik <-}\StringTok{ }\KeywordTok{sum}\NormalTok{(}\KeywordTok{log}\NormalTok{(x}\OperatorTok{$}\KeywordTok{Px}\NormalTok{(theseDat)))}
+    
+    \ControlFlowTok{if}\NormalTok{(fitted) \{}
+        \KeywordTok{attr}\NormalTok{(lik, }\StringTok{'df'}\NormalTok{) <-}\StringTok{ }\DecValTok{2}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+        \KeywordTok{attr}\NormalTok{(lik, }\StringTok{'df'}\NormalTok{) <-}\StringTok{ }\DecValTok{0}
+\NormalTok{    \}}
+    
+    \KeywordTok{class}\NormalTok{(lik) <-}\StringTok{ 'logLik'}
+    
+    \KeywordTok{return}\NormalTok{(lik)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#' @description plot method for sstat class}
+\CommentTok{#' @param x the `sstat` object}
+\CommentTok{#' @param sstatCol color for super stats fit}
+\CommentTok{#' @param normCol color for Gaussian fit}
+\CommentTok{#' @param showNorm logical, should Gaussian fit be shown}
+\CommentTok{#' @param addLegend logical, should legend be added}
+\CommentTok{#' @param ... other parameters passed to `plot.default`}
+
+\NormalTok{plot.sstat <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x, }\DataTypeTok{sstatCol =} \StringTok{'red'}\NormalTok{, }\DataTypeTok{normCol =} \StringTok{'blue'}\NormalTok{, }
+                       \DataTypeTok{showNorm =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{addLegend =} \OtherTok{TRUE}\NormalTok{, ...) \{}
+\NormalTok{    thisECDF <-}\StringTok{ }\NormalTok{socorro}\OperatorTok{::}\KeywordTok{simpECDF}\NormalTok{(}\KeywordTok{abs}\NormalTok{(}\KeywordTok{unlist}\NormalTok{(x}\OperatorTok{$}\NormalTok{Px.sub)), }\DataTypeTok{complement =} \OtherTok{TRUE}\NormalTok{)}
+    
+    \CommentTok{# helper function to deal with optional axis arguments}
+\NormalTok{    .axissetup <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(side) \{}
+        \ControlFlowTok{if}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxt'}\NormalTok{, side) }\OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(pargs)) \{}
+            \ControlFlowTok{if}\NormalTok{(pargs[[}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxt'}\NormalTok{, side)]] }\OperatorTok{==}\StringTok{ 'n'}\NormalTok{) \{}
+                \KeywordTok{assign}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxfun'}\NormalTok{, side), }\ControlFlowTok{function}\NormalTok{(...) \{\}, }\DataTypeTok{pos =} \DecValTok{1}\NormalTok{)}
+\NormalTok{            \} }\ControlFlowTok{else}\NormalTok{ \{}
+                \ControlFlowTok{if}\NormalTok{(side }\OperatorTok{%in%}\StringTok{ }\NormalTok{pargs}\OperatorTok{$}\NormalTok{log) \{}
+                    \KeywordTok{assign}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxfun'}\NormalTok{, side), socorro}\OperatorTok{::}\NormalTok{logAxis, }\DataTypeTok{pos =} \DecValTok{1}\NormalTok{)}
+\NormalTok{                \} }\ControlFlowTok{else}\NormalTok{ \{}
+                    \KeywordTok{assign}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxfun'}\NormalTok{, side), axis, }\DataTypeTok{pos =} \DecValTok{1}\NormalTok{)}
+\NormalTok{                \}}
+\NormalTok{            \}}
+\NormalTok{        \} }\ControlFlowTok{else}\NormalTok{ \{}
+            \ControlFlowTok{if}\NormalTok{(side }\OperatorTok{%in%}\StringTok{ }\NormalTok{pargs}\OperatorTok{$}\NormalTok{log) \{}
+                \KeywordTok{assign}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxfun'}\NormalTok{, side), socorro}\OperatorTok{::}\NormalTok{logAxis, }\DataTypeTok{pos =} \DecValTok{1}\NormalTok{)}
+\NormalTok{            \} }\ControlFlowTok{else}\NormalTok{ \{}
+                \KeywordTok{assign}\NormalTok{(}\KeywordTok{sprintf}\NormalTok{(}\StringTok{'%saxfun'}\NormalTok{, side), axis, }\DataTypeTok{pos =} \DecValTok{1}\NormalTok{)}
+\NormalTok{            \}}
+\NormalTok{        \}}
+\NormalTok{    \}}
+    
+\NormalTok{    pargs <-}\StringTok{ }\KeywordTok{list}\NormalTok{(...)}
+    \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\NormalTok{(}\StringTok{'log'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(pargs))) pargs}\OperatorTok{$}\NormalTok{log <-}\StringTok{ 'xy'}
+    \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\NormalTok{(}\StringTok{'xlab'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(pargs))) pargs}\OperatorTok{$}\NormalTok{xlab <-}\StringTok{ '|Fluctuations|'}
+    \ControlFlowTok{if}\NormalTok{(}\OperatorTok{!}\NormalTok{(}\StringTok{'ylab'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(pargs))) pargs}\OperatorTok{$}\NormalTok{ylab <-}\StringTok{ 'Cumulative density'}
+    \KeywordTok{.axissetup}\NormalTok{(}\StringTok{'x'}\NormalTok{)}
+    \KeywordTok{.axissetup}\NormalTok{(}\StringTok{'y'}\NormalTok{)}
+    
+\NormalTok{    pargs}\OperatorTok{$}\NormalTok{xaxt <-}\StringTok{ 'n'}
+\NormalTok{    pargs}\OperatorTok{$}\NormalTok{yaxt <-}\StringTok{ 'n'}
+    
+    \KeywordTok{do.call}\NormalTok{(plot, }\KeywordTok{c}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ thisECDF), pargs))}
+    \KeywordTok{xaxfun}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+    \KeywordTok{yaxfun}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+    
+\NormalTok{    PPx <-}\StringTok{ }\NormalTok{x}\OperatorTok{$}\NormalTok{PPx}
+    \KeywordTok{curve}\NormalTok{(}\KeywordTok{PPx}\NormalTok{(x, }\DataTypeTok{comp =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{col =}\NormalTok{ sstatCol, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+    
+    \ControlFlowTok{if}\NormalTok{(showNorm) \{}
+\NormalTok{        thisSD <-}\StringTok{ }\KeywordTok{sd}\NormalTok{(}\KeywordTok{unlist}\NormalTok{(x}\OperatorTok{$}\NormalTok{Px.sub))}
+        \KeywordTok{curve}\NormalTok{(}\DecValTok{2}\OperatorTok{*}\KeywordTok{pnorm}\NormalTok{(x, }\DecValTok{0}\NormalTok{, thisSD, }\DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), }\DataTypeTok{col =}\NormalTok{ normCol, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{    \}}
+    
+    \ControlFlowTok{if}\NormalTok{(addLegend) \{}
+\NormalTok{        leg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{'Observed'}\NormalTok{, }\StringTok{'Superstatistics'}\NormalTok{)}
+\NormalTok{        col <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'fg'}\NormalTok{), sstatCol)}
+\NormalTok{        pch <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{ifelse}\NormalTok{(}\StringTok{'pch'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(}\KeywordTok{list}\NormalTok{(...)), }\KeywordTok{list}\NormalTok{(...)}\OperatorTok{$}\NormalTok{pch, }\DecValTok{1}\NormalTok{), }\OtherTok{NA}\NormalTok{)}
+\NormalTok{        pt.lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{        pt.cex <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{        lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, }\DecValTok{2}\NormalTok{)}
+        
+        \ControlFlowTok{if}\NormalTok{(}\StringTok{'panel.first'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(}\KeywordTok{list}\NormalTok{(...))) \{}
+\NormalTok{            leg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(leg, }\StringTok{'Superstatistics CI'}\NormalTok{)}
+\NormalTok{            col <-}\StringTok{ }\KeywordTok{c}\NormalTok{(col, socorro}\OperatorTok{::}\KeywordTok{colAlpha}\NormalTok{(sstatCol, }\FloatTok{0.25}\NormalTok{))}
+\NormalTok{            pt.lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pt.lwd, }\DecValTok{1}\NormalTok{)}
+\NormalTok{            pt.cex <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pt.cex, }\DecValTok{2}\NormalTok{)}
+\NormalTok{            lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(lwd, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{            pch <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pch, }\DecValTok{15}\NormalTok{)}
+\NormalTok{        \}}
+        
+        \ControlFlowTok{if}\NormalTok{(showNorm) \{}
+\NormalTok{            leg <-}\StringTok{ }\KeywordTok{c}\NormalTok{(leg, }\StringTok{'Gaussian'}\NormalTok{)}
+\NormalTok{            col <-}\StringTok{ }\KeywordTok{c}\NormalTok{(col, normCol)}
+\NormalTok{            pt.lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pt.lwd, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{            pt.cex <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pt.cex, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{            lwd <-}\StringTok{ }\KeywordTok{c}\NormalTok{(lwd, }\DecValTok{2}\NormalTok{)}
+\NormalTok{            pch <-}\StringTok{ }\KeywordTok{c}\NormalTok{(pch, }\OtherTok{NA}\NormalTok{)}
+\NormalTok{        \}}
+        
+\NormalTok{        extracex <-}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(}\StringTok{'cex'} \OperatorTok{%in%}\StringTok{ }\KeywordTok{names}\NormalTok{(}\KeywordTok{list}\NormalTok{(...)), }\KeywordTok{list}\NormalTok{(...)}\OperatorTok{$}\NormalTok{cex, }\DecValTok{1}\NormalTok{)}
+        \KeywordTok{legend}\NormalTok{(}\StringTok{'bottomleft'}\NormalTok{, }\DataTypeTok{legend =}\NormalTok{ leg, }\DataTypeTok{col =}\NormalTok{ col, }\DataTypeTok{pch =}\NormalTok{ pch, }\DataTypeTok{pt.lwd =}\NormalTok{ pt.lwd, }
+               \DataTypeTok{pt.cex =}\NormalTok{ pt.cex}\OperatorTok{*}\NormalTok{extracex, }\DataTypeTok{lwd =}\NormalTok{ lwd, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{)}
+\NormalTok{    \}}
+\NormalTok{\}}
+
+
+\CommentTok{#' @description function to add confidence interval polygon from ML analysis}
+\CommentTok{#' @param ci the matrix of CI intervals for the parameter values returned by `bootMLE.sstat`}
+\CommentTok{#' @param fun the CDF function to plug the parameter values into}
+\CommentTok{#' @param ... further arguments passed to `polygon` (e.g. `col`, `boarder`, etc.)}
+
+\NormalTok{mlePoly <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ci, fun, ...) \{}
+\NormalTok{    n <-}\StringTok{ }\DecValTok{50}
+\NormalTok{    x <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{1}\NormalTok{], }\KeywordTok{par}\NormalTok{(}\StringTok{'usr'}\NormalTok{)[}\DecValTok{2}\NormalTok{], }\DataTypeTok{length =}\NormalTok{ n)}
+\NormalTok{    x <-}\StringTok{ }\KeywordTok{c}\NormalTok{(x, }\KeywordTok{rev}\NormalTok{(x))}
+    
+    \ControlFlowTok{if}\NormalTok{(}\KeywordTok{par}\NormalTok{(}\StringTok{'xlog'}\NormalTok{)) x <-}\StringTok{ }\DecValTok{10}\OperatorTok{^}\NormalTok{x}
+    
+\NormalTok{    y <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{fun}\NormalTok{(x[}\DecValTok{1}\OperatorTok{:}\NormalTok{n], ci[}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], ci[}\DecValTok{2}\NormalTok{, }\DecValTok{2}\NormalTok{]), }\KeywordTok{fun}\NormalTok{(x[(}\DecValTok{1}\OperatorTok{:}\NormalTok{n) }\OperatorTok{+}\StringTok{ }\NormalTok{n], ci[}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{], ci[}\DecValTok{2}\NormalTok{, }\DecValTok{1}\NormalTok{]))}
+    
+    \KeywordTok{polygon}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ x, }\DataTypeTok{y =}\NormalTok{ y, ...)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sstatComp <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(grp.data,}\DataTypeTok{minN=}\DecValTok{15}\NormalTok{,}\DataTypeTok{xlab=}\StringTok{"Absolute Fluctuation"}\NormalTok{,}
+                      \DataTypeTok{ylab=}\StringTok{"Cumulative Density"}\NormalTok{,}\DataTypeTok{leg=}\OtherTok{TRUE}\NormalTok{,}\DataTypeTok{plotit=}\OtherTok{TRUE}\NormalTok{) \{}
+\NormalTok{    these2use <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(grp.data,length) }\OperatorTok{>=}\StringTok{ }\NormalTok{minN}
+\NormalTok{    p2use <-}\StringTok{ }\NormalTok{grp.data[these2use]}
+    
+    \KeywordTok{cat}\NormalTok{(}\StringTok{"computing Gaussian fit for p_k(x|sigma) }\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{    pk.par <-}\StringTok{ }\KeywordTok{sapply}\NormalTok{(p2use,}\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{unlist}\NormalTok{(}\KeywordTok{normLS}\NormalTok{(x)[}\KeywordTok{c}\NormalTok{(}\StringTok{"par"}\NormalTok{,}\StringTok{"value"}\NormalTok{)]))}
+\NormalTok{    pk.par <-}\StringTok{ }\KeywordTok{t}\NormalTok{(pk.par)}
+    \KeywordTok{colnames}\NormalTok{(pk.par) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"mu"}\NormalTok{,}\StringTok{"sig"}\NormalTok{,}\StringTok{"ss"}\NormalTok{)}
+    
+    \KeywordTok{cat}\NormalTok{(}\StringTok{"re-centering }\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+    \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in} \DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(p2use)) \{}
+\NormalTok{        p2use[[i]] <-}\StringTok{ }\NormalTok{p2use[[i]] }\OperatorTok{-}\StringTok{ }\NormalTok{pk.par[i,}\StringTok{"mu"}\NormalTok{]}
+\NormalTok{    \}}
+    
+    \KeywordTok{cat}\NormalTok{(}\StringTok{"computing f(beta) }\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{    f.beta.par <-}\StringTok{ }\KeywordTok{gammaLS}\NormalTok{(}\DecValTok{1}\OperatorTok{/}\NormalTok{(pk.par[,}\StringTok{"sig"}\NormalTok{])}\OperatorTok{^}\DecValTok{2}\NormalTok{)}\OperatorTok{$}\NormalTok{par}
+\NormalTok{    fuent.par <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DataTypeTok{n=}\DecValTok{2}\OperatorTok{*}\NormalTok{f.beta.par[}\DecValTok{1}\NormalTok{],}\DataTypeTok{b0=}\NormalTok{f.beta.par[}\DecValTok{1}\NormalTok{]}\OperatorTok{*}\NormalTok{f.beta.par[}\DecValTok{2}\NormalTok{])}
+    
+    \KeywordTok{cat}\NormalTok{(}\StringTok{"computing P(x) }\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\NormalTok{    this.Px <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) }\KeywordTok{Px.gam}\NormalTok{(x,f.beta.par[}\DecValTok{1}\NormalTok{],f.beta.par[}\DecValTok{2}\NormalTok{])}
+\NormalTok{    this.PPx <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x,}\DataTypeTok{comp=}\OtherTok{TRUE}\NormalTok{) }\KeywordTok{PPxGam}\NormalTok{(x,f.beta.par[}\DecValTok{1}\NormalTok{],f.beta.par[}\DecValTok{2}\NormalTok{],comp)}
+    
+\NormalTok{    out <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{gam.par=}\NormalTok{f.beta.par,}\DataTypeTok{sspar=}\NormalTok{fuent.par,}\DataTypeTok{beta=}\DecValTok{1}\OperatorTok{/}\NormalTok{(pk.par[,}\StringTok{"sig"}\NormalTok{])}\OperatorTok{^}\DecValTok{2}\NormalTok{,}
+                \DataTypeTok{sumSq=}\NormalTok{pk.par[,}\StringTok{"ss"}\NormalTok{],}\DataTypeTok{minN=}\NormalTok{minN,}\DataTypeTok{raw.pk=}\NormalTok{p2use,}
+                \DataTypeTok{Px.raw=}\NormalTok{grp.data,}\DataTypeTok{Px.sub=}\NormalTok{p2use,}\DataTypeTok{incld=}\NormalTok{these2use,}\DataTypeTok{Px=}\NormalTok{this.Px,}\DataTypeTok{PPx=}\NormalTok{this.PPx)}
+    
+    \KeywordTok{class}\NormalTok{(out) <-}\StringTok{ "sstat"}
+    
+    \ControlFlowTok{if}\NormalTok{(plotit) }\KeywordTok{plot}\NormalTok{(out)}
+    
+    \KeywordTok{return}\NormalTok{(out)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
