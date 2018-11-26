@@ -1,6 +1,5 @@
-library(distr)
-
-sstatComp <- function(grp.data,minN=15,xlab="Absolute Fluctuation",ylab="Cumulative Density",leg=TRUE,plotit=TRUE) {
+sstatComp <- function(grp.data,minN=15,xlab="Absolute Fluctuation",
+                      ylab="Cumulative Density",leg=TRUE,plotit=TRUE) {
 	these2use <- sapply(grp.data,length) >= minN
 	p2use <- grp.data[these2use]
 	
@@ -22,16 +21,9 @@ sstatComp <- function(grp.data,minN=15,xlab="Absolute Fluctuation",ylab="Cumulat
 	this.Px <- function(x) Px.gam(x,f.beta.par[1],f.beta.par[2])
 	this.PPx <- function(x,comp=TRUE) PPxGam(x,f.beta.par[1],f.beta.par[2],comp)
 	
-	##	functions using library `distr'
-	sstat.dist <- "stub"#AbscontDistribution(d=this.Px)
-	dsstat <- "stub"#function(x) sstat.dist@d (x)
-	psstat <- "stub"#function(q,lower.tail=FALSE,log.p=FALSE) sstat.dist@p(q,lower.tail=lower.tail,log.p=log.p)
-	qsstat <- "stub"#function(p,lower.tail=TRUE,log.p=FALSE) sstat.dist@q(p,lower.tail=lower.tail,log.p=log.p)
-	rsstat <- "stub"#function(n) sstat.dist@r(n)
-	
-	out <- list(gam.par=f.beta.par,sspar=fuent.par,beta=1/(pk.par[,"sig"])^2,sumSq=pk.par[,"ss"],minN=minN,raw.pk=p2use,
-				Px.raw=grp.data,Px.sub=p2use,incld=these2use,Px=this.Px,PPx=this.PPx,
-				dsstat=dsstat,psstat=psstat,qsstat=qsstat,rsstat=rsstat)
+	out <- list(gam.par=f.beta.par,sspar=fuent.par,beta=1/(pk.par[,"sig"])^2,
+	            sumSq=pk.par[,"ss"],minN=minN,raw.pk=p2use,
+				Px.raw=grp.data,Px.sub=p2use,incld=these2use,Px=this.Px,PPx=this.PPx)
 	
 	class(out) <- "sstat"
 	
