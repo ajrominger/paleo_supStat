@@ -115,7 +115,7 @@ San Vicu\~na, Santiago, Chile}}
 %
   Compared to other approaches that have used simple birth-death
   processes, equilibrial dynamics, or non-linear theories from
-  complexity science, super-statistics is superior in its ability to
+  complexity science, superstatistics is superior in its ability to
   account for both small and extreme fluctuations in the richness of
   fossil taxa.
 % 
@@ -344,7 +344,7 @@ levels.
 \end{figure}
 
 
-To predict the super-statistical behavior of the entire marine
+To predict the superstatistical behavior of the entire marine
 invertebrate Phanerozoic fauna we must integrate over all possible
 local equilibria that each clade could experience. The stationary
 distribution of $\beta_k$ values describes these possible equilibria,
@@ -395,24 +395,24 @@ bias-corrected PBDB (Fig. \ref{fig:Px}).
     fat-tailed as compared to the maximum likelihood estimate of the
     normal distribution (blue line).  At the order level the empirical
     distribution of fluctuations are well described by our
-    super-statistical approach, both when computed from integrating
+    superstatistical approach, both when computed from integrating
     over the distribution of observed variances (red line) and when
     fit via maximum likelihood (95\% confidence interval; red
     shading).}
   \label{fig:Px}
 \end{figure}
 
-To quantitatively evaluate how well the super-statistical prediction
+To quantitatively evaluate how well the superstatistical prediction
 matches the family-level data we constructed a 95\% confidence
 envelope from bootstrapped maximum likelihood estimates for
 $P(x)$. Observed fluctuations fall within this 95\% confidence
 envelope (Fig. \ref{fig:Px}), indicating that the data do not reject
-the super-statistical prediction. For further comparison, we fit a
+the superstatistical prediction. For further comparison, we fit a
 Gaussian distribution to the observed fluctuations, which corresponds
 to the equilibrium hypothesis that all orders conform to the same
 dynamic. Using Akaike Information Criterion (AIC) we find that
 observed fluctuations are considerably better explained by the
-super-statistical prediction than by the Gaussian hypothesis ({\small
+superstatistical prediction than by the Gaussian hypothesis ({\small
   $\Delta$}AIC = 1895.622). Thus, as expected under the
 superstatistical hypothesis, the fat-tailed distribution of
 fluctuations arise from the superposition of independent Gaussian
@@ -463,7 +463,7 @@ $\beta_k^{(family)}$ is still Gamma.
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=1]{../../fig_dStat.pdf}
-  \caption[Goodness of super-statistical theory fit]{Distribution of
+  \caption[Goodness of superstatistical theory fit]{Distribution of
     Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
     within orders (gray shading represents 95\% confidence
     interval). Solid black line is observed KS statistic at the order
@@ -475,7 +475,7 @@ $\beta_k^{(family)}$ is still Gamma.
 To further test the evolutionary coherence of families we conducted a
 permutation experiment in which genera were randomly reassigned to
 families while maintaining the number of genera in each family. For
-each permutation, we calculated the super-statistical prediction and
+each permutation, we calculated the superstatistical prediction and
 its Kolmogorov-Smirnov statistic. The permutation simulates a null
 model in which common evolutionary history is stripped away (genera
 are placed in random families) but the total number of observed genera
@@ -506,7 +506,7 @@ of Kolmogorov-Smirnov statistics.
 
 %% why orders
 Our analysis makes no assumption that orders and families should
-correspond to super-statistical subsystems, but identifies them as the
+correspond to superstatistical subsystems, but identifies them as the
 appropriate level for marine invertebrates. As we show, orders and the
 families they subsume differ only in the volatilities of their
 richness fluctuations (Fig. \ref{fig:pk_f}).
@@ -579,7 +579,7 @@ models in ecology are criticized for their over-parameterization
 theory \citep{hubbell2001} is the unrealistic assumption of ecological
 equivalency \citep{chave2004neutral} and poor prediction of real
 dynamics \citep{ricklefs2006neutral}. If ecosystems are viewed as the
-super-position of many individualistically evolving clades, each
+superposition of many individualistically evolving clades, each
 exploiting the environment differently and thus obeying a different
 set of non-equivalent statistics, then diversity dynamics could be
 parsimoniously predicted with superstatistics while incorporating real
@@ -692,9 +692,9 @@ impact the statistical distribution of fluctuations
 (Fig. \ref{figSupp:3TPub}).
 
 
-\subsection{Super-statistical methods} \label{sec:numMeth}
+\subsection{Superstatistical methods} \label{sec:numMeth}
 
-We first derive the super-statistical distribution $P(x)$ by fitting
+We first derive the superstatistical distribution $P(x)$ by fitting
 Gaussian distributions to clade-level distributions of fluctuations
 $p_k(x)$, extracting the inverse variances $\beta_k$ of those
 $p_k(x)$, testing the best function to describe the distribution of
@@ -708,7 +708,7 @@ fluctuation distributions of small clades were more reliably fit with
 curve fitting than with maximum likelihood.
 
 We then estimated $P(x)$ directly from the raw data using maximum
-likelihood to compare the fit of our super-statistical prediction and
+likelihood to compare the fit of our superstatistical prediction and
 that of a simple Gaussian distribution using AIC. To calculate a
 likelihood-based confidence interval on our prediction we bootstrapped
 the data, subsampling fluctuations with replacement from all families
@@ -783,7 +783,7 @@ number $Y$ of extinction \emph{or} origination events in $\tau$ being
 distributed
 \begin{equation}
   \label{eq:eventPois1}
-  Y \sim \text{Pois}(\rho \int_{t=0}^\tau N(t) dt).
+  Y \sim \text{Pois}\left(\rho \int_{t=0}^\tau N(t) dt\right).
 \end{equation}
 Under the steady state assumption we can approximate $N(t)$ by
 $\bar{N}$, the steady state richness, leading to
@@ -869,7 +869,7 @@ distribution at the level of classes and phyla
 
 \begin{figure}[!hp]
   \centering
-  \includegraphics[width=0.4\textwidth]{../../figSupp_pkx_allTaxa.pdf}
+  \includegraphics[width=0.8\textwidth]{../../figSupp_pkx_allTaxa.pdf}
   \caption{Change in within clade richness fluctuation distributions
     with increasing taxonomic level. The percentile-percentile plots
     show how the percentiles of observed re-scaled fluctuation
@@ -885,7 +885,7 @@ distribution at the level of classes and phyla
 
 \begin{figure}[!hp]
   \centering
-  \includegraphics[width=0.4\textwidth]{../../figSupp_fbeta_allTaxa.pdf}
+  \includegraphics[width=0.8\textwidth]{../../figSupp_fbeta_allTaxa.pdf}
   \caption{Change in the distributions of $\beta_k$ across clades with
     increasing taxonomic level. Points are observed $\beta_k$ values
     and red lines are the best-fit Gamma distributions. Deviations

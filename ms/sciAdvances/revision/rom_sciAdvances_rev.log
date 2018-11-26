@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 NOV 2018 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  26 NOV 2018 16:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -298,13 +298,7 @@ File: ../../figSupp_divByPub.pdf Graphic file (type pdf)
 <use ../../figSupp_divByPub.pdf>
 Package pdftex.def Info: ../../figSupp_divByPub.pdf  used on input line 818.
 (pdftex.def)             Requested size: 182.09485pt x 182.0949pt.
-
-Overfull \hbox (10.34276pt too wide) in paragraph at lines 826--837
-\OT1/cmr/m/n/12 subsampling-based rich-ness es-ti-mates for the Phanero-zoic ti
-me-series of ma-rine in-vertabrates.
- []
-
-[26 <../../figSupp_divByPub.pdf>]
+ [26 <../../figSupp_divByPub.pdf>]
 <../../figSupp_divEstComp.pdf, id=135, 578.16pt x 289.08pt>
 File: ../../figSupp_divEstComp.pdf Graphic file (type pdf)
 <use ../../figSupp_divEstComp.pdf>
@@ -315,15 +309,15 @@ File: ../../figSupp_pkx_allTaxa.pdf Graphic file (type pdf)
 <use ../../figSupp_pkx_allTaxa.pdf>
 Package pdftex.def Info: ../../figSupp_pkx_allTaxa.pdf  used on input line 872.
 
-(pdftex.def)             Requested size: 182.09485pt x 60.69646pt.
+(pdftex.def)             Requested size: 364.19664pt x 121.40283pt.
 <../../figSupp_fbeta_allTaxa.pdf, id=137, 650.43pt x 216.81pt>
 File: ../../figSupp_fbeta_allTaxa.pdf Graphic file (type pdf)
 <use ../../figSupp_fbeta_allTaxa.pdf>
 Package pdftex.def Info: ../../figSupp_fbeta_allTaxa.pdf  used on input line 88
 8.
-(pdftex.def)             Requested size: 182.09485pt x 60.69646pt.
- [27 <../../figSupp_divEstComp.pdf>] [28 <../../figSupp_pkx_allTaxa.pdf> <../..
-/figSupp_fbeta_allTaxa.pdf>]
+(pdftex.def)             Requested size: 364.19664pt x 121.40283pt.
+ [27 <../../figSupp_divEstComp.pdf>]
+[28 <../../figSupp_pkx_allTaxa.pdf> <../../figSupp_fbeta_allTaxa.pdf>]
 <../../figSupp_eeSpaceOcc.pdf, id=169, 289.08pt x 252.945pt>
 File: ../../figSupp_eeSpaceOcc.pdf Graphic file (type pdf)
 <use ../../figSupp_eeSpaceOcc.pdf>
@@ -344,7 +338,7 @@ Here is how much of TeX's memory you used:
  6521 multiletter control sequences out of 15000+600000
  13035 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,725b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,6n,25p,722b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/publ
@@ -361,7 +355,7 @@ ss8.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 .pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
 pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb>
-Output written on rom_sciAdvances_rev.pdf (30 pages, 1253922 bytes).
+Output written on rom_sciAdvances_rev.pdf (30 pages, 1253929 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  171 compressed objects within 2 object streams

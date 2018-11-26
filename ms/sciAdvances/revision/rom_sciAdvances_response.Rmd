@@ -27,7 +27,7 @@ Overall, I think the manuscript would benefit from:
 
 - some more discussion of possible explanations for the observed patterns
 
-> foo
+> XXXX
 
 - a clearer unwrapping of the proposed connections to punctuated equilibrium (and other evolutionary hypotheses discussed).
 
@@ -126,7 +126,7 @@ all left vague, and it comes up again in discussion:
 "Specifically, if $\beta_k$ values are associated with a clade's
 physiological and life history traits, and those traits evolve via
 Ornstein-Uhlenbeck-like exploration of an adaptive landscape, the
-resulting stationary distribution of $\kbeta_$ will be Gamma (40,41)."
+resulting stationary distribution of $\beta_k$ will be Gamma (40,41)."
 
 I guess it is not clear to me what it means to say 'a clade's
 physiological and life history traits', as within an order surely
