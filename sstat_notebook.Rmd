@@ -96,3 +96,32 @@ Part of our argument about the failure of superstatistics at higher taxonomic le
 
 ```{r code=readLines('analysis/pbdb_ecoEvoSpace.R')}
 ```
+
+
+## Helper functions
+
+All the above analyses make use of helpful functions in the `R` directory. We reproduce those functions below:
+
+```{r code=readLines('R/calcFlux.R')}
+```
+
+```{r code=readLines('R/gammaLS.R')}
+```
+
+```{r code=readLines('R/make3TPub.R')}
+```
+
+```{r code=readLines('R/normLS.R')}
+```
+
+```{r code=readLines('R/Px_gam.R')}
+```
+
+```{r code=readLines('R/sstat_likelihood_methods.R')}
+```
+
+```{r code=readLines('R/sstat_plot_methods.R')}
+```
+
+```{r code=readLines('R/sstatComp.R')}
+```
