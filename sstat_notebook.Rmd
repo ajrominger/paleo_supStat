@@ -1,6 +1,8 @@
 ---
+title: "Appendix A: Code to reproduce the study"
 output: 
     pdf_document:
+        number_sections: true
         keep_tex: true
 ---
 
@@ -8,23 +10,32 @@ output:
 knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
 ```
 
+\newcommand{\beginappendix}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{A\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{A\arabic{figure}}%
+  \setcounter{section}{0}
+  \renewcommand{\thesection}{A\arabic{section}}%
+}
 
-# Reproducing the study
+\beginappendix
+
 
 The easiest way to reproduce this study is to download, clone, or fork the GitHub repository at `github.com/ajrominger/paleo_supStat`. All scripts can then be run on new downloads of the PBDB and modifications to the analysese can be made. The repository is organized into directories `data` containing data and data-cleaning scripts; `R` containing R functions for general use; and `analysis` containing analysis scripts that use the data and R functions. The GitHub repository also contains a manuscript directory (`ms`), this document (`sstat_notebook.Rmd`), and an R script (`sstat_make.R`) that calls each data cleaning and analysis script in sequence to automatically reproduce the entire study. The `data`, `R`, and `analysis` directories can also be recreated from the scripts reproduced below.  
 
 The accompanying explainations below (organized by the flow of data aquisition, cleaning, and then analysis) will help the user understand the purpose of each script/function such that they can reproduce the results, or modify the routine.
 
-Lastly, this study depends on the contributed packages *divDyn*, *parallel*, and *R.utils* which should be downloaded from CRAN, and on a custom package *socorro* which must be downloaded from GitHub:
+Lastly, this study depends on the contributed packages *divDyn*, *parallel*, and *R.utils* which should be installed from CRAN, and on a custom package *socorro* which must be installed from GitHub:
 
 ```{r, eval=FALSE}
 devtools::install_github('ajrominger/socorro')
 ```
 
 
-## Getting the data
+# Getting the data
 
-### PBDB API
+## PBDB API
 
 To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`, which accesses the API and cleans the data by:
 
@@ -41,7 +52,7 @@ The data gathering script `data/pbdb_data_get.R` is shown below:
 ```
 
 
-### Scraping fossilworks
+## Scraping fossilworks
 
 The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is below: 
 
@@ -49,7 +60,7 @@ The script to pull Alory's time bins (`data/fossilworks_tbins_intervals.R`) is b
 ```
 
 
-## Three timer and publication bias correction
+# Three timer and publication bias correction
 
 Once the data have been downloaded and cleaned, we correct for incomplete and biased sampling with the script `data/pbdb_3TPub_make.R` which sources the function `R/make3TPub.R` to generate the main output: a matrix with time bins as rows, taxa (families in this case) as columns and bias-corrected richness as cells.
 
@@ -76,7 +87,7 @@ We can check our correction against other popular methods.  In the script `analy
 ```
 
 
-## Super statistical analysis of 3TPub-corrected PBDB data
+# Super statistical analysis of 3TPub-corrected PBDB data
 
 Once data have been bias-corrected we can complete their super-statistical analysis.  We do that in the script `analysis/pbdb_sstat.R` shown here:
 
@@ -113,7 +124,7 @@ Part of our argument about the failure of superstatistics at higher taxonomic le
 ```
 
 
-## Helper functions
+# Helper functions
 
 All the above analyses make use of helpful functions in the `R` directory. We reproduce those functions below:
 

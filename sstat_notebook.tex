@@ -24,6 +24,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
+            pdftitle={Appendix A: Code to reproduce the study},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -85,7 +86,7 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{0}
+\setcounter{secnumdepth}{5}
 % Redefines (sub)paragraphs to behave more like sections
 \ifx\paragraph\undefined\else
 \let\oldparagraph\paragraph
@@ -112,9 +113,9 @@
 
 \setlength{\droptitle}{-2em}
 
-  \title{}
-    \pretitle{\vspace{\droptitle}}
-  \posttitle{}
+  \title{Appendix A: Code to reproduce the study}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
     \author{}
     \preauthor{}\postauthor{}
     \date{}
@@ -122,8 +123,18 @@
   
 
 \begin{document}
+\maketitle
 
-\section{Reproducing the study}\label{reproducing-the-study}
+\newcommand{\beginappendix}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{A\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{A\arabic{figure}}%
+  \setcounter{section}{0}
+  \renewcommand{\thesection}{A\arabic{section}}%
+}
+
+\beginappendix
 
 The easiest way to reproduce this study is to download, clone, or fork
 the GitHub repository at \texttt{github.com/ajrominger/paleo\_supStat}.
@@ -155,9 +166,9 @@ from GitHub:
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Getting the data}\label{getting-the-data}
+\section{Getting the data}\label{getting-the-data}
 
-\subsubsection{PBDB API}\label{pbdb-api}
+\subsection{PBDB API}\label{pbdb-api}
 
 To obtain the PBDB data we make use of the API in script
 \texttt{data/pbdb\_data\_get.R}, which accesses the API and cleans the
@@ -274,7 +285,7 @@ below:
 \end{Highlighting}
 \end{Shaded}
 
-\subsubsection{Scraping fossilworks}\label{scraping-fossilworks}
+\subsection{Scraping fossilworks}\label{scraping-fossilworks}
 
 The script to pull Alory's time bins
 (\texttt{data/fossilworks\_tbins\_intervals.R}) is below:
@@ -365,7 +376,7 @@ The script to pull Alory's time bins
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Three timer and publication bias
+\section{Three timer and publication bias
 correction}\label{three-timer-and-publication-bias-correction}
 
 Once the data have been downloaded and cleaned, we correct for
@@ -634,7 +645,7 @@ The script \texttt{analysis/pbdb\_divCurve.R} is shown below:
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Super statistical analysis of 3TPub-corrected PBDB
+\section{Super statistical analysis of 3TPub-corrected PBDB
 data}\label{super-statistical-analysis-of-3tpub-corrected-pbdb-data}
 
 Once data have been bias-corrected we can complete their
@@ -1273,7 +1284,7 @@ script \texttt{analysis/pbdb\_ecoEvoSpace.R} shown here:
 \end{Highlighting}
 \end{Shaded}
 
-\subsection{Helper functions}\label{helper-functions}
+\section{Helper functions}\label{helper-functions}
 
 All the above analyses make use of helpful functions in the \texttt{R}
 directory. We reproduce those functions below:
