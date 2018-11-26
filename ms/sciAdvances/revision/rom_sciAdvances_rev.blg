@@ -3,50 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: rom_sciAdvances_rev.aux
 The style file: Science.bst
 Database file #1: ../../superStat.bib
-Warning--I didn't find a database entry for "vermeij2008"
-Warning--I didn't find a database entry for "bambach"
-Warning--I didn't find a database entry for "jablonski"
-Warning--I didn't find a database entry for "nicheCons"
-Warning--I didn't find a database entry for "YuleSomething"
-You've used 61 entries,
+You've used 70 entries,
             2300 wiz_defined-function locations,
-            1113 strings with 15677 characters,
-and the built_in function-call counts, 13010 in all, are:
-= -- 1202
-> -- 468
-< -- 8
-+ -- 234
-- -- 117
-* -- 971
-:= -- 1938
-add.period$ -- 61
-call.type$ -- 61
+            1156 strings with 17026 characters,
+and the built_in function-call counts, 14883 in all, are:
+= -- 1365
+> -- 540
+< -- 9
++ -- 270
+- -- 135
+* -- 1108
+:= -- 2207
+add.period$ -- 70
+call.type$ -- 70
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 61
-duplicate$ -- 694
-empty$ -- 1224
-format.name$ -- 152
-if$ -- 3077
+cite$ -- 70
+duplicate$ -- 794
+empty$ -- 1424
+format.name$ -- 175
+if$ -- 3527
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 65
-newline$ -- 186
-num.names$ -- 61
-pop$ -- 244
+int.to.str$ -- 70
+missing$ -- 76
+newline$ -- 213
+num.names$ -- 70
+pop$ -- 292
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 452
+skip$ -- 514
 stack$ -- 0
-substring$ -- 760
-swap$ -- 229
-text.length$ -- 8
+substring$ -- 843
+swap$ -- 259
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 125
-width$ -- 63
-write$ -- 487
-(There were 5 warnings)
+while$ -- 143
+width$ -- 72
+write$ -- 557

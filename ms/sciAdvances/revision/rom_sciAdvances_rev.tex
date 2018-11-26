@@ -28,8 +28,9 @@
 {}
 
 
-\title{Non-equilibrium evolution of volatility in origination and extinction explains fat-tailed
-  fluctuations in Phanerozoic biodiversity}
+\title{Non-equilibrium evolution of volatility in origination and
+  extinction explains fat-tailed fluctuations in Phanerozoic
+  biodiversity}
 
 \author[1, {*}]{Andrew J. Rominger}
 \author[1, 2, 3]{Miguel A. Fuentes}
@@ -184,9 +185,9 @@ adaptive landscape by higher taxa \citep{eldredgeGould1972,
   newman1985adaptive, hopkins2014}. We operationally define ``adaptive
 landscape'' to mean a clade's set characteristics that influences its
 macroevolution. Those characteristics could be ecological (e.g.
-substrate preference \citep{bambach, hopkins2014}, morphological
-(e.g. growth form \citep{jablonski}), or macroecological (e.g. range
-size \citep{harnik2011, foote2008paleobiol}).
+substrate preference \citep{bambach1983, bush2007, hopkins2014},
+morphological (e.g. body plan \citep{erwin2012}), or macroecological
+(e.g. range size \citep{harnik2011, foote2008paleobiol}).
 
 
 \subsection{Superstatistics of fossil biodiversity}
@@ -238,16 +239,16 @@ extinction to depend on larval type \citep{jablonski2008}, body plan
 \citep{harnik2011, foote2008paleobiol}, and substrate preference
 \citep{hopkins2014} on rates of origination and extinction. Not all of
 these traits would be considered dimensions of an ecological niche or
-characteristics of a guild \citep{bambach}, but they all point to
-different strategies that influence a clade's macroevlutionarily
-success. These characteristics result from interactions between
-heritable traits and environments, which themselves may semi-heritable
-\citep{nicheCons}. Thus different regions of adaptive space, and the
-clades occupying them, will experience different magnitudes of
-stochastic fluctuations in taxonomic richness. As clades occasionally
-split to fill new regions of adaptive space their pulsed
-diversification determines the non-equilibrium nature of the entire
-biota.
+characteristics of a guild \citep{bambach1983, bambach2007, bush2007},
+but they all point to different strategies that influence a clade's
+macroevlutionarily success. These characteristics result from
+interactions between heritable traits and environments, which
+themselves may semi-heritable \citep{nicheCons}. Thus different
+regions of adaptive space, and the clades occupying them, will
+experience different magnitudes of stochastic fluctuations in
+taxonomic richness. As clades occasionally split to fill new regions
+of adaptive space their pulsed diversification determines the
+non-equilibrium nature of the entire biota.
 
 
 % not sure where this belongs:
@@ -431,7 +432,7 @@ and phylo worse yet with the Kolmogorov-Smirnov statistic of phyla
 being no different than the null randomized taxonomies described
 below.
 
-However, if super-statistical theory explains the data, this worsening
+However, if superstatistical theory explains the data, this worsening
 fit with increasing taxonomic scale is expected as the different
 classes and phyla should not represent dynamically equilibrial
 sub-systems in their fluctuation dynamics. Instead, classes and phyla
@@ -441,10 +442,10 @@ one statistic should no longer be sufficient to describe class-level
 dynamics. We see this confirmed by the increasing frequency of outlier
 fluctuations in within class and phylum level fluctuation
 distributions (Fig. \ref{figSupp:pkx_allTaxa}). We can also see that
-families and orders represent, on average, 1 to 2 Bambachian ecospace
-hypercubes \citep{bambach}, respectively, in contrast to classes and
-phyla which represent, on average, 8 to 30 hypercubes, respectively
-(Fig. \ref{figSupp:eeSpaceOcc}).
+families and orders represent, on average, 1 to 2 ecospace hypercubes
+\citep{bambach1983, bambach2007, bush2007}, respectively, in contrast
+to classes and phyla which represent, on average, 8 to 30 hypercubes,
+respectively (Fig. \ref{figSupp:eeSpaceOcc}).
 
 
 Our analysis indicates that orders and families are evolutionarily
@@ -480,12 +481,13 @@ model in which common evolutionary history is stripped away (genera
 are placed in random families) but the total number of observed genera
 per family is held constant. Controlling for the total number of
 genera per family is key because this could be purely an artifact of
-an arbitrary taxonomic process \citep{YuleSomething} and could also be
-solely responsible for differences in the $\beta_k$ across
-clades. Indeed, the number of genera in a family and that families
-$\beta_k$ value are correlated (Fig. \ref{figSupp:betaByRich}). Thus
-we want to know if this correlation alone accounts for all downstream
-stuperstatistical results.
+an arbitrary taxonomic process \citep{yule1925, berlin1966, hey2001,
+  capocci2008} and could also be solely responsible for differences in
+the $\beta_k$ across clades. Indeed, the number of genera in a family
+and that families $\beta_k$ value are correlated
+(Fig. \ref{figSupp:betaByRich}). Thus we want to know if this
+correlation alone accounts for all downstream stuperstatistical
+results.
 
 Repeating the null permutation of genera in families 500 times yields
 a null distribution of Kolmogorov-Smirnov statistics that is far
@@ -594,7 +596,7 @@ populations to clades are ripe for exploration.
 
 All data processing and analyses were preformed in R \citep{rcite} and
 all code needed to reproduce our study are provided, with added
-explaination, in the supplement.
+explaination, in supplemental Appendix A.
 
 \subsection{Paleobiology Database data download and filtering}
 Data were downloaded from the Paleobiology Database (PBDB; {\tt
@@ -664,7 +666,7 @@ given publications in that time period.  The expected number is
 calculated by regressing the log-transformed three-timer-corrected
 number of genera on log-transformed number of publications. There is
 only a weak trend toward higher richness with more publications
-(Fig. \ref{fig:divByPub}) meaning that the most important correction
+(Fig. \ref{figSupp:divByPub}) meaning that the most important correction
 comes from the three timer correction.
 
 Our new method re-scales each genus occurrence from 0 or 1 (absent or
@@ -684,10 +686,10 @@ results at the global scale across all clades to subsampling
 procedures. We directly compare our predicted time series of global
 fluctuations in genus richness with results derived from rarifaction
 and shareholder quarum subsampling (SQS) in Figure
-\ref{fig:supp_3TPub}.  Our method shows very minor differences with
+\ref{figSupp:3TPub}.  Our method shows very minor differences with
 these subsampling-based predictions and any discrepancies do not
 impact the statistical distribution of fluctuations
-(Fig. \ref{fig:supp_3TPub}).
+(Fig. \ref{figSupp:3TPub}).
 
 
 \subsection{Super-statistical methods} \label{sec:numMeth}
@@ -740,7 +742,7 @@ fluction distribution of each bootstrap replicate.
     github.com/ajrominger/paleo\_supStat}. This github repository also
   hosts the exact download from {\tt paleobiodb.org} used in this
   analysis. All required scripts are also availible and explained in
-  the Supplement.
+  supplemental Appendix A.
 \end{itemize}
 
 
@@ -809,7 +811,7 @@ detection within a binomial sampling framework as described in the
 main text, and then further corrects for potential publication bias
 using simple log-log regression.  We reproduce that regresion of
 log-richness versus log-number of publications here
-(Fig. \ref{figSubb:divByPub}). 
+(Fig. \ref{figSupp:divByPub}). 
 
 \begin{figure}[!hp]
   \centering
@@ -825,7 +827,7 @@ We compare our sampling and bias-correction method to other more
 established approaches. Specifically we use the newly availible R
 package {\it divDyn} \citep{kocsis2018} to produce subsampling-based
 richness estimates for the Phanerozoic timeseries of marine
-invertabrates. In Figure \ref{figSubb:3TPub} we comare classical
+invertabrates. In Figure \ref{figSupp:3TPub} we compare classical
 rarifaction with shareholder quorum subsampling (SQS) with our
 method. All samples were rarified to 120 occurrences, which is
 approximately the maximum sample size across all time bins, and the
@@ -901,14 +903,13 @@ fluctation outliers at higher taxonomic levels is that these higher
 taxa increasingly aggregate disperate types of organisms. One way to
 evaluate this idea is to count the ecological guilds comprised by taxa
 at different levels. We do that if Figure \ref{figSupp:eeSpaceOcc} and
-find that families comprise, on average, 1 Bambachian guild, families
-comprise 2 guilds on average, and classes and phyla comprise many
-more. 
+find that families comprise, on average, 1 guild, families comprise 2
+guilds on average, and classes and phyla comprise many more.
 
 \begin{figure}[!hp]
   \centering
   \includegraphics[width=0.4\textwidth]{../../figSupp_eeSpaceOcc.pdf} 
-  \caption{Relationship between number of Bambachian guild hypercubes
+  \caption{Relationship between number of ecological guild hypercubes
     and taxonomic level.}
   \label{figSupp:eeSpaceOcc}
 \end{figure}
