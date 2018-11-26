@@ -31,7 +31,7 @@ Overall, I think the manuscript would benefit from:
 
 - a clearer unwrapping of the proposed connections to punctuated equilibrium (and other evolutionary hypotheses discussed).
 
-> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explaination for our results.  This siminal concept in the field is still relevent, however, and we expand our discussion of it, as well as other concepts such as the Red Queen, in the discussion in lines XXXXX
+> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explanation for our results.  This seminal concept in the field is still relevant, however, and we expand our discussion of it, as well as other concepts such as the Red Queen, in the discussion in lines XXXXX
 
 
 If I understand correctly, the authors assume that all orders undergo
@@ -50,7 +50,7 @@ I suppose another way to ask the question would be: what happens if
 the authors do try to fit independent birth and death rates to the
 time series for each order?
 
-> The reviewer is indeed correct that net diversification or extinciton could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries. This means we focus on fluctuations about any possible trend toward net diversificaiton or extinction. This zero-centering is made clear in the methods, and also indtroduced earlier (lines XXXX; near 'To focus attention on the varianc') to help readers understand our approach. In the same section we define "equilibrial" in the statistical sense and make that will be our working definition
+> The reviewer is indeed correct that net diversification or extinction could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries. This means we focus on fluctuations about any possible trend toward net diversification or extinction. This zero-centering is made clear in the methods, and also introduced earlier (lines XXXX; near 'To focus attention on the variance') to help readers understand our approach. In the same section we define "equilibrial" in the statistical sense and make that will be our working definition
 
 
 Related, am I understanding that the authors use the fit of beta_k for
@@ -87,7 +87,7 @@ a clear relationship between fitted beta and the mean order size. Is
 it possible that the distribution of mean order sizes underlies the
 distribution in order fluctuation sizes?
 
-> We were also concerned with the potential arbitrariness of taxonomies. We add discussion of this in line XXX (around yule1925). This is also the motivation for our permutation experiment in which we mantain the size of families, but permute the identities of their constituant taxa.  This experiment shows that real families contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the constituant taxa of real families arrise and go extinct according to a similar underlying process. We have also added in the supplement an analysis of the correlation between genus richness in families and their associated $\beta_k$ values. This is referenced in our motivation for the permutation experiment (around figSupp:betaByRich). 
+> We were also concerned with the potential arbitrariness of taxonomies. We add discussion of this in line XXX (around yule1925). This is also the motivation for our permutation experiment in which we maintain the size of families, but permute the identities of their constituent taxa.  This experiment shows that real families contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the constituent taxa of real families arise and go extinct according to a similar underlying process. We have also added in the supplement an analysis of the correlation between genus richness in families and their associated $\beta_k$ values. This is referenced in our motivation for the permutation experiment (around figSupp:betaByRich). 
 
 
 As stated in the text and shown in S4, the analysis when performed at
@@ -162,7 +162,7 @@ well have advantages as applied in other contexts. From this
 manuscript, however, I was not able to discern them. And, the finding
 of macroevolutionary differences among higher taxa is uncontroversial.
 
-> We appreciate the reviewer's kind words. A random effects ANOVA could certainly be used to evaluate the support for grouping fluctuations by different taxonomic groups, or not at all, but indeed as the reviewer points out, "differences among higher taxa is uncontroversial." Our goal was not to re-iterate this near truism, instead our goal was to evaluate whether this near truism is in fact sufficient to account for patterns in the fossil record (i.e. fat tails) which up to now seemed to require complicated mechanistic explainations (which we briefly survey in the introduction). The advantage of using the machinery of superstatistics is that it formalizes this simple conjecture---different higher taxa experience different diversification dynamics and these differences, when aggregated, produce the seemingly unusual behavior in the system as a whole. Two additional advantages are: 1) that the success of superstatistics in the fossil record allows us to cast biodiversity questions in abstract terms that connect to other deciplines---from the social sciences to physics---which could help us gain further insight into the possible mechanisms leading to common dynamics across disperate systems; and 2) that superstatistics, unlike ANOVA, does not impose a distributional assumption across groups. This means we can find the best fitting distribution and again learn about the possible mechanisms responsible for the interesting patterns observed by evaluating which mechanisms are consistent with the between group distribution.  In our case we discover a Gamma distribution which points to mean-reverting processes such as Orstein-Uhlenbeck evolution.
+> We appreciate the reviewer's kind words. A random effects ANOVA could certainly be used to evaluate the support for grouping fluctuations by different taxonomic groups, or not at all, but indeed as the reviewer points out, "differences among higher taxa is uncontroversial." Our goal was not to re-iterate this near truism, instead our goal was to evaluate whether this near truism is in fact sufficient to account for patterns in the fossil record (i.e. fat tails) which up to now seemed to require complicated mechanistic explanations (which we briefly survey in the introduction). The advantage of using the machinery of superstatistics is that it formalizes this simple conjecture---different higher taxa experience different diversification dynamics and these differences, when aggregated, produce the seemingly unusual behavior in the system as a whole. Two additional advantages are: 1) that the success of superstatistics in the fossil record allows us to cast biodiversity questions in abstract terms that connect to other disciplines---from the social sciences to physics---which could help us gain further insight into the possible mechanisms leading to common dynamics across disparate systems; and 2) that superstatistics, unlike ANOVA, does not impose a distributional assumption across groups. This means we can find the best fitting distribution and again learn about the possible mechanisms responsible for the interesting patterns observed by evaluating which mechanisms are consistent with the between group distribution.  In our case we discover a Gamma distribution which points to mean-reverting processes such as Ornstein-Uhlenbeck evolution.
 \newline\newline
 In summary ANOVA is a statistical model to understand the relevance of different groupings; its goal is not to predict macroscopic distributions across large systems. Superstatistics is a theory which predicts those patterns and can be used to explore the processes generating them, as well as tangentially perform ANOVA-like tasks of confirming which groupings are sensible. 
 \newline\newline
@@ -184,7 +184,7 @@ assess rate homogeneity under conventional approaches, for example by
 comparing a model with uniform rates within groups to a model with
 rate heterogeneity (there are various ways one could do this).
 
-> We are also concerned about "error," specifically from biased sampling throughout the fossil record. We account for this using a new method based on binomial sampling and publicaiton bias that we layout in the methods section.
+> We are also concerned about "error," specifically from biased sampling throughout the fossil record. We account for this using a new method based on binomial sampling and publication bias that we layout in the methods section.
 \newline\newline
 One could certainly evaluate if there is rate heterogeneity by competing rate homogeneous and rate heterogeneous models, but again, this is not our interest---our interest is in the consequence of rate heterogeneity on the macroscopic pattern of fluctuations in taxon richness throughout the fossil record.  We seek to clarify this intention with new wording in the introduction XXXXXXXXX
 
@@ -216,14 +216,14 @@ families have low generic diversity), but it showing that families do
 worse than orders would support the scenario favored in the manuscript
 (although there may be issues of sample size and statistical power).
 
-> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the family level.  As the reviewer indicates, this adds creedence to our idea.  We discuss this in greater depth in lines XXXX
+> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the family level.  As the reviewer indicates, this adds credence to our idea.  We discuss this in greater depth in lines XXXX
 
 ## Reviewer 3
 
 I reviewed an earlier version of this manuscript for another journal, 
 and I was ill-pleased to see that my review was largely ignored. 
 
-> First and foremost, we would like to thank this reviewer for their thurough critique, both for this submission and the previous version. We indeed deeply considered their detailed comments and we are grateful for this oppurtunity to respond, which was not afforded in the previous review process. Many of their conceptual points we heed at face value; their methodological reservations we thuroughly consider and used to better present our existing methods for dealing with sampling differences.  We in fact do not ignore sampling, nor do we use shareholder quorum subsampling (SQS) to account for it.  Instead we present a new method.  We retain our method in favor of adopting Reviewer 3's alternative suggestion because 1) we nor the other reviewers find fault with this method (Reviewer 3 did not comment on our approach to accounting for sampling differences, though we would welcome their thoughts); and 2) the proposed alternative approaches contain their own assumptions and biases which we deem inappropriate for our analysis.  We explain our reasoning in more detail below.
+> First and foremost, we would like to thank this reviewer for their thorough critique, both for this submission and the previous version. We indeed deeply considered their detailed comments and we are grateful for this opportunity to respond, which was not afforded in the previous review process. Many of their conceptual points we heed at face value; their methodological reservations we thoroughly consider and used to better present our existing methods for dealing with sampling differences.  We in fact do not ignore sampling, nor do we use shareholder quorum subsampling (SQS) to account for it.  Instead we present a new method.  We retain our method in favor of adopting Reviewer 3's alternative suggestion because 1) we nor the other reviewers find fault with this method (Reviewer 3 did not comment on our approach to accounting for sampling differences, though we would welcome their thoughts); and 2) the proposed alternative approaches contain their own assumptions and biases which we deem inappropriate for our analysis.  We explain our reasoning in more detail below.
 
 1. The hypotheses that the authors wish to test are best framed in
 terms of richness: i.e., numbers of taxa. However, what they really
@@ -242,7 +242,7 @@ concerns with the SQS model: see Hannisdal et al. 2017 Proc. R. Soc. B
 press)
 
 > We apologize for imprecise wording; we are indeed using fluctuations in *richness* and not *diversity*. We have changed all instances of "diversity" to "richness" where appropriate.  We are also not making use of SQS in any analysis.  Instead we use our own method for accounting for sampling differences (which is detailed in the Methods section).  The comparison of our sampling standardization routine to SQS in the supplement is intended only to show that our more efficient approach compares favorable to the more established (but computationally and informatically wasteful) SQS method. \newline\newline
-It should be noted, however, that the paleontological literature tends to conflate richness and diversity.  Indeed *diversity* dynamics is used to describe Sepkoski's curve of genus *richness.* A recent R package `divDyn` (https://cran.r-project.org/web/packages/divDyn/vignettes/handout.pdf) reports SQS, among other similar estimates, as within bin *richness.* In some sense this is fine: richness is one of many diversity estimates (for example richness is the Hill number with alpha = 0). But ecologists do indeed reserve special, different meanings for richness versus diversity. We initially embraced the paleontological literature's conflation of diversity and richness, but we agree that erring on the side of clarity is prefered and we have made the needed edits.
+It should be noted, however, that the paleontological literature tends to conflate richness and diversity.  Indeed *diversity* dynamics is used to describe Sepkoski's curve of genus *richness.* A recent R package `divDyn` (https://cran.r-project.org/web/packages/divDyn/vignettes/handout.pdf) reports SQS, among other similar estimates, as within bin *richness.* In some sense this is fine: richness is one of many diversity estimates (for example richness is the Hill number with alpha = 0). But ecologists do indeed reserve special, different meanings for richness versus diversity. We initially embraced the paleontological literature's conflation of diversity and richness, but we agree that erring on the side of clarity is preferred and we have made the needed edits.
 
 2. Because of this, SQS is not the panacea for the sampling issue. I
 went on at some length in my last review about the importance of
@@ -260,9 +260,9 @@ methods like TRiPS to overestimate richness (see Wagner & Marcot 2013
 MEE 4:703). Ultimately, to test the how/why of richness fluctuations,
 some sort of approach like this is necessary.
 
-> We simpathize with the reviewer for feeling that their valid concerns about sampling were not addressed. Indeed we have not ignored this central statistical issue---we developed our own method to account for differences in sampling (lines 231--254 in the original submission; see section "Correcting for imperfect and potentially biased sampling" in the current submission). This approach is rooted in the simple idea of binomial sampling.  We take this "three timer correction" (as it is often refered to) and go one step further to correct for sampling differences introduced by publication biase of novel taxa. \newline\newline
-The methods developed by Foote and proposed by the reviewer are among the best in the field, and we are long time admirers of Prof. Foote.  However, these methods were developed for stratographic ranges only---which fail to take full advantage of the wealth of occurrence data provided by the PBDB, as noted repeatedly by Alroy (2008; 2010)---and cannot account for publication bias.  As such we choose not to empliment them. \newline\newline
-The TRiPS method suggested by the reviewer employs a binomial likelihood to quantify sampling. Because the sufficient statistic of a binomial likelihood is simply the observed proportion of successes (or failures) we have indeed mimicked this approach by estimating the observed proportion of "Lazurous" genera (i.e. those that have failed to be deteched between subsequent intervals of positive detection) for a given time period and using this observed proportion to estimate the expected number of taxa actually present in that time period.  This expected value is simply the number of observed taxa divided by the estimated sampling probability (to confirm this one need only recall that the mean of a binomial distribution is $E[X]$ = np$ thus $n$---the latent number of taxa---is $n = E[X]/p$ assuming the observed number of taxa is on average near the expectation).  The details of our approach are laid out in the methods section.
+> We sympathize with the reviewer for feeling that their valid concerns about sampling were not addressed. Indeed we have not ignored this central statistical issue---we developed our own method to account for differences in sampling (lines 231--254 in the original submission; see section "Correcting for imperfect and potentially biased sampling" in the current submission). This approach is rooted in the simple idea of binomial sampling.  We take this "three timer correction" (as it is often referred to) and go one step further to correct for sampling differences introduced by publication bias of novel taxa. \newline\newline
+The methods developed by Foote and proposed by the reviewer are among the best in the field, and we are long time admirers of Prof. Foote.  However, these methods were developed for stratigraphic ranges only---which fail to take full advantage of the wealth of occurrence data provided by the PBDB, as noted repeatedly by Alroy (2008; 2010)---and cannot account for publication bias.  As such we choose not to implement them. \newline\newline
+The TRiPS method suggested by the reviewer employs a binomial likelihood to quantify sampling. Because the sufficient statistic of a binomial likelihood is simply the observed proportion of successes (or failures) we have indeed mimicked this approach by estimating the observed proportion of "Lazarus" genera (i.e. those that have failed to be detected between subsequent intervals of positive detection) for a given time period and using this observed proportion to estimate the expected number of taxa actually present in that time period.  This expected value is simply the number of observed taxa divided by the estimated sampling probability (to confirm this one need only recall that the mean of a binomial distribution is $E[X]$ = np$ thus $n$---the latent number of taxa---is $n = E[X]/p$ assuming the observed number of taxa is on average near the expectation).  The details of our approach are laid out in the methods section.
 
 3. As before, I think that "niche" is the wrong word for the
 ecological level that the authors are discussing. They really are
@@ -282,15 +282,15 @@ provided R-code for doing this below: I strongly encourage the authors
 to take advantage of these data! Alternatively, the data used in
 papers such as Bush et al. (2007 Paleobiol. 33:76) could be used.
 
-> It is indeed a great resource that Bambach's guild designations are availible through the PBDB. We detail our utilization of these data in our response to the next comment. \newline\newline
-We also find it neccesary to confront the semantics of "niche" versus "guild." We conceed that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confussion we opt to not use either of the terms and instead replace all instances of "niche" with "adaptive landscape," defining carefully what we mean by that term at the first instance of its use (lines XXXX) (where we first say 'macroecological')
+> It is indeed a great resource that Bambach's guild designations are available through the PBDB. We detail our utilization of these data in our response to the next comment. \newline\newline
+We also find it necessary to confront the semantics of "niche" versus "guild." We concede that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confusion we opt to not use either of the terms and instead replace all instances of "niche" with "adaptive landscape," defining carefully what we mean by that term at the first instance of its use (lines XXXX) (where we first say 'macroecological')
 
 4. Following point 3, I am very skeptical that orders are going to be
 homogeneous ecological units. Indeed, one of the explanations for why
 groups like orders initially radiated is that they were able to become
 ecologically diverse.
 
-> foo
+> We have taken this reviewer's advice to investigate the ecological composition of different taxonomic levels. This analysis reveals that families contain on average one ecological guild hypercube, families contain on average 2, and classes and phyla contain many more. This analysis is in the supplemental section "Guild composition of higher taxa" and referenced in the main text at lines XXXXX.
 
 5. As before, I think that the authors do themselves a major
 disservice using the word "punctuated," although they at least have
@@ -312,7 +312,7 @@ Figure. 1. There still is no indication of what these orders are.
 SQS Analyses: Again, there is no mention of what the coverage levels
 were, or how exactly they were chosen.
 
-> We have specified the coverage which was set at 0.75 to relect a similar average richness as produced with rarifacton and our new bias correction method, this is made clear in the supplement in the section "Evaluation of sampling bias correction methods".
+> We have specified the coverage which was set at 0.75 to reflect a similar average richness as produced with rarefaction and our new bias correction method, this is made clear in the supplement in the section "Evaluation of sampling bias correction methods".
 
 As I noted last time, I think that this paper offers a really
 interesting methodological advancement. However, I also think that
@@ -322,12 +322,12 @@ suggested here and in the prior review, then I think that there is a
 much better chance of both the methods and interpretations gaining
 some traction.
 
-> We greatly appreciate the reviewer's support and their commendable efforts to help us improve out paper. We also acknowledge their reservations. The approach we choose is to further clarify and detail our new method to account for sampling differences. We do not specifically adopt the approaches suggested by the reviewer for the reasons discussed above; however, we go to new lengths to make clear our methedological reasoning.
+> We greatly appreciate the reviewer's support and their commendable efforts to help us improve out paper. We also acknowledge their reservations. The approach we choose is to further clarify and detail our new method to account for sampling differences. We do not specifically adopt the approaches suggested by the reviewer for the reasons discussed above; however, we go to new lengths to make clear our methodological reasoning.
 
 Finally, here is some R-code that the authors can use to download
 ecological data from the Paleobiology Database. Just enter (say) accio_ecologic_guild_data(taxon="Phacopida") and you get a tab-delimited text file with the ecological data that the PaleoDB has for phacopid genera.
 
-> Thanks for sharing!  We have now made our code to interface with the PBDB API more accesible online and in the supplement.
+> Thanks for sharing!  We have now made our code to interface with the PBDB API more accessible online and in the supplement.
 
 ```{r}
 clear_na_from_matrix <- function(data, replacement = "") { 
@@ -430,7 +430,7 @@ rate, and so: (i) the analysis needs to be re-run with 2018 data.
 And, (ii) the text needs to updated to accommodate the steady rate of
 publications on equilibrial/non-equilibrial diversity dynamics. In my
 opinion none of these un- cited more recent papers undermine the
-fundamental contribution of this manucript, but a new consensus
+fundamental contribution of this manuscript, but a new consensus
 centering on time-varying equilibrial dynamics is beginning to emerge
 over the previous more polarized equilibrial/non-equilibrial debate
 (e.g., see the 2016 Phil Trans Roy Soc B volume edited by Quental and
@@ -450,7 +450,7 @@ the Supplemental Information into the main text.
 also be performed at the family level, or if that is not possible,
 that needs to be explained why. Why stop at the ordinal level?
 
-> We have included families.
+> We have included families.  And indeed the new results are very interesting and incorporated throughout the revision.
 
 
 Intermediate suggestions for improvement
@@ -488,7 +488,7 @@ orders, and while they can account for their data with the ideas of
 niche conservatism, with the assumption of non-overlapping niches
 across orders, they have not explained it. (v) The term punctuated
 adaptive radiation is problematic – later in the text they evoke Gould
-and Eldredge’s ‘punctuate equilibrium’, but that theory was developed
+and Eldridge’s ‘punctuate equilibrium’, but that theory was developed
 right down at the species level, and has nothing to do with adaptive
 radiations, per se. My guess is what they are trying to say is that
 the pattern they find is consistent with each order having a coherent
@@ -532,14 +532,14 @@ credibility of the paper (there is nothing wrong with using the
 three-timer method, but the section has to be written with a broader
 view).
 
-> This section has been re-titled "Correcting for imperfect and potentially biased sampling" and contains a superior descripton of the method and a more nuanced contextualization in the most recent literature on this subject.
+> This section has been re-titled "Correcting for imperfect and potentially biased sampling" and contains a superior description of the method and a more nuanced contextualization in the most recent literature on this subject.
 
 7) Line 344. It is stated that the data are available though the PBDB
 – but where are the data you analyzed available (especially, after all
 that cleaning)? To be frank, this statement comes across as lazy and
 dismissive.
 
-> This statment has been extended to ensure that any reader can reproduce our results.
+> This statement has been extended to ensure that any reader can reproduce our results.
 
 Minor suggestions for improvement
 
@@ -586,7 +586,7 @@ what? Genus richness?
 > yes, genus richness has been specified
 
 Lines 107-111. The discussion of the possible relationship between the
-Guassian fluctuations in genus richness and neutral-like process (in
+Gaussian fluctuations in genus richness and neutral-like process (in
 contrast to the largely dead idea of SOC [self organized criticality])
 is distracting, and should be moved to the discussion.
 
@@ -622,7 +622,7 @@ genera per order per time period by the expected number of genera
 given publications in that time period". I don’t understand this
 hypothesized bias – please explain!
 
-> This is a concern first proposed by Alroy (2010). We agree with the priciple that researcers might show preference for publishing on new groups, thus leading to a possible correlation between number of publications for a given interval and number of taxa. We find only very weak evidence that more publications lead to more taxa regardless of toxon identity and time interval. We report this weak correlation and have now added a citation to Alroy (2010) to further justify the possibility of publication bias.
+> This is a concern first proposed by Alroy (2010). We agree with the principle that researchers might show preference for publishing on new groups, thus leading to a possible correlation between number of publications for a given interval and number of taxa. We find only very weak evidence that more publications lead to more taxa regardless of taxon identity and time interval. We report this weak correlation and have now added a citation to Alroy (2010) to further justify the possibility of publication bias.
 
 
 Line 257: Is some punctuation missing here?
