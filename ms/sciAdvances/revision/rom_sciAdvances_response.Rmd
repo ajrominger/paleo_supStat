@@ -216,7 +216,7 @@ families have low generic diversity), but it showing that families do
 worse than orders would support the scenario favored in the manuscript
 (although there may be issues of sample size and statistical power).
 
-> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the family level.  As the reviewer indicates, this adds credence to our idea.  We discuss this in greater depth in lines XXXX
+> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the order level.  As the reviewer indicates, this adds credence to our idea.  We discuss this in greater depth in lines XXXX.
 
 ## Reviewer 3
 
@@ -290,7 +290,7 @@ homogeneous ecological units. Indeed, one of the explanations for why
 groups like orders initially radiated is that they were able to become
 ecologically diverse.
 
-> We have taken this reviewer's advice to investigate the ecological composition of different taxonomic levels. This analysis reveals that families contain on average one ecological guild hypercube, families contain on average 2, and classes and phyla contain many more. This analysis is in the supplemental section "Guild composition of higher taxa" and referenced in the main text at lines XXXXX.
+> We have taken this reviewer's advice to investigate the ecological composition of different taxonomic levels. This analysis reveals that families contain on average one ecological guild hypercube, orders contain on average 2, and classes and phyla contain many more. This analysis is in the supplemental section "Guild composition of higher taxa" and referenced in the main text at lines XXXXX.
 
 5. As before, I think that the authors do themselves a major
 disservice using the word "punctuated," although they at least have
