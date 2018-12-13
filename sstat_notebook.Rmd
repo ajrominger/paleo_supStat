@@ -26,7 +26,7 @@ The easiest way to reproduce this study is to download, clone, or fork the GitHu
 
 The accompanying explanations below (organized by the flow of data acquisition, cleaning, and then analysis) will help the user understand the purpose of each script/function such that they can reproduce the results, or modify the routine.
 
-Lastly, this study depends on the contributed packages *divDyn*, *parallel*, and *R.utils* which should be installed from CRAN, and on a custom package *socorro* which must be installed from GitHub:
+Lastly, this study depends on the contributed packages *divDyn*, *parallel*, and *R.utils* which should be installed from CRAN, and on a custom package *socorro* which must be installed from GitHub (using the *devtools* package):
 
 ```{r, eval=FALSE}
 devtools::install_github('ajrominger/socorro')
@@ -44,7 +44,7 @@ To obtain the PBDB data we make use of the API in script `data/pbdb_data_get.R`,
 - including only fine-scale stratigraphy (below the "group" level)
 - resolving taxonomy to the genus or subgenus level where available (storing genus or subgenus as `otu`)
 - combining multiple records of the same OTU per collection
-- importing standardized timebins from \url{fossilworks.org} (timebins are scraped with script `data/fossilworks_tbins_intervals.R`)
+- importing standardized time bins from \url{fossilworks.org} (time bins are scraped with script `data/fossilworks_tbins_intervals.R`)
 
 The data gathering script `data/pbdb_data_get.R` is shown below:
 
@@ -118,7 +118,7 @@ We can also explore how well the $f(\beta_k)$ fit at different taxonomic levels 
 ```
 
 
-Part of our argument about the failure of superstatistics at higher taxonomic levels is that these higher taxa aggregate increasingly disparate subtaxa.  To investigate this idea we look at the number of guilds represented by the average taxon at each taxonomic level in the script `analysis/pbdb_ecoEvoSpace.R` shown here:
+Part of our argument about the failure of superstatistics at higher taxonomic levels is that these higher taxa aggregate increasingly disparate subtaxa.  To investigate this idea we look at the number of ecospace hypercubes represented by the average taxon at each taxonomic level in the script `analysis/pbdb_ecoEvoSpace.R` shown here:
 
 ```{r code=readLines('analysis/pbdb_ecoEvoSpace.R')}
 ```

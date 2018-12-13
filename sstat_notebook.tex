@@ -112,15 +112,14 @@
 }
 
 \setlength{\droptitle}{-2em}
-
   \title{Appendix A: R code to reproduce the study}
-    \pretitle{\vspace{\droptitle}\centering\huge}
+  \pretitle{\vspace{\droptitle}\centering\huge}
   \posttitle{\par}
-    \author{}
-    \preauthor{}\postauthor{}
-    \date{}
-    \predate{}\postdate{}
-  
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
 
 \begin{document}
 \maketitle
@@ -158,7 +157,7 @@ results, or modify the routine.
 Lastly, this study depends on the contributed packages \emph{divDyn},
 \emph{parallel}, and \emph{R.utils} which should be installed from CRAN,
 and on a custom package \emph{socorro} which must be installed from
-GitHub:
+GitHub (using the \emph{devtools} package):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -188,7 +187,7 @@ data by:
 \item
   combining multiple records of the same OTU per collection
 \item
-  importing standardized timebins from \url{fossilworks.org} (timebins
+  importing standardized time bins from \url{fossilworks.org} (time bins
   are scraped with script \texttt{data/fossilworks\_tbins\_intervals.R})
 \end{itemize}
 
@@ -1221,8 +1220,8 @@ reproduced below:
 Part of our argument about the failure of superstatistics at higher
 taxonomic levels is that these higher taxa aggregate increasingly
 disparate subtaxa. To investigate this idea we look at the number of
-guilds represented by the average taxon at each taxonomic level in the
-script \texttt{analysis/pbdb\_ecoEvoSpace.R} shown here:
+ecospace hypercubes represented by the average taxon at each taxonomic
+level in the script \texttt{analysis/pbdb\_ecoEvoSpace.R} shown here:
 
 \begin{Shaded}
 \begin{Highlighting}[]
