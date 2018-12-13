@@ -49,15 +49,18 @@ Sebasti\'an, Lota 2465, Santiago 7510157, Chile}}
 Biol\'ogicas, Pontificia Universidad de Chile, Alameda 340, Santiago,
 Chile}}
 %
-\affil[5]{\normalsize{Instituto de Ecolog\'ia y Biodiversidad, Casilla 653,
-Santiago, Chile}}
+\affil[5]{\normalsize{Instituto de Ecolog\'ia y Biodiversidad (IEB),
+    Casilla 653, Santiago, Chile}}
 %
-\affil[6]{\normalsize{Laboratorio Internacional de Cambio Global (LINCGlobal),
-Pontificia Universidad Católica de Chile, Alameda 340, Santiago,
-Chile}}
+\affil[6]{\normalsize{Laboratorio Internacional de Cambio Global
+    (LINCGlobal), and Centro de Cambio Global UC, Pontificia
+    Universidad Catolica de Chile, Santiago, Chile.}}
 %
 \affil[7]{\normalsize{Centro Cambio Global UC, Av.~Vicu\~na Mackenna 4860, Campus
 San Vicu\~na, Santiago, Chile}}
+%
+\affil[8]{\normalsize{Centro de Ciencias de la Complejidad (C3),
+    Universidad Nacional Aut\'onoma de M\'exico.}}
 %
 \affil[{*}]{\normalsize{To whom correspondence should be addressed,
     e-mail: rominger@santafe.edu}}
@@ -91,7 +94,7 @@ San Vicu\~na, Santiago, Chile}}
   Phanerozoic.
 %
   Using this theory, known as superstatistics, we show that the simple
-  fact of heterogeneous rates or origination and extinction between
+  fact of heterogeneous rates of origination and extinction between
   clades and conserved rates within clades is sufficient to account
   for this fat-tailed form. We identify orders and the families they
   subsume as the taxonomic level at which clades experience
@@ -237,18 +240,18 @@ volatility differences, but others have found rates of origination and
 extinction to depend on larval type \citep{jablonski2008}, body plan
 \citep{erwin2012}, body size \citep{harnik2011}, range size
 \citep{harnik2011, foote2008paleobiol}, and substrate preference
-\citep{hopkins2014} on rates of origination and extinction. Not all of
-these traits would be considered dimensions of an ecological niche or
-characteristics of a guild \citep{bambach1983, bambach2007, bush2007},
-but they all point to different strategies that influence a clade's
-macroevolutionary success. These characteristics result from
-interactions between heritable traits and environments, which
-themselves may semi-heritable \citep{nicheCons}. Thus different
-regions of adaptive space, and the clades occupying them, will
-experience different magnitudes of stochastic fluctuations in
-taxonomic richness. As clades occasionally split to fill new regions
-of adaptive space their pulsed diversification determines the
-non-equilibrium nature of the entire biota.
+\citep{hopkins2014}. Not all of these traits would be considered
+dimensions of an ecological niche or characteristics of a guild
+\citep{bambach1983, bambach2007, bush2007}, but they all point to
+different strategies that influence a clade's macroevolutionary
+success. These characteristics result from interactions between
+heritable traits and environments, which themselves may be
+semi-heritable \citep{nicheCons}. Thus different regions of adaptive
+space, and the clades occupying them, will experience different
+magnitudes of stochastic fluctuations in taxonomic richness. As clades
+occasionally split to fill new regions of adaptive space their pulsed
+diversification determines the non-equilibrium nature of the entire
+biota.
 
 
 % not sure where this belongs:
@@ -267,11 +270,11 @@ genus richness (the lowest reliably recorded taxonomic resolution)
 using the Paleobiology Database (PBDB; {\tt paleobiodb.org}). We
 corrected these raw data for incomplete sampling and bias using a new
 approach described in the methods section. Occurrences from the PBDB
-were matched to 49 standard timebins all of approximately 11MY
+were matched to 49 standard time bins all of approximately 11MY
 duration following previous publications \citep{alroy08,
   alroy2010}. Fluctuations in genus richness were calculated as the
 simple difference between bias-corrected richnesses in adjacent
-timebins.
+time bins.
 
 To focus attention on the variance of fluctuations we zero-centered
 each clade's fluctuation distribution. In this way we focus on
@@ -309,7 +312,7 @@ and confirm that the observed fit of superstatistical theory is not an
 artifact of arbitrary classification but instead represents real,
 biologically relevant diversification processes within and between
 clades. We find that families and orders conform to the assumptions of
-our superstatistical model while classes and orders do not.
+our superstatistical model while classes and phyla do not.
 
 \section{Results}
 
@@ -328,18 +331,21 @@ levels.
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.8]{../../fig_pkx-fbeta.pdf}
-  \caption[Variability in trajectories of within-order fluctuations in
-  genus richness]{The distributions of within-order fluctuations in
+  \caption[Variability in trajectories of within-family fluctuations in
+  genus richness]{The distributions of within-family fluctuations in
     genus richness shown for the trajectories of three exemplar
-    orders (A) and shown as an empirical cumulative density aggregated
-    across all orders (B). To display all orders simultaneously we
-    simply collapse their fluctuation distributions by dividing by
-    their standard deviations. If orders conform to the Gaussian
-    hypothesis their scaled fluctuations should fall along the
-    cumulative density line of a normal N(0, 1) distribution, as shown
-    in (B). In (C) the distribution of inverse variances $\beta_k$
-    across all orders matches very closely to a Gamma distribution
-    (black line); exemplar orders are again highlighted.}
+    families (A) and shown as an empirical cumulative density
+    aggregated across all families (B). To display all families
+    simultaneously we simply collapse their fluctuation distributions
+    by dividing by their standard deviations. If families conform to
+    the Gaussian hypothesis their scaled fluctuations should fall
+    along the cumulative density line of a normal N(0, 1)
+    distribution, as shown in (B). We further confirm this normal
+    distribution in the supplement
+    (Fig. \ref{figSupp:pkx_allTaxa}). In (C) the distribution of
+    inverse variances $\beta_k$ across all families matches very
+    closely to a Gamma distribution (black line); exemplar families
+    are again highlighted.}
   \label{fig:pk_f}
 \end{figure}
 
@@ -355,7 +361,7 @@ We estimate the distribution of $\beta_k$'s simply as the maximum
 likelihood distribution describing the set of volatilities for all
 families, orders, classes, or phyla. Phanerozoic marine invertebrate
 families clearly follow a Gamma distribution in their $\beta_k$ values
-(Fig. \ref{fig:pk_f}). This Gamma shape also holds for orders and
+(Fig. \ref{fig:pk_f}). This Gamma shape also holds for orders but
 shows increasing deviations again for classes and especially phyla
 (Fig. \ref{figSupp:fbeta_allTaxa}).
 
@@ -368,7 +374,7 @@ fluctuations for the entire marine Phanerozoic, $P(x)$, as
 \end{equation}
 where
 $p_k(x \mid \beta) = \sqrt{\frac{\beta}{2\pi}} e^{-\frac{\beta
-    x^2}{2}}$ is the distribution of fluctuations within an order and
+    x^2}{2}}$ is the distribution of fluctuations within a family and
 $f(\beta) = \frac{1}{\Gamma(b_1/2)}
 \left(\frac{b_1}{2b_0}\right)^{b_1/2} \beta^{(b_1/2) - 1}
 \text{exp}\left(-\frac{b_1 \beta}{2 b_0}\right)$ is the stationary
@@ -388,17 +394,17 @@ bias-corrected PBDB (Fig. \ref{fig:Px}).
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=1]{../../fig_Px.pdf} 
-  \caption[Order-level distribution of richness
+  \caption[Clade-level distribution of richness
   fluctuations]{Distribution of fluctuations in genus richness within
-    orders of marine invertebrates in the Paleobiology Database
-    \citep{alroy08} after sampling correction. The distribution is
-    fat-tailed as compared to the maximum likelihood estimate of the
-    normal distribution (blue line).  At the order level the empirical
-    distribution of fluctuations are well described by our
-    superstatistical approach, both when computed from integrating
-    over the distribution of observed variances (red line) and when
-    fit via maximum likelihood (95\% confidence interval; red
-    shading).}
+    different taxonomic groupings of marine invertebrates in the
+    Paleobiology Database \citep{alroy08} after sampling
+    correction. The distribution is fat-tailed as compared to the
+    maximum likelihood estimate of the normal distribution (blue
+    line).  At the family and order level the empirical distribution
+    of fluctuations are well described by our superstatistical
+    approach, both when computed from integrating over the
+    distribution of observed variances (red line) and when fit via
+    maximum likelihood (95\% confidence interval; red shading).}
   \label{fig:Px}
 \end{figure}
 
@@ -409,7 +415,7 @@ $P(x)$. Observed fluctuations fall within this 95\% confidence
 envelope (Fig. \ref{fig:Px}), indicating that the data do not reject
 the superstatistical prediction. For further comparison, we fit a
 Gaussian distribution to the observed fluctuations, which corresponds
-to the equilibrium hypothesis that all orders conform to the same
+to the equilibrium hypothesis that all families conform to the same
 dynamic. Using Akaike Information Criterion (AIC) we find that
 observed fluctuations are considerably better explained by the
 superstatistical prediction than by the Gaussian hypothesis ({\small
@@ -443,9 +449,11 @@ dynamics. We see this confirmed by the increasing frequency of outlier
 fluctuations in within class and phylum level fluctuation
 distributions (Fig. \ref{figSupp:pkx_allTaxa}). We can also see that
 families and orders represent, on average, 1 to 2 ecospace hypercubes
-\citep{bambach1983, bambach2007, bush2007}, respectively, in contrast
-to classes and phyla which represent, on average, 8 to 30 hypercubes,
-respectively (Fig. \ref{figSupp:eeSpaceOcc}).
+\citep[defined by taxon environment, motility, life habit, vision,
+diet, reproduction, and ontogeny][]{bambach1983, bambach2007,
+  bush2007}, respectively. In contrast, classes and phyla represent,
+on average, 8 to 30 hypercubes, respectively
+(Fig. \ref{figSupp:eeSpaceOcc}).
 
 
 Our analysis indicates that orders and families are evolutionarily
@@ -465,10 +473,9 @@ $\beta_k^{(family)}$ is still Gamma.
   \includegraphics[scale=1]{../../fig_dStat.pdf}
   \caption[Goodness of superstatistical theory fit]{Distribution of
     Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
-    within orders (gray shading represents 95\% confidence
-    interval). Solid black line is observed KS statistic at the order
-    level, while the dashed black line shows the observed KS statistic
-    at the class level.}
+    within familes (gray shading represents 95\% confidence
+    interval). Solid colored lines are observed KS statistics at
+    different taxonomic levels as indicated.}
   \label{fig:dStat}
 \end{figure}
 
@@ -492,7 +499,7 @@ results.
 Repeating the null permutation of genera in families 500 times yields
 a null distribution of Kolmogorov-Smirnov statistics that is far
 separated from the observed values at the family and order levels
-(Fig. \ref{fig:dStat}) suggesting the good fit at these levels is not
+(Fig. \ref{fig:dStat}) suggesting that the good fit at these levels is not
 merely a statistical artifact of classification or the richness of
 clades, but carries important biological information. It should also
 be noted that the width of 95\% confidence interval of this null
@@ -507,27 +514,23 @@ of Kolmogorov-Smirnov statistics.
 %% why orders
 Our analysis makes no assumption that orders and families should
 correspond to superstatistical subsystems, but identifies them as the
-appropriate level for marine invertebrates. As we show, orders and the
-families they subsume differ only in the volatilities of their
-richness fluctuations (Fig. \ref{fig:pk_f}).
+appropriate level for marine invertebrates. Our study is the first to
+demonstrate that complex patterns in the fluctuation of taxon richness
+in the fossil record are the result of a simple underlying process
+analogous to the statistical mechanisms by which complexity emerges in
+large, non-equilibrium physical \citep{beck2004} and social systems
+\citep{fuentes2009}.  We do so by identifying the biological scale at
+which clades conform to locally independent dynamic equilibria in
+fluctuations.  Equilibrium could result from many processes, including
+neutrality \citep{macWilson, hubbell2001, olszewski2004},
+diversity-dependence \citep{rabosky2009ecolLett, moen2014, foote2018}
+and processes that dampen---rather than exacerbate---fluctuations in
+complex ecological networks \citep{berlow2009}. These candidate
+processes are directly opposed to the presumption of instability
+underlying the self-organized criticality hypothesis for paleo
+biodiversity \citep{bak1993, sole1997}.
 
-Our study is the first to demonstrate that complex patterns in the
-fluctuation of taxon richness in the fossil record are the result of a
-simple underlying process analogous to the statistical mechanisms by
-which complexity emerges in large, non-equilibrium physical
-\citep{beck2004} and social systems \citep{fuentes2009}.  We do so by
-identifying the biological scale at which clades conform to locally
-independent dynamic equilibria in fluctuations.  Equilibrium could
-result from many processes, including neutrality \citep{macWilson,
-  hubbell2001, olszewski2004}, diversity-dependence
-\citep{rabosky2009ecolLett, moen2014, foote2018} and processes that
-dampen---rather than exacerbate---fluctuations in complex ecological
-networks \citep{berlow2009}. These candidate processes are directly
-opposed to the instability hypothesis underlying the self-organized
-criticality hypothesis for paleo biodiversity \citep{bak1993,
-  sole1997}.
-
-We show the distribution describing the evolution to different
+We show that the distribution describing the evolution to different
 equilibria between orders is Gamma (Fig. \ref{fig:pk_f}).  A Gamma
 distribution, while consistent with multiple processes (e.g.,
 \citep{cir1985}), could result from evolution of diversification rates
@@ -538,58 +541,63 @@ those traits evolve via Ornstein-Uhlenbeck-like exploration of an
 adaptive landscape, the resulting stationary distribution of $\beta_k$
 will be Gamma \citep{cir1985, butler2004}.  For macroevolutionary
 rates to vary across an adaptive landscape, this landscape cannot be
-flat, and thus niche conservatism interrupted by adaptive exploration
-is likely \citep{newman1985adaptive, gavrilets2004book}. The specifics
-of how this adaptive landscape is shaped and is traversed by evolving
-clades determine the exact form of the distribution of $\beta_k$
+flat, and thus niche conservatism around local optima in adaptive
+space interrupted by adaptive exploration is likely
+\citep{newman1985adaptive, gavrilets2004book}. The specifics of how
+this adaptive landscape is shaped and is traversed by evolving clades
+determine the exact form of the distribution of $\beta_k$
 volatilities, in the case of the marine Phanerozoic resulting in a
-Gamma. Our work thus motivates further study of the trait spaces and
-evolutionary shifts consistent with Gamma-distributed equilibria in
-richness fluctuation volatilities.
+Gamma distribution. Our work thus motivates further study of the trait
+spaces and evolutionary shifts consistent with Gamma-distributed
+equilibria in richness fluctuation volatilities.
 
-We then show that the pulsed shift to different equilibria between
-orders and the families they subsume is sufficient to explain the
+We show that the pulsed shift to different equilibria between orders
+and the families they subsume is sufficient to explain the
 characteristically fat-tailed distribution of richness fluctuations
 when the marine Phanerozoic fauna is viewed as a whole macrosystem.
 Armed with an understanding of the statistical origin of this
 diversification pattern we can explore which models of niche
-conservatism and pulsed adaptive radiation in are consistent with the
+conservatism and pulsed adaptive radiation are consistent with the
 statistical behavior of the Phanerozoic. Our statistical theory
 provides new motivation for identifying the eco-evolutionary causes of
 innovations between lineages and how those innovations are eventually
-conserved within lineages. With a theoretical baseline, we can also go
-on to identify and robustly examine the mechanisms underlying patterns
-unexplained by our statistical theory. For example, clades wax and
-wane systematically, and possibly non-symmetrically, through time
+conserved within lineages. Using the superstatistical prediction as a
+theoretical baseline, we can also go on to identify and robustly
+examine the mechanisms underlying deviations unexplained by our
+statistical theory. For example, some clades wax and wane
+systematically, and possibly non-symmetrically, through time
 \citep{liow2007, foote2008paleobiol, quental2013}, a pattern that we
 cannot explain with superstatistics alone.
 
 %% note on how sstat could be applied to other questions in eco-evo.
 Superstatistics could also be applied to other areas of evolution and
 macroecology.  For example new phylogenetic models already consider
-heterogeneous rates of diversification (e.g.,
-\citep{rabosky2014}). The superstatistics of clades in adaptive
-landscapes could motivated models that jointly predict changes in
-trait and diversification, a research area currently struggling with
-model inadequacy \citep{rabosky2017fisse}. This framework could also
-provide a new paradigm in modeling the distributions of richness,
-abundance and resource use in non-neutral communities. Non-neutral
-models in ecology are criticized for their over-parameterization
-\citep{rosindell2011}, yet a persistent counter argument to neutral
-theory \citep{hubbell2001} is the unrealistic assumption of ecological
-equivalency \citep{chave2004neutral} and poor prediction of real
-dynamics \citep{ricklefs2006neutral}. If ecosystems are viewed as the
+heterogeneous rates of diversification \citep[e.g.,][]{rabosky2014} as
+expected between different subsystems. The superstatistics of clades
+in adaptive landscapes could motivated models that jointly predict
+changes in trait and diversification, a research area currently
+struggling with model inadequacy \citep{rabosky2017fisse}. This
+framework could also provide a new paradigm in modeling the
+distributions of richness, abundance and resource use in non-neutral
+communities which can be viewed as emerging from the combination of
+locally equilibrium subsystems. Non-neutral models in ecology are
+criticized for their over-parameterization \citep{rosindell2011}, yet
+a persistent counter argument to neutral theory \citep{hubbell2001} is
+the unrealistic assumption of ecological equivalency
+\citep{chave2004neutral} and poor prediction of real dynamics
+\citep{ricklefs2006neutral}. If ecosystems are viewed as the
 superposition of many individualistically evolving clades, each
 exploiting the environment differently and thus obeying a different
-set of non-equivalent statistics, then diversity dynamics could be
-parsimoniously predicted with superstatistics while incorporating real
-biological information on ecological differences between taxa.
+set of statistics, then diversity dynamics could be parsimoniously
+predicted with superstatistics while incorporating real biological
+information on ecological differences between taxa.
 
 Superstatistics is a powerful tool to derive macro-scale predictions
 from locally fluctuating sub-systems whose evolution is driven by
 interesting, but complex and difficult to model, biological
-mechanisms. As such, applications of superstatistics from islands to
-populations to clades are ripe for exploration.
+mechanisms. As such, applications of superstatistics to a wide variety
+of patterns in ecological and evolutionary systems are ripe for
+exploration.
 
 
 \section{Methods and Materials}
@@ -599,18 +607,20 @@ all code needed to reproduce our study are provided, with added
 explanation, in supplemental Appendix A.
 
 \subsection{Paleobiology Database data download and filtering}
-Data were downloaded from the Paleobiology Database (PBDB; {\tt
-  https://paleobiodb.org}) on 16 November 2018 via the database's API
-(data retrieval and processing script in the supplement). Collections
-were filtered using the same approach as Alroy \citep{alroy08} to
-insure that only well preserved marine invertebrate occurrences were
-used in subsequent analyses. This filtering resulted in 815,222 unique
-genus-level occurrences. These were further filtered to exclude those
-occurrences without family-level taxonomy and those collections with
-age estimate resolutions outside the 11MY timebins proposed by Alroy
-\citep{alroy08} resulting in 454,033 occurrences. These timebins were
+Data on individual fossil occurrences and the ecospace characteristics
+of Phanerozoic marine invertabrates were downloaded from the
+Paleobiology Database (PBDB; {\tt https://paleobiodb.org}) on 16
+November 2018 via the database's API (data retrieval and processing
+script in the supplement). Collections were filtered using the same
+approach as Alroy \citep{alroy08} to insure that only well preserved
+marine invertebrate occurrences were used in subsequent analyses. This
+filtering resulted in 815,222 unique genus-level occurrences. These
+were further filtered to exclude those occurrences without
+family-level taxonomy and those collections with age estimate
+resolutions outside the 11MY time bins proposed by Alroy
+\citep{alroy08} resulting in 454,033 occurrences. These time bins were
 compiled from {\tt http://fossilworks.org} with a custom script
-reproduced in the supplement. The first and last of these timebins,
+reproduced in the supplement. The first and last of these time bins,
 corresponding to the earliest Cambrian and the latest Cenozoic, were
 excluded from analysis because their sampling completeness (see below)
 could not be assessed.
@@ -654,7 +664,7 @@ simple occupancy through time type model assuming binomial sampling
 \citep{royleDorazio}, and in that way mimics other proposed methods
 for the fossil record \citep{foote2016, starrfelt2016}. We avoid
 parametrically modeling the sampling process through time by instead
-taking a sliding window of timebins from the Cambrian to the
+taking a sliding window of time bins from the Cambrian to the
 Cenozoic. It should be noted that the three-timer correction compares
 favorably to other similar methods to account for imperfect detection
 \citep{alroy2014}
@@ -795,7 +805,7 @@ $\bar{N}$, the steady state richness, leading to
 This Poisson distribution is asymptotically Gaussian, which is a more
 appropriate distribution for our sampling and bias-corrected richness
 estimates because these estimates are not integer-valued but rather
-continuous random variables. Furthermore, because we ue standard time
+continuous random variables. Furthermore, because we use standard time
 periods of average duration $\tau = 11\text{MY}$ the the distribution
 of fluctuations within taxa will be independent of the specific time
 periods considered. The Gaussian asymptotics of time-averaged
@@ -828,11 +838,11 @@ established approaches. Specifically we use the newly available R
 package {\it divDyn} \citep{kocsis2018} to produce subsampling-based
 richness estimates for the Phanerozoic timeseries of marine
 invertebrates. In Figure \ref{figSupp:3TPub} we compare classical
-rarifaction with shareholder quorum subsampling (SQS) with our
+rarefaction with shareholder quorum subsampling (SQS) with our
 method. All samples were rarified to 120 occurrences, which is
 approximately the maximum sample size across all time bins, and the
 SQS quorum was set to 0.75 to similarly approximate this common
-sampling denominator across time bins. For both rarifaction and SQS we
+sampling denominator across time bins. For both rarefaction and SQS we
 produced 50 subsample replicates.
 
   
@@ -894,22 +904,25 @@ distribution at the level of classes and phyla
 \end{figure}
 
 
-\section{Guild composition of higher taxa}
+\section{Ecospace occupation of higher taxa}
 \label{sec:suppGuilds} 
 
 We posit that part of the increasing divergence between
 superstatistics and observed fluctuations and the increase in
 fluctuation outliers at higher taxonomic levels is that these higher
 taxa increasingly aggregate disparate types of organisms. One way to
-evaluate this idea is to count the ecological guilds comprised by taxa
-at different levels. We do that if Figure \ref{figSupp:eeSpaceOcc} and
-find that families comprise, on average, 1 guild, families comprise 2
-guilds on average, and classes and phyla comprise many more.
+evaluate this idea is to count the ecospace hypercubes
+\citep{bambach1983, bambach2007, bush2007} occupied by taxa at
+different levels. We use the ecological characteristics reported by
+the PBDB: taxon environment, motility, life habit, vision, diet,
+reproduction, and ontogeny. In Figure \ref{figSupp:eeSpaceOcc} we find
+that families comprise, on average, 1 hypercude, families comprise 2
+hypercubes on average, and classes and phyla comprise many more.
 
 \begin{figure}[!hp]
   \centering
   \includegraphics[width=0.4\textwidth]{../../figSupp_eeSpaceOcc.pdf} 
-  \caption{Relationship between number of ecological guild hypercubes
+  \caption{Relationship between number of ecospace hypercubes occupied
     and taxonomic level.}
   \label{figSupp:eeSpaceOcc}
 \end{figure}
