@@ -123,7 +123,6 @@ dev.off()
 # plot p_k(x|b) and f(beta) for families
 # --------------------------------------
 
-# idea for normality test: sample 1 from each order and do ks test on that subsampled set
 
 # highlight individual trajectories
 loFam <- 'Tainoceratidae' # nautiloid
