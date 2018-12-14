@@ -2,7 +2,7 @@
 header-includes:
     \usepackage{tcolorbox}
     \newtcolorbox{myquote}{colback=gray!5!white, colframe=gray!75!black}
-    \renewenvironment{quote}{\begin{myquote}\begin{itshape}}{\end{itshape}\end{myquote}}
+    \renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
 output: pdf_document
 ---
 
@@ -614,7 +614,7 @@ the paleontological record and its interpretation.
 Line 224-225. What exactly does latest Cenozoic mean? The Holocene,
 the Neogene, the last 10 million years?
 
-> we now specify that this means the most recent ~11my bin as advanced by Alroy 2008
+> we now specify that this means the most recent ~11my bin as advanced by Alroy (2008)
 
 Line 240–242: It is stated: "To eliminate further bias due to
 preferential publication of novel taxa we divide observed number of
