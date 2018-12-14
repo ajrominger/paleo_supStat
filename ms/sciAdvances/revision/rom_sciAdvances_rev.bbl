@@ -23,9 +23,6 @@ M.~Benton, {\it Science\/} {\bf 268}, 52 (1995).
 \bibitem{Erwin1998}
 D.~H. Erwin, {\it Trends in Ecology and Evolution\/} {\bf 13}, 344 (1998).
 
-\bibitem{quental2013}
-T.~B. Quental, C.~R. Marshall, {\it Science\/}  (2013).
-
 \bibitem{bak1993}
 P.~Bak, K.~Sneppen, {\it Phys. Rev. Lett.\/} {\bf 71}, 4083 (1993).
 
@@ -43,20 +40,12 @@ J.~W. Kirchner, A.~Weil, {\it Nature\/} {\bf 395}, 337 (1998).
 \bibitem{alroy2010}
 J.~Alroy, {\it Science\/} {\bf 329}, 1191 (2010).
 
-\bibitem{rabosky2009ecolLett}
-D.~L. Rabosky, {\it Ecology Letters\/} {\bf 12}, 735 (2009).
-
-\bibitem{marshall2016}
-C.~R. Marshall, T.~B. Quental, {\it Phil. Trans. R. Soc. B\/} {\bf 371},
-  20150217 (2016).
+\bibitem{quental2013}
+T.~B. Quental, C.~R. Marshall, {\it Science\/}  (2013).
 
 \bibitem{erwin2012}
 D.~H. Erwin, {\it Journal of Experimental Zoology Part B: Molecular and
   Developmental Evolution\/} {\bf 318}, 460 (2012).
-
-\bibitem{harmon2015}
-L.~J. Harmon, S.~Harrison, {\it The American Naturalist\/} {\bf 185}, 584
-  (2015).
 
 \bibitem{jordan2016}
 S.~M. Jordan, T.~G. Barraclough, J.~Rosindell, {\it Phil. Trans. R. Soc. B\/}
@@ -75,13 +64,6 @@ G.~J. Vermeij, {\it Palaeogeography, Palaeoclimatology, Palaeoecology\/} {\bf
 
 \bibitem{simpson1953}
 G.~Simpson, {\it The Major Features of Evolution\/} pp. 313--337 (1953).
-
-\bibitem{holman1989}
-E.~W. Holman, {\it Paleobiology\/} pp. 357--363 (1989).
-
-\bibitem{stadler2011}
-T.~Stadler, {\it Proceedings of the National Academy of Sciences\/} {\bf 108},
-  6187 (2011).
 
 \bibitem{rabosky2014}
 D.~L. Rabosky, {\it PloS one\/} {\bf 9}, e89543 (2014).
@@ -126,10 +108,6 @@ P.~G. Harnik, {\it Proceedings of the National Academy of Sciences\/} {\bf
 M.~Foote, J.~S. Crampton, A.~G. Beu, R.~A. Cooper, {\it Paleobiology\/} {\bf
   34}, 421 (2008).
 
-\bibitem{keilson1970}
-J.~Keilson, S.~S. Rao, {\it Journal of Applied Probability\/} {\bf 7}, 699
-  (1970).
-
 \bibitem{grassmann1987}
 W.~K. Grassmann, {\it Annals of Operations Research\/} {\bf 8}, 165 (1987).
 
@@ -159,20 +137,9 @@ E.~Mayr, {\it Systematic Zoology\/} {\bf 14}, 73 (1965).
 \bibitem{erwin2007}
 D.~H. Erwin, {\it Palaeontology\/} {\bf 50}, 57 (2007).
 
-\bibitem{ezard2016}
-T.~H.~G. Ezard, T.~B. Quental, M.~J. Benton, {\it Philos. Trans. R. Soc. Lond.
-  B Biol. Sci.\/} {\bf 371}, 20150216 (2016).
-
 \bibitem{yule1925}
 G.~U. Yule, {\it Philosophical Transactions of the Royal Society of London
   Series B\/} {\bf 213}, 21 (1925).
-
-\bibitem{berlin1966}
-B.~Berlin, D.~E. Breedlove, P.~H. Raven, {\it Science\/} {\bf 154}, 273 (1966).
-
-\bibitem{hey2001}
-J.~Hey, {\it Genes, categories, and species: The evolutionary and cognitive
-  cause of the species problem\/} (Oxford University Press, 2001).
 
 \bibitem{capocci2008}
 A.~Capocci, G.~Caldarelli, {\it Journal of Physics A: Mathematical and
@@ -181,9 +148,6 @@ A.~Capocci, G.~Caldarelli, {\it Journal of Physics A: Mathematical and
 \bibitem{hubbell2001}
 S.~P. Hubbell, {\it The unified neutral theory of biodiversity and biogeography
   (MPB-32)\/}, vol.~32 (Princeton University Press, 2001).
-
-\bibitem{olszewski2004}
-T.~D. Olszewski, D.~H. Erwin, {\it Nature\/} {\bf 428}, 738 (2004).
 
 \bibitem{moen2014}
 D.~Moen, H.~Morlon, {\it Trends in Ecology \& Evolution\/} {\bf 29}, 190
@@ -201,13 +165,9 @@ E.~L. Berlow, {\it et~al.\/}, {\it Proceedings of the National Academy of
 J.~C. Cox, J.~E. Ingersoll~Jr, S.~A. Ross, {\it Econometrica: Journal of the
   Econometric Society\/} pp. 385--407 (1985).
 
-\bibitem{butler2004}
-M.~A. Butler, A.~A. King, {\it The American Naturalist\/} {\bf 164}, 683
-  (2004).
-
 \bibitem{gavrilets2004book}
-S.~Gavrilets, {\it Fitness landscapes and the origin of species (MPB-41)\/},
-  vol.~41 (Princeton University Press, 2004).
+S.~Gavrilets, {\it Fitness landscapes and the origin of species\/}, vol.~41
+  (Princeton University Press, 2004).
 
 \bibitem{rabosky2017fisse}
 D.~L. Rabosky, E.~E. Goldberg, {\it Evolution\/} {\bf 71}, 1432 (2017).
@@ -215,12 +175,6 @@ D.~L. Rabosky, E.~E. Goldberg, {\it Evolution\/} {\bf 71}, 1432 (2017).
 \bibitem{rosindell2011}
 J.~Rosindell, S.~P. Hubbell, R.~S. Etienne, {\it Trends in ecology \&
   evolution\/} {\bf 26}, 340 (2011).
-
-\bibitem{chave2004neutral}
-J.~Chave, {\it Ecology letters\/} {\bf 7}, 241 (2004).
-
-\bibitem{ricklefs2006neutral}
-R.~E. Ricklefs, {\it Ecology\/} {\bf 87}, 1424 (2006).
 
 \bibitem{rcite}
 {R Core Team}, {\it R: A Language and Environment for Statistical Computing\/},

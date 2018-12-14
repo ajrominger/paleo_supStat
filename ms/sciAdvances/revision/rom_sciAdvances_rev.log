@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 DEC 2018 11:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 DEC 2018 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -238,7 +238,7 @@ e
 File: ../../fig_pkx-fbeta.pdf Graphic file (type pdf)
 
 <use ../../fig_pkx-fbeta.pdf>
-Package pdftex.def Info: ../../fig_pkx-fbeta.pdf used on input line 319.
+Package pdftex.def Info: ../../fig_pkx-fbeta.pdf used on input line 318.
 (pdftex.def)             Requested size: 345.08606pt x 325.21199pt.
 
 
@@ -248,7 +248,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <../../fig_Px.pdf, id=47, 383.4325pt x 361.35pt>
 File: ../../fig_Px.pdf Graphic file (type pdf)
  <use ../../fig_Px.pdf>
-Package pdftex.def Info: ../../fig_Px.pdf used on input line 382.
+Package pdftex.def Info: ../../fig_Px.pdf used on input line 381.
 (pdftex.def)             Requested size: 383.43156pt x 361.34912pt.
 
 
@@ -258,82 +258,82 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../../fig_dStat.pdf Graphic file (type pdf)
 
 <use ../../fig_dStat.pdf>
-Package pdftex.def Info: ../../fig_dStat.pdf used on input line 459.
+Package pdftex.def Info: ../../fig_dStat.pdf used on input line 458.
 (pdftex.def)             Requested size: 289.07928pt x 289.07928pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [11] [12 <../../fig_dStat.pdf>] [13] [14] [15] [16] [17]
-(./rom_sciAdvances_rev.bbl [18] [19] [20] [21] [22]) [23]
-Overfull \hbox (6.36977pt too wide) in paragraph at lines 730--738
+(./rom_sciAdvances_rev.bbl [18] [19] [20] [21] [22])
+Overfull \hbox (6.36977pt too wide) in paragraph at lines 728--736
 []\OT1/cmr/m/n/12 Data are avail-able through the Pa-le-o-bi-ol-ogy Database
  []
 
 
-Overfull \hbox (140.69667pt too wide) in paragraph at lines 730--738
+Overfull \hbox (140.69667pt too wide) in paragraph at lines 728--736
 \OT1/cmr/m/n/12 pro-cess, clean, and ul-ti-mately an-a-lyze the data are avail-
 able on-line at \OT1/cmtt/m/n/12 github.com/ajrominger/paleo[]supStat\OT1/cmr/m
 /n/12 .
  []
 
-[24]
-Overfull \hbox (9.19162pt too wide) in paragraph at lines 760--760
+[23]
+Overfull \hbox (9.19162pt too wide) in paragraph at lines 758--758
 []\OT1/cmr/bx/n/17.28 Limit dis-tri-bu-tion of a time-averaged ho-mo-ge-neous
  []
 
-[25
+[24
 
-] <../../figSupp_divByPub.pdf, id=125, 289.08pt x 289.08pt>
+] <../../figSupp_divByPub.pdf, id=121, 289.08pt x 289.08pt>
 File: ../../figSupp_divByPub.pdf Graphic file (type pdf)
 
 <use ../../figSupp_divByPub.pdf>
-Package pdftex.def Info: ../../figSupp_divByPub.pdf used on input line 810.
+Package pdftex.def Info: ../../figSupp_divByPub.pdf used on input line 808.
 (pdftex.def)             Requested size: 182.09485pt x 182.0949pt.
- [26 <../../figSupp_divByPub.pdf>]
-<../../figSupp_divEstComp.pdf, id=135, 578.16pt x 289.08pt>
+ [25 <../../figSupp_divByPub.pdf>]
+<../../figSupp_divEstComp.pdf, id=132, 578.16pt x 289.08pt>
 File: ../../figSupp_divEstComp.pdf Graphic file (type pdf)
 
 <use ../../figSupp_divEstComp.pdf>
-Package pdftex.def Info: ../../figSupp_divEstComp.pdf used on input line 832.
+Package pdftex.def Info: ../../figSupp_divEstComp.pdf used on input line 830.
 (pdftex.def)             Requested size: 318.66946pt x 159.33412pt.
 
-<../../figSupp_pkx_allTaxa.pdf, id=136, 650.43pt x 216.81pt>
+<../../figSupp_pkx_allTaxa.pdf, id=133, 650.43pt x 216.81pt>
 File: ../../figSupp_pkx_allTaxa.pdf Graphic file (type pdf)
 
 <use ../../figSupp_pkx_allTaxa.pdf>
-Package pdftex.def Info: ../../figSupp_pkx_allTaxa.pdf used on input line 861.
+Package pdftex.def Info: ../../figSupp_pkx_allTaxa.pdf used on input line 859.
 (pdftex.def)             Requested size: 364.19664pt x 121.40283pt.
 
-<../../figSupp_fbeta_allTaxa.pdf, id=137, 650.43pt x 216.81pt>
+<../../figSupp_fbeta_allTaxa.pdf, id=134, 650.43pt x 216.81pt>
 File: ../../figSupp_fbeta_allTaxa.pdf Graphic file (type pdf)
 
 <use ../../figSupp_fbeta_allTaxa.pdf>
-Package pdftex.def Info: ../../figSupp_fbeta_allTaxa.pdf used on input line 877
+Package pdftex.def Info: ../../figSupp_fbeta_allTaxa.pdf used on input line 875
 .
 (pdftex.def)             Requested size: 364.19664pt x 121.40283pt.
- [27 <../../figSupp_divEstComp.pdf>]
-[28 <../../figSupp_pkx_allTaxa.pdf> <../../figSupp_fbeta_allTaxa.pdf>]
-<../../figSupp_eeSpaceOcc.pdf, id=169, 289.08pt x 252.945pt>
+ [26 <../../figSupp_divEstComp.pdf>]
+[27 <../../figSupp_pkx_allTaxa.pdf> <../../figSupp_fbeta_allTaxa.pdf>]
+<../../figSupp_eeSpaceOcc.pdf, id=166, 289.08pt x 252.945pt>
 File: ../../figSupp_eeSpaceOcc.pdf Graphic file (type pdf)
 
 <use ../../figSupp_eeSpaceOcc.pdf>
-Package pdftex.def Info: ../../figSupp_eeSpaceOcc.pdf used on input line 903.
+Package pdftex.def Info: ../../figSupp_eeSpaceOcc.pdf used on input line 901.
 (pdftex.def)             Requested size: 182.09485pt x 159.33302pt.
- [29 <../../figSupp_eeSpaceOcc.pdf>]
-<../../figSupp_betaByRich.pdf, id=179, 289.08pt x 289.08pt>
+ [28 <../../figSupp_eeSpaceOcc.pdf>]
+<../../figSupp_betaByRich.pdf, id=176, 289.08pt x 289.08pt>
 File: ../../figSupp_betaByRich.pdf Graphic file (type pdf)
 
 <use ../../figSupp_betaByRich.pdf>
-Package pdftex.def Info: ../../figSupp_betaByRich.pdf used on input line 926.
+Package pdftex.def Info: ../../figSupp_betaByRich.pdf used on input line 924.
 (pdftex.def)             Requested size: 182.09485pt x 182.0949pt.
- [30 <../../figSupp_betaByRich.pdf>]
+ [29 <../../figSupp_betaByRich.pdf>]
 (./rom_sciAdvances_rev.aux) ) 
 Here is how much of TeX's memory you used:
- 2735 strings out of 492995
- 37884 string characters out of 6132704
- 106128 words of memory out of 5000000
- 6250 multiletter control sequences out of 15000+600000
+ 2722 strings out of 492995
+ 37701 string characters out of 6132704
+ 106076 words of memory out of 5000000
+ 6237 multiletter control sequences out of 15000+600000
  13035 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,6n,25p,722b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -353,10 +353,10 @@ ss8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
 fb>
-Output written on rom_sciAdvances_rev.pdf (30 pages, 1240811 bytes).
+Output written on rom_sciAdvances_rev.pdf (29 pages, 1239159 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
+ 235 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
