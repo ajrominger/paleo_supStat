@@ -172,7 +172,7 @@ trajLines(tbinMid, lo, col = cols['lo'], lwd = 2)
 trajLines(tbinMid, mi, col = cols['mi'], lwd = 2)
 trajLines(tbinMid, hi, col = cols['hi'], lwd = 2)
 
-text(c(450, 230, 10), c(4, 5.25, 2), labels = c(miFam, loFam, hiFam), 
+text(c(420, 230, 10), c(4, 5.25, 2), labels = c(miFam, loFam, hiFam), 
      col = cols[c('mi', 'lo', 'hi')], pos = c(3, 4, 2))
 
 paleoAxis(1)
@@ -199,14 +199,15 @@ plot(betaCDF, ylim = c(0, 1.025),
      log = 'x', xaxt = 'n', yaxt = 'n',
      xlab = expression(beta), col = 'gray')
 
-theseBeta <- sstatPBDBfam3TP$beta[c(loFam, miFam, hiFam)]
-points(theseBeta, approxfun(betaCDF)(theseBeta), bg = cols, pch = 21, cex = 1.2)
-
 logAxis(1, expLab = TRUE)
 
 curve(pgamma(x, sstatPBDBfam3TP$gam.par[1], sstatPBDBfam3TP$gam.par[2], 
              lower.tail = FALSE), 
       col = 'black', lwd = 2, add = TRUE)
+
+theseBeta <- sstatPBDBfam3TP$beta[c(loFam, miFam, hiFam)]
+points(theseBeta, approxfun(betaCDF)(theseBeta), bg = cols, pch = 21, cex = 1.2)
+
 
 legend('topright', legend = 'C', pch = NA, bty = 'n', cex = 1.4)
 
