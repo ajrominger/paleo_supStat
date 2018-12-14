@@ -23,15 +23,15 @@ Overall, I think the manuscript would benefit from:
 
 - a clear description of the model assumptions
 
-> We do this now more clearly in the introduction first in lines XXX and again re-affirm our assumptions in line XXX (around where we cite mayr1965systZool)
+> We do this now more clearly in the introduction first in the new section "Superstatistics of fossil biodiversity" and again re-affirm our assumptions in line 123--129
 
 - some more discussion of possible explanations for the observed patterns
 
-> XXXX
+> We have added content throughout, especially in the Introduction and Discussion, see in particulare lines 88--101, 228--237, 242--253.
 
 - a clearer unwrapping of the proposed connections to punctuated equilibrium (and other evolutionary hypotheses discussed).
 
-> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explanation for our results.  This seminal concept in the field is still relevant, however, and we expand our discussion of it, as well as other concepts such as the Red Queen, in the discussion in lines XXXXX
+> Following the suggestions of Reviewer 3, we have removed "punctuated equilibrium" as a literal explanation for our results.  This seminal concept in the field is still relevant, however, and we expand our discussion of it in the context of adaptive landscapes (lines 58--63, 228--241)
 
 
 If I understand correctly, the authors assume that all orders undergo
@@ -50,7 +50,7 @@ I suppose another way to ask the question would be: what happens if
 the authors do try to fit independent birth and death rates to the
 time series for each order?
 
-> The reviewer is indeed correct that net diversification or extinction could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries. This means we focus on fluctuations about any possible trend toward net diversification or extinction. This zero-centering is made clear in the methods, and also introduced earlier (lines XXXX; near 'To focus attention on the variance') to help readers understand our approach. In the same section we define "equilibrial" in the statistical sense and make that will be our working definition
+> The reviewer is indeed correct that net diversification or extinction could be considered. In our analysis we explicitly did not consider either, and did so by zero-centering all timeseries. This means we focus on fluctuations about any possible trend toward net diversification or extinction. This zero-centering is made clear in the methods, and also introduced earlier (lines 111--112) to help readers understand our approach. In the same section we define "equilibrial" in the statistical sense and make that will be our working definition
 
 
 Related, am I understanding that the authors use the fit of beta_k for
@@ -66,7 +66,7 @@ This might be confusing, because readers may think of diversification
 rate as being a net diversification rate, which here is assumed to be
 zero, IIUC.
 
-> Thanks for pointing out this inconsistency, you are indeed correct that this could confuse readers. The $\beta_k$ should be interpreted as the inverse variance in diversification as defined as (originations - extinctions). The variance of the difference between these two random variables will increase as *both* speciation and extinction rates increase.  We have replaced "rate" with "volatility," where appropriate---including in the title---to signify the variance of origination - extinction, and clearly defined volatility on line XXXX (where we ref suppLimitDist). We have further updated our discussion on XXXXXX to more accurately reflect the idea that evolution across an adaptive landscape can change the volatility of diversification by changing the magnitude of speciation and extinction rates.
+> Thanks for pointing out this inconsistency, you are indeed correct that this could confuse readers. The $\beta_k$ should be interpreted as the inverse variance in diversification as defined as (originations - extinctions). The variance of the difference between these two random variables will increase as *both* speciation and extinction rates increase.  We have replaced "rate" with "volatility," where appropriate---including in the title---to signify the variance of origination - extinction, and clearly defined volatility on line 75.
 
 
 I would assume it matters when plotting fluctuation sizes in e.g. Fig
@@ -74,7 +74,7 @@ I would assume it matters when plotting fluctuation sizes in e.g. Fig
 of this in the SI, but I'd like to understand if the variation in
 timeslices is enough to affect these analyses.
 
-> We have made clear earlier on XXXX (where we say '49 standard timebins') that we use 11 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
+> We have made clear earlier on (lines 107--108) that we use 11 MY time bins as used previously in the literature (e.g. Alroy 2008 and 2010).
 
 
 Do the authors acknowledge that there is any room for bias in the
@@ -87,7 +87,7 @@ a clear relationship between fitted beta and the mean order size. Is
 it possible that the distribution of mean order sizes underlies the
 distribution in order fluctuation sizes?
 
-> We were also concerned with the potential arbitrariness of taxonomies. We add discussion of this in line XXX (around yule1925). This is also the motivation for our permutation experiment in which we maintain the size of families, but permute the identities of their constituent taxa.  This experiment shows that real families contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the constituent taxa of real families arise and go extinct according to a similar underlying process. We have also added in the supplement an analysis of the correlation between genus richness in families and their associated $\beta_k$ values. This is referenced in our motivation for the permutation experiment (around figSupp:betaByRich). 
+> We were also concerned with the potential arbitrariness of taxonomies. We add discussion of this in lines 131--135. This is also the motivation for our permutation experiment in which we maintain the size of families, but permute the identities of their constituent taxa.  This experiment shows that real families contain biological information relevant to their diversification dynamics, i.e. there must be genuine characteristics that make the constituent taxa of real families arise and go extinct according to a similar underlying process. We have also added in the supplement an analysis of the correlation between genus richness in families and their associated $\beta_k$ values. This is referenced in our motivation for the permutation experiment (around figSupp:betaByRich). 
 
 
 As stated in the text and shown in S4, the analysis when performed at
@@ -100,7 +100,7 @@ because the distribution of betas at the class level is not Gamma. The
 authors show us the resulting P(x) doesn't work, but it isn't clear
 which ingredient breaks down. (Apologies if I missed this analysis)
 
-> This would indeed be an interesting analysis and we have now included it in the supplement. XXXXXXX
+> We have included this analysis in the supplement and reference it in the main text (lines 137--143). We find that both the within clade and between clade distributions break down above the order level.
 
 
 I found a few statements related to niches and evolutionary process a
@@ -135,7 +135,7 @@ be related to an average of various important traits of lineages
 wihtin a clade? Again, this connection is not adequately spelled out
 for readers to form an opinion.
 
-> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines XXXXX. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (XXXXXX) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies, and thus could be characteristic of a region of "niche" space, but does not define that region. (around where we cite erwin2012)
+> We agree that our treatment of "niche" was prime for misinterpretation and confusion, also noted by Reviewer 3. We have opted to replace the term "niche" with "region" or "location" in "adaptive space" following the adaptive landscape idea of Simpson (1953). We pay careful attention to this idea and our definition of it in lines 60--63. We also acknowledge the confusion around whether the $\beta_k$ define locations in "niche" space, or if the location leads to a specific $\beta_k$ value.  To clarify this, we have added to the text (lines 98--101) that we interpret each $\beta_k$ to be an emergent trait of a clade, emerging from its unique set of ecological strategies.
 
 In summary, I think the authors have found a very striking pattern,
 which has the potential to aid our understanding of fluctuations in
@@ -166,7 +166,7 @@ of macroevolutionary differences among higher taxa is uncontroversial.
 \newline\newline
 In summary ANOVA is a statistical model to understand the relevance of different groupings; its goal is not to predict macroscopic distributions across large systems. Superstatistics is a theory which predicts those patterns and can be used to explore the processes generating them, as well as tangentially perform ANOVA-like tasks of confirming which groupings are sensible. 
 \newline\newline
-We clarify the intentions of our superstatistical approach XXXXXXXX
+We clarify the intentions of our superstatistical approach with a revised introduction that clearly motivates the study of complex patterns in the fossil record, and then details the superstatistical approach in a section titled "Superstatistics of fossil biodiversity."
 
 Perhaps some of the benefit of the superstatistics comes from the
 prediction that fluctuations should be Gaussian within groups, whereas
@@ -186,7 +186,7 @@ rate heterogeneity (there are various ways one could do this).
 
 > We are also concerned about "error," specifically from biased sampling throughout the fossil record. We account for this using a new method based on binomial sampling and publication bias that we layout in the methods section.
 \newline\newline
-One could certainly evaluate if there is rate heterogeneity by competing rate homogeneous and rate heterogeneous models, but again, this is not our interest---our interest is in the consequence of rate heterogeneity on the macroscopic pattern of fluctuations in taxon richness throughout the fossil record.  We seek to clarify this intention with new wording in the introduction XXXXXXXXX
+One could certainly evaluate if there is rate heterogeneity by competing rate homogeneous and rate heterogeneous models, but again, this is not our interest---our interest is in the consequence of rate heterogeneity on the macroscopic pattern of fluctuations in taxon richness throughout the fossil record.  We seek to clarify this intention with new styructuring and expanded explanation throughout introduction.
 
 
 I would also say that I think there are places in which the
@@ -199,7 +199,7 @@ macroevolutionary processes, including constant-rates birth-death,
 diversity dependence, and neutrality. These span most of of the
 scenarios considered seriously in macroevolutionary studies.
 
-> We certainly agree with the reviewer. We have introduced the statistical mechanical idea of equilibrium sooner so as to avoid confusing readers of our intentions and interpretations (lines XXXX) (where we first say 'zero-centered')
+> We certainly agree with the reviewer. We have introduced the statistical mechanical idea of equilibrium sooner so as to avoid confusing readers of our intentions and interpretations (lines 111--119).
 
 Another example concerns their interpretation of uniform regimes
 within orders, and thus that it is only rare events -- the formation of
@@ -216,7 +216,7 @@ families have low generic diversity), but it showing that families do
 worse than orders would support the scenario favored in the manuscript
 (although there may be issues of sample size and statistical power).
 
-> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the order level.  As the reviewer indicates, this adds credence to our idea.  We discuss this in greater depth in lines XXXX.
+> We have now extended our analysis to families and find, very interestingly, that family-level dynamics are also well captured by superstatistics, but the goodness of fit at the family level is just slightly not as good compared to the order level.  As the reviewer indicates, this adds credence to our idea.  We discuss this in greater depth in lines 171--173 and 187--194.
 
 ## Reviewer 3
 
@@ -283,14 +283,14 @@ to take advantage of these data! Alternatively, the data used in
 papers such as Bush et al. (2007 Paleobiol. 33:76) could be used.
 
 > It is indeed a great resource that Bambach's guild designations are available through the PBDB. We detail our utilization of these data in our response to the next comment. \newline\newline
-We also find it necessary to confront the semantics of "niche" versus "guild." We concede that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confusion we opt to not use either of the terms and instead replace all instances of "niche" with "adaptive landscape," defining carefully what we mean by that term at the first instance of its use (lines XXXX) (where we first say 'macroecological')
+We also find it necessary to confront the semantics of "niche" versus "guild." We concede that the literature is over-populated with different uses for both terms, many overlapping and likely conflicting between disciplines (e.g. ecology, evolution, paleobiology). To avoid adding further to this confusion we opt to not use either of the terms and instead replace all instances of "niche" with "adaptive landscape," defining carefully what we mean by that term at the first instance of its use (lines 60--63).
 
 4. Following point 3, I am very skeptical that orders are going to be
 homogeneous ecological units. Indeed, one of the explanations for why
 groups like orders initially radiated is that they were able to become
 ecologically diverse.
 
-> We have taken this reviewer's advice to investigate the ecological composition of different taxonomic levels. This analysis reveals that families contain on average one ecological guild hypercube, orders contain on average 2, and classes and phyla contain many more. This analysis is in the supplemental section "Guild composition of higher taxa" and referenced in the main text at lines XXXXX.
+> We have taken this reviewer's advice to investigate the ecological composition of different taxonomic levels. This analysis reveals that families contain on average one ecological guild hypercube, orders contain on average 2, and classes and phyla contain many more. This analysis is in the supplemental section "Ecospace occupation of higher taxa" and referenced in the main text at lines 183--186.
 
 5. As before, I think that the authors do themselves a major
 disservice using the word "punctuated," although they at least have
@@ -444,13 +444,13 @@ class-level data. I strongly recommend: (i) highlighting this in the
 text, as well as (ii) bringing the phylum and class figure panels from
 the Supplemental Information into the main text.
 
-> We have revised Figure 2 to show all taxonomic levels (now including family as well), and have emphasized this finding in the results and discussion (XXXXX)
+> We have revised Figure 2 to show all taxonomic levels (now including family as well), and have emphasized findings across these taxonomic levels (especially including family) throughout the results and discussion.
  
 3) Related to the point made immediately above, the analysis should
 also be performed at the family level, or if that is not possible,
 that needs to be explained why. Why stop at the ordinal level?
 
-> We have included families.  And indeed the new results are very interesting and incorporated throughout the revision.
+> We have included families.  And indeed the new results are very interesting and incorporated throughout the revision.  We find that families also conform to the superstatistical prediction equally well.
 
 
 Intermediate suggestions for improvement
@@ -505,7 +505,7 @@ what they actually mean. And then, in the discussion, they can worry
 about positing connections between the phenomenology they have
 discovered to other ideas.
 
-> we have re-worked much of the paper to avoid over-reach, including major over-hauls of the abstract and introduction where the reviewer found specific issue with niche conservatism and punctuated evolution.
+> We have re-worked much of the paper to avoid over-reach, including major over-hauls of the abstract and introduction where the reviewer found specific issue with niche conservatism and punctuated evolution.
 
 5) Lines 36-38. The casual (sounding?) dismal of escalation (Vermeij,
 [13]) is poor. The Madin et al. paper is weak, and has not gained
@@ -517,7 +517,7 @@ due to the nature of escalatory dynamics, leads to a long-term ratchet
 in the diversity dynamics). So, this needs to be re-written with a
 little more nuance.
 
-> Revised for added nuance and fairness to the literature; see lines XXXX (around where we cite vermeij2008 now)
+> Revised for added nuance and fairness to the literature; see lines 44--48.
 
 6) Line 231. This section is labeled: "Three-timer and publication
 sampling correction", yet in the SM the authors claim that their
