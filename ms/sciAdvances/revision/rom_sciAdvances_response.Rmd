@@ -10,6 +10,8 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+We are grateful to the reviewers and Prof. Aaron Clauset for helping to substantially improve our manuscript.  Below we detail our responses to each comment and in the manuscript text our new edits are highlighted in blue.
+
 ## Reviewer 1
 
 This analysis, summarized in Fig 1 is intriguing, non-trivial, and to
