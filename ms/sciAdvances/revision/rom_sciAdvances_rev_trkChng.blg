@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: rom_sciAdvances_rev_trkChng.aux
 The style file: Science.bst
 Database file #1: ../../superStat.bib
-You've used 57 entries,
+You've used 58 entries,
             2300 wiz_defined-function locations,
-            1084 strings with 15199 characters,
-and the built_in function-call counts, 12144 in all, are:
-= -- 1110
-> -- 452
+            1089 strings with 15298 characters,
+and the built_in function-call counts, 12261 in all, are:
+= -- 1121
+> -- 456
 < -- 8
-+ -- 226
-- -- 113
-* -- 903
-:= -- 1801
-add.period$ -- 57
-call.type$ -- 57
-change.case$ -- 0
++ -- 228
+- -- 114
+* -- 908
+:= -- 1825
+add.period$ -- 58
+call.type$ -- 58
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 57
-duplicate$ -- 650
-empty$ -- 1160
-format.name$ -- 146
-if$ -- 2875
+cite$ -- 58
+duplicate$ -- 657
+empty$ -- 1172
+format.name$ -- 147
+if$ -- 2900
 int.to.chr$ -- 0
-int.to.str$ -- 57
+int.to.str$ -- 58
 missing$ -- 62
-newline$ -- 174
-num.names$ -- 57
-pop$ -- 245
+newline$ -- 177
+num.names$ -- 58
+pop$ -- 247
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 417
+skip$ -- 419
 stack$ -- 0
 substring$ -- 665
-swap$ -- 214
+swap$ -- 215
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 116
-width$ -- 59
-write$ -- 454
+while$ -- 117
+width$ -- 60
+write$ -- 463
