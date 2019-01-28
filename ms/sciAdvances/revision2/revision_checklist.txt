@@ -1,0 +1,60 @@
+REVISION CHECKLIST    
+We *strongly* recommend that you use this list to prepare your revised manuscript and related materials so that they are in the best shape possible when you submit your revision. Please go through this checklist carefully.    
+
+Your submission must follow the journal limits listed below, or it will be returned to you later to adjust. 
+
+Research Articles:
+[  ] Word Count: ~15,000 words (Review articles: ~8,000 words)
+[  ] Reference List: ~ 40 citations total (Review articles: ~100 citations)
+[  ] Main Figures/Tables: 6 Figures/Tables Total (Combined) 
+[  ] Supplemental Figures/Tables: 10 Figures/Tables Total (Combined) 
+
+If your paper is accepted for publication, the accepted version is the manuscript that will be published. Changes made to any substantive text or data of any kind at the galley stage will likely result in a delay of the publication of your paper while changes are checked with editors. We very strongly urge you to read and check your revision very carefully before you submit it back to us.     
+1.      All authors will soon receive an email with a link to fill out the online author questionnaire (COI and license forms). We will not publish a paper until all authors have completed and submitted this questionnaire.  
+2.      In your author paperwork, select that you have applied for a waiver *only* if your institution has its own publishing license. (Some institutions have policies that might limit authors' ability to grant AAAS the exclusive rights we require to publish a manuscript. Check your institution's copyright policy to see if there is a publication policy or Open Access policy that requires you to grant to the institution nonexclusive rights under copyright. If you need help, please ask your local librarian. If there is a policy, you will need to apply for a waiver.)    
+3.      Please note that responsibility for each figure in the main text must be claimed by at least one author in the questionnaires.   
+
+Your new cover letter should include:  
+
+[  ] The correct email address and phone numbers for you and any other corresponding author who will need to receive galley proofs   
+[  ] Telephone numbers for all authors.   
+
+You should have ready to upload with your revised manuscript:  
+
+[  ] A separate document with your responses to reviews, which you should label "Response to Reviews" and upload as "Response to Reviews" under Auxiliary Supplementary Materials. 
+[  ] Whenever possible, all your figures in high-resolution format (at least 600 DPI) so that they are clear when magnified and have legible text. We will need high-resolution files if your revised manuscript is fully accepted . 
+[  ] Supplementary materials in a separate file or files (not part of main text) with figures and tables labeled using S1, S2, and so on.     
+
+Your revised submission should:  
+
+[  ] Be a Word document, not a PDF. (This is IMPORTANT!)  If your manuscript file is in LaTeX, upload a PDF as the main manuscript file and the LaTeX file as supplementary material.
+[  ] Have no changes to the author list. (If there are any changes, please highlight them. All authors will need to approve the new author list.)  
+[  ] Have changes to the original manuscript noted in highlight color. Do not use "track changes". 
+[  ] Include clear, informative headings throughout. 
+[  ] Be written primarily in active voice.  
+[  ] Have all referenced images submitted in a clear and readable format and in correct order. 
+[  ] Include a Materials and Methods section (these do not go in Supplementary Materials). 
+[  ] State clearly that IRB and/or IACUC guidelines were followed with human or animal subjects. 
+[  ] Include a reference list that         
+       o     contains all references from the SM (SM cannot include a reference list)       
+       o     does not include personal communications, working papers, or unpublished work of any kind       
+       o     follows Science style (www.sciencemag.org/site/feature/contribinfo/prep/res/refs.xhtml)  
+[  ] Have acknowledgments that include:        
+       o     an accurate and complete Funding statement. This information should also be updated if needed in the submission system.      
+       o     a statement about conflicting interests along the lines: "Competing Interests: The authors declare that they have no competing interests." If this is not accurate, please list the competing interests.       
+       o     a breakdown of author contributions.       
+       o     the name of the repository where readers can access your data.     
+
+Science Advances strongly encourages authors to put data in a publicly accessible repository such as Dryad. At minimum, a statement similar to the following is required: "All data needed to evaluate the conclusions in the paper are present in the paper and/or the Supplementary Materials. Additional data available from authors upon request."  Please also provide any database or other access numbers that would help interested readers access data used in your study. 
+
+[  ] Include page numbers in the footer on every page. 
+[  ] Include an accurate list of supplementary materials.   
+
+Before submitting your revision, you should:  
+
+[  ] Check to make sure all embedded links work. 
+[  ] Double-check information in tables.   
+
+If you haven't already entered a 125-character teaser, the one-sentence summary aimed at non-specialist readers, please prepare and submit one with your revision. 
+
+Remember that you should upload only one copy of the revised manuscript and that the supplementary materials will NOT be edited before publication, so you should make sure that what you upload is ready for public viewing and distribution. 
