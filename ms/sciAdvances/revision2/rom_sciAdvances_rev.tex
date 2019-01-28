@@ -765,8 +765,8 @@ aggregated fluctuation distribution of each bootstrap replicate.
 Fossil taxa gain and lose genera according to an
 origination-extinction process. We assume that most fossil occurrences
 of a taxon come from the period of its history when it is dominant and
-in steady state. In a time slice of duration $\tau$ during such a
-period of steady state the latent per capita rates of origination and
+in stationary state. In a time slice of duration $\tau$ during such a
+period of stationary state the latent per capita rates of origination and
 extinction would be equal (i.e. $\lambda = \mu \equiv \rho$) and the
 number of origination or extinctions events (call such events $Y$)
 each follow an inhomogeneous Poisson process with rate $\rho N_t$
@@ -779,8 +779,8 @@ distributed
   \label{eq:eventPois1}
   Y \sim \text{Pois}\left(\rho \int_{t=0}^\tau N(t) dt\right).
 \end{equation}
-Under the steady state assumption we can approximate $N(t)$ by
-$\bar{N}$, the steady state richness, leading to
+Under the stationarity assumption we can approximate $N(t)$ by
+$\bar{N}$, the stationary richness, leading to
 \begin{equation}
   \label{eq:eventPois2}
   Y \sim \text{Pois}(\rho \bar{N} \tau).
