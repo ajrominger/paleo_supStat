@@ -184,12 +184,13 @@ distribution is consistent with niche conservatism
 \citep{roy2009range, hopkins2014} and pulsed exploration on an
 adaptive landscape by higher taxa \citep{simpson1953,
   eldredgeGould1972, newman1985adaptive, hopkins2014}. We
-operationally define ``adaptive landscape'' to mean a clade's set
-characteristics that influences its macroevolution. Those
-characteristics could be ecological (e.g.  substrate preference
-\citep{bambach1983, bush2007, hopkins2014}), morphological (e.g. body
-plan \citep{erwin2012}), or macroecological (e.g. range size
-\citep{harnik2011, foote2008paleobiol}).
+operationally define ``adaptive landscape'' to mean a clade's set of
+characteristics, and the fitness they impart to the clade, that
+influences its macroevolution. Those characteristics could be
+ecological (e.g.  substrate preference \citep{bambach1983, bush2007,
+  hopkins2014}), morphological (e.g. body plan \citep{erwin2012}), or
+macroecological (e.g. range size \citep{harnik2011,
+  foote2008paleobiol}).
 
 
 \subsection{Superstatistics of fossil biodiversity}
@@ -229,10 +230,12 @@ processes determining the ``colonization'' of adaptive peaks, as
 opposed to short timescale biogeographic processes.
 
 The volatility of richness fluctuations will vary across these islands
-in adaptive space as an emergent trait of a clade. Ultimately,
-volatility emerges from the life histories, ecologies, and
-evolutionary histories that characterize each clade's occupancy in
-different regions of an adaptive landscape. We do not attempt to
+in adaptive space as an emergent trait of a clade resulting from the
+macroevolutionary fitness of the clade and the shape of the
+surrounding adaptive landscape. Ultimately, volatility emerges from
+the life histories, ecologies, and evolutionary histories that drive
+each clade's macroevolutionary fitness and characterize its occupancy
+in different regions of an adaptive landscape. We do not attempt to
 diagnose which characteristics of different regions account for
 volatility differences, but others have found rates of origination and
 extinction to depend on larval type \citep{jablonski2008}, body plan
@@ -480,10 +483,19 @@ genera per family is key because this could be purely an artifact of
 an arbitrary taxonomic process \citep{yule1925, capocci2008} and genus
 richness alone could be solely responsible for differences in the
 $\beta_k$ across clades. Indeed, the number of genera in a family and
-that family's $\beta_k$ value are correlated
-(Fig. \ref{figSupp:betaByRich}). Thus we want to know if this
-correlation alone accounts for all downstream superstatistical
-results.
+that family's $\beta_k$ value are negatively correlated
+(Fig. \ref{figSupp:betaByRich}). A negative correlation between clade
+richness and $\beta_k$ is not unexpected because fluctuations are the
+sums of the random variables representing genus origination and
+extinction events; the more of these random variables in the summation
+(i.e. the more genus richness in a clade) the higher the variance of
+the summation.  Because $\beta_k \equiv 1/\sigma_k^2$ increasing
+richness should lead to decreasing $\beta_k$ values. Thus we want to
+know if this correlation alone accounts for all downstream
+superstatistical results. The permutation test is specifically
+designed to determine if the $\beta_k$ imposed by this correlation
+with richness are sufficient to explain the observed superstatistical
+fit.
 
 Repeating the null permutation of genera in families 500 times yields
 a null distribution of Kolmogorov-Smirnov statistics that is far
@@ -529,16 +541,17 @@ associated with a clade's macroevolutionarily-relevant traits, and
 those traits evolve via Ornstein-Uhlenbeck-like exploration of an
 adaptive landscape, the resulting stationary distribution of $\beta_k$
 will be Gamma \citep{cir1985}.  For macroevolutionary rates to vary
-across an adaptive landscape, this landscape cannot be flat, and thus
-niche conservatism around local optima in adaptive space interrupted
-by adaptive exploration is likely \citep{newman1985adaptive,
-  gavrilets2004book}. The specifics of how this adaptive landscape is
-shaped and is traversed by evolving clades determine the exact form of
-the distribution of $\beta_k$ volatilities, in the case of the marine
-Phanerozoic resulting in a Gamma distribution. Our work thus motivates
-further study of the trait spaces and evolutionary shifts consistent
-with Gamma-distributed equilibria in richness fluctuation
-volatilities.
+across an adaptive landscape, this landscape cannot be flat
+(i.e. equal fitness everywhere), but instead must be rugged. Thus
+niche conservatism around local fitness optima in adaptive space
+interrupted by adaptive exploration is likely
+\citep{newman1985adaptive, gavrilets2004book}. The specifics of how
+this adaptive landscape is shaped and is traversed by evolving clades
+determine the exact form of the distribution of $\beta_k$
+volatilities, in the case of the marine Phanerozoic resulting in a
+Gamma distribution. Our work thus motivates further study of the trait
+spaces and evolutionary shifts consistent with Gamma-distributed
+equilibria in richness fluctuation volatilities.
 
 We show that the pulsed shift to different equilibria between orders
 and the families they subsume is sufficient to explain the
