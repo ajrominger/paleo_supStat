@@ -50,16 +50,16 @@ of beta on family size, N—i.e. how would beta depend on family size if lambda 
 
 However, Fig S6 shows the opposite relationship altogether—roughly this figure shows that beta~1/N, and this seems worthy of more comment! In fact, I can't even quite see where the Spondylidae family can fit into fig S6, given that they have a (standardized) mean richness of 1 genus and fitted beta ~ 10^{-1}. But maybe this is just down to the way the y-axis is defined in Fig S6 vs Fig 1A.
 
-> The likely key to interpreting these patterns is that in Fig S6 we look at the total richness of a clade, which includes turnover through time, and so while the Spondylidae tend to have 1 genus in any given time interval, the identity of that genus changes and so the group's total richness is greater than 1.  This helps explain where Spondylidae might fall in Fig S6, but also helps understand why beta ~ 1/N: the time-series of fluctuations is the summation of +1 and -1 for each genus origination and extinction, in the time intervals when those events took place.  Viewing the fluctuation of each time interval as a sum of random variables means that the variance of that fluctuation should increase with increasing N.  Because $\beta = 1/\sigma^2$ this is consistent with $\beta$ decreasing with increasing N.  We add this to the discussion in lines XXX.
+> The likely key to interpreting these patterns is that in Fig S6 we look at the total richness of a clade, which includes turnover through time, and so while the Spondylidae tend to have 1 "standardized" genus in any given time interval, the identity of genera changes and so the group's total richness is greater than 1 standardized richness unit.  This helps explain where Spondylidae might fall in Fig S6, but also helps understand why beta ~ 1/N: the time-series of fluctuations is the summation of +1 and -1 for each genus origination and extinction, in the time intervals when those events took place.  Viewing the fluctuation of each time interval as a sum of random variables means that the variance of that fluctuation should increase with increasing N.  Because $\beta = 1/\sigma^2$ this is consistent with $\beta$ decreasing with increasing N.  We add this to the commentary in lines ['is not unexpected'].
 
 In any case, this is an interesting relationship that seems like it has some power in explaining the variability in fitted values of beta across families. However, the authors say it is not sufficient to explain the observed variation in betas. I did not quite understand
 how the permutation test described in the main text was showing this. But maybe here is another way of thinking about it. Suppose I fitted beta ~ const/N using Fig S6. How much worse would this do than the gamma distribution that is fitted to observed betas in Fig 1C?
 
-> The permutation test is trying to achieve exactly this suggestion: derive the set of $\beta$ values that would result from N dependence alone and see how much worse the gamma and resulting P(x) distributions are.  In fact our permutation approach should be closer to the actual gamma dn P(x) distributions because it not only captures the central tendency of the $\beta = f(N)$ function but also some of its spread. XXXXX
+> The permutation test is trying to achieve exactly this suggestion: derive the set of $\beta$ values that would result from N-dependence alone and see how much worse the gamma and resulting P(x) distributions are.  In fact our permutation approach should be closer to the actual gamma and P(x) distributions because it not only captures the central tendency of the $\beta = f(N)$ function but also some of its spread. We have added this interpretation of the permutation experiment at lines ['is not unexpected'].
 
 In summary I think Fig S6 deserves more comment and readers may want to understand better why we would see beta ~ 1/N.
 
-> We agree and have added more commentary, in line with the discussion above, throughout and specifcially lines XXXX
+> We agree and have added more commentary, following from the discussion above, at lines ['is not unexpected'].
 
 ** Overall, one suggestion that might clarify some of the above questions might be to infer the best fit parameters for the birth-death process from the observed transitions for each time series, allowing both lambda and mu to be fitted parameters, and then these more clearly related to beta.
 
@@ -70,11 +70,11 @@ In summary I think Fig S6 deserves more comment and readers may want to understa
 
 The authors have responded to comments in my original review by (1) adding an analysis of families, (2) revising parts that argue for the utility of the superstatistics approach, and (3) revising some of the process interpretations based on the results. I appreciate the family analysis, which is similar to that of orders in showing macroevolutionary coherence within taxonomic units.
 
-> We thank the reviewer for their first round of comments and for again evaluating our revision.
+> We thank the reviewer for their first round of comments and for again evaluating our revision, helping us to improve its clarity.
 
 As for changes (2), I feel pretty similarly as I did about the first version of the manuscript. The methods are interesting and, as far as I can tell, valid. I am still not sure that have clear advantages over other approaches, but I could be wrong, and it would be good to release these ideas into the wild, so to speak, and see how they fare.
 
-> We appreciate the reviewer's open mindedness in suggesting that the wilds of our scientific community can be the judge of the ultimate utility of our approach.
+> We appreciate the reviewer's open mindedness in suggesting that the wilds of our scientific community can decide the ultimate utility or lack thereof of our approach.
 
 In terms of interpretation, the revisions are fine, though I think the same limitation holds in that the main result — macroevolutionary dynamics are more within clades rather than between clades — is not very surprising. But there may be value in the specifics of how this work breaks down this heterogeneity.
 
@@ -82,10 +82,10 @@ In terms of interpretation, the revisions are fine, though I think the same limi
 
 One side note about interpretation: the paper uses the metaphor of the adaptive landscape to frame the interpretations, but in places I lost the thread of this framing. The adaptive landscape in macroevolution is usually used in the interpretation of trait evolution, not speciation/extinction dynamics. I think the connection made here is the assumption that the clade volatilities (beta_k) are related to trait values, which may evolve by OU-like dynamics on an adaptive landscape. Does there need to be an additional assumption about the nature of this relationship - linear, perhaps?
 
-> The reviewer raises a good point in that if OU-like trait evolution underlies gamma-distributed $\beta$ values, then there should be a linear mapping of trait fitness and volatility.  We make that clearer in lines XXXX.  One other point to note, however, is that Simpson's original fitness landscape was aimed not only at traits but also macroevolutionary rates, making our narrative a natural extension of his.  We solidify that interpretation in lines XXX.
+> The connection of our work to adaptive landscapes indeed requires refinement. We should make clear that the traits themselves are not responsible for volatilities, but rather the macrovolutionary fitness confered by those traits to the clade are what we hypothesize to determine the clade's volatility.  We make that clearer in lines ['surrounding adaptive landscape'].  One other point to note, however, is that Simpson's original fitness landscape was aimed not only at traits (which constitute the "geographic coordinates" of the lanscape) but also macroevolutionary rates which come from the elevation of the landscape, making our narrative a natural extension of his.  We solidify that interpretation in lines ['fitness they impart' and 'characterize its occupancy'].
 
 I was tripped up in interpreting this quote: "For macroevolutionary rates to vary across an adaptive landscape, this landscape cannot be flat, and thus niche conservatism around local optima in adaptive space interrupted by adaptive exploration is likely (27,47)."
 
 What does elevation on this landscape represent? For OU dynamics, a flat landscape indicates Brownian motion. Brownian motion still produces trait variation, and If trait variation causes differences in clade volatilities (beta_k), then Brownian motion will still produce variation in macroevolutionary rates. So I am confused as to how the adaptive landscape is construed in this interpretation.
 
-> Here the key, which we admitted could (and now do) make more clear, is that it is not the traits per se which should correspond to volatility but rather the macroevolutionary fitness of those traits.  We clarify in lines XXX.
+> Here the key, which we admitted could (and now do) make more clear, is that it is not the traits per se which should correspond to volatility but rather the macroevolutionary fitness of those traits.  We clarify in lines [around 'rugged' and 'characterize its occupancy'].
