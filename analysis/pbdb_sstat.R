@@ -70,6 +70,9 @@ sstatPBDBfam3TPCI <- bootMLE.sstat(sstatPBDBfam3TP, B = 1000, useAll = FALSE)
 pbdbOrdFlux <- calcFlux(pbdbOrdDiv)
 sstatPBDBOrd <- sstatComp(pbdbOrdFlux, minN = 10, plotit = FALSE)
 
+# likelihood CI for family-level sstat analysis
+sstatPBDBOrd3TPCI <- bootMLE.sstat(sstatPBDBOrd, B = 1000, useAll = FALSE)
+
 pbdbClsFlux <- calcFlux(pbdbClsDiv)
 sstatPBDBCls <- sstatComp(pbdbClsFlux, minN = 10, plotit = FALSE)
 
@@ -97,7 +100,9 @@ logAxis(2, expLab = TRUE)
 legend('topright', legend = 'A', bty = 'n', cex = 1.4)
 
 plot(sstatPBDBOrd, xlim = c(1e-04, 5e+02), ylim = c(8e-05, 1), xaxt = 'n', yaxt = 'n', 
-     addLegend = FALSE)
+     addLegend = FALSE, 
+     panel.first = quote(mlePoly(sstatPBDBOrd3TPCI$sstat, PPx.gam,
+                                 col = hsv(alpha = 0.25), border = NA)))
 mtext('Orders', side = 3, line = 0)
 legend('topright', legend = 'B', bty = 'n', cex = 1.4)
 
@@ -115,6 +120,7 @@ legend('topright', legend = 'D', bty = 'n', cex = 1.4)
 
 mtext('|Fluctuations|', side = 1, outer = TRUE, line = 2)
 mtext('Cumulative density', side = 2, outer = TRUE, line = 2)
+
 dev.off()
 
 
