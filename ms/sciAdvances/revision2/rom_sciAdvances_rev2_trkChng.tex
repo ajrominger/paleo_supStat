@@ -245,13 +245,14 @@ distribution is consistent with niche conservatism
 \citep{roy2009range, hopkins2014} and pulsed exploration on an
 adaptive landscape by higher taxa \citep{simpson1953,
   eldredgeGould1972, newman1985adaptive, hopkins2014}. We
-operationally define ``adaptive landscape'' to mean a clade's set \DIFdelbegin \DIFdel{characteristics }\DIFdelend \DIFaddbegin \DIFadd{of
-characteristics, and the fitness they impart to the clade, }\DIFaddend that
-influences its macroevolution. Those characteristics could be
-ecological (e.g.  substrate preference \citep{bambach1983, bush2007,
-  hopkins2014}), morphological (e.g. body plan \citep{erwin2012}), or
-macroecological (e.g. range size \citep{harnik2011,
-  foote2008paleobiol}).
+operationally define ``adaptive landscape'' to mean a clade's set
+\DIFdelbegin \DIFdel{characteristics }\DIFdelend \DIFaddbegin
+\DIFadd{of characteristics, and the fitness they impart to the clade,
+}\DIFaddend that influences its macroevolution. Those characteristics
+could be ecological (e.g.  substrate preference \citep{bambach1983,
+  bush2007, hopkins2014}), morphological (e.g. body plan
+\citep{erwin2012}), or macroecological (e.g. range size
+\citep{harnik2011, foote2008paleobiol}).
 
 
 \subsection{Superstatistics of fossil biodiversity}
@@ -271,17 +272,18 @@ temperature. In macroevolutionary ``mechanics'' we define the
 $\beta_k$ of clade $k$ as the inverse variance of fluctuations $x_k$
 in the number of genera within that clade, i.e. fluctuations in the
 genus richness.  The $\beta_k$ thus represent the inverse variances,
-what we term volatilities, of the \DIFdelbegin \DIFdel{stationary distribution of a
-homogeneous }\DIFdelend origination-extinction processes of
-genera \DIFdelbegin \DIFdel{. Fluctuations
-from this stationary process}\DIFdelend \DIFaddbegin \DIFadd{with clades. The details fo this origination-extinction
-process, e.g. whether it is linear or subject to a carrying capacity,
-are not of central importance to our analysis; so long as fluctuations
-can reach a stationary distribution and are observed over
-time-averaged intervals in a temporally coarse-grained fossil record
-they }\DIFaddend will be approximately Gaussian \DIFdelbegin \DIFdel{if the
-clades' diversification dynamics are independent and in local
-equilibrium }\DIFdelend (see Supplemental Section
+what we term volatilities, of the \DIFdelbegin \DIFdel{stationary
+  distribution of a homogeneous }\DIFdelend origination-extinction
+processes of genera \DIFdelbegin \DIFdel{. Fluctuations from this
+  stationary process}\DIFdelend \DIFaddbegin \DIFadd{with clades. The
+  details of this origination-extinction process, e.g. whether it is
+  linear or subject to a carrying capacity, are not of central
+  importance to our analysis; so long as fluctuations can reach a
+  stationary distribution and are observed over time-averaged
+  intervals in a temporally coarse-grained fossil record they
+}\DIFaddend will be approximately Gaussian \DIFdelbegin \DIFdel{if the
+  clades' diversification dynamics are independent and in local
+  equilibrium }\DIFdelend (see Supplemental Section
 \ref{sec:suppLimitDist}; \citep{grassmann1987}).
 
 We make the hypothesis of dynamic equilibrium within a clade following
@@ -302,7 +304,7 @@ macroevolutionary fitness of the clade and the shape of the
 surrounding adaptive landscape}\DIFaddend . Ultimately, volatility emerges from
 the life histories, ecologies, and evolutionary histories that \DIFdelbegin \DIFdel{characterize }\DIFdelend \DIFaddbegin \DIFadd{drive
 }\DIFaddend each clade's \DIFaddbegin \DIFadd{macroevolutionary fitness and characterize its }\DIFaddend occupancy
-in different regions of an adaptive landscape. We do not attempt to
+of different regions of an adaptive landscape. We do not attempt to
 diagnose which characteristics of different regions account for
 volatility differences, but others have found rates of origination and
 extinction to depend on larval type \citep{jablonski2008}, body plan
@@ -464,15 +466,16 @@ bias-corrected PBDB (Fig. \ref{fig:Px}).
     approach, both when computed from integrating over the
     distribution of observed variances (red line) and when fit via
     maximum likelihood (95\% confidence interval; red shading in
-    (A)).}
+    (A) and (B)).}
   \label{fig:Px}
 \end{figure}
 
 To quantitatively evaluate how well the superstatistical prediction
-matches the family-level data we constructed a 95\% confidence
-envelope from bootstrapped maximum likelihood estimates of
-$P(x)$. Observed fluctuations fall within this 95\% confidence
-envelope (Fig. \ref{fig:Px}), indicating that the data do not reject
+matches the \DIFaddbegin \DIFadd{family- and order-level data we
+  constructed a 95\% confidence envelope from bootstrapped maximum
+  likelihood estimates of $P(x)$. Observed fluctuations for both
+  taxonomic levels} \DIFaddend fall within these 95\% confidence
+envelopes (Fig. \ref{fig:Px}), indicating that the data do not reject
 the superstatistical prediction. For further comparison, we fit a
 Gaussian distribution to the observed fluctuations, which corresponds
 to the equilibrium hypothesis that all families conform to the same
@@ -532,7 +535,7 @@ $\beta_k^{(family)}$ is still Gamma.
   \includegraphics[scale=1]{../../fig_dStat.pdf}
   \caption[Goodness of superstatistical theory fit]{Distribution of
     Kolmogorov-Smirnov (KS) statistics from randomly permuting genera
-    within familes (gray shading represents 95\% confidence
+    within families (gray shading represents 95\% confidence
     interval). Solid colored lines are observed KS statistics at
     different taxonomic levels as indicated.}
   \label{fig:dStat}
@@ -608,10 +611,12 @@ niche space \citep{cir1985}.  Specifically, if $\beta_k$ values are
 associated with a clade's macroevolutionarily-relevant traits, and
 those traits evolve via Ornstein-Uhlenbeck-like exploration of an
 adaptive landscape, the resulting stationary distribution of $\beta_k$
-will be Gamma \citep{cir1985}.  For macroevolutionary rates to vary
-across an adaptive landscape, this landscape cannot be flat
-\DIFaddbegin \DIFadd{(i.e. equal fitness everywhere), but instead must be rugged. Thus
-}\DIFaddend niche conservatism around local \DIFaddbegin \DIFadd{fitness }\DIFaddend optima in adaptive space
+will be Gamma \citep{cir1985}. \DIFaddbegin \DIFadd{For
+  macroevolutionary rates to vary in a way consistent with the
+  observed superstatistical description of fluctuations this landscape
+  cannot be flat (i.e. equal fitness everywhere), but instead must be
+  rugged. Thus }\DIFaddend niche conservatism around local
+\DIFaddbegin \DIFadd{fitness }\DIFaddend optima in adaptive space
 interrupted by adaptive exploration is likely
 \citep{newman1985adaptive, gavrilets2004book}. The specifics of how
 this adaptive landscape is shaped and is traversed by evolving clades
@@ -804,7 +809,7 @@ aggregated fluctuation distribution of each bootstrap replicate.
 \item[{\bf Funding:}] AJR thanks funding from Fulbright Chile, the
   National Science Foundation Graduate Research Fellowship Program and
   the Omidyar Program at the Santa Fe Institute; MAF thanks FONDECYT
-  1140278; PM thanks CONICYT PFB-023, ICM-P05-002 and FONDECYT
+  1140278; PM thanks CONICYT AFB170008, ICM-P05-002 and FONDECYT
   1161023.
 \item[{\bf Author contributions:}] AJR, MAF and PAM designed the
   study; AJR and MAF preformed the analyses; AJR, MAF and PAM
@@ -895,22 +900,24 @@ $\bar{N}$, the steady state richness, leading to
 %DIFDELCMD < 
 
 %DIFDELCMD < %%%
-\DIFdel{This Poisson distribution is asymptotically Gaussian, which is a more
-appropriate distribution for our sampling and bias-corrected richness
-estimates because these estimates are not integer-valued but rather
-continuous random variables.  Furthermore, because we use standard time
-periods of average duration $\tau = 11\text{MY}$ the the distribution
-of fluctuations within taxa will be independent of the specific time
-periods considered. The Gaussian }\DIFdelend \DIFaddbegin \DIFadd{The difference of these
-Poisson distributions is again asymptotically Gaussian.  Our analysis
-does not depend on all clades being perfectly stationary with
-$\lambda = \mu$ because of the }\DIFaddend asymptotics of time-averaged \DIFdelbegin \DIFdel{birth-death processeshave been proven and explored elsewhere as well
-\mbox{%DIFAUXCMD
-\citep{grassmann1987}}\hspace{0pt}%DIFAUXCMD
-}\DIFdelend \DIFaddbegin \DIFadd{Markov
-processes. Indeed we zero-center all fluctuation time series to avoid
-possible net diversification or extinction bias our analysis of
-fluctuation volatilities}\DIFaddend .
+\DIFdel{This Poisson distribution is asymptotically Gaussian, which is
+  a more appropriate distribution for our sampling and bias-corrected
+  richness estimates because these estimates are not integer-valued
+  but rather continuous random variables.  Furthermore, because we use
+  standard time periods of average duration $\tau = 11\text{MY}$ the
+  the distribution of fluctuations within taxa will be independent of
+  the specific time periods considered. The Gaussian }\DIFdelend
+\DIFaddbegin \DIFadd{The difference of these Poisson distributions is
+  again asymptotically Gaussian.  Our analysis does not depend on all
+  clades being perfectly stationary with $\lambda = \mu$ because of
+  the }\DIFaddend asymptotics of time-averaged \DIFdelbegin
+\DIFdel{birth-death processes have been proven and explored elsewhere
+  as well \mbox{%DIFAUXCMD
+    \citep{grassmann1987}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{Markov processes. Indeed we
+  zero-center all fluctuation time series to avoid possible net
+  diversification or extinction from biasing our analysis of
+  fluctuation volatilities}\DIFaddend .
 
 
 \section{Evaluation of sampling bias correction methods}
@@ -926,8 +933,9 @@ log-richness versus log-number of publications here
 \begin{figure}[!hp]
   \centering
   \includegraphics[width=0.4\textwidth]{../../figSupp_divByPub.pdf}
-  \caption{Relationship between number of publications and genus
-    richness at the family level as recorded by the PBDB.}
+  \caption{Relationship between number of publications and three-timer
+    (3T) corrected genus richness at the family level as recorded by
+    the PBDB.}
   \label{figSupp:divByPub}
 \end{figure}
 
@@ -982,11 +990,12 @@ distribution at the levels of classes and phyla
     show how the percentiles of observed re-scaled fluctuation
     distributions compare to expected percentiles from a Gaussian
     distribution with mean 0 and variance 1. We can see that families
-    conform to a linear relationship while higher taxa, even at the
-    order level, begin to show s-shaped relationships. Inset plots
-    show how kurtosis increases from 0 (the value for a Gaussian
-    distribution) at the family level to increasingly larger values
-    at higher taxonomic levels.}
+    and order conform to a linear relationship, albeit with the later
+    showing some signs of an s-shaped pattern. Clases and phyla show
+    stronger deviations from the linear trend with a marked s-shaped
+    relationships. Inset plots show how kurtosis increases from 0 (the
+    value for a Gaussian distribution) at the family level to
+    increasingly larger values at higher taxonomic levels.}
   \label{figSupp:pkx_allTaxa}
 \end{figure}
 
@@ -1013,7 +1022,7 @@ evaluate this idea is to count the ecospace hypercubes
 different levels. We use the ecological characteristics reported by
 the PBDB: taxon environment, motility, life habit, vision, diet,
 reproduction, and ontogeny. In Figure \ref{figSupp:eeSpaceOcc} we find
-that families comprise, on average, 1 hypercube, families comprise 2
+that families comprise, on average, 1 hypercube, orders comprise 2
 hypercubes on average, and classes and phyla comprise many more.
 
 \begin{figure}[!hp]
