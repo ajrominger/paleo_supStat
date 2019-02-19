@@ -112,14 +112,15 @@
 }
 
 \setlength{\droptitle}{-2em}
-  \title{Appendix A: R code to reproduce the study}
-  \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-  \author{}
-  \preauthor{}\postauthor{}
-  \date{}
-  \predate{}\postdate{}
 
+  \title{Appendix A: R code to reproduce the study}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
 
 \begin{document}
 \maketitle
@@ -725,6 +726,9 @@ super-statistical analysis. We do that in the script
 \NormalTok{pbdbOrdFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbOrdDiv)}
 \NormalTok{sstatPBDBOrd <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbOrdFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
 
+\CommentTok{# likelihood CI for family-level sstat analysis}
+\NormalTok{sstatPBDBOrd3TPCI <-}\StringTok{ }\KeywordTok{bootMLE.sstat}\NormalTok{(sstatPBDBOrd, }\DataTypeTok{B =} \DecValTok{1000}\NormalTok{, }\DataTypeTok{useAll =} \OtherTok{FALSE}\NormalTok{)}
+
 \NormalTok{pbdbClsFlux <-}\StringTok{ }\KeywordTok{calcFlux}\NormalTok{(pbdbClsDiv)}
 \NormalTok{sstatPBDBCls <-}\StringTok{ }\KeywordTok{sstatComp}\NormalTok{(pbdbClsFlux, }\DataTypeTok{minN =} \DecValTok{10}\NormalTok{, }\DataTypeTok{plotit =} \OtherTok{FALSE}\NormalTok{)}
 
@@ -752,7 +756,9 @@ super-statistical analysis. We do that in the script
 \KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'A'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
 
 \KeywordTok{plot}\NormalTok{(sstatPBDBOrd, }\DataTypeTok{xlim =} \KeywordTok{c}\NormalTok{(}\FloatTok{1e-04}\NormalTok{, }\FloatTok{5e+02}\NormalTok{), }\DataTypeTok{ylim =} \KeywordTok{c}\NormalTok{(}\FloatTok{8e-05}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{, }
-     \DataTypeTok{addLegend =} \OtherTok{FALSE}\NormalTok{)}
+     \DataTypeTok{addLegend =} \OtherTok{FALSE}\NormalTok{, }
+     \DataTypeTok{panel.first =} \KeywordTok{quote}\NormalTok{(}\KeywordTok{mlePoly}\NormalTok{(sstatPBDBOrd3TPCI}\OperatorTok{$}\NormalTok{sstat, PPx.gam,}
+                                 \DataTypeTok{col =} \KeywordTok{hsv}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.25}\NormalTok{), }\DataTypeTok{border =} \OtherTok{NA}\NormalTok{)))}
 \KeywordTok{mtext}\NormalTok{(}\StringTok{'Orders'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{3}\NormalTok{, }\DataTypeTok{line =} \DecValTok{0}\NormalTok{)}
 \KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'B'}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
 
@@ -770,6 +776,7 @@ super-statistical analysis. We do that in the script
 
 \KeywordTok{mtext}\NormalTok{(}\StringTok{'|Fluctuations|'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{1}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
 \KeywordTok{mtext}\NormalTok{(}\StringTok{'Cumulative density'}\NormalTok{, }\DataTypeTok{side =} \DecValTok{2}\NormalTok{, }\DataTypeTok{outer =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{line =} \DecValTok{2}\NormalTok{)}
+
 \KeywordTok{dev.off}\NormalTok{()}
 
 
@@ -778,7 +785,6 @@ super-statistical analysis. We do that in the script
 \CommentTok{# plot p_k(x|b) and f(beta) for families}
 \CommentTok{# --------------------------------------}
 
-\CommentTok{# idea for normality test: sample 1 from each order and do ks test on that subsampled set}
 
 \CommentTok{# highlight individual trajectories}
 \NormalTok{loFam <-}\StringTok{ 'Tainoceratidae'} \CommentTok{# nautiloid}
@@ -828,7 +834,7 @@ super-statistical analysis. We do that in the script
 \KeywordTok{trajLines}\NormalTok{(tbinMid, mi, }\DataTypeTok{col =}\NormalTok{ cols[}\StringTok{'mi'}\NormalTok{], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
 \KeywordTok{trajLines}\NormalTok{(tbinMid, hi, }\DataTypeTok{col =}\NormalTok{ cols[}\StringTok{'hi'}\NormalTok{], }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{)}
 
-\KeywordTok{text}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{450}\NormalTok{, }\DecValTok{230}\NormalTok{, }\DecValTok{10}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\FloatTok{5.25}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(miFam, loFam, hiFam), }
+\KeywordTok{text}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{420}\NormalTok{, }\DecValTok{230}\NormalTok{, }\DecValTok{10}\NormalTok{), }\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\FloatTok{5.25}\NormalTok{, }\DecValTok{2}\NormalTok{), }\DataTypeTok{labels =} \KeywordTok{c}\NormalTok{(miFam, loFam, hiFam), }
      \DataTypeTok{col =}\NormalTok{ cols[}\KeywordTok{c}\NormalTok{(}\StringTok{'mi'}\NormalTok{, }\StringTok{'lo'}\NormalTok{, }\StringTok{'hi'}\NormalTok{)], }\DataTypeTok{pos =} \KeywordTok{c}\NormalTok{(}\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{2}\NormalTok{))}
 
 \KeywordTok{paleoAxis}\NormalTok{(}\DecValTok{1}\NormalTok{)}
@@ -855,14 +861,15 @@ super-statistical analysis. We do that in the script
      \DataTypeTok{log =} \StringTok{'x'}\NormalTok{, }\DataTypeTok{xaxt =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{yaxt =} \StringTok{'n'}\NormalTok{,}
      \DataTypeTok{xlab =} \KeywordTok{expression}\NormalTok{(beta), }\DataTypeTok{col =} \StringTok{'gray'}\NormalTok{)}
 
-\NormalTok{theseBeta <-}\StringTok{ }\NormalTok{sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta[}\KeywordTok{c}\NormalTok{(loFam, miFam, hiFam)]}
-\KeywordTok{points}\NormalTok{(theseBeta, }\KeywordTok{approxfun}\NormalTok{(betaCDF)(theseBeta), }\DataTypeTok{bg =}\NormalTok{ cols, }\DataTypeTok{pch =} \DecValTok{21}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
-
 \KeywordTok{logAxis}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{expLab =} \OtherTok{TRUE}\NormalTok{)}
 
 \KeywordTok{curve}\NormalTok{(}\KeywordTok{pgamma}\NormalTok{(x, sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{1}\NormalTok{], sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{gam.par[}\DecValTok{2}\NormalTok{], }
              \DataTypeTok{lower.tail =} \OtherTok{FALSE}\NormalTok{), }
       \DataTypeTok{col =} \StringTok{'black'}\NormalTok{, }\DataTypeTok{lwd =} \DecValTok{2}\NormalTok{, }\DataTypeTok{add =} \OtherTok{TRUE}\NormalTok{)}
+
+\NormalTok{theseBeta <-}\StringTok{ }\NormalTok{sstatPBDBfam3TP}\OperatorTok{$}\NormalTok{beta[}\KeywordTok{c}\NormalTok{(loFam, miFam, hiFam)]}
+\KeywordTok{points}\NormalTok{(theseBeta, }\KeywordTok{approxfun}\NormalTok{(betaCDF)(theseBeta), }\DataTypeTok{bg =}\NormalTok{ cols, }\DataTypeTok{pch =} \DecValTok{21}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.2}\NormalTok{)}
+
 
 \KeywordTok{legend}\NormalTok{(}\StringTok{'topright'}\NormalTok{, }\DataTypeTok{legend =} \StringTok{'C'}\NormalTok{, }\DataTypeTok{pch =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{bty =} \StringTok{'n'}\NormalTok{, }\DataTypeTok{cex =} \FloatTok{1.4}\NormalTok{)}
 
