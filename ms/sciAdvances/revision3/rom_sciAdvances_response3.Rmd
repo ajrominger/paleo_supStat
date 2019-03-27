@@ -1,0 +1,33 @@
+---
+header-includes:
+    \usepackage{tcolorbox}
+    \newtcolorbox{myquote}{colback=gray!5!white, colframe=gray!75!black}
+    \renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+> We are deeply greatful to the Editor and Reviewer 1 for their continued encouragement and critiques that improve our manuscript.  Below we respond to the current minor revision requested.
+
+## Reviewer 1
+
+Thanks to the authors for the further comments---I agree that the new manuscript clearly distinguishes between the linear birth death model and the flexible specification of fluctuations that the authors have in mind.
+
+I also think the authors have also clearly argued why the negative correlation between beta and N for a family with N genera makes sense.
+
+> We thank the reviewer for their thoughtful commentary.
+
+My only further comment relates to whether this N-dependence provides a better (or different) explanation than the super statistical description. First, I would say that the two aren't necessarily incompatible. There is clearly a distribution of values of beta across families---the question in my mind is whether one explanatory variable (family size) on its own provides a `good' enough explanation of this pattern---as the authors say: "we want to know if this correlation alone accounts for all downstream superstatistical results".
+
+However, I am not sure that the manuscript makes clear the reasoning for using the statistical permutation test to determine this. In this test, the authors reshuffle all genera across families (while holding family size constant). They then (presumably) re-fit values for beta using the effective fluctuations in these `null families' over time. If I understand correctly, the distributions of these fitted values of beta to the null reshufflings are then quite different from the actual distribution of betas, suggesting it matters which genera are in which families. But this null test seems like it could also introduce unwanted biases. For example, as exemplified in Fig 1, families are not necessarily present throughout the span of the phanerozoic. Does the reshuffling control for this, or do the null families tend to be spread throughout the entire Eon? If the latter, this seems like it would naturally change the distribution of beta values.
+
+> In the main text we have made clear that our permutation test avoids the unwanted bias of fragmentary families that span the entire eon.  We do this by ignoring intances of no change (i.e. 0 fluctuation) thus ignoring potential gaps in the occurrences of permuted families. This is the approach we adopt in all analyses, so our actual and permuted analyses are consistent, and avoid unwanted bias.  We make this more clear in lines 124--125 and 206--208.
+
+In summary, I believe that the noise around the relationship shown in Figure S6 is telling us something biologically important about the differences between families that go beyond the number of genera they contain. But my question is whether these true biological differences are what is being captured by superstatistics and the gamma distribution of beta values.
+
+Here would be my final suggestion to test this: are family sizes distributed as similarly to a gamma distribution as are the fitted values of beta? If so, then it seems that family size is likely an adequate explanation for the superstatistical pattern the authors have uncovered (and it is still very interesting that this pattern is not there at coarser levels of taxonomic description). But if the distribution of family sizes is very clearly not a gamma distribution, then it suggests that the gamma distribution as a description for volatilities is indeed capturing more of (some other, unknown aspects of) the biology than family size alone.
+
+> This would indeed be an interesting and useful analysis and we have added this analaysis to the supplement (Figure S7) and reference it in the main text (lines 212--216). Interestingly, the family size distribution is not gamma.

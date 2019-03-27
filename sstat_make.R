@@ -19,4 +19,7 @@ source('analysis/pbdb_sstat.R')
 source('analysis/pbdb_dperm.R')
 
 # explore occupation of eco-space by taxa
-# source('analysis/pbdb_ecoEvoSpace.R')
+source('analysis/pbdb_ecoEvoSpace.R')
+
+# explore relationship between beta and richness
+source('analysis/pbdb_betaRichness.R')
