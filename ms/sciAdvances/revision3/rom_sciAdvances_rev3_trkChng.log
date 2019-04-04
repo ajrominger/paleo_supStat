@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  27 MAR 2019 14:52
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  3 APR 2019 12:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -173,32 +173,32 @@ Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
 \DIFdelgraphicsbox=\box32
 \DIFdelgraphicswidth=\skip53
 \DIFdelgraphicsheight=\skip54
-LaTeX Info: Redefining \DIFaddbegin on input line 123.
-LaTeX Info: Redefining \DIFaddend on input line 124.
-LaTeX Info: Redefining \DIFdelbegin on input line 125.
-LaTeX Info: Redefining \DIFdelend on input line 126.
-LaTeX Info: Redefining \DIFaddbeginFL on input line 131.
-LaTeX Info: Redefining \DIFaddendFL on input line 132.
-LaTeX Info: Redefining \DIFdelbeginFL on input line 133.
-LaTeX Info: Redefining \DIFdelendFL on input line 134.
+LaTeX Info: Redefining \DIFaddbegin on input line 124.
+LaTeX Info: Redefining \DIFaddend on input line 125.
+LaTeX Info: Redefining \DIFdelbegin on input line 126.
+LaTeX Info: Redefining \DIFdelend on input line 127.
+LaTeX Info: Redefining \DIFaddbeginFL on input line 132.
+LaTeX Info: Redefining \DIFaddendFL on input line 133.
+LaTeX Info: Redefining \DIFdelbeginFL on input line 134.
+LaTeX Info: Redefining \DIFdelendFL on input line 135.
 
 (./rom_sciAdvances_rev3_trkChng.aux)
 \openout1 = `rom_sciAdvances_rev3_trkChng.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 137.
-LaTeX Font Info:    ... okay on input line 137.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 138.
+LaTeX Font Info:    ... okay on input line 138.
  [1
 
 ] [2
@@ -218,12 +218,12 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../../fig_dStat.pdf Graphic file (type QTm)
  <use  "../../fig_dStat.pdf" > [12] [13] [14] [15] [16] [17]
 [18] (./rom_sciAdvances_rev3_trkChng.bbl [19] [20] [21] [22]) [23]
-Overfull \hbox (6.67195pt too wide) in paragraph at lines 825--833
+Overfull \hbox (6.67195pt too wide) in paragraph at lines 826--834
 []\TU/lmr/m/n/12 Data are available through the Paleobiology Database
  []
 
 [24]
-Overfull \hbox (7.23787pt too wide) in paragraph at lines 855--855
+Overfull \hbox (7.23787pt too wide) in paragraph at lines 856--856
 []\TU/lmr/bx/n/17.28 Limit distribution of a time-averaged homogeneous
  []
 
@@ -252,7 +252,7 @@ File: ../../figSupp_richGamma.pdf Graphic file (type QTm)
 Here is how much of TeX's memory you used:
  2070 strings out of 493005
  26956 string characters out of 6134596
- 105957 words of memory out of 5000000
+ 106030 words of memory out of 5000000
  6010 multiletter control sequences out of 15000+600000
  10926 words of font info for 56 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
